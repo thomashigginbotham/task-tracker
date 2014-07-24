@@ -1,0 +1,97 @@
+/* ================================
+ * Navigation
+ * ================================ */
+
+.tab-nav {
+	margin-bottom: $col-gutter + 2rem;
+	padding-top: .5em;
+	background: $color-primary;
+
+	h1 {
+		@include hide-text;
+		margin: 0;
+		height: 0;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		@include inline-block;
+		position: relative;
+		color: $color-text-inverse;
+
+		&:after {
+			content: ' |';
+			font-size: .8em;
+		}
+		&:last-child:after {
+			content: '';
+		}
+		&.active:after {
+			visibility: hidden;
+		}
+		&.active li:after {
+			visibility: visible;
+		}
+		li {
+			color: $color-primary;
+		}
+	}
+	li ul {
+		display: none;
+		position: absolute;
+		top: 2.3em;
+		left: 0;
+		white-space: nowrap;
+		font-size: .9em;
+		color: $color-primary;
+	}
+	li.active ul {
+		display: block;
+	}
+	li li {
+		padding: 1em 0;
+	}
+	a {
+		@include inline-block;
+		padding: .25em 1em;
+		border-radius: .25em .25em 0 0;
+		text-decoration: none;
+		color: $color-text-inverse;
+
+		&:hover,
+		&:focus {
+			background: rgba($color-bg, .25);
+		}
+	}
+	li.active a {
+		color: $color-primary;
+		background: $color-bg;
+	}
+	li.active li a {
+		margin: 0 .5em;
+		padding: 0;
+		background: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			background: none;
+		}
+	}
+	li.active li:first-child a {
+		padding-left: 0;
+	}
+	li li.active a {
+		font-weight: bold;
+		color: $color-text;
+		cursor: text;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}

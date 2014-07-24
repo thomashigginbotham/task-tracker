@@ -3,7 +3,8 @@
  * ================================ */
 
 /* -- Framework -- */
-.page-wrapper {
+.content-wrapper {
 	margin: 0 auto;
+	padding: 0 $page-margin;
 	max-width: $page-max-width;
 }

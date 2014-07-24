@@ -14,8 +14,16 @@ $small-canvas: 640px;
 $tiny-canvas: 480px;
 
 /* -- Colors -- */
-$color-primary: #fff;
-$color-secondary: #000;
+$color-primary: #3f9eff;       // Dodger Blue
+$color-primary-dark: #0480ff;  // Azure Radiance
+$color-secondary: #ff2c1d;     // Red Orange
+$color-tertiary: #b8cc18;      // La Rioja
+$color-tertiary-dark: #a0b20c; // Pistachio
+
+$color-text: #000;
+$color-text-inverse: #fff;
+$color-bg: #fff;
+$color-bg-dark: #eee;
 
 /* ================================
  * Modules
