@@ -38,3 +38,30 @@
 		margin: $col-gutter;
 	}
 }
+
+/* -- Color Sections -- */
+.color-chip {
+	@include box-sizing(border-box);
+	@include inline-block;
+	width: 70px;
+	height: 70px;
+}
+.color-grid {
+	@include row;
+	margin-bottom: $col-gutter;
+
+	.color-chip {
+		float: left;
+	}
+}
+.color-details {
+	@include row;
+	margin-bottom: $col-gutter;
+
+	.color-chip {
+		@include column(1, 3);
+	}
+	.color-detail {
+		@include column(2, 3)
+	}
+}
