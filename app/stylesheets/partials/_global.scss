@@ -11,3 +11,30 @@
 	float: right;
 	margin-left: $col-gutter;
 }
+
+/* -- Sectioned Content -- */
+.content-group {
+	margin-bottom: $col-gutter;
+
+	header {
+		border-bottom: 1px solid $color-bg-darkest;
+
+		h1 {
+			@include inline-block;
+			margin-right: .25em;
+			margin-bottom: -1px;
+			padding: .25em .75em 0;
+			border: 1px solid $color-bg-darkest;
+			border-bottom-width: 0;
+			font-size: 1.4em;
+			color: $color-text;
+			background: $color-bg;
+		}
+		.subheading {
+			display: inline;
+		}
+	}
+	> :not(header) {
+		margin: $col-gutter;
+	}
+}
