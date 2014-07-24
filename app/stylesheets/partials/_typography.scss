@@ -1,0 +1,49 @@
+/* ================================
+ * Typography
+ * (Generic site-wide font rules)
+ * ================================ */
+
+/*
+WARNING! Do not use @font-face or @import to include web fonts if you will be
+supporting IE 8 or lower. Selectivizr has issues with web fonts when the CSS
+is minified.
+*/
+
+/* -- Font Variables -- */
+$regular: 400;
+$bold: 700;
+
+$base-font-family: Arial, Helvetica, sans-serif;
+$base-font-weight: $regular;
+$base-font-size: .875em;
+$base-line-height: 1.6;
+
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+$header-font-weight: $regular;
+
+/* -- General -- */
+body {
+	font: #{$base-font-size}/#{$base-line-height} $base-font-family;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: $header-font-weight;
+}
+h2 {
+	font-size: 1.6em;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: .8em;
+}

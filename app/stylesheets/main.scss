@@ -1,0 +1,14 @@
+/* ================================
+ * Master Style Sheet
+ * (Only contains imports)
+ * ================================ */
+
+/* -- Partials -- */
+@import "partials/base";       // Basic variables and module imports
+@import "partials/resets";     // Overrides of browser default styles
+@import "partials/grids";      // Framework and layout
+@import "partials/global";     // Globally available classes
+@import "partials/typography"; // General font rules
+@import "partials/header";     // Global header styles
+@import "partials/content";    // Main content styles
+@import "partials/footer";     // Global footer styles

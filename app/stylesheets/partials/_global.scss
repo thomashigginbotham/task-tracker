@@ -1,0 +1,13 @@
+/* ================================
+ * Globally Available Classes
+ * ================================ */
+
+/* -- Alignment -- */
+.left {
+	float: left;
+	margin-right: $col-gutter;
+}
+.right {
+	float: right;
+	margin-left: $col-gutter;
+}

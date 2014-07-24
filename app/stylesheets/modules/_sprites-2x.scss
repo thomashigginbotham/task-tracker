@@ -1,0 +1,72 @@
+/* ================================
+ * High Pixel Density Sprite Maps
+ * (requires Compass)
+ * ================================ */
+
+%high-contrast-image-rendering {
+	image-rendering: optimizeSpeed;             /* Legal fallback                 */
+	image-rendering: -moz-crisp-edges;          /* Firefox                        */
+	image-rendering: -o-crisp-edges;            /* Opera                          */
+	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+	
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin sprite-2x($sprite-map, $sprite-map-2x, $name, $offset-x: 0, $offset-y: 0, $replace-text: false) {
+	$x-pos: get-double-x-position($sprite-map-2x, $name, $offset-x);
+	$y-pos: get-double-y-position($sprite-map-2x, $name, $offset-y);
+
+	@extend %high-contrast-image-rendering;
+
+	@if $replace-text {
+		@include hide-text(right);
+	}
+
+	background: sprite($sprite-map, $name, $offset-x, $offset-y) no-repeat;
+
+	@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
+		background-image: sprite-url($sprite-map-2x);
+		background-position: $x-pos $y-pos;
+		background-size: ceil((image-width(sprite-path($sprite-map-2x)) - 1) / 2) auto;
+	}
+}
+
+@mixin sprite-2x-with-dimensions($sprite-map, $sprite-map-2x, $name, $offset-x: 0, $offset-y: 0, $replace-text: false) {
+	@include sprite-2x($sprite-map, $sprite-map-2x, $name, $offset-x, $offset-y);
+	width: image-width(sprite-file($sprite-map, $name));
+	height: image-height(sprite-file($sprite-map, $name));
+
+	@if $replace-text {
+		@include hide-text(right);
+	}
+}
+
+@mixin sprite-2x-position($sprite-map, $sprite-map-2x, $name, $offset-x: 0, $offset-y: 0) {
+	$x-pos: get-double-x-position($sprite-map-2x, $name, $offset-x);
+	$y-pos: get-double-y-position($sprite-map-2x, $name, $offset-y);
+
+	background-position: sprite-position($sprite-map, $name, $offset-x, $offset-y);
+
+	@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
+		background-position: $x-pos $y-pos;
+	}
+}
+
+@function get-double-x-position($sprite-map-2x, $name, $offset-x: 0) {
+	$x-pos: null;
+
+	@if unit($offset-x) == '%' {
+		$x-pos: $offset-x;
+	} @else {
+		$x-pos: round(nth(sprite-position($sprite-map-2x, $name), 1) / 2) + $offset-x;
+	}
+
+	@return $x-pos;
+}
+
+@function get-double-y-position($sprite-map-2x, $name, $offset-y: 0) {
+	@return round(nth(sprite-position($sprite-map-2x, $name), 2) / 2) + $offset-y;
+}

@@ -1,0 +1,23 @@
+/* ================================
+ * Variables
+ * ================================ */
+/* -- Dimensions -- */
+$page-max-width: 960px;
+$page-margin: 20px;
+$col-count: 12;
+$col-gutter: 1.4rem;
+
+/* -- Break points -- */
+$large-canvas: 960px;
+$medium-canvas: 800px;
+$small-canvas: 640px;
+$tiny-canvas: 480px;
+
+/* -- Colors -- */
+$color-primary: #fff;
+$color-secondary: #000;
+
+/* ================================
+ * Modules
+ * ================================ */
+@import "../modules/all";
