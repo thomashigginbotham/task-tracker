@@ -94,4 +94,21 @@
 			text-decoration: none;
 		}
 	}
+	.nav-style,
+	.nav-components,
+	.nav-pages {
+		> a:before {
+			margin-right: .25em;
+			font-family: 'FontAwesome';
+		}
+	}
+	.nav-style > a:before {
+		content: '\f040';
+	}
+	.nav-components > a:before {
+		content: '\f00a';
+	}
+	.nav-pages > a:before {
+		content: '\f15b';
+	}
 }
