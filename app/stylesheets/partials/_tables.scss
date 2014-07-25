@@ -1,0 +1,24 @@
+/* ================================
+ * Table Styles
+ * ================================ */
+
+.basic-table {
+	border-collapse: collapse;
+
+	thead tr {
+		border-bottom: 1px solid $color-bg-darkest;
+	}
+	thead th {
+		text-align: left;
+	}
+	th, td {
+		padding: $col-gutter / 4 $col-gutter / 2;
+	}
+	td {
+		border-right: 1px solid $color-bg-darkest;
+
+		&:last-child {
+			border-right-width: 0;
+		}
+	}
+}
