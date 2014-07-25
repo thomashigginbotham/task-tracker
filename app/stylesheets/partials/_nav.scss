@@ -2,10 +2,24 @@
  * Navigation
  * ================================ */
 
+/* -- Mixins -- */
+@mixin set-color-theme($color) {
+	background: $color;
+
+	li ul,
+	li li,
+	li.active a {
+		color: $color;
+	}
+	li li.active a {
+		color: $color-text;
+	}
+}
+
+/* -- Tab and Sublink Styles -- */
 .tab-nav {
 	margin-bottom: $col-gutter + 2rem;
 	padding-top: .5em;
-	background: $color-primary;
 
 	h1 {
 		@include hide-text;
@@ -13,30 +27,28 @@
 		height: 0;
 	}
 	ul {
+		position: relative;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 	li {
 		@include inline-block;
-		position: relative;
 		color: $color-bg;
 
-		&:after {
-			content: ' |';
+		&:before {
+			content: '| ';
 			font-size: .8em;
 		}
-		&:last-child:after {
-			content: '';
+		&:first-child:before {
+			display: none;
 		}
-		&.active:after {
+		&.active:before,
+		&.active + li:before {
 			visibility: hidden;
 		}
-		&.active li:after {
+		&.active li:before {
 			visibility: visible;
-		}
-		li {
-			color: $color-primary;
 		}
 	}
 	li ul {
@@ -46,7 +58,6 @@
 		left: 0;
 		white-space: nowrap;
 		font-size: .9em;
-		color: $color-primary;
 	}
 	li.active ul {
 		display: block;
@@ -67,7 +78,6 @@
 		}
 	}
 	li.active a {
-		color: $color-primary;
 		background: $color-bg;
 	}
 	li.active li a {
@@ -82,11 +92,11 @@
 		}
 	}
 	li.active li:first-child a {
+		margin-left: 0;
 		padding-left: 0;
 	}
 	li li.active a {
 		font-weight: bold;
-		color: $color-text;
 		cursor: text;
 
 		&:hover,
@@ -111,4 +121,15 @@
 	.nav-pages > a:before {
 		content: '\f15b';
 	}
+}
+
+/* -- Tab Themes -- */
+.tab-nav.style-active {
+	@include set-color-theme($color-primary);
+}
+.tab-nav.components-active {
+	@include set-color-theme($color-secondary);
+}
+.tab-nav.pages-active {
+	@include set-color-theme($color-tertiary);
 }
