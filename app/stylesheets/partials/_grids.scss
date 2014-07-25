@@ -24,3 +24,10 @@
 		@include grid(2);
 	}
 }
+
+/* -- Forms Layout -- */
+.selection-ui {
+	@media (min-width: $medium-canvas) {
+		@include grid(2);
+	}
+}

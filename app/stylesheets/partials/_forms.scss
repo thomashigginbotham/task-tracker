@@ -1,0 +1,108 @@
+/* ================================
+ * Form Styles
+ * ================================ */
+
+/* -- Global Styles -- */
+label {
+	cursor: pointer;
+}
+
+/* -- Basic Form Layout -- */
+$basic-label-width: 12em;
+$basic-field-width: 20em;
+
+.basic-form {
+	.form-field {
+		@include row;
+		margin-bottom: $col-gutter / 2;
+
+		label {
+			display: block;
+			font-weight: $bold;
+
+			@media (min-width: $medium-canvas) {
+				float: left;
+				margin-right: 1em;
+				width: $basic-label-width;
+			}
+		}
+		input:not([type=radio]):not([type=checkbox]),
+		textarea,
+		select {
+			width: $basic-field-width;
+		}
+		input:not([type=radio]):not([type=checkbox]) {
+			border-width: 0 0 1px;
+			border-color: $color-bg-darkest;
+
+			&:focus {
+				border-color: $color-primary;
+				outline: none;
+			}
+		}
+		textarea,
+		select {
+			border-color: $color-bg-darkest;
+
+			&:focus {
+				border-color: $color-primary;
+				outline: none;
+			}
+		}
+	}
+	.option-field {
+		label {
+			display: inline;
+			float: none;
+			margin: 0;
+			width: auto;
+		}
+	}
+	.error-state {
+		color: $color-error;
+
+		input:not([type=radio]):not([type=checkbox]),
+		textarea,
+		select {
+			border-color: $color-error;
+			color: $color-text;
+		}
+		.error-msg {
+			display: block;
+
+			@media (min-width: $medium-canvas) {
+				float: left;
+				width: $basic-label-width + $basic-field-width + 1em;
+				text-align: right;
+			}
+		}
+	}
+	.error-msg {
+		color: $color-error;
+
+		&:before {
+			content: '\f071';
+			margin-right: .25em;
+			font-family: 'FontAwesome';
+		}
+	}
+}
+
+/* -- Buttons -- */
+button,
+a.button {
+	padding: .5em 1em;
+	border: none;
+	text-decoration: none;
+	color: $color-bg;
+	background: $color-tertiary-dark;
+
+	&.primary {
+		background: $color-primary;
+	}
+	&.disabled,
+	&[disabled] {
+		cursor: default;
+		background: $color-bg-darkest;
+	}
+}
