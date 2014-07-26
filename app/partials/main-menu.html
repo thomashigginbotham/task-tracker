@@ -1,0 +1,12 @@
+<div class="content-wrapper">
+	<h1>Pattern Library Menu</h1>
+
+	<ul>
+		<li data-ng-repeat="parentItem in menu" data-ng-class="['nav-' + hyphenateString(parentItem.text), (containsCurrentUri(parentItem.submenu)) ? 'active' : '']">
+			<a href="#{{parentItem.submenu[0].uri}}">{{parentItem.text}}</a>
+			<ul>
+				<li data-ng-repeat="childItem in parentItem.submenu" data-ng-class="{'active': isCurrentUri(childItem.uri)}"><a href="#{{childItem.uri}}" ng-click="setActiveMenuItem()">{{childItem.text}}</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>

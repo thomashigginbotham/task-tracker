@@ -36,57 +36,10 @@
 
 	<body>
 		<div class="page-wrapper">
-			<nav class="tab-nav style-active">
-				<div class="content-wrapper">
-					<h1>Pattern Library Menu</h1>
-					<ul>
-						<li class="nav-style active">
-							<a href="index.html">Style</a>
-							<ul>
-								<li class="active"><a href="index.html">Introduction</a></li>
-								<li><a href="typography.html">Typography</a></li>
-								<li><a href="color.html">Color</a></li>
-								<li><a href="forms.html">Forms</a></li>
-								<li><a href="tables.html">Tables</a></li>
-							</ul>
-						</li>
-						<li class="nav-components">
-							<a href="page-sections.html">Components</a>
-							<ul>
-								<li><a href="page-sections.html">Page Sections</a></li>
-								<li><a href="ui-elements.html">UI Elements</a></li>
-							</ul>
-						</li>
-						<li class="nav-pages">
-							<a href="page-home.html">Pages</a>
-							<ul>
-								<li><a href="page-home.html">Home Page</a></li>
-								<li><a href="page-interior.html">Interior Page</a></li>
-								<li><a href="page-contact.html">Contact Page</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
+			<nav class="tab-nav" data-main-menu></nav>
 
 			<section class="page-content">
-				<main class="content-wrapper">
-					<h1>Introduction to the Pattern Library</h1>
-					<p>A pattern library helps designers and developers maintain a consistent appearance throughout a web project’s life. By breaking apart the project into smaller components and stylistic rules, a baseline is created for building new components and pages that keep the same look and feel as the existing parts of the project.</p>
-					<p>Pattern libraries also provide useful reference material and documentation.</p>
-
-					<h2>About the Library</h2>
-					<p>At the top of this page are three tabs: Style, Components, and Pages. The smallest, most basic aspects of design are found in the Style section, more complex design combinations — or components — are placed in the Components section, and finalized page templates are found in the Pages section.</p>
-
-					<h3>Style Section</h3>
-					<p>You are in the Style section now — the Introduction to be precise. The design of this page is automatically pulled from the style sheets used by the web project. The headers and paragraphs you are seeing adhere to the basic typographical and color rules defined in the CSS. To see more information about the typography, colors, forms, and other basic design elements for this site, use the links below the Style tab at the top of this page.</p>
-
-					<h3>Components Section</h3>
-					<p>Components are larger, reusable elements that build on the base styles. Examples of components would be a tabbed interface, a modal dialog box, or even a blog comment. Before creating new designs, you should always reference the existing components to see if something already exists to meet your needs. If you still must create a new component, be sure to add it to this pattern library when it’s done.</p>
-
-					<h3>Pages Section</h3>
-					<p>The pattern library is expected to grow along with the web project. When starting out, the Pages section will contain basic wireframes that can be tested in live browsers. As design decisions are made, the wireframes will be fleshed out with the styles and components as they are created. When the project is finished, the pages act as a reference for the various layouts that are possible and can provide guidance when creating new page templates.</p>
-				</main>
+				<main class="content-wrapper" data-ng-view></main>
 			</section>
 
 			<footer class="site-footer">

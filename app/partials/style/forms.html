@@ -1,0 +1,154 @@
+<h1>Forms</h1>
+<p>Form elements include text boxes, drop-downs, check boxes, radio buttons, and other elements that are used to collect data from the user.</p>
+
+<h2>Text Boxes</h2>
+
+<section class="content-group">
+	<header>
+		<h1>Single-line Text Box</h1>
+		<span class="subheading"><a href="#">View HTML</a></span>
+	</header>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<label for="single-line-textbox">Text box label</label>
+			<input type="text" id="single-line-textbox" placeholder="Placeholder text" />
+		</div>
+
+		<div class="form-field error-state">
+			<label for="single-line-textbox-error">Text box in error state</label>
+			<input type="text" id="single-line-textbox-error" placeholder="Placeholder text" />
+			<span class="error-msg">Something’s not right</span>
+		</div>
+	</form>
+</section>
+
+<section class="content-group">
+	<header>
+		<h1>Multi-line Text Box</h1>
+		<span class="subheading"><a href="#">View HTML</a></span>
+	</header>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<label for="multi-line-textbox">Text box label</label>
+			<textarea id="multi-line-textbox" cols="50" rows="5" placeholder="Placeholder text"></textarea>
+		</div>
+
+		<div class="form-field error-state">
+			<label for="multi-line-textbox-error">Text box in error state</label>
+			<textarea id="multi-line-textbox-error" cols="50" rows="5" placeholder="Placeholder text"></textarea>
+			<span class="error-msg">Something’s not right</span>
+		</div>
+	</form>
+</section>
+
+<h2>Selection Interfaces</h2>
+
+<section class="content-group">
+	<header>
+		<h1>Drop-down Box</h1>
+		<span class="subheading"><a href="#">View HTML</a></span>
+	</header>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<label for="dropdown">Drop-down label</label>
+			<select id="dropdown">
+				<option value="">Option 1</option>
+				<option value="">Option 2</option>
+				<option value="">Option 3</option>
+			</select>
+		</div>
+
+		<div class="form-field error-state">
+			<label for="dropdown-error">Drop-down in error state</label>
+			<select id="dropdown-error">
+				<option value="">Option 1</option>
+				<option value="">Option 2</option>
+				<option value="">Option 3</option>
+			</select>
+			<span class="error-msg">Something’s not right</span>
+		</div>
+	</form>
+</section>
+
+<div class="selection-ui">
+	<section class="content-group">
+		<header>
+			<h1>Check Boxes</h1>
+			<span class="subheading"><a href="#">View HTML</a></span>
+		</header>
+
+		<form action="#" method="POST" class="basic-form">
+			<div class="form-field option-field">
+				<input type="checkbox" id="check-1" checked="checked" />
+				<label for="check-1">Option 1</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="checkbox" id="check-2" />
+				<label for="check-2">Option 2</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="checkbox" id="check-3" />
+				<label for="check-3">Option 3</label>
+			</div>
+
+			<p class="error-msg">General error message.</p>
+		</form>
+	</section>
+
+	<section class="content-group">
+		<header>
+			<h1>Radio Buttons</h1>
+			<span class="subheading"><a href="#">View HTML</a></span>
+		</header>
+
+		<form action="#" method="POST" class="basic-form">
+			<div class="form-field option-field">
+				<input type="radio" id="radio-1" name="radio" checked="checked" />
+				<label for="radio-1">Option 1</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="radio" id="radio-2" name="radio" />
+				<label for="radio-2">Option 2</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="radio" id="radio-3" name="radio" />
+				<label for="radio-3">Option 3</label>
+			</div>
+
+			<p class="error-msg">General error message.</p>
+		</form>
+	</section>
+</div>
+
+<h2>Buttons</h2>
+
+<section class="content-group">
+	<header>
+		<h1>&lt;button&gt; Tag</h1>
+		<span class="subheading"><a href="#">View HTML</a></span>
+	</header>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<button class="primary">Primary Button</button>
+			<button>Default Button</button>
+			<button disabled="disabled">Disabled Button</button>
+		</div>
+	</form>
+</section>
+
+<section class="content-group">
+	<header>
+		<h1>&lt;a&gt; Tag</h1>
+		<span class="subheading"><a href="#">View HTML</a></span>
+	</header>
+
+	<div>
+		<a href="#" class="button primary">Primary Button</a>
+		<a href="#" class="button">Default Button</a>
+		<a href="#" class="button disabled">Disabled Button</a>
+	</div>
+</section>
