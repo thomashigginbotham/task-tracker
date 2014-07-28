@@ -86,3 +86,10 @@
 		font-family: FontAwesome;
 	}
 }
+.hide-code {
+	@extend .show-code;
+
+	&:before {
+		content: '\f070';
+	}
+}
