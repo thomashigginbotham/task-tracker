@@ -1,76 +1,150 @@
 <h1>Tables</h1>
 <p>Tables are used to present information in a row/column structure.</p>
 
-<h2>Generic Table</h2>
+<div data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+	<h2>Generic Table <a href class="subheader" data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-<table class="basic-table">
-	<thead>
-		<tr>
-			<th colspan="2">IMDB Top Ten Movies</th>
-			<th>Rating</th>
-			<th>Year</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>1</td>
-			<td>The Shawshank Redemption</td>
-			<td>9.2</td>
-			<td>1994</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>The Godfather</td>
-			<td>9.2</td>
-			<td>1972</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>The Godfather: Part II</td>
-			<td>9.0</td>
-			<td>1974</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>The Dark Knight</td>
-			<td>8.9</td>
-			<td>2008</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>Pulp Fiction</td>
-			<td>8.9</td>
-			<td>1994</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>The Good, the Bad and the Ugly</td>
-			<td>8.9</td>
-			<td>1966</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Schindler’s List</td>
-			<td>8.9</td>
-			<td>1993</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Angry Men</td>
-			<td>8.9</td>
-			<td>1957</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>The Lord of the Rings — The Return of the King</td>
-			<td>8.9</td>
-			<td>2003</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Fight Club</td>
-			<td>8.8</td>
-			<td>1999</td>
-		</tr>
-	</tbody>
-</table>
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;table class=&quot;basic-table&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th colspan=&quot;2&quot;&gt;IMDB Top Ten Movies&lt;/th&gt;
+			&lt;th&gt;Rating&lt;/th&gt;
+			&lt;th&gt;Year&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;1&lt;/td&gt;
+			&lt;td&gt;The Shawshank Redemption&lt;/td&gt;
+			&lt;td&gt;9.2&lt;/td&gt;
+			&lt;td&gt;1994&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;2&lt;/td&gt;
+			&lt;td&gt;The Godfather&lt;/td&gt;
+			&lt;td&gt;9.2&lt;/td&gt;
+			&lt;td&gt;1972&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;3&lt;/td&gt;
+			&lt;td&gt;The Godfather: Part II&lt;/td&gt;
+			&lt;td&gt;9.0&lt;/td&gt;
+			&lt;td&gt;1974&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;4&lt;/td&gt;
+			&lt;td&gt;The Dark Knight&lt;/td&gt;
+			&lt;td&gt;8.9&lt;/td&gt;
+			&lt;td&gt;2008&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;5&lt;/td&gt;
+			&lt;td&gt;Pulp Fiction&lt;/td&gt;
+			&lt;td&gt;8.9&lt;/td&gt;
+			&lt;td&gt;1994&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;6&lt;/td&gt;
+			&lt;td&gt;The Good, the Bad and the Ugly&lt;/td&gt;
+			&lt;td&gt;8.9&lt;/td&gt;
+			&lt;td&gt;1966&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;7&lt;/td&gt;
+			&lt;td&gt;Schindler&rsquo;s List&lt;/td&gt;
+			&lt;td&gt;8.9&lt;/td&gt;
+			&lt;td&gt;1993&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;8&lt;/td&gt;
+			&lt;td&gt;Angry Men&lt;/td&gt;
+			&lt;td&gt;8.9&lt;/td&gt;
+			&lt;td&gt;1957&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;9&lt;/td&gt;
+			&lt;td&gt;The Lord of the Rings &mdash; The Return of the King&lt;/td&gt;
+			&lt;td&gt;8.9&lt;/td&gt;
+			&lt;td&gt;2003&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;10&lt;/td&gt;
+			&lt;td&gt;Fight Club&lt;/td&gt;
+			&lt;td&gt;8.8&lt;/td&gt;
+			&lt;td&gt;1999&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+	<table class="basic-table">
+		<thead>
+			<tr>
+				<th colspan="2">IMDB Top Ten Movies</th>
+				<th>Rating</th>
+				<th>Year</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>The Shawshank Redemption</td>
+				<td>9.2</td>
+				<td>1994</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>The Godfather</td>
+				<td>9.2</td>
+				<td>1972</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>The Godfather: Part II</td>
+				<td>9.0</td>
+				<td>1974</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>The Dark Knight</td>
+				<td>8.9</td>
+				<td>2008</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Pulp Fiction</td>
+				<td>8.9</td>
+				<td>1994</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>The Good, the Bad and the Ugly</td>
+				<td>8.9</td>
+				<td>1966</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>Schindler’s List</td>
+				<td>8.9</td>
+				<td>1993</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>Angry Men</td>
+				<td>8.9</td>
+				<td>1957</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>The Lord of the Rings — The Return of the King</td>
+				<td>8.9</td>
+				<td>2003</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>Fight Club</td>
+				<td>8.8</td>
+				<td>1999</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
