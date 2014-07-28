@@ -11,18 +11,23 @@ requirejs.config({
 		requirejs: '../bower_components/requirejs/require',
 		almond: '../bower_components/almond/almond',
 		angular: '../bower_components/angular/angular',
-		'angular-route': '../bower_components/angular-route/angular-route'
+		'angular-route': '../bower_components/angular-route/angular-route',
+		'google-code-prettify': '../bower_components/google-code-prettify/src/prettify'
 	},
 	shim: {
 		angular: {
 			exports: 'angular'
 		},
 		'angular-route': {
-			deps: ['angular'],
+			deps: [
+				'angular'
+			],
 			exports: 'ngRoute'
 		}
 	},
-	deps: ['bootstrap'],
+	deps: [
+		'bootstrap'
+	],
 	packages: [
 
 	]

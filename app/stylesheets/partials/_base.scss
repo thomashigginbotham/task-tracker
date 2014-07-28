@@ -27,6 +27,9 @@ $color-bg: #fff;
 
 $color-error: #f00;
 
+/* -- Browser Support -- */
+$experimental-support-for-opera: false; // Opera uses Blink engine now
+
 /* ================================
  * Modules
  * ================================ */

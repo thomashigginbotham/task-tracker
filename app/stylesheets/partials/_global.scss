@@ -68,6 +68,14 @@
 	}
 }
 
+/* -- Code Blocks -- */
+.prettyprint {
+	padding: 1em;
+	font-size: 1em;
+	color: $color-bg;
+	background: $color-text;
+}
+
 /* -- Misc. Modules -- */
 .show-code {
 	text-decoration: none;

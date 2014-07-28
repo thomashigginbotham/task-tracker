@@ -9,6 +9,7 @@
     "normalize-css": "~3.0.1",
     "almond": "~0.2.9",
     "angular": "~1.2.21",
-    "angular-route": "~1.2.21"
+    "angular-route": "~1.2.21",
+    "google-code-prettify": "~1.0.2"
   }
 }

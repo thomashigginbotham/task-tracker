@@ -24,6 +24,7 @@ $fixed-line-height: $base-line-height;
 
 /* -- General -- */
 body {
+	@include experimental(tab-size, 4);
 	font: #{$base-font-size}/#{$base-line-height} $base-font-family;
 }
 h1, h2, h3, h4, h5, h6 {
