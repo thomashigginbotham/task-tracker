@@ -32,6 +32,8 @@
 		}
 		.subheading {
 			display: inline;
+			position: relative;
+			top: .25em;
 		}
 	}
 	> :not(header) {
@@ -63,5 +65,16 @@
 	}
 	.color-detail {
 		@include column(2, 3)
+	}
+}
+
+/* -- Misc. Modules -- */
+.show-code {
+	text-decoration: none;
+
+	&:before {
+		content: '\f06e';
+		margin-right: .25em;
+		font-family: FontAwesome;
 	}
 }
