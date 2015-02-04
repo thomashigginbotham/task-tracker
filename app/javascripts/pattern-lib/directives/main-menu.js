@@ -34,13 +34,10 @@ define(['directives/module'], function(directives) {
 				text: 'Pages',
 				submenu: [{
 					text: 'Home Page',
-					uri: '/pages/home'
+					uri: '/pages/index'
 				}, {
 					text: 'Interior Page',
 					uri: '/pages/interior'
-				}, {
-					text: 'Contact Page',
-					uri: '/pages/contact'
 				}]
 			}];
 
@@ -88,7 +85,7 @@ define(['directives/module'], function(directives) {
 			restrict: 'A',
 			controller: Ctrl,
 			link: link,
-			templateUrl: 'partials/main-menu.html'
+			templateUrl: 'partials/pattern-lib/main-menu.html'
 		};
 	}]);
 });

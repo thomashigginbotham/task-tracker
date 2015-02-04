@@ -1,0 +1,153 @@
+/* ================================
+ * Navigation for Pattern Library
+ * ================================ */
+
+/* -- Mixins -- */
+@mixin set-color-theme($color) {
+	background: $color;
+
+	li ul,
+	li li,
+	li.active a {
+		color: $color;
+	}
+	li li.active a {
+		color: $color-text;
+	}
+}
+
+/* -- Tab and Sublink Styles -- */
+.page-wrapper {
+	// Add space to top for fixed-position navigation
+	@include rem(padding-top, 7rem);
+}
+.tab-nav {
+	@include rem(margin-bottom, $ui-col-gutter + 2);
+	@include rem(padding-top, 0.5rem);
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	width: 100%;
+
+	&:after {
+		@include rem(top, 2.5rem);
+		@include rem(height, 3.4rem);
+		content: '';
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		border-bottom: 1px solid $color-bg-darkest;
+		background-color: $color-bg;
+	}
+	h1 {
+		@include hide-text;
+		margin: 0;
+		height: 0;
+	}
+	ul {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		@include inline-block;
+		color: $color-bg;
+
+		&:before {
+			content: '| ';
+			font-size: .8em;
+		}
+		&:first-child:before {
+			display: none;
+		}
+		&.active:before,
+		&.active + li:before {
+			visibility: hidden;
+		}
+		&.active li:before {
+			visibility: visible;
+		}
+	}
+	li ul {
+		@include rem(top, 2rem);
+		display: none;
+		position: absolute;
+		left: 0;
+		white-space: nowrap;
+		font-size: .9em;
+	}
+	li.active ul {
+		display: block;
+	}
+	li li {
+		padding: 1em 0;
+	}
+	a {
+		@include inline-block;
+		padding: .25em 1em;
+		border-radius: .25em .25em 0 0;
+		text-decoration: none;
+		color: $color-bg;
+
+		&:hover,
+		&:focus {
+			background: rgba($color-bg, .25);
+		}
+	}
+	li.active a {
+		background: $color-bg;
+	}
+	li.active li a {
+		margin: 0 .5em;
+		padding: 0;
+		background: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			background: none;
+		}
+	}
+	li.active li:first-child a {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	li li.active a {
+		font-weight: bold;
+		cursor: text;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+	.nav-style,
+	.nav-components,
+	.nav-pages {
+		> a:before {
+			margin-right: .25em;
+			font-family: 'FontAwesome';
+		}
+	}
+	.nav-style > a:before {
+		content: '\f040';
+	}
+	.nav-components > a:before {
+		content: '\f00a';
+	}
+	.nav-pages > a:before {
+		content: '\f15b';
+	}
+}
+
+/* -- Tab Themes -- */
+.tab-nav.style-active {
+	@include set-color-theme($color-primary);
+}
+.tab-nav.components-active {
+	@include set-color-theme($color-secondary);
+}
+.tab-nav.pages-active {
+	@include set-color-theme($color-tertiary-dark);
+}

@@ -5,5 +5,5 @@ define([
 	'controllers/style-forms-ctrl',
 	'controllers/style-tables-ctrl',
 	'controllers/components-page-sections-ctrl',
-	'controllers/pages-home-ctrl'
+	'controllers/pages-ctrl'
 ], function() {});

@@ -6,16 +6,25 @@
 /* -- Modules -- */
 @import "modules/all";         // Modules contain functions and mixins
 
+/* -- Variables -- */
+@import "pattern-lib/base";
+@import "partials/base";
+
+/* -- Pattern Library Styles -- */
+@import "pattern-lib/grids";   // Framework and layout
+@import "pattern-lib/global";  // Globally available classes
+@import "pattern-lib/nav";     // Navigation and menu styles
+@import "pattern-lib/footer";  // Footer styles
+
 /* -- Partials -- */
-@import "partials/base";       // Variables
 @import "partials/resets";     // Overrides of browser default styles
-@import "partials/grids";      // Framework and layout
 @import "partials/global";     // Globally available classes
 @import "partials/typography"; // General font rules
 @import "partials/forms";      // Form styles
 @import "partials/tables";     // Tabular data styles
 @import "partials/nav";        // Navigation and menu styles
-@import "partials/header";     // Global header styles
-@import "partials/footer";     // Global footer styles
+@import "partials/header";     // Header styles
+@import "partials/footer";     // Footer styles
 
+/* -- Third-party CSS -- */
 @import "vendor/prettyprint";  // Sunburst theme for Google Pretty Print

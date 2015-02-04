@@ -78,11 +78,15 @@ $col-gutter: 1.4rem !default;      // Column gutter width (for newer browsers)
  * $custom-col-gutter (optional): Width of gutters.
  */
 @mixin column-width($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
+	$base-width-percentage: $col-span / $custom-col-count * 100;
+
 	// Old browsers must use fluid gutters
-	width: ((100% - ($custom-col-count - 1) * $col-gutter-fluid) / $custom-col-count) * $col-span + ($col-span - 1) * $col-gutter-fluid;
+	width: $base-width-percentage - ($col-gutter-fluid * (1 - $base-width-percentage / 100)) - .001%;
 
 	// New browsers can use fluid or fixed gutters
-	width: calc(((100% - (#{$custom-col-count} - 1) * #{$custom-col-gutter}) / #{$custom-col-count}) * #{$col-span} + (#{$col-span} - 1) * #{$custom-col-gutter});
+	@if unit($custom-col-gutter) != '%' {
+		width: calc(#{$base-width-percentage * 1%} - #{$custom-col-gutter * (1 - $base-width-percentage / 100)} - .1px);
+	}
 }
 
 /*

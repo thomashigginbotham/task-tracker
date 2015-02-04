@@ -4,92 +4,10 @@
 
 /* -- Alignment -- */
 .left {
+	@include rem(margin-right, $col-gutter);
 	float: left;
-	margin-right: $col-gutter;
 }
 .right {
+	@include rem(margin-left, $col-gutter);
 	float: right;
-	margin-left: $col-gutter;
-}
-
-/* -- Sectioned Content -- */
-.content-group {
-	margin-bottom: $col-gutter;
-
-	header {
-		border-bottom: 1px solid $color-bg-darkest;
-
-		h1 {
-			@include inline-block;
-			margin-right: .25em;
-			margin-bottom: -1px;
-			padding: .25em .75em 0;
-			border: 1px solid $color-bg-darkest;
-			border-bottom-width: 0;
-			font-size: 1.4em;
-			color: $color-text;
-			background: $color-bg;
-		}
-		.subheading {
-			display: inline;
-			position: relative;
-			top: .25em;
-		}
-	}
-	> :not(header) {
-		margin: $col-gutter;
-	}
-}
-
-/* -- Color Sections -- */
-.color-chip {
-	@include box-sizing(border-box);
-	@include inline-block;
-	width: 70px;
-	height: 70px;
-}
-.color-grid {
-	@include row;
-	margin-bottom: $col-gutter;
-
-	.color-chip {
-		float: left;
-	}
-}
-.color-details {
-	@include row;
-	margin-bottom: $col-gutter;
-
-	.color-chip {
-		@include column(1, 3);
-	}
-	.color-detail {
-		@include column(2, 3)
-	}
-}
-
-/* -- Code Blocks -- */
-.prettyprint {
-	padding: 1em;
-	font-size: 1em;
-	color: $color-bg;
-	background: $color-text;
-}
-
-/* -- Misc. Modules -- */
-.show-code {
-	text-decoration: none;
-
-	&:before {
-		content: '\f06e';
-		margin-right: .25em;
-		font-family: FontAwesome;
-	}
-}
-.hide-code {
-	@extend .show-code;
-
-	&:before {
-		content: '\f070';
-	}
 }

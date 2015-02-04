@@ -3,31 +3,8 @@
  * ================================ */
 
 /* -- Framework -- */
-.content-wrapper {
+.page-wrapper {
 	margin: 0 auto;
-	padding: 0 $page-margin;
+	padding: $page-margin;
 	max-width: $page-max-width;
-}
-
-/* -- Colors Layout -- */
-.color-grids {
-	margin-bottom: $col-gutter;
-
-	@media (min-width: $medium-canvas) {
-		@include grid(2);
-	}
-}
-.theme-details {
-	margin-bottom: $col-gutter;
-
-	@media (min-width: $medium-canvas) {
-		@include grid(2);
-	}
-}
-
-/* -- Forms Layout -- */
-.selection-ui {
-	@media (min-width: $medium-canvas) {
-		@include grid(2);
-	}
 }

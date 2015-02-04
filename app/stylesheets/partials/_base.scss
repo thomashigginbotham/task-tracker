@@ -27,10 +27,23 @@ $color-bg: #fff;
 
 $color-error: #f00;
 
-/* -- Browser Support -- */
-$experimental-support-for-opera: false; // Opera uses Blink engine now
+/* -- Font Variables -- */
+/*
+WARNING! Do not use @font-face or @import to include web fonts if you will be
+supporting IE 8 or lower. Selectivizr has issues with web fonts when the CSS
+is minified.
+*/
 
-/* ================================
- * Modules
- * ================================ */
-@import "../modules/all";
+$regular: 400;
+$bold: 700;
+
+$base-font-family: Roboto, Arial, Helvetica, sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 14px;
+$base-line-height: 1.8;
+
+$header-font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
+
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;

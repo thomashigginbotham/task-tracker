@@ -1,0 +1,17 @@
+/* ================================
+ * Footer for Pattern Library
+ * ================================ */
+
+.site-footer {
+	padding: 1em 0;
+	background: $color-bg-dark;
+
+	h1 {
+		@include hide-text;
+		margin: 0;
+		height: 0;
+	}
+	p {
+		margin: 0;
+	}
+}

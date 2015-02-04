@@ -3,32 +3,13 @@
  * (Generic site-wide font rules)
  * ================================ */
 
-/*
-WARNING! Do not use @font-face or @import to include web fonts if you will be
-supporting IE 8 or lower. Selectivizr has issues with web fonts when the CSS
-is minified.
-*/
-
-/* -- Font Variables -- */
-$regular: 400;
-$bold: 700;
-
-$base-font-family: Roboto, Arial, Helvetica, sans-serif;
-$base-font-weight: $regular;
-$base-font-size: .875em;
-$base-line-height: 1.8;
-
-$fixed-font-family: monospace;
-$fixed-font-size: 85%;
-$fixed-line-height: $base-line-height;
-
 /* -- General -- */
 body {
 	@include experimental(tab-size, 4);
 	font: #{$base-font-size}/#{$base-line-height} $base-font-family;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
+	font-family: $header-font-family;
 }
 h1 {
 	text-transform: uppercase;
@@ -52,11 +33,4 @@ h5 {
 }
 h6 {
 	font-size: .8em;
-}
-
-/* -- Headings -- */
-.subheader {
-	margin-left: .5em;
-	font-size: .6em;
-	font-family: Roboto, Arial, Helvetica, sans-serif;
 }

@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+	'use strict';
+
 	// Load dependencies
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -34,6 +36,11 @@ module.exports = function(grunt) {
 						flatten: true,
 						src: ['app/bower_components/selectivizr/selectivizr.js'],
 						dest: 'dist/javascripts/vendor'
+					}, {
+						expand: true,
+						cwd: 'app/partials/pattern-lib',
+						src: ['**'],
+						dest: 'dist/partials/pattern-lib'
 					}
 				]
 			}
@@ -61,7 +68,8 @@ module.exports = function(grunt) {
 		cssmin: {
 			dist: {
 				files: {
-					'dist/stylesheets/main.css': ['app/bower_components/normalize-css/normalize.css', '.tmp/stylesheets/main.css']
+					'dist/stylesheets/main.css': ['app/bower_components/normalize-css/normalize.css', '.tmp/stylesheets/main.css'],
+					'dist/stylesheets/pattern-lib.css': ['app/bower_components/normalize-css/normalize.css', '.tmp/stylesheets/pattern-lib.css']
 				}
 			}
 		},
@@ -69,12 +77,12 @@ module.exports = function(grunt) {
 			target: {
 				rjsConfig: 'app/javascripts/main.js',
 				options: {
-					exclude: ['html5shiv', 'selectivizr']
+					exclude: ['html5shiv', 'selectivizr', 'requirejs']
 				}
 			}
 		},
 		requirejs: {
-			compile: {
+			main: {
 				options: {
 					baseUrl: './app/javascripts',
 					mainConfigFile: 'app/javascripts/main.js',
@@ -86,6 +94,23 @@ module.exports = function(grunt) {
 					generateSourceMaps: true,
 					preserveLicenseComments: false,
 				}
+			},
+			patternLib: {
+				options: {
+					baseUrl: './app/javascripts/pattern-lib',
+					mainConfigFile: 'app/javascripts/pattern-lib/main.js',
+					name: 'app',
+					out: 'dist/javascripts/pattern-lib/built.js',
+					include: ['../../bower_components/almond/almond.js'],
+					insertRequire: ['bootstrap'],
+					findNestedDependencies: true,
+					optimize: 'uglify2',
+					uglify2: {
+						mangle: false
+					},
+					generateSourceMaps: true,
+					preserveLicenseComments: false
+				}
 			}
 		},
 		express: {
@@ -93,8 +118,8 @@ module.exports = function(grunt) {
 				options: {
 					port: 9090,
 					hostname: '0.0.0.0',
-					bases: ['app', '.tmp'],
-					open: true,
+					bases: ['.tmp', 'app'],
+					open: 'http://localhost:9090/pattern-lib.html',
 					livereload: true
 				}
 			},
@@ -103,7 +128,7 @@ module.exports = function(grunt) {
 					port: 9091,
 					hostname: '0.0.0.0',
 					bases: ['dist'],
-					open: true
+					open: 'http://localhost:9091/pattern-lib.html'
 				}
 			}
 		},
@@ -129,16 +154,25 @@ module.exports = function(grunt) {
 			}
 		},
 		processhtml: {
+			dev: {
+				files: {
+					'.tmp/index.html': ['app/index.html'],
+					'.tmp/interior.html': ['app/interior.html'],
+					'.tmp/pattern-lib.html': ['app/pattern-lib.html']
+				}
+			},
 			dist: {
 				files: {
-					'dist/index.html': ['app/index.html']
+					'dist/index.html': ['app/index.html'],
+					'dist/interior.html': ['app/interior.html'],
+					'dist/pattern-lib.html': ['app/pattern-lib.html']
 				}
 			}
 		}
 	});
 
 	// Tasks
-	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml']);
-	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'express:dev', 'watch']);
-	grunt.registerTask('dist-serve', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml', 'express:dist', 'express-keepalive']);
+	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml:dist']);
+	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'processhtml:dev', 'express:dev', 'watch']);
+	grunt.registerTask('dist-serve', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
 };

@@ -1,3 +1,5 @@
+/* jshint browser: true */
+
 /**
  * Bootstrap angular to window.document
  */

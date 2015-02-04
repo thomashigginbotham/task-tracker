@@ -14,18 +14,18 @@ a {
 // No top margins on most block elements makes for easier
 // vertical alignment with other elements
 h1 {
+	@include rem(margin-bottom, $col-gutter / 4);
 	margin-top: 0;
-	margin-bottom: $col-gutter / 4;
 }
 h2, h3, h4, h5, h6 {
+	@include rem(margin-bottom, $col-gutter / 2);
 	margin-top: 0;
-	margin-bottom: $col-gutter / 2;
 }
 p,
 ul, ol, dl,
 table {
+	@include rem(margin-bottom, $col-gutter);
 	margin-top: 0;
-	margin-bottom: $col-gutter;
 }
 
 // Monospace font reset

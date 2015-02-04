@@ -12,7 +12,7 @@
 		text-align: left;
 	}
 	th, td {
-		padding: $col-gutter / 4 $col-gutter / 2;
+		@include rem(padding, $col-gutter / 4 $col-gutter / 2);
 	}
 	td {
 		border-right: 1px solid $color-bg-darkest;
