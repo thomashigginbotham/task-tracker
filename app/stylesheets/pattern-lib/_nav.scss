@@ -21,7 +21,7 @@
 	// Add space to top for fixed-position navigation
 	@include rem(padding-top, 7rem);
 }
-.tab-nav {
+.xpl-nav {
 	@include rem(margin-bottom, $ui-col-gutter + 2);
 	@include rem(padding-top, 0.5rem);
 	position: fixed;
@@ -142,12 +142,12 @@
 }
 
 /* -- Tab Themes -- */
-.tab-nav.style-active {
+.xpl-nav.style-active {
 	@include set-color-theme($color-primary);
 }
-.tab-nav.components-active {
+.xpl-nav.components-active {
 	@include set-color-theme($color-secondary);
 }
-.tab-nav.pages-active {
+.xpl-nav.pages-active {
 	@include set-color-theme($color-tertiary-dark);
 }
