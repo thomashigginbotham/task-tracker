@@ -38,9 +38,9 @@ module.exports = function(grunt) {
 						dest: 'dist/javascripts/vendor'
 					}, {
 						expand: true,
-						cwd: 'app/partials/pattern-lib',
+						cwd: 'app/partials',
 						src: ['**'],
-						dest: 'dist/partials/pattern-lib'
+						dest: 'dist/partials'
 					}
 				]
 			}
@@ -135,6 +135,7 @@ module.exports = function(grunt) {
 		watch: {
 			html: {
 				files: ['app/**/*.html'],
+				tasks: ['processhtml:dev'],
 				options: {
 					livereload: true
 				}
