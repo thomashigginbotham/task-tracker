@@ -47,6 +47,13 @@
 	@include inline-block;
 	width: 70px;
 	height: 70px;
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	border-color: $color-bg-darkest;
+
+	&:first-of-type {
+		border-left-width: 1px;
+	}
 }
 .color-grid {
 	@include row;

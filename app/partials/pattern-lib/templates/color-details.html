@@ -1,0 +1,28 @@
+<section class="color-grids">
+	<div class="color-grid">
+		<h3>Base Colors</h3>
+
+		<span data-ng-repeat="color in baseColors" class="color-chip" style="background-color: {{color.value}}"></span>
+	</div>
+
+	<div class="color-grid">
+		<h3>Text and Background Colors</h3>
+
+		<span data-ng-repeat="color in textColors" class="color-chip" style="background-color: {{color.value}}"></span>
+	</div>
+</section>
+
+<section class="theme-details">
+	<div data-ng-repeat="color in baseColors.concat(textColors).concat(otherColors)" class="color-details content-group">
+		<header><h1>{{color.value}}</h1></header>
+
+		<div>
+			<span class="color-chip" style="background-color: {{color.value}}"></span>
+
+			<div class="color-detail">
+				<strong>{{color.key}}</strong><br />
+				<span class="hex-code">{{color.value}}</span>
+			</div>
+		</div>
+	</div>
+</section>
