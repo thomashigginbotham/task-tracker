@@ -31,7 +31,7 @@
 			background: $color-bg;
 		}
 		.subheading {
-			display: inline;
+			@include inline-block;
 			position: relative;
 			top: .25em;
 		}
