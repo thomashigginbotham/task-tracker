@@ -32,6 +32,11 @@ define(['app', 'angular-route'], function(app) {
 			controller: 'ComponentsPageSectionsCtrl'
 		});
 
+		$routeProvider.when('/components/ui-elements', {
+			templateUrl: 'partials/pattern-lib/components/ui-elements.html',
+			controller: 'ComponentsUiElementsCtrl'
+		});
+
 		$routeProvider.when('/pages/:pageName', {
 			templateUrl: 'partials/pattern-lib/pages/iframe-loader.html',
 			controller: 'PagesCtrl'
