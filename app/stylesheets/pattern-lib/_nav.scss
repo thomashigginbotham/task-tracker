@@ -28,6 +28,7 @@
 	z-index: 10;
 	top: 0;
 	width: 100%;
+	white-space: nowrap;
 
 	&:after {
 		@include rem(top, 2.5rem);
