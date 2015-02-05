@@ -41,6 +41,11 @@ module.exports = function(grunt) {
 						cwd: 'app/partials',
 						src: ['**'],
 						dest: 'dist/partials'
+					}, {
+						expand: true,
+						flatten: true,
+						src: ['app/stylesheets/partials/_base.scss'],
+						dest: 'dist/stylesheets/partials'
 					}
 				]
 			}
