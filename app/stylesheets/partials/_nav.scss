@@ -3,5 +3,25 @@
  * ================================ */
 
 .site-nav {
+	@include rem(padding, 1em $col-gutter);
+	background-color: $color-bg-darkest;
 
+	h2 {
+		@include hide-text(right);
+		margin-bottom: 0;
+		border-bottom-width: 0;
+		font-size: 0;
+	}
+	ul {
+		@include horizontal-list(1em);
+	}
+	a {
+		text-decoration: none;
+		color: $color-text;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
 }

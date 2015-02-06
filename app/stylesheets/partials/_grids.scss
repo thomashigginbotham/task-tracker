@@ -8,3 +8,9 @@
 	padding: $page-margin;
 	max-width: $page-max-width;
 }
+.site-nav {
+	@include rem(margin-bottom, $col-gutter);
+}
+main {
+	@include rem(margin-bottom, $col-gutter);
+}

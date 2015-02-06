@@ -10,9 +10,7 @@ require(['jquery'], function($) {
 	$(function() {
 		/* -- Sample jQuery Plugin -- */
 		require(['samplePlugin'], function() {
-			$('.page-wrapper').samplePlugin({
-				htmlToAdd: '<p style="color:#f00">jQuery plugins are placed in the <i>app/javascripts/lib/jquery-plugins</i> folder. This text was added by a sample plugin.</p>'
-			});
+			$('main').samplePlugin();
 		});
 	});
 

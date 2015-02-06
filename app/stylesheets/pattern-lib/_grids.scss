@@ -56,3 +56,8 @@ body {
 		@include grid(2);
 	}
 }
+
+/* -- Components Layout -- */
+.component-wrapper {
+	@include rem(margin-bottom, $col-gutter);
+}

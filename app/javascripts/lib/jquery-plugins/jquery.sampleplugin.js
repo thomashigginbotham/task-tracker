@@ -2,10 +2,14 @@
 /// A sample jQuery plugin
 /// </summary>
 define(['jquery'], function ($) {
-	$.fn.samplePlugin = function (options) {
-		var settings = $.extend({}, options);
+	'use strict';
 
-		this.append($('<p style="color:#f00">jQuery plugins are placed in the <i>app/javascripts/lib/jquery-plugins</i> folder. This text was added by a sample plugin.</p>'));
+	$.fn.samplePlugin = function (options) {
+		var settings = $.extend({
+			color: '#f00'
+		}, options);
+
+		this.append($('<p style="color:' + settings.color + '">This text was added by a sample jQuery plugin. Plugins are placed in the <strong>app/javascripts/lib/jquery-plugins</strong> folder and are called from <strong>app/javascripts/app.js</strong>.</p>'));
 
 		return this;
 	};

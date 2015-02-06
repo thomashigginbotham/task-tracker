@@ -3,5 +3,15 @@
  * ================================ */
 
 .site-footer {
+	@include rem(padding, 1em $col-gutter);
+	text-align: center;
+	background-color: $color-bg-dark;
 
+	// Ensure last element in the footer doesn't have bottom margin
+	& > *:last-child:after {
+		@include rem(margin, $col-gutter 0 #{-$col-gutter});
+		content: '';
+		display: block;
+		height: 0;
+	}
 }

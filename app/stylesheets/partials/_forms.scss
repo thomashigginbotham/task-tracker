@@ -20,7 +20,7 @@ $basic-field-width: 20em;
 			display: block;
 			font-weight: $bold;
 
-			@media (min-width: $medium-canvas) {
+			@media (min-width: $canvas-medium) {
 				float: left;
 				margin-right: 1em;
 				width: $basic-label-width;
@@ -34,6 +34,7 @@ $basic-field-width: 20em;
 		input:not([type=radio]):not([type=checkbox]) {
 			border-width: 0 0 1px;
 			border-color: $color-bg-darkest;
+			background-color: transparent;
 
 			&:focus {
 				border-color: $color-primary;
@@ -70,7 +71,7 @@ $basic-field-width: 20em;
 		.error-msg {
 			display: block;
 
-			@media (min-width: $medium-canvas) {
+			@media (min-width: $canvas-medium) {
 				float: left;
 				width: $basic-label-width + $basic-field-width + 1em;
 				text-align: right;

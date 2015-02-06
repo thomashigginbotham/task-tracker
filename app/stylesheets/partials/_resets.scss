@@ -24,7 +24,7 @@ h2, h3, h4, h5, h6 {
 p,
 ul, ol, dl,
 table {
-	@include rem(margin-bottom, $col-gutter);
+	@include rem(margin-bottom, $col-gutter / 2);
 	margin-top: 0;
 }
 
