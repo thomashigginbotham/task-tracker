@@ -1,6 +1,6 @@
 {
   "name": "experis-pattern-library",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "jquery": "~1.11.1",
     "requirejs": "~2.1.11",
