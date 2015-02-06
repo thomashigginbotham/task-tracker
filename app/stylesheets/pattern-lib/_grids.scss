@@ -61,3 +61,8 @@ body {
 .component-wrapper {
 	@include rem(margin-bottom, $col-gutter);
 }
+
+/* -- IE 8 -- */
+\:main {
+	display: block
+}

@@ -11,6 +11,13 @@ define(['directives/module'], function(directives) {
 			scope.textColors = [];
 			scope.otherColors = [];
 
+			// Add trim() support if missing
+			if(typeof String.prototype.trim !== 'function') {
+				String.prototype.trim = function() {
+					return this.replace(/^\s+|\s+$/g, '');
+				};
+			}
+
 			// Get Sass color variables and add to scope
 			$http.get(sassVarsUrl).
 				success(function(data) {

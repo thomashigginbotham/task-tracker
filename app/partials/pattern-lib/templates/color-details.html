@@ -2,13 +2,13 @@
 	<div class="color-grid">
 		<h3>Base Colors</h3>
 
-		<span data-ng-repeat="color in baseColors" class="color-chip" style="background-color: {{color.value}}"></span>
+		<span data-ng-repeat="color in baseColors" class="color-chip" data-ng-style="{backgroundColor: color.value}"></span>
 	</div>
 
 	<div class="color-grid">
 		<h3>Text and Background Colors</h3>
 
-		<span data-ng-repeat="color in textColors" class="color-chip" style="background-color: {{color.value}}"></span>
+		<span data-ng-repeat="color in textColors" class="color-chip" data-ng-style="{backgroundColor: color.value}"></span>
 	</div>
 </section>
 
@@ -17,7 +17,7 @@
 		<header><h1>{{color.value}}</h1></header>
 
 		<div>
-			<span class="color-chip" style="background-color: {{color.value}}"></span>
+			<span class="color-chip" data-ng-style="{backgroundColor: color.value}"></span>
 
 			<div class="color-detail">
 				<strong>{{color.key}}</strong><br />
