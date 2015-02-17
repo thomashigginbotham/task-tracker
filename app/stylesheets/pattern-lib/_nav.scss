@@ -37,7 +37,7 @@
 		position: absolute;
 		z-index: -1;
 		width: 100%;
-		border-bottom: 1px solid $color-bg-darkest;
+		border-bottom: 1px solid $ui-color-accent;
 		background-color: $color-bg;
 	}
 	h1 {
@@ -150,5 +150,5 @@
 	@include set-color-theme($color-secondary);
 }
 .xpl-nav.pages-active {
-	@include set-color-theme($color-tertiary-dark);
+	@include set-color-theme($color-tertiary);
 }

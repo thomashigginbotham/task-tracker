@@ -33,7 +33,7 @@ $basic-field-width: 20em;
 		}
 		input:not([type=radio]):not([type=checkbox]) {
 			border-width: 0 0 1px;
-			border-color: $color-bg-darkest;
+			border-color: $color-text;
 			background-color: transparent;
 
 			&:focus {
@@ -43,7 +43,7 @@ $basic-field-width: 20em;
 		}
 		textarea,
 		select {
-			border-color: $color-bg-darkest;
+			border-color: $color-text;
 
 			&:focus {
 				border-color: $color-primary;
@@ -96,7 +96,7 @@ a.button {
 	border: none;
 	text-decoration: none;
 	color: $color-bg;
-	background: $color-tertiary-dark;
+	background: $color-tertiary;
 
 	&.primary {
 		background: $color-primary;
@@ -104,6 +104,6 @@ a.button {
 	&.disabled,
 	&[disabled] {
 		cursor: default;
-		background: $color-bg-darkest;
+		background: lighten(desaturate($color-tertiary, 50%), 10%);
 	}
 }

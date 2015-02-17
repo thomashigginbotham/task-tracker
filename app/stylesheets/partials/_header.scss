@@ -6,7 +6,7 @@
 .site-header {
 	@include rem(padding, $col-gutter);
 	text-align: center;
-	background-color: $color-bg-dark;
+	background-color: darken($color-bg, 5%);
 }
 
 /* -- Color Decoration -- */
@@ -15,7 +15,7 @@
 	margin-top: 10px;
 
 	:before {
-		@include background(linear-gradient(to right, $color-primary 20%, $color-primary-dark 20%, $color-primary-dark 40%, $color-secondary 40%, $color-secondary 60%, $color-tertiary 60%, $color-tertiary 80%, $color-tertiary-dark 80%));
+		@include background(linear-gradient(to right, $color-primary 33.333%, $color-secondary 33.333%, $color-secondary 66.667%, $color-tertiary 66.667%));
 		content: '';
 		position: absolute;
 		top: -10px;

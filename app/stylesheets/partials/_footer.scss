@@ -5,7 +5,7 @@
 .site-footer {
 	@include rem(padding, 1em $col-gutter);
 	text-align: center;
-	background-color: $color-bg-dark;
+	background-color: darken($color-bg, 10%);
 
 	// Ensure last element in the footer doesn't have bottom margin
 	& > *:last-child:after {

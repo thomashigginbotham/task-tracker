@@ -4,7 +4,7 @@
 
 .site-nav {
 	@include rem(padding, 1em $col-gutter);
-	background-color: $color-bg-darkest;
+	background-color: darken($color-bg, 10%);
 
 	h2 {
 		@include hide-text(right);
