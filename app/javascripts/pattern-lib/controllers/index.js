@@ -4,6 +4,6 @@ define([
 	'controllers/style-color-ctrl',
 	'controllers/style-forms-ctrl',
 	'controllers/style-tables-ctrl',
-	'controllers/components-page-sections-ctrl',
+	'controllers/components-ctrl',
 	'controllers/pages-ctrl'
 ], function() {});

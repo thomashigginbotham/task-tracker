@@ -29,12 +29,12 @@ define(['app', 'angular-route'], function(app) {
 
 		$routeProvider.when('/components/page-sections', {
 			templateUrl: 'partials/pattern-lib/components/page-sections.html',
-			controller: 'ComponentsPageSectionsCtrl'
+			controller: 'ComponentsCtrl'
 		});
 
 		$routeProvider.when('/components/ui-elements', {
 			templateUrl: 'partials/pattern-lib/components/ui-elements.html',
-			controller: 'ComponentsUiElementsCtrl'
+			controller: 'ComponentsCtrl'
 		});
 
 		$routeProvider.when('/pages/:pageName', {
