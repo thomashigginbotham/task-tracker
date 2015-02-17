@@ -9,19 +9,6 @@
 		<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 	</header>
 
-	<form action="#" method="POST" class="basic-form">
-		<div class="form-field">
-			<label for="single-line-textbox">Text box label</label>
-			<input type="text" id="single-line-textbox" placeholder="Placeholder text" />
-		</div>
-
-		<div class="form-field error-state">
-			<label for="single-line-textbox-error">Text box in error state</label>
-			<input type="text" id="single-line-textbox-error" placeholder="Placeholder text" />
-			<span class="error-msg">Something’s not right</span>
-		</div>
-	</form>
-
 <pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
 	&lt;div class=&quot;form-field&quot;&gt;
 		&lt;label for=&quot;single-line-textbox&quot;&gt;Text box label&lt;/label&gt;
@@ -34,6 +21,19 @@
 		&lt;span class=&quot;error-msg&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code></pre>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<label for="single-line-textbox">Text box label</label>
+			<input type="text" id="single-line-textbox" placeholder="Placeholder text" />
+		</div>
+
+		<div class="form-field error-state">
+			<label for="single-line-textbox-error">Text box in error state</label>
+			<input type="text" id="single-line-textbox-error" placeholder="Placeholder text" />
+			<span class="error-msg">Something’s not right</span>
+		</div>
+	</form>
 </section>
 
 <section class="content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
@@ -41,19 +41,6 @@
 		<h1>Multi-line Text Box</h1>
 		<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 	</header>
-
-	<form action="#" method="POST" class="basic-form">
-		<div class="form-field">
-			<label for="multi-line-textbox">Text box label</label>
-			<textarea id="multi-line-textbox" cols="50" rows="5" placeholder="Placeholder text"></textarea>
-		</div>
-
-		<div class="form-field error-state">
-			<label for="multi-line-textbox-error">Text box in error state</label>
-			<textarea id="multi-line-textbox-error" cols="50" rows="5" placeholder="Placeholder text"></textarea>
-			<span class="error-msg">Something’s not right</span>
-		</div>
-	</form>
 
 <pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
 	&lt;div class=&quot;form-field&quot;&gt;
@@ -67,6 +54,19 @@
 		&lt;span class=&quot;error-msg&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code></pre>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<label for="multi-line-textbox">Text box label</label>
+			<textarea id="multi-line-textbox" cols="50" rows="5" placeholder="Placeholder text"></textarea>
+		</div>
+
+		<div class="form-field error-state">
+			<label for="multi-line-textbox-error">Text box in error state</label>
+			<textarea id="multi-line-textbox-error" cols="50" rows="5" placeholder="Placeholder text"></textarea>
+			<span class="error-msg">Something’s not right</span>
+		</div>
+	</form>
 </section>
 
 <h2>Selection Interfaces</h2>
@@ -76,27 +76,6 @@
 		<h1>Drop-down Box</h1>
 		<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 	</header>
-
-	<form action="#" method="POST" class="basic-form">
-		<div class="form-field">
-			<label for="dropdown">Drop-down label</label>
-			<select id="dropdown">
-				<option value="">Option 1</option>
-				<option value="">Option 2</option>
-				<option value="">Option 3</option>
-			</select>
-		</div>
-
-		<div class="form-field error-state">
-			<label for="dropdown-error">Drop-down in error state</label>
-			<select id="dropdown-error">
-				<option value="">Option 1</option>
-				<option value="">Option 2</option>
-				<option value="">Option 3</option>
-			</select>
-			<span class="error-msg">Something’s not right</span>
-		</div>
-	</form>
 
 <pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
 	&lt;div class=&quot;form-field&quot;&gt;
@@ -118,6 +97,27 @@
 		&lt;span class=&quot;error-msg&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code></pre>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<label for="dropdown">Drop-down label</label>
+			<select id="dropdown">
+				<option value="">Option 1</option>
+				<option value="">Option 2</option>
+				<option value="">Option 3</option>
+			</select>
+		</div>
+
+		<div class="form-field error-state">
+			<label for="dropdown-error">Drop-down in error state</label>
+			<select id="dropdown-error">
+				<option value="">Option 1</option>
+				<option value="">Option 2</option>
+				<option value="">Option 3</option>
+			</select>
+			<span class="error-msg">Something’s not right</span>
+		</div>
+	</form>
 </section>
 
 <div class="selection-ui">
@@ -126,23 +126,6 @@
 			<h1>Check Boxes</h1>
 			<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
-
-		<form action="#" method="POST" class="basic-form">
-			<div class="form-field option-field">
-				<input type="checkbox" id="check-1" checked="checked" />
-				<label for="check-1">Option 1</label>
-			</div>
-			<div class="form-field option-field">
-				<input type="checkbox" id="check-2" />
-				<label for="check-2">Option 2</label>
-			</div>
-			<div class="form-field option-field">
-				<input type="checkbox" id="check-3" />
-				<label for="check-3">Option 3</label>
-			</div>
-
-			<p class="error-msg">General error message.</p>
-		</form>
 
 <pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
 	&lt;div class=&quot;form-field option-field&quot;&gt;
@@ -160,6 +143,23 @@
 
 	&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;
 &lt;/form&gt;</code></pre>
+
+		<form action="#" method="POST" class="basic-form">
+			<div class="form-field option-field">
+				<input type="checkbox" id="check-1" checked="checked" />
+				<label for="check-1">Option 1</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="checkbox" id="check-2" />
+				<label for="check-2">Option 2</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="checkbox" id="check-3" />
+				<label for="check-3">Option 3</label>
+			</div>
+
+			<p class="error-msg">General error message.</p>
+		</form>
 	</section>
 
 	<section class="content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
@@ -167,23 +167,6 @@
 			<h1>Radio Buttons</h1>
 			<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
-
-		<form action="#" method="POST" class="basic-form">
-			<div class="form-field option-field">
-				<input type="radio" id="radio-1" name="radio" checked="checked" />
-				<label for="radio-1">Option 1</label>
-			</div>
-			<div class="form-field option-field">
-				<input type="radio" id="radio-2" name="radio" />
-				<label for="radio-2">Option 2</label>
-			</div>
-			<div class="form-field option-field">
-				<input type="radio" id="radio-3" name="radio" />
-				<label for="radio-3">Option 3</label>
-			</div>
-
-			<p class="error-msg">General error message.</p>
-		</form>
 
 <pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
 	&lt;div class=&quot;form-field option-field&quot;&gt;
@@ -201,6 +184,23 @@
 
 	&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;
 &lt;/form&gt;</code></pre>
+
+		<form action="#" method="POST" class="basic-form">
+			<div class="form-field option-field">
+				<input type="radio" id="radio-1" name="radio" checked="checked" />
+				<label for="radio-1">Option 1</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="radio" id="radio-2" name="radio" />
+				<label for="radio-2">Option 2</label>
+			</div>
+			<div class="form-field option-field">
+				<input type="radio" id="radio-3" name="radio" />
+				<label for="radio-3">Option 3</label>
+			</div>
+
+			<p class="error-msg">General error message.</p>
+		</form>
 	</section>
 </div>
 
@@ -212,14 +212,6 @@
 		<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 	</header>
 
-	<form action="#" method="POST" class="basic-form">
-		<div class="form-field">
-			<button class="primary">Primary Button</button>
-			<button>Default Button</button>
-			<button disabled="disabled">Disabled Button</button>
-		</div>
-	</form>
-
 <pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
 	&lt;div class=&quot;form-field&quot;&gt;
 		&lt;button class=&quot;primary&quot;&gt;Primary Button&lt;/button&gt;
@@ -227,6 +219,14 @@
 		&lt;button disabled=&quot;disabled&quot;&gt;Disabled Button&lt;/button&gt;
 	&lt;/div&gt;
 &lt;/form&gt;</code></pre>
+
+	<form action="#" method="POST" class="basic-form">
+		<div class="form-field">
+			<button class="primary">Primary Button</button>
+			<button>Default Button</button>
+			<button disabled="disabled">Disabled Button</button>
+		</div>
+	</form>
 </section>
 
 <section class="content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
@@ -235,13 +235,13 @@
 		<span class="subheading"><a href data-ng-class="{'show-code': !codeIsVisible, 'hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 	</header>
 
+<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;a href=&quot;#&quot; class=&quot;button primary&quot;&gt;Primary Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Disabled Button&lt;/a&gt;</code></pre>
+
 	<div>
 		<a href="#" class="button primary">Primary Button</a>
 		<a href="#" class="button">Default Button</a>
 		<a href="#" class="button disabled">Disabled Button</a>
 	</div>
-
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;a href=&quot;#&quot; class=&quot;button primary&quot;&gt;Primary Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Disabled Button&lt;/a&gt;</code></pre>
 </section>
