@@ -1,4 +1,4 @@
-define(['app', 'angular-route'], function(app) {
+define(['pattern-app', 'angular-route'], function(app) {
 	'use strict';
 
 	return app.config(['$routeProvider', function($routeProvider) {

@@ -10,7 +10,7 @@ require(['jquery'], function($) {
 	$(function() {
 		/* -- Sample jQuery Plugin -- */
 		require(['samplePlugin'], function() {
-			$('main').samplePlugin();
+			$('.site-footer p').samplePlugin();
 		});
 	});
 

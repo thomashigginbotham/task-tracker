@@ -7,7 +7,7 @@ define([
 	'require',
 	'angular',
 	'jquery',
-	'app',
+	'pattern-app',
 	'routes'
 ], function(require, ng, $) {
 	'use strict';
@@ -15,4 +15,7 @@ define([
 	$(function() {
 		ng.bootstrap(document, ['app']);
 	});
+
+	// Load user scripts
+	require(['../main']);
 });
