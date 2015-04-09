@@ -14,8 +14,8 @@ define([
 
 	$(function() {
 		ng.bootstrap(document, ['app']);
-	});
 
-	// Load user scripts
-	require(['../main']);
+		// Run user scripts
+		require(['user-scripts']);
+	});
 });

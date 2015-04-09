@@ -96,6 +96,7 @@ module.exports = function(grunt) {
 					include: ['../bower_components/almond/almond.js'],
 					findNestedDependencies: true,
 					optimize: 'uglify2',
+					wrap: true,
 					generateSourceMaps: true,
 					preserveLicenseComments: false,
 				}
@@ -104,15 +105,15 @@ module.exports = function(grunt) {
 				options: {
 					baseUrl: './app/javascripts/pattern-lib',
 					mainConfigFile: 'app/javascripts/pattern-lib/main.js',
-					name: 'app',
+					name: 'pattern-app',
 					out: 'dist/javascripts/pattern-lib/built.js',
 					include: ['../../bower_components/almond/almond.js'],
 					insertRequire: ['bootstrap'],
-					findNestedDependencies: true,
 					optimize: 'uglify2',
 					uglify2: {
 						mangle: false
 					},
+					wrap: true,
 					generateSourceMaps: true,
 					preserveLicenseComments: false
 				}

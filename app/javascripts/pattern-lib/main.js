@@ -12,7 +12,8 @@ requirejs.config({
 		'almond': '../../bower_components/almond/almond',
 		'angular': '../../bower_components/angular/angular',
 		'angular-route': '../../bower_components/angular-route/angular-route',
-		'google-code-prettify': '../../bower_components/google-code-prettify/src/prettify'
+		'google-code-prettify': '../../bower_components/google-code-prettify/src/prettify',
+		'user-scripts': '../main'
 	},
 	shim: {
 		angular: {

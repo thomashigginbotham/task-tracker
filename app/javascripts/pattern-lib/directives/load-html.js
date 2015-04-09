@@ -1,3 +1,5 @@
+/* jslint browser: true */
+
 define(['directives/module'], function(directives) {
 	'use strict';
 
@@ -14,6 +16,9 @@ define(['directives/module'], function(directives) {
 
 					// Append data
 					element.append(html);
+
+					// Notify other scripts
+					window.dispatchEvent(new CustomEvent('xplComponentLoaded'));
 				}).
 				error(function() {
 					throw 'loadHtml directive failed to load URI';
