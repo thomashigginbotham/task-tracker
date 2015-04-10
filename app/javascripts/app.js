@@ -18,7 +18,7 @@ require(['jquery'], function($) {
 
 	/* -- Allow XPL to re-run scripts when components load -- */
 	(function() {
-		$(window).on('xplComponentLoaded', function() {
+		$(window).on('xplComponentLoad xplRouteChange', function() {
 			setTimeout(init, 0);
 		});
 	})();

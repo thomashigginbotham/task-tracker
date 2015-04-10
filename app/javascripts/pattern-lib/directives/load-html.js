@@ -17,8 +17,10 @@ define(['directives/module'], function(directives) {
 					// Append data
 					element.append(html);
 
-					// Notify other scripts
-					window.dispatchEvent(new CustomEvent('xplComponentLoaded'));
+					// Notify other scripts when component is added
+					if (typeof scope.htmlEncode === 'undefined' || scope.htmlEncode.toLowerCase() === 'false') {
+						window.dispatchEvent(new CustomEvent('xplComponentLoad'));
+					}
 				}).
 				error(function() {
 					throw 'loadHtml directive failed to load URI';
