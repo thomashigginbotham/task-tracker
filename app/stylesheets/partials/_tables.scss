@@ -1,6 +1,6 @@
-/* ================================
- * Table Styles
- * ================================ */
+// Table styles.
+//
+// No styleguide reference.
 
 .basic-table {
 	border-collapse: collapse;
@@ -8,12 +8,16 @@
 	thead tr {
 		border-bottom: 1px solid lighten($color-text, 65%);
 	}
+
 	thead th {
 		text-align: left;
 	}
-	th, td {
+
+	th,
+	td {
 		@include rem(padding, $col-gutter / 4 $col-gutter / 2);
 	}
+
 	td {
 		border-right: 1px solid lighten($color-text, 65%);
 

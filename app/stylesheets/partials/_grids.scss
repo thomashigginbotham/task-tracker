@@ -1,16 +1,17 @@
-/* ================================
- * Grids and General Layouts
- * ================================ */
+// Grids and general layouts.
+//
+// No styleguide reference.
 
-/* -- Framework -- */
 .page-wrapper {
 	margin: 0 auto;
 	padding: $page-margin;
 	max-width: $page-max-width;
 }
+
 .site-nav {
 	@include rem(margin-bottom, $col-gutter);
 }
+
 main {
 	@include rem(margin-bottom, $col-gutter);
 }

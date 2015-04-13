@@ -1,12 +1,13 @@
-/* ================================
- * Globally Available Classes
- * ================================ */
+// Globally-available classes
+//
+// No styleguide reference.
 
-/* -- Alignment -- */
+// Alignment
 .left {
 	@include rem(margin-right, $col-gutter);
 	float: left;
 }
+
 .right {
 	@include rem(margin-left, $col-gutter);
 	float: right;

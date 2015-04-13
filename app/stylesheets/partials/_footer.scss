@@ -1,6 +1,6 @@
-/* ================================
- * Footer
- * ================================ */
+// Website footer.
+//
+// No styleguide reference.
 
 .site-footer {
 	@include rem(padding, 1em $col-gutter);
@@ -8,7 +8,7 @@
 	background-color: darken($color-bg, 10%);
 
 	// Ensure last element in the footer doesn't have bottom margin
-	& > *:last-child:after {
+	> *:last-child:after {
 		@include rem(margin, $col-gutter 0 #{-$col-gutter});
 		content: '';
 		display: block;
@@ -16,7 +16,6 @@
 	}
 }
 
-/* -- IE 8 -- */
 .lt-ie9 {
 	.site-footer > *:last-child:after {
 		margin-bottom: 0;

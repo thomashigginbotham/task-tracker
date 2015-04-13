@@ -1,18 +1,13 @@
-/* ================================
- * Header
- * ================================ */
+// Website header.
+//
+// No styleguide reference.
 
-/* -- Layout -- */
 .site-header {
 	@include rem(padding, $col-gutter);
-	text-align: center;
-	background-color: darken($color-bg, 5%);
-}
-
-/* -- Color Decoration -- */
-.site-header {
 	position: relative;
 	margin-top: 10px;
+	text-align: center;
+	background-color: darken($color-bg, 5%);
 
 	:before {
 		@include background(linear-gradient(to right, $color-primary 33.333%, $color-secondary 33.333%, $color-secondary 66.667%, $color-tertiary 66.667%));
@@ -25,25 +20,25 @@
 		height: 10px;
 		border-bottom: 1px solid $color-bg;
 	}
-}
 
-/* -- Search Box -- */
-.site-header .basic-form .form-field {
-	white-space: nowrap;
+	.basic-form .form-field {
+		white-space: nowrap;
+	}
 
-	label {
+	.basic-form .form-field label {
 		@include hide-text(right);
 		width: 0;
 		font-size: 0;
 	}
-	input[type=search] {
+
+	.basic-form .form-field input[type=search] {
 		width: 150px;
 	}
 }
 
-/* -- RWD Updates -- */
+// Responsive updates
 @media (min-width: $canvas-small) {
-	/* -- Layout -- */
+	// Layout
 	.site-header {
 		@include row();
 		text-align: left;
@@ -56,16 +51,17 @@
 				display: block;
 			}
 		}
+
 		.basic-form {
 			@include column(10);
 		}
 	}
 
-	/* -- Search Box -- */
+	// Search box
 	.site-header .basic-form .form-field {
 		text-align: right;
 
-		input[type=search] {
+		[type=search] {
 			width: 225px;
 		}
 	}

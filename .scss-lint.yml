@@ -113,7 +113,7 @@ linters:
     properties: {}
 
   PropertySortOrder:
-    enabled: true
+    enabled: false
     ignore_unspecified: false
     separate_groups: false
 

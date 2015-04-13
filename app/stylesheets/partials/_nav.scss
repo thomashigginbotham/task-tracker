@@ -1,6 +1,6 @@
-/* ================================
- * Navigation
- * ================================ */
+// Website navigation.
+//
+// No styleguide reference.
 
 .site-nav {
 	@include rem(padding, 1em $col-gutter);
@@ -12,9 +12,11 @@
 		border-bottom-width: 0;
 		font-size: 0;
 	}
+
 	ul {
 		@include horizontal-list(1em);
 	}
+
 	a {
 		text-decoration: none;
 		color: $color-text;

@@ -1,19 +1,18 @@
-/* ================================
- * Variables
- * ================================ */
-/* -- Dimensions -- */
+// Global variables.
+
+// Dimensions
 $page-max-width: 960px;
 $page-margin: 20px;
 $col-count: 12;
 $col-gutter: 1.4rem;
 
-/* -- Break points -- */
+// Responsive breakpoints
 $canvas-large: 960px;
 $canvas-medium: 800px;
 $canvas-small: 640px;
 $canvas-tiny: 480px;
 
-/* -- Colors -- */
+// Colors
 $color-primary: #3f9eff;       // Dodger Blue
 $color-primary-dark: #0480ff;  // Azure Radiance
 $color-secondary: #ff2c1d;     // Red Orange
@@ -29,12 +28,11 @@ $color-success: #9c0;
 $color-warning: #f93;
 $color-error: #f00;
 
-/* -- Font Variables -- */
-/*
-WARNING! Do not use @font-face or @import to include web fonts if you will be
-supporting IE 8 or lower. Selectivizr has issues with web fonts when the CSS
-is minified.
-*/
+// Fonts
+
+// WARNING! Do not use @font-face or @import to include web fonts if you will be
+// supporting IE 8 or lower. Selectivizr has issues with web fonts when the CSS
+// is minified.
 
 $regular: 400;
 $bold: 700;
