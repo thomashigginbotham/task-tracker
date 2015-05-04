@@ -27,13 +27,10 @@ define(['pattern-app', 'angular-route'], function(app) {
 			controller: 'StyleTablesCtrl'
 		});
 
-		$routeProvider.when('/components/page-sections', {
-			templateUrl: 'partials/pattern-lib/components/page-sections.html',
-			controller: 'ComponentsCtrl'
-		});
-
-		$routeProvider.when('/components/ui-elements', {
-			templateUrl: 'partials/pattern-lib/components/ui-elements.html',
+		$routeProvider.when('/components/:componentName', {
+			templateUrl: function(params) {
+				return 'partials/pattern-lib/components/' + params.componentName + '.html';
+			},
 			controller: 'ComponentsCtrl'
 		});
 
