@@ -4,7 +4,7 @@ define(['directives/module'], function(directives) {
 	'use strict';
 
 	directives.directive('colorDetails', ['$http', function($http) {
-		var sassVarsUrl = '/stylesheets/partials/_base.scss';
+		var sassVarsUrl = 'stylesheets/partials/_base.scss';
 
 		var link = function(scope) {
 			scope.baseColors = [];
@@ -68,7 +68,7 @@ define(['directives/module'], function(directives) {
 		return {
 			restrict: 'A',
 			link: link,
-			templateUrl: '/partials/pattern-lib/templates/color-details.html'
+			templateUrl: 'partials/pattern-lib/templates/color-details.html'
 		};
 	}]);
 });
