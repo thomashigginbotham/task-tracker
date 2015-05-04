@@ -38,11 +38,6 @@ module.exports = function(grunt) {
 						dest: 'dist/javascripts/vendor'
 					}, {
 						expand: true,
-						cwd: 'app/partials',
-						src: ['**'],
-						dest: 'dist/partials'
-					}, {
-						expand: true,
 						flatten: true,
 						src: ['app/stylesheets/partials/_base.scss'],
 						dest: 'dist/stylesheets/partials'
@@ -162,17 +157,39 @@ module.exports = function(grunt) {
 		},
 		processhtml: {
 			dev: {
-				files: {
-					'.tmp/index.html': ['app/index.html'],
-					'.tmp/interior.html': ['app/interior.html'],
-					'.tmp/pattern-lib.html': ['app/pattern-lib.html']
+				files: [{
+					expand: true,
+					cwd: 'app',
+					src: ['*.html'],
+					dest: '.tmp',
+					ext: '.html'
+				}, {
+					expand: true,
+					cwd: 'app/partials',
+					src: ['*.html'],
+					dest: '.tmp/partials',
+					ext: '.html'
+				}],
+				options: {
+					recursive: true
 				}
 			},
 			dist: {
-				files: {
-					'dist/index.html': ['app/index.html'],
-					'dist/interior.html': ['app/interior.html'],
-					'dist/pattern-lib.html': ['app/pattern-lib.html']
+				files: [{
+					expand: true,
+					cwd: 'app',
+					src: ['*.html'],
+					dest: 'dist',
+					ext: '.html'
+				}, {
+					expand: true,
+					cwd: 'app/partials',
+					src: ['**/*.html'],
+					dest: 'dist/partials',
+					ext: '.html'
+				}],
+				options: {
+					recursive: true
 				}
 			}
 		}
