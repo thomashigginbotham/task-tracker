@@ -32,7 +32,7 @@
 
 	&:after {
 		@include rem(top, 2.5rem);
-		@include rem(height, 3.4rem);
+		@include rem(height, 3rem);
 		content: '';
 		position: absolute;
 		z-index: -1;
@@ -97,6 +97,7 @@
 	a {
 		@include inline-block;
 		padding: .25em 1em;
+		height: 1.55rem;
 		border-radius: .25em .25em 0 0;
 		text-decoration: none;
 		color: $color-bg;
@@ -114,6 +115,7 @@
 	.active li a {
 		margin: 0 .5em;
 		padding: 0;
+		height: auto;
 		background: none;
 
 		&:hover,
@@ -180,6 +182,7 @@
 
 	.main-menu {
 		@include column(3, 4);
+		height: 2.5rem;
 	}
 
 	.tools-menu {
