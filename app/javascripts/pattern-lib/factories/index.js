@@ -1,0 +1,3 @@
+define([
+	'factories/menu'
+], function() {});

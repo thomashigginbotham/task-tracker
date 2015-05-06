@@ -1,29 +1,29 @@
-/* ================================
- * Navigation for Pattern Library
- * ================================ */
+// Navigation for pattern library
 
-/* -- Mixins -- */
+// Mixins
 @mixin set-color-theme($color) {
 	background: $color;
 
 	li ul,
 	li li,
-	li.active a {
+	.active a {
 		color: $color;
 	}
-	li li.active a {
+
+	li .active a {
 		color: $color-text;
 	}
 }
 
-/* -- Tab and Sublink Styles -- */
+// Tab and Sublink Styles
 .page-wrapper {
 	// Add space to top for fixed-position navigation
 	@include rem(padding-top, 7rem);
 }
+
 .xpl-nav {
 	@include rem(margin-bottom, $ui-col-gutter + 2);
-	@include rem(padding-top, 0.5rem);
+	@include rem(padding-top, .5rem);
 	position: fixed;
 	z-index: 10;
 	top: 0;
@@ -40,17 +40,20 @@
 		border-bottom: 1px solid $ui-color-accent;
 		background-color: $color-bg;
 	}
+
 	h1 {
 		@include hide-text;
 		margin: 0;
 		height: 0;
 	}
+
 	ul {
 		position: relative;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
+
 	li {
 		@include inline-block;
 		color: $color-bg;
@@ -59,17 +62,21 @@
 			content: '| ';
 			font-size: .8em;
 		}
+
 		&:first-child:before {
 			display: none;
 		}
+
 		&.active:before,
 		&.active + li:before {
 			visibility: hidden;
 		}
+
 		&.active li:before {
 			visibility: visible;
 		}
 	}
+
 	li ul {
 		@include rem(top, 2rem);
 		display: none;
@@ -78,12 +85,15 @@
 		white-space: nowrap;
 		font-size: .9em;
 	}
-	li.active ul {
+
+	.active ul {
 		display: block;
 	}
+
 	li li {
 		padding: 1em 0;
 	}
+
 	a {
 		@include inline-block;
 		padding: .25em 1em;
@@ -96,10 +106,12 @@
 			background: rgba($color-bg, .25);
 		}
 	}
-	li.active a {
+
+	.active a {
 		background: $color-bg;
 	}
-	li.active li a {
+
+	.active li a {
 		margin: 0 .5em;
 		padding: 0;
 		background: none;
@@ -110,11 +122,13 @@
 			background: none;
 		}
 	}
-	li.active li:first-child a {
+
+	.active li:first-child a {
 		margin-left: 0;
 		padding-left: 0;
 	}
-	li li.active a {
+
+	.active .active a {
 		font-weight: bold;
 		cursor: text;
 
@@ -123,6 +137,8 @@
 			text-decoration: none;
 		}
 	}
+
+	// Icons
 	.nav-style,
 	.nav-components,
 	.nav-pages {
@@ -131,24 +147,58 @@
 			font-family: 'FontAwesome';
 		}
 	}
+
 	.nav-style > a:before {
 		content: '\f040';
 	}
+
 	.nav-components > a:before {
 		content: '\f00a';
 	}
+
 	.nav-pages > a:before {
 		content: '\f15b';
 	}
-}
 
-/* -- Tab Themes -- */
-.xpl-nav.style-active {
-	@include set-color-theme($color-primary);
-}
-.xpl-nav.components-active {
-	@include set-color-theme($color-secondary);
-}
-.xpl-nav.pages-active {
-	@include set-color-theme($color-tertiary);
+	// Tab Themes
+	&.style-active {
+		@include set-color-theme($color-primary);
+	}
+
+	&.components-active {
+		@include set-color-theme($color-secondary);
+	}
+
+	&.pages-active {
+		@include set-color-theme($color-tertiary);
+	}
+
+	// Tools menu
+	.content-wrapper {
+		@include row();
+	}
+
+	.main-menu {
+		@include column(3, 4);
+	}
+
+	.tools-menu {
+		@include column(1, 4);
+		text-align: right;
+
+		a {
+			background: rgba($color-bg, .25);
+		}
+
+		a:hover {
+			background: rgba($color-bg, .35);
+		}
+	}
+
+	// Icons
+	.tools-new-window:before {
+		content: '\f08e';
+		margin-right: .25em;
+		font-family: 'FontAwesome';
+	}
 }

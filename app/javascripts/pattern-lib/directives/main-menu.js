@@ -1,8 +1,9 @@
-define(['directives/module'], function(directives) {
+define(['directives/module', 'jquery'], function(directives, $) {
 	'use strict';
 
-	directives.directive('mainMenu', ['$location', function($location) {
+	directives.directive('mainMenu', ['$location', 'MenuFactory', function($location, MenuFactory) {
 		var Ctrl = function($scope) {
+			// Main menu
 			$scope.menu = [{
 				text: 'Style',
 				submenu: [{
@@ -41,6 +42,14 @@ define(['directives/module'], function(directives) {
 				}]
 			}];
 
+			// Tools menu
+			$scope.tools = [];
+
+			MenuFactory.registerObserverCallback(function() {
+				$scope.tools = MenuFactory.getTools();
+			});
+
+			// Utility methods
 			$scope.isCurrentUri = function(uri) {
 				return $location.path() === uri;
 			};
@@ -66,7 +75,7 @@ define(['directives/module'], function(directives) {
 			};
 		};
 
-		var link = function($scope, element, attrs) {
+		var link = function($scope, element) {
 			$scope.$on('$routeChangeSuccess', function() {
 				// Add current menu item's class
 				var path = $location.path();
