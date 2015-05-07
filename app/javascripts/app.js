@@ -18,9 +18,9 @@ require(['jquery'], function($) {
 
 	/* -- Allow XPL to re-run scripts when components load -- */
 	(function() {
-		$(window).on('xplComponentLoad xplRouteChange', function() {
+		window.addEventListener('xplComponentsLoaded', function() {
 			setTimeout(init, 0);
-		});
+		}, false);
 	})();
 
 	/* -- Add Selectivizr support for IE 6-8 <http://selectivizr.com/> -- */
