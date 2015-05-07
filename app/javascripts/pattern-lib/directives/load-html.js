@@ -6,7 +6,11 @@ define(['directives/module'], function(directives) {
 	directives.directive('loadHtml', ['$http', function($http) {
 		var link = function(scope, element) {
 			// Get HTML
-			$http.get(scope.loadUri).
+			$http({
+				method: 'GET',
+				url: scope.loadUri,
+				cache: true
+			}).
 				success(function(data) {
 					var html = data;
 

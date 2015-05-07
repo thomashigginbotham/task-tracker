@@ -17,8 +17,13 @@ define([
 		app.run(['$rootScope', function($rootScope) {
 			$rootScope.$on('$routeChangeSuccess', function() {
 				// Notify other scripts of route change
-				window.dispatchEvent(new CustomEvent('xplRouteChange'));
+				window.dispatchEvent(new CustomEvent('xplRouteChanged'));
 			});
+		}]);
+
+		// Fire event notification when all $http requests are done
+		app.config(['$httpProvider', function($httpProvider) {
+			$httpProvider.interceptors.push('componentHttpInterceptor');
 		}]);
 
 		// Bind Angular to the document element
