@@ -51,6 +51,11 @@ module.exports = function(grunt) {
 						cwd: 'app/fonts',
 						src: ['**'],
 						dest: 'dist/fonts'
+					}, {
+						expand: true,
+						flatten: true,
+						src: ['app/apple-touch-icon.png', 'app/favicon.ico'],
+						dest: 'dist'
 					}
 				]
 			}
