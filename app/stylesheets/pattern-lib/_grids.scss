@@ -16,20 +16,21 @@ body {
 .xpl-content-wrapper {
 	@include box-sizing(border-box);
 	margin: 0 auto;
-	padding: 0 $ui-margin;
+	padding: 0 $ui-col-gutter;
 	max-width: $ui-max-width;
 	height: 100%;
+}
+.xpl-main .xpl-content-wrapper {
+	margin: $ui-margin auto;
 }
 
 // Iframes
 .xpl-page-loader {
-	@include rem(margin-bottom, $ui-col-gutter);
 	display: block;
 	width: 100%;
 	height: 480px;
-	height: calc(100vh - #{13.3rem -$ui-col-gutter});
-	border: 1px solid $color-tertiary;
-	resize: both;
+	height: calc(100vh - 8.8rem);
+	border: none;
 }
 
 // Colors Layout

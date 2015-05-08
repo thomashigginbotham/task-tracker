@@ -2,9 +2,9 @@
 //
 // No styleguide reference.
 
-.page-wrapper {
+.content-wrapper {
 	margin: 0 auto;
-	padding: $page-margin;
+	padding: 0 $page-margin;
 	max-width: $page-max-width;
 
 	.site-nav {
@@ -13,5 +13,5 @@
 }
 
 main {
-	@include rem(margin-bottom, $col-gutter);
+	@include rem(margin, $col-gutter 0);
 }

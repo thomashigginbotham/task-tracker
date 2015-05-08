@@ -21,6 +21,10 @@
 		border-bottom: 1px solid $color-bg;
 	}
 
+	h2 {
+		border-bottom-width: 0;
+	}
+
 	.basic-form .form-field {
 		white-space: nowrap;
 	}
@@ -43,7 +47,7 @@
 		@include row();
 		text-align: left;
 
-		h1 {
+		h2 {
 			@include column(2);
 			margin-bottom: 0;
 
