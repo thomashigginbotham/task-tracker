@@ -177,32 +177,34 @@
 	}
 
 	// Tools menu
-	.xpl-content-wrapper {
-		@include row();
-	}
-
-	.xpl-main-menu {
-		@include column(3, 4);
-		height: 2.5rem;
-	}
-
-	.xpl-tools-menu {
-		@include column(1, 4);
-		text-align: right;
-
-		a {
-			background: rgba($color-bg, .25);
+	@media (min-width: $ui-small-canvas) {
+		.xpl-content-wrapper {
+			@include row();
 		}
 
-		a:hover {
-			background: rgba($color-bg, .35);
+		.xpl-main-menu {
+			@include column(3, 4);
+			height: 2.5rem;
 		}
-	}
 
-	// Icons
-	.xpl-tools-new-window:before {
-		content: '\f08e';
-		margin-right: .25em;
-		font-family: 'FontAwesome';
+		.xpl-tools-menu {
+			@include column(1, 4);
+			text-align: right;
+
+			a {
+				background: rgba($color-bg, .25);
+			}
+
+			a:hover {
+				background: rgba($color-bg, .35);
+			}
+		}
+
+		// Icons
+		.xpl-tools-new-window:before {
+			content: '\f08e';
+			margin-right: .25em;
+			font-family: 'FontAwesome';
+		}
 	}
 }
