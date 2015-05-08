@@ -100,6 +100,7 @@ $basic-field-width: 20em;
 // Buttons
 button,
 .button {
+	display: inline-block;
 	padding: .5em 1em;
 	border: 0;
 	text-decoration: none;
