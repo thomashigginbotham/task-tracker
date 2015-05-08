@@ -6,10 +6,10 @@
 	margin: 0 auto;
 	padding: $page-margin;
 	max-width: $page-max-width;
-}
 
-.site-nav {
-	@include rem(margin-bottom, $col-gutter);
+	.site-nav {
+		@include rem(margin-bottom, $col-gutter);
+	}
 }
 
 main {
