@@ -19,7 +19,11 @@ define(['directives/module'], function(directives) {
 			}
 
 			// Get Sass color variables and add to scope
-			$http.get(sassVarsUrl).
+			$http({
+				method: 'GET',
+				url: sassVarsUrl,
+				cache: true
+			}).
 				success(function(data) {
 					var matches = data.match(/\$color[^:]+:\s*[^;]+/g);
 					var len = matches.length;
