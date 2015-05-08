@@ -75,23 +75,23 @@
 		&.active li:before {
 			visibility: visible;
 		}
-	}
 
-	li ul {
-		@include rem(top, 2rem);
-		display: none;
-		position: absolute;
-		left: 0;
-		white-space: nowrap;
-		font-size: .9em;
+		ul {
+			@include rem(top, 2rem);
+			display: none;
+			position: absolute;
+			left: 0;
+			white-space: nowrap;
+			font-size: .9em;
+		}
+
+		li {
+			padding: 1em 0;
+		}
 	}
 
 	.active ul {
 		display: block;
-	}
-
-	li li {
-		padding: 1em 0;
 	}
 
 	a {
@@ -147,6 +147,7 @@
 		> a:before {
 			margin-right: .25em;
 			font-family: 'FontAwesome';
+			font-size: 14px;
 		}
 	}
 
