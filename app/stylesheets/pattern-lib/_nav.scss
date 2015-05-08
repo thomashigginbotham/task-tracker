@@ -31,7 +31,7 @@
 	white-space: nowrap;
 
 	&:after {
-		@include rem(top, 2.5rem);
+		@include rem(top, 2.45rem);
 		@include rem(height, 3rem);
 		content: '';
 		position: absolute;
