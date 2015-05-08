@@ -11,7 +11,9 @@ require(['jquery'], function($) {
 		$(function() {
 			/* -- Sample jQuery Plugin -- */
 			require(['samplePlugin'], function() {
-				$('.site-footer p').first().samplePlugin();
+				$('.site-footer p').first().samplePlugin({
+					color: '#777'
+				});
 			});
 		});
 	};
