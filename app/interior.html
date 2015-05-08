@@ -5,16 +5,9 @@
 <!--<![endif]-->
 	<head>
 		<title>Starter Interior Page</title>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<!-- build:remove:dist -->
-		<link rel="stylesheet" href="/bower_components/normalize-css/normalize.css"/>
-		<!-- /build -->
-		<link rel="stylesheet" href="/stylesheets/main.css"/>
+		<!-- build:include partials/head.html --><!-- /build -->
 
-		<!--[if lt IE 9]>
-		<script src="/javascripts/vendor/html5shiv.min.js"></script>
-		<![endif]-->
+		<link rel="stylesheet" href="/stylesheets/main.css"/>
 
 		<!-- build:js:dist /javascripts/built.js -->
 		<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
@@ -30,7 +23,6 @@
 				<article>
 					<h1>Interior Page</h1>
 					<p>Other page types can be added by duplicating this one (<strong>app/interior.html</strong>). To add them to the navigation at the top of the pattern library, edit the file at <strong>javascripts/pattern-lib/directives/main-menu.js</strong>.</p>
-					<p>Also, remember to update the <strong>processhtml</strong> tasks in <strong>Gruntfile.js</strong> with any new pages you create.</p>
 				</article>
 			</main>
 
