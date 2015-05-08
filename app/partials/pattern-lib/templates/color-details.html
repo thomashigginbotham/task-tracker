@@ -1,27 +1,27 @@
-<section class="color-grids">
-	<div class="color-grid">
+<section class="xpl-color-grids">
+	<div class="xpl-color-grid">
 		<h3>Base Colors</h3>
 
-		<span data-ng-repeat="color in baseColors" class="color-chip" data-ng-style="{backgroundColor: color.value}"></span>
+		<span data-ng-repeat="color in baseColors" class="xpl-color-chip" data-ng-style="{backgroundColor: color.value}"></span>
 	</div>
 
-	<div class="color-grid">
+	<div class="xpl-color-grid">
 		<h3>Text and Background Colors</h3>
 
-		<span data-ng-repeat="color in textColors" class="color-chip" data-ng-style="{backgroundColor: color.value}"></span>
+		<span data-ng-repeat="color in textColors" class="xpl-color-chip" data-ng-style="{backgroundColor: color.value}"></span>
 	</div>
 </section>
 
-<section class="theme-details">
-	<div data-ng-repeat="color in baseColors.concat(textColors).concat(otherColors)" class="color-details content-group">
+<section class="xpl-theme-details">
+	<div data-ng-repeat="color in baseColors.concat(textColors).concat(otherColors)" class="xpl-color-details xpl-content-group">
 		<header><h1>{{color.value}}</h1></header>
 
 		<div>
-			<span class="color-chip" data-ng-style="{backgroundColor: color.value}"></span>
+			<span class="xpl-color-chip" data-ng-style="{backgroundColor: color.value}"></span>
 
-			<div class="color-detail">
+			<div class="xpl-color-detail">
 				<strong>{{color.key}}</strong><br />
-				<span class="hex-code">{{color.value}}</span>
+				<span class="xpl-hex-code">{{color.value}}</span>
 			</div>
 		</div>
 	</div>

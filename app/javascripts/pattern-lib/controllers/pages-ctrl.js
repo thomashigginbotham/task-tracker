@@ -12,7 +12,7 @@ define(['controllers/module'], function(controllers) {
 		// Update tools menu
 		MenuFactory.setTools([{
 			text: 'Open Page',
-			class: 'tools-new-window',
+			class: 'xpl-tools-new-window',
 			action: function() {
 				// Open current page in new window/tab
 				window.open(pageUri);

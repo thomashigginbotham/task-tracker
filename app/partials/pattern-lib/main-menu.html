@@ -1,8 +1,8 @@
-<div class="content-wrapper">
+<div class="xpl-content-wrapper">
 	<h1>Pattern Library Menu</h1>
 
-	<ul class="main-menu">
-		<li data-ng-repeat="parentItem in menu" data-ng-class="['nav-' + hyphenateString(parentItem.text), (containsCurrentUri(parentItem.submenu)) ? 'active' : '']">
+	<ul class="xpl-main-menu">
+		<li data-ng-repeat="parentItem in menu" data-ng-class="['xpl-nav-' + hyphenateString(parentItem.text), (containsCurrentUri(parentItem.submenu)) ? 'active' : '']">
 			<a href="#{{parentItem.submenu[0].uri}}">{{parentItem.text}}</a>
 			<ul>
 				<li data-ng-repeat="childItem in parentItem.submenu" data-ng-class="{'active': isCurrentUri(childItem.uri)}"><a href="#{{childItem.uri}}" ng-click="setActiveMenuItem()">{{childItem.text}}</a></li>
@@ -10,7 +10,7 @@
 		</li>
 	</ul>
 
-	<ul class="tools-menu" data-ng-show="tools">
+	<ul class="xpl-tools-menu" data-ng-show="tools">
 		<li data-ng-repeat="tool in tools">
 			<a href="" class="{{tool.class}}" ng-click="tool.action()">{{tool.text}}</a>
 		</li>

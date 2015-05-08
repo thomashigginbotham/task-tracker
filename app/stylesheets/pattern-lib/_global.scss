@@ -1,19 +1,18 @@
-/* ================================
- * Pattern Library Classes
- * ================================ */
+// Pattern Library Classes
 
-/* -- Alignment -- */
-.left {
+// Alignment
+.xpl-left {
 	@include rem(margin-right, $ui-col-gutter);
 	float: left;
 }
-.right {
+
+.xpl-right {
 	@include rem(margin-left, $ui-col-gutter);
 	float: right;
 }
 
-/* -- Sectioned Content -- */
-.content-group {
+// Sectioned Content
+.xpl-content-group {
 	@include rem(margin-bottom, $ui-col-gutter);
 
 	header {
@@ -30,19 +29,21 @@
 			color: $color-text;
 			background: $color-bg;
 		}
-		.subheading {
+
+		.xpl-subheading {
 			@include inline-block;
 			position: relative;
 			top: .25em;
 		}
 	}
+
 	> :not(header) {
 		@include rem(margin, $ui-col-gutter);
 	}
 }
 
-/* -- Color Sections -- */
-.color-chip {
+// Color Sections
+.xpl-color-chip {
 	@include box-sizing(border-box);
 	@include inline-block;
 	width: 70px;
@@ -55,33 +56,36 @@
 		border-left-width: 1px;
 	}
 }
-.color-grid {
+
+.xpl-color-grid {
 	@include row;
 	@include rem(margin-bottom, $ui-col-gutter);
 
-	.color-chip {
+	.xpl-color-chip {
 		float: left;
 	}
 }
-.color-details {
+
+.xpl-color-details {
 	@include row;
 	@include rem(margin-bottom, $ui-col-gutter);
 
-	.color-chip {
+	.xpl-color-chip {
 		@include column(1, 3);
 	}
-	.color-detail {
+
+	.xpl-color-detail {
 		@include column(2, 3)
 	}
 }
 
-/* -- Code Blocks -- */
-.subheader {
+// Code Blocks
+.xpl-subheader {
 	margin-left: .5em;
 	font-size: .6em;
 	font-family: $base-font-family;
 }
-.show-code {
+.xpl-show-code {
 	text-decoration: none;
 
 	&:before {
@@ -90,22 +94,24 @@
 		font-family: FontAwesome;
 	}
 }
-.hide-code {
-	@extend .show-code;
+
+.xpl-hide-code {
+	@extend .xpl-show-code;
 
 	&:before {
 		content: '\f070';
 	}
 }
-.prettyprint {
+
+.xpl-prettyprint {
 	padding: 1em;
 	font-size: 1em;
 	color: $color-bg;
 	background: $color-text;
 }
 
-/* -- Component Demos -- */
-.component-demo {
+// Component Demos
+.xpl-component-demo {
 	@include rem(margin, $ui-col-gutter 0);
 	@include rem(padding, $ui-col-gutter);
 	border: 1px solid $ui-color-accent;

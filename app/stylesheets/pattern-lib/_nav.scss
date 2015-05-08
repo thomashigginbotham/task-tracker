@@ -16,7 +16,7 @@
 }
 
 // Tab and Sublink Styles
-.page-wrapper {
+.xpl-page-wrapper {
 	// Add space to top for fixed-position navigation
 	@include rem(padding-top, 7rem);
 }
@@ -141,9 +141,9 @@
 	}
 
 	// Icons
-	.nav-style,
-	.nav-components,
-	.nav-pages {
+	.xpl-nav-style,
+	.xpl-nav-components,
+	.xpl-nav-pages {
 		> a:before {
 			margin-right: .25em;
 			font-family: 'FontAwesome';
@@ -151,15 +151,15 @@
 		}
 	}
 
-	.nav-style > a:before {
+	.xpl-nav-style > a:before {
 		content: '\f040';
 	}
 
-	.nav-components > a:before {
+	.xpl-nav-components > a:before {
 		content: '\f00a';
 	}
 
-	.nav-pages > a:before {
+	.xpl-nav-pages > a:before {
 		content: '\f15b';
 	}
 
@@ -177,16 +177,16 @@
 	}
 
 	// Tools menu
-	.content-wrapper {
+	.xpl-content-wrapper {
 		@include row();
 	}
 
-	.main-menu {
+	.xpl-main-menu {
 		@include column(3, 4);
 		height: 2.5rem;
 	}
 
-	.tools-menu {
+	.xpl-tools-menu {
 		@include column(1, 4);
 		text-align: right;
 
@@ -200,7 +200,7 @@
 	}
 
 	// Icons
-	.tools-new-window:before {
+	.xpl-tools-new-window:before {
 		content: '\f08e';
 		margin-right: .25em;
 		font-family: 'FontAwesome';

@@ -1,21 +1,19 @@
-/* ================================
- * Pattern Library Grids
- * ================================ */
+// Pattern Library Grids
 
-/* -- Framework -- */
+// Framework
 html,
 body {
 	height: 100%;
 }
-.page-wrapper {
+.xpl-page-wrapper {
 	@include box-sizing(border-box);
 	height: 100%;
 }
-.page-content {
+.xpl-page-content {
 	@include box-sizing(border-box);
 	min-height: calc(100% - 3.4rem);
 }
-.content-wrapper {
+.xpl-content-wrapper {
 	@include box-sizing(border-box);
 	margin: 0 auto;
 	padding: 0 $ui-margin;
@@ -23,8 +21,8 @@ body {
 	height: 100%;
 }
 
-/* -- Iframes -- */
-.page-loader {
+// Iframes
+.xpl-page-loader {
 	@include rem(margin-bottom, $ui-col-gutter);
 	display: block;
 	width: 100%;
@@ -34,15 +32,15 @@ body {
 	resize: both;
 }
 
-/* -- Colors Layout -- */
-.color-grids {
+// Colors Layout
+.xpl-color-grids {
 	margin-bottom: $ui-col-gutter;
 
 	@media (min-width: $ui-medium-canvas) {
 		@include grid(2);
 	}
 }
-.theme-details {
+.xpl-theme-details {
 	margin-bottom: $ui-col-gutter;
 
 	@media (min-width: $ui-medium-canvas) {
@@ -50,19 +48,19 @@ body {
 	}
 }
 
-/* -- Forms Layout -- */
-.selection-ui {
+// Forms Layout
+.xpl-selection-ui {
 	@media (min-width: $ui-medium-canvas) {
 		@include grid(2);
 	}
 }
 
-/* -- Components Layout -- */
-.component-wrapper {
+// Components Layout
+.xpl-component-wrapper {
 	@include rem(margin-bottom, $col-gutter);
 }
 
-/* -- IE 8 -- */
+// IE 8
 \:main {
 	display: block
 }

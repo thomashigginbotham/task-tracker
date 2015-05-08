@@ -1,30 +1,19 @@
-/* ================================
- * Master Style Sheet
- * (Only contains imports)
- * ================================ */
+// XPL Master Style Sheet
 
-/* -- Modules -- */
-@import "modules/all";         // Modules contain functions and mixins
+// Modules
+@import 'modules/all';         // Modules contain functions and mixins
 
-/* -- Variables -- */
-@import "pattern-lib/base";
-@import "partials/base";
+// Variables
+@import 'pattern-lib/base';
 
-/* -- Pattern Library Styles -- */
-@import "pattern-lib/grids";   // Framework and layout
-@import "pattern-lib/global";  // Globally available classes
-@import "pattern-lib/nav";     // Navigation and menu styles
-@import "pattern-lib/footer";  // Footer styles
+// Pattern Library Styles
+@import 'pattern-lib/grids';   // Framework and layout
+@import 'pattern-lib/global';  // Globally available classes
+@import 'pattern-lib/nav';     // Navigation and menu styles
+@import 'pattern-lib/footer';  // Footer styles
 
-/* -- Partials -- */
-@import "partials/resets";     // Overrides of browser default styles
-@import "partials/global";     // Globally available classes
-@import "partials/typography"; // General font rules
-@import "partials/forms";      // Form styles
-@import "partials/tables";     // Tabular data styles
-@import "partials/nav";        // Navigation and menu styles
-@import "partials/header";     // Header styles
-@import "partials/footer";     // Footer styles
+// User Styles
+@import 'main';
 
-/* -- Third-party CSS -- */
-@import "vendor/prettyprint";  // Sunburst theme for Google Pretty Print
+// Third-party CSS
+@import 'vendor/prettyprint';  // Sunburst theme for Google Pretty Print
