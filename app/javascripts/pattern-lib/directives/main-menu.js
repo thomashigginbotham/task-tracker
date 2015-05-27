@@ -94,7 +94,7 @@ define(['directives/module', 'jquery'], function(directives, $) {
 			restrict: 'A',
 			controller: Ctrl,
 			link: link,
-			templateUrl: 'partials/pattern-lib/main-menu.html'
+			templateUrl: 'templates/pattern-lib/main-menu.html'
 		};
 	}]);
 });

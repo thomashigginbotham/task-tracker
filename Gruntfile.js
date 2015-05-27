@@ -180,9 +180,9 @@ module.exports = function(grunt) {
 					ext: '.html'
 				}, {
 					expand: true,
-					cwd: 'app/partials',
+					cwd: 'app/templates',
 					src: ['*.html'],
-					dest: '.tmp/partials',
+					dest: '.tmp/templates',
 					ext: '.html'
 				}],
 				options: {
@@ -198,9 +198,9 @@ module.exports = function(grunt) {
 					ext: '.html'
 				}, {
 					expand: true,
-					cwd: 'app/partials',
+					cwd: 'app/templates',
 					src: ['**/*.html'],
-					dest: 'dist/partials',
+					dest: 'dist/templates',
 					ext: '.html'
 				}],
 				options: {

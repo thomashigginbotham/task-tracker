@@ -72,7 +72,7 @@ define(['directives/module'], function(directives) {
 		return {
 			restrict: 'A',
 			link: link,
-			templateUrl: 'partials/pattern-lib/templates/color-details.html'
+			templateUrl: 'templates/pattern-lib/color-details.html'
 		};
 	}]);
 });
