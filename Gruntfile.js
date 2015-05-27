@@ -80,6 +80,15 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 versions', 'ie 8', 'ie 9', '> 5%'],
+				diff: true
+			},
+			main: {
+				src: '.tmp/stylesheets/*.css'
+			}
+		},
 		cssmin: {
 			dist: {
 				files: {
@@ -158,7 +167,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev'],
+				tasks: ['compass:dev', 'autoprefixer'],
 				options: {
 					livereload: true
 				}
@@ -211,7 +220,7 @@ module.exports = function(grunt) {
 	});
 
 	// Tasks
-	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml:dist']);
-	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'processhtml:dev', 'express:dev', 'watch']);
-	grunt.registerTask('dist-serve', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
+	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist']);
+	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'express:dev', 'watch']);
+	grunt.registerTask('dist-serve', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
 };

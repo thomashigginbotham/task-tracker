@@ -3,7 +3,7 @@
 // No styleguide reference.
 
 body {
-	@include experimental(tab-size, 4);
+	tab-size: 4;
 	font: #{$base-font-size}/#{$base-line-height} $base-font-family;
 }
 
