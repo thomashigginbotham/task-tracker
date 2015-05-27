@@ -200,4 +200,4 @@ linters:
     enabled: true
 
   Compass::*:
-    enabled: false
+    enabled: true
