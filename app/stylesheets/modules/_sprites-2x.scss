@@ -1,25 +1,72 @@
-/* ================================
- * High Pixel Density Sprite Maps
- * (requires Compass)
- * ================================ */
+// Framework Image Sprites
+//
+// Styleguide 2.
 
-%high-contrast-image-rendering {
-	image-rendering: optimizeSpeed;             /* Legal fallback                 */
-	image-rendering: -moz-crisp-edges;          /* Firefox                        */
-	image-rendering: -o-crisp-edges;            /* Opera                          */
-	image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
-	image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
-	-ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
-	
-	-webkit-background-clip: padding-box;
+// Framework Sprite Functions
+//
+// Styleguide 2.1.
+
+// Returns the horizontal position for a 2x sprite image.
+//
+// $sprite-map-2x - The high-resolution, Compass sprite map.
+// $name          - The name of the image sprite.
+// $offset-x      - Horizontally offset the sprite position.
+//
+// Styleguide 2.1.1.
+@function get-double-x-position($sprite-map-2x, $name, $offset-x: 0) {
+	$x-pos: null;
+
+	@if unit($offset-x) == '%' {
+		$x-pos: $offset-x;
+	} @else {
+		$x-pos: round(nth(sprite-position($sprite-map-2x, $name), 1) / 2) + $offset-x;
+	}
+
+	@return $x-pos;
+}
+
+// Returns the vertical position for a 2x sprite image.
+//
+// $sprite-map-2x - The high-resolution, Compass sprite map.
+// $name          - The name of the image sprite.
+// $offset-y      - Vertically offset the sprite position.
+//
+// Styleguide 2.1.2.
+@function get-double-y-position($sprite-map-2x, $name, $offset-y: 0) {
+	@return round(nth(sprite-position($sprite-map-2x, $name), 2) / 2) + $offset-y;
+}
+
+// Framework Sprite Mixins
+//
+// Styleguide 2.2.
+
+// Prevents image anti-aliasing on edges.
+//
+// Compatibility untested.
+//
+// Styleguide 2.2.1
+@mixin high-contrast-image-rendering() {
+	image-rendering: crisp-edges;
 	background-clip: padding-box;
 }
 
+// Sets the background to a sprite image with support for high DPI devices.
+//
+// $sprite-map    - The low resolution, Compass sprite map.
+// $sprite-map-2x - The high-resolution, Compass sprite map.
+// $name          - The name of the image sprite.
+// $offset-x      - Horizontally offset the sprite position.
+// $offset-y      - Vertically offset the sprite position.
+// $replace-text  - Hide the element's text content, showing only the sprite.
+//
+// Compatibility untested.
+//
+// Styleguide 2.2.2.
 @mixin sprite-2x($sprite-map, $sprite-map-2x, $name, $offset-x: 0, $offset-y: 0, $replace-text: false) {
 	$x-pos: get-double-x-position($sprite-map-2x, $name, $offset-x);
 	$y-pos: get-double-y-position($sprite-map-2x, $name, $offset-y);
 
-	@extend %high-contrast-image-rendering;
+	@include high-contrast-image-rendering;
 
 	@if $replace-text {
 		@include hide-text(right);
@@ -34,16 +81,36 @@
 	}
 }
 
+// Sets the background to a sprite image with support for high DPI devices and
+// sets the width and height of the element to that of the image.
+//
+// $sprite-map    - The low resolution, Compass sprite map.
+// $sprite-map-2x - The high-resolution, Compass sprite map.
+// $name          - The name of the image sprite.
+// $offset-x      - Horizontally offset the sprite position.
+// $offset-y      - Vertically offset the sprite position.
+// $replace-text  - Hide the element's text content, showing only the sprite.
+//
+// Compatibility untested.
+//
+// Styleguide 2.2.3.
 @mixin sprite-2x-with-dimensions($sprite-map, $sprite-map-2x, $name, $offset-x: 0, $offset-y: 0, $replace-text: false) {
-	@include sprite-2x($sprite-map, $sprite-map-2x, $name, $offset-x, $offset-y);
+	@include sprite-2x($sprite-map, $sprite-map-2x, $name, $offset-x, $offset-y, $replace-text);
 	width: image-width(sprite-file($sprite-map, $name));
 	height: image-height(sprite-file($sprite-map, $name));
-
-	@if $replace-text {
-		@include hide-text(right);
-	}
 }
 
+// Sets the background position of a sprite image with support for high DPI devices.
+//
+// $sprite-map    - The low resolution, Compass sprite map.
+// $sprite-map-2x - The high-resolution, Compass sprite map.
+// $name          - The name of the image sprite.
+// $offset-x      - Horizontally offset the sprite position.
+// $offset-y      - Vertically offset the sprite position.
+//
+// Compatibility untested.
+//
+// Styleguide 2.2.4.
 @mixin sprite-2x-position($sprite-map, $sprite-map-2x, $name, $offset-x: 0, $offset-y: 0) {
 	$x-pos: get-double-x-position($sprite-map-2x, $name, $offset-x);
 	$y-pos: get-double-y-position($sprite-map-2x, $name, $offset-y);
@@ -53,20 +120,4 @@
 	@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
 		background-position: $x-pos $y-pos;
 	}
-}
-
-@function get-double-x-position($sprite-map-2x, $name, $offset-x: 0) {
-	$x-pos: null;
-
-	@if unit($offset-x) == '%' {
-		$x-pos: $offset-x;
-	} @else {
-		$x-pos: round(nth(sprite-position($sprite-map-2x, $name), 1) / 2) + $offset-x;
-	}
-
-	@return $x-pos;
-}
-
-@function get-double-y-position($sprite-map-2x, $name, $offset-y: 0) {
-	@return round(nth(sprite-position($sprite-map-2x, $name), 2) / 2) + $offset-y;
 }
