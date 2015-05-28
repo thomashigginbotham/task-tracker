@@ -1,13 +1,21 @@
-// Form styles.
+// Form Styles
 //
 // No styleguide reference.
 
-// Global styles
+// Global Styles
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 label {
 	cursor: pointer;
 }
 
-// Basic form layout
+// Basic Layout
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 $basic-label-width: 12em;
 $basic-field-width: 20em;
 
@@ -98,9 +106,13 @@ $basic-field-width: 20em;
 }
 
 // Buttons
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 button,
 .button {
-	display: inline-block;
+	@include inline-block();
 	padding: .5em 1em;
 	border: 0;
 	text-decoration: none;
@@ -113,7 +125,7 @@ button,
 
 	&.disabled,
 	&[disabled] {
-		cursor: default;
+		cursor: not-allowed;
 		background: lighten(desaturate($color-tertiary, 50%), 10%);
 	}
 }

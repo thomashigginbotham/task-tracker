@@ -1,7 +1,8 @@
 // Website footer.
 //
+// Compatibility untested.
+//
 // No styleguide reference.
-
 .site-footer {
 	@include rem(padding, 1em $col-gutter);
 	text-align: center;

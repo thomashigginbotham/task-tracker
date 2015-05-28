@@ -1,7 +1,8 @@
-// General typography settings.
+// General Typography Settings
+//
+// Compatibility untested.
 //
 // No styleguide reference.
-
 body {
 	tab-size: 4;
 	font: #{$base-font-size}/#{$base-line-height} $base-font-family;

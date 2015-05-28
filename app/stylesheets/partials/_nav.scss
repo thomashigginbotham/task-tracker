@@ -1,7 +1,8 @@
-// Website navigation.
+// Website Navigation
+//
+// Compatibility untested.
 //
 // No styleguide reference.
-
 .site-nav {
 	@include rem(padding, 1em $col-gutter);
 	background-color: darken($color-bg, 10%);

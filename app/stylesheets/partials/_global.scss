@@ -3,6 +3,10 @@
 // No styleguide reference.
 
 // Alignment
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 .left {
 	@include rem(margin-right, $col-gutter);
 	float: left;

@@ -1,39 +1,72 @@
-// Variables for Pattern Library
+// Pattern Library variables
+//
+// No styleguide reference.
 
-// Dimensions
+// Page Dimensions
+//
+// $ui-max-width  - The maximum width of the page.
+// $ui-margin     - The amount of left/right page margin.
+// $ui-col-count  - The number of columns in the default grid.
+// $ui-col-gutter - The width of column gutters.
+//
+// No styleguide reference.
 $ui-max-width: 960px;
 $ui-margin: 20px;
 $ui-col-count: 12;
 $ui-col-gutter: 1.4rem;
 
-// Break points
+// Responsive Break Points
+//
+// $ui-large-canvas  - The largest break point.
+// $ui-medium-canvas - A common break point for tablets.
+// $ui-small-canvas  - A break point for small tablets and large phones.
+// $ui-tiny-canvas   - The smallest break point.
+//
+// No styleguide reference.
 $ui-large-canvas: 960px;
 $ui-medium-canvas: 800px;
 $ui-small-canvas: 640px;
 $ui-tiny-canvas: 480px;
 
 // Colors
+//
+// $ui-color-accent       - The UI accent color.
+// $ui-color-accent-light - A lighter version of the UI accent color.
+// $color-primary         - Hexadecimal value of the primary color.
+// $color-secondary       - Hexadecimal value of the secondary color.
+// $color-text            - Hexadecimal value of the base text color.
+// $color-bg              - Hexadecimal value of the main background.
+//
+// No styleguide reference.
 $ui-color-accent: #ccc;
 $ui-color-accent-light: #eee;
-
 $color-primary: #3f9eff !default;
 $color-secondary: #ff2c1d !default;
 $color-tertiary: #a5b814 !default;
-
 $color-text: #222 !default;
 $color-bg: #fff !default;
 
 // Fonts
+//
+// $regular            - The regular font weight
+// $bold               - The bold font weight
+// $base-font-family   - The default font family
+// $base-font-weight   - The default font weight
+// $base-font-size     - The default font size
+// $base-line-height   - The default leading/line height
+// $header-font-family - The font family for headings
+// $fixed-font-family  - The font family for monospace fonts
+// $fixed-font-size    - The font size for monospace fonts
+// $fixed-line-height  - The line height for monospace fonts
+//
+// No styleguide reference.
 $regular: 400 !default;
 $bold: 700 !default;
-
 $base-font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif !default;
 $base-font-weight: $regular !default;
 $base-font-size: 14px !default;
 $base-line-height: 1.8 !default;
-
 $header-font-family: 'Century Gothic', sans-serif !default;
-
 $fixed-font-family: monospace !default;
 $fixed-font-size: 85% !default;
 $fixed-line-height: $base-line-height !default;

@@ -1,18 +1,41 @@
-// Global variables.
+// Variables
+//
+// Styleguide 3.
 
 // Dimensions
+//
+// $page-max-width - The maximum width of the page.
+// $page-margin    - The left/right margin of the page.
+// $col-count      - The number of columns in the default grid.
+// $col-gutter     - The width of column gutters.
+//
+// Styleguide 3.1.
 $page-max-width: 960px;
 $page-margin: 20px;
 $col-count: 12;
 $col-gutter: 1.4rem;
 
-// Responsive breakpoints
+// Responsive Break Points
+//
+// $canvas-large  - The largest available break point.
+// $canvas-medium - A common break point for tablets.
+// $canvas-small  - A break point for small tablets and large phones.
+// $canvas-tiny   - The smallest break point.
+//
+// Styleguide 3.2.
 $canvas-large: 960px;
 $canvas-medium: 800px;
 $canvas-small: 640px;
 $canvas-tiny: 480px;
 
 // Colors
+//
+// $color-primary   - Hexadecimal value of the primary color.
+// $color-secondary - Hexadecimal value of the secondary color.
+// $color-text      - Hexadecimal value of the base text color.
+// $color-bg        - Hexadecimal value of the main background.
+//
+// Styleguide 3.3.
 $color-primary: #3f9eff;       // Dodger Blue
 $color-primary-dark: #0480ff;  // Azure Radiance
 $color-secondary: #ff2c1d;     // Red Orange
@@ -28,21 +51,29 @@ $color-warning: #f93;
 $color-error: #f00;
 
 // Fonts
-
 // WARNING! Do not use @font-face or @import to include web fonts if you will be
 // supporting IE 8 or lower. Selectivizr has issues with web fonts when the CSS
 // is minified.
-
+//
+// $regular            - The regular font weight
+// $bold               - The bold font weight
+// $base-font-family   - The default font family
+// $base-font-weight   - The default font weight
+// $base-font-size     - The default font size
+// $base-line-height   - The default leading/line height
+// $header-font-family - The font family for headings
+// $fixed-font-family  - The font family for monospace fonts
+// $fixed-font-size    - The font size for monospace fonts
+// $fixed-line-height  - The line height for monospace fonts
+//
+// Styleguide 3.4.
 $regular: 400;
 $bold: 700;
-
 $base-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 $base-font-weight: $regular;
 $base-font-size: 14px;
 $base-line-height: 1.8;
-
 $header-font-family: "Century Gothic", sans-serif;
-
 $fixed-font-family: monospace;
 $fixed-font-size: 85%;
 $fixed-line-height: $base-line-height;

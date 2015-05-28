@@ -1,6 +1,12 @@
 // Navigation for pattern library
+//
+// No styleguide reference.
 
 // Mixins
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 @mixin set-color-theme($color) {
 	background: $color;
 
@@ -16,6 +22,10 @@
 }
 
 // Tab and Sublink Styles
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 .xpl-page-wrapper {
 	// Add space to top for fixed-position navigation
 	padding-top: 78px;
@@ -141,6 +151,10 @@
 	}
 
 	// Icons
+	//
+	// Compatibility untested.
+	//
+	// No styleguide reference.
 	.xpl-nav-style,
 	.xpl-nav-components,
 	.xpl-nav-pages {
@@ -165,6 +179,10 @@
 	}
 
 	// Tab Themes
+	//
+	// Compatibility untested.
+	//
+	// No styleguide reference.
 	&.style-active {
 		@include set-color-theme($color-primary);
 	}
@@ -178,6 +196,10 @@
 	}
 
 	// Tools menu
+	//
+	// Compatibility untested.
+	//
+	// No styleguide reference.
 	@media (min-width: $ui-small-canvas) {
 		.xpl-content-wrapper {
 			@include row();

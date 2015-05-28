@@ -1,6 +1,12 @@
 // Pattern Library Classes
+//
+// No styleguide reference.
 
 // Alignment
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 .xpl-left {
 	@include rem(margin-right, $ui-col-gutter);
 	float: left;
@@ -12,6 +18,10 @@
 }
 
 // Sectioned Content
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 .xpl-content-group {
 	@include rem(margin-bottom, $ui-col-gutter);
 
@@ -43,6 +53,10 @@
 }
 
 // Color Sections
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 .xpl-color-chip {
 	@include box-sizing(border-box);
 	@include inline-block;
@@ -80,12 +94,11 @@
 }
 
 // Code Blocks
-.xpl-subheader {
-	margin-left: .5em;
-	font-size: .6em;
-	font-family: $base-font-family;
-}
-.xpl-show-code {
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+%xpl-show-code {
 	text-decoration: none;
 
 	&:before {
@@ -95,12 +108,22 @@
 	}
 }
 
+.xpl-show-code {
+	@extend %xpl-show-code;
+}
+
 .xpl-hide-code {
-	@extend .xpl-show-code;
+	@extend %xpl-show-code;
 
 	&:before {
 		content: '\f070';
 	}
+}
+
+.xpl-subheader {
+	margin-left: .5em;
+	font-size: .6em;
+	font-family: $base-font-family;
 }
 
 .xpl-prettyprint {
@@ -111,6 +134,10 @@
 }
 
 // Component Demos
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 .xpl-component-demo {
 	@include rem(margin, $ui-col-gutter 0);
 	@include rem(padding, $ui-col-gutter);

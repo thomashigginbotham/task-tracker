@@ -1,18 +1,27 @@
 // Pattern Library Grids
+//
+// Compatibility untested.
+//
+// No styleguide reference.
 
-// Framework
+// General Layout
+//
+// No styleguide reference.
 html,
 body {
 	height: 100%;
 }
+
 .xpl-page-wrapper {
 	@include box-sizing(border-box);
 	height: 100%;
 }
+
 .xpl-page-content {
 	@include box-sizing(border-box);
 	min-height: calc(100% - 3.4rem);
 }
+
 .xpl-content-wrapper {
 	@include box-sizing(border-box);
 	margin: 0 auto;
@@ -20,20 +29,25 @@ body {
 	max-width: $ui-max-width;
 	height: 100%;
 }
+
 .xpl-main .xpl-content-wrapper {
 	margin: $ui-margin auto;
 }
 
 // Iframes
+//
+// No styleguide referenece.
 .xpl-page-loader {
 	display: block;
 	width: 100%;
 	height: 480px;
 	height: calc(100vh - 78px - 3.4rem);
-	border: none;
+	border: 0;
 }
 
-// Colors Layout
+// Color Section Layout
+//
+// No styleguide referenece.
 .xpl-color-grids {
 	margin-bottom: $ui-col-gutter;
 
@@ -41,6 +55,7 @@ body {
 		@include grid(2);
 	}
 }
+
 .xpl-theme-details {
 	margin-bottom: $ui-col-gutter;
 
@@ -49,19 +64,27 @@ body {
 	}
 }
 
-// Forms Layout
+// Form Section Layout
+//
+// No styleguide referenece.
 .xpl-selection-ui {
 	@media (min-width: $ui-medium-canvas) {
 		@include grid(2);
 	}
 }
 
-// Components Layout
+// Component Section Layout
+//
+// No styleguide referenece.
 .xpl-component-wrapper {
 	@include rem(margin-bottom, $col-gutter);
 }
 
-// IE 8
-\:main {
-	display: block
+// IE 8 corrections
+//
+// No styleguide referenece.
+.lt-ie9 {
+	main {
+		display: block;
+	}
 }
