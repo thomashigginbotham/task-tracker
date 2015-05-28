@@ -18,25 +18,25 @@
 // Tab and Sublink Styles
 .xpl-page-wrapper {
 	// Add space to top for fixed-position navigation
-	@include rem(padding-top, 5.5rem);
+	padding-top: 78px;
 }
 
 .xpl-nav {
 	@include rem(margin-bottom, $ui-col-gutter + 2);
-	@include rem(padding-top, .5rem);
 	position: fixed;
 	z-index: 10;
 	top: 0;
+	padding-top: 8px;
 	width: 100%;
 	white-space: nowrap;
 
 	&:after {
-		@include rem(top, 2.45rem);
-		@include rem(height, 3rem);
 		content: '';
 		position: absolute;
+		top: 37px;
 		z-index: -1;
 		width: 100%;
+		height: 40px;
 		border-bottom: 1px solid $ui-color-accent;
 		background-color: $color-bg;
 	}
@@ -77,16 +77,16 @@
 		}
 
 		ul {
-			@include rem(top, 2rem);
 			display: none;
 			position: absolute;
+			top: 29px;
 			left: 0;
 			white-space: nowrap;
 			font-size: .9em;
 		}
 
 		li {
-			padding: 1em 0;
+			padding: 5px 0;
 		}
 	}
 
@@ -96,10 +96,10 @@
 
 	a {
 		@include inline-block;
-		padding: .25em 1em;
-		height: 1.55rem;
+		padding: 0 1em;
 		border-radius: .25em .25em 0 0;
 		text-decoration: none;
+		line-height: 30px;
 		color: $color-bg;
 
 		&:hover,
@@ -146,6 +146,7 @@
 	.xpl-nav-pages {
 		> a:before {
 			margin-right: .25em;
+			vertical-align: middle;
 			font-family: 'FontAwesome';
 			font-size: 14px;
 		}
@@ -184,7 +185,6 @@
 
 		.xpl-main-menu {
 			@include column(3, 4);
-			height: 2.5rem;
 		}
 
 		.xpl-tools-menu {
