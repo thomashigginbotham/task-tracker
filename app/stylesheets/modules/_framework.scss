@@ -97,8 +97,9 @@ $col-gutter: 1.4rem !default;
 	}
 }
 
-// Formats element as a column within a row.
-
+// Provides the width for a specified number of columns, allowing room for
+// dividers between each column.
+//
 // $col-span          - How many columns this cell will span across.
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
@@ -106,12 +107,30 @@ $col-gutter: 1.4rem !default;
 // Compatibility untested.
 //
 // Styleguide 1.3.4.
+@mixin column-width-with-dividers($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
+	$base-width-percentage: $col-span / $custom-col-count * 100;
+
+	width: calc(#{$base-width-percentage * 1%} - #{$custom-col-gutter * (1 - $base-width-percentage / 100)} + #{$custom-col-gutter * ($col-span / $custom-col-count)} - .1px);
+
+	&:last-child {
+		width: calc(#{$base-width-percentage * 1%} - #{$custom-col-gutter * (1 - $base-width-percentage / 100)} - #{$custom-col-gutter * ($custom-col-count - $col-span) / $custom-col-count} - .1px);
+	}
+}
+
+// Formats element as a column within a row.
+//
+// $col-span          - How many columns this cell will span across.
+// $custom-col-count  - The total number of columns in the row.
+// $custom-col-gutter - The width of the gutters.
+//
+// Compatibility untested.
+//
+// Styleguide 1.3.5.
 @mixin column($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
 	@include column-width($col-span, $custom-col-count, $custom-col-gutter);
 
 	box-sizing: border-box;
 	float: left;
-
 	margin-right: $col-gutter-fluid;
 	margin-right: calc(#{$custom-col-gutter});
 
@@ -125,6 +144,33 @@ $col-gutter: 1.4rem !default;
 	}
 }
 
+// Formats element as a column within a row with a border as a divider.
+//
+// $border            - A short-hand border value (e.g. 1px solid #000).
+// $col-span          - How many columns this cell will span across.
+// $custom-col-count  - The total number of columns in the row.
+// $custom-col-gutter - The width of the gutters.
+//
+// Compatibility untested.
+//
+// Styleguide 1.3.6.
+@mixin column-with-divider($border, $col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
+	@include column-width-with-dividers($col-span, $custom-col-count, $custom-col-gutter);
+
+	box-sizing: border-box;
+	float: left;
+	margin-right: $custom-col-gutter;
+	padding-right: $custom-col-gutter;
+	border-right: $border;
+
+	&:last-child {
+		float: right;
+		margin-right: 0;
+		padding-right: 0;
+		border-right-width: 0;
+	}
+}
+
 // Creates a centered column within a row.
 //
 // $col-span         - How many columns this cell will span across.
@@ -132,7 +178,7 @@ $col-gutter: 1.4rem !default;
 //
 // Compatibility untested.
 //
-// Styleguide 1.3.5.
+// Styleguide 1.3.7.
 @mixin center-column($col-span, $custom-col-count: $col-count) {
 	@include column-width($col-span, $custom-col-count);
 
@@ -149,7 +195,7 @@ $col-gutter: 1.4rem !default;
 //
 // Compatibility untested.
 //
-// Styleguide 1.3.6.
+// Styleguide 1.3.8.
 @mixin push($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
 	$push-ratio: $col-span / $custom-col-count;
 	margin-left: $push-ratio * 100% + ($push-ratio * $col-gutter-fluid);
@@ -170,7 +216,7 @@ $col-gutter: 1.4rem !default;
 //
 // Compatibility untested.
 //
-// Styleguide 1.3.7.
+// Styleguide 1.3.9.
 @mixin pull($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
 	@include push($col-span * -1, $custom-col-count, $custom-col-gutter);
 }
@@ -182,7 +228,7 @@ $col-gutter: 1.4rem !default;
 //
 // Compatibility untested.
 //
-// Styleguide 1.3.8.
+// Styleguide 1.3.10.
 @mixin grid($cols, $custom-col-gutter: $col-gutter) {
 	$first-column-cell: #{$cols}n-#{$cols - 1};
 	$last-column-cell: #{$cols}n;
@@ -231,7 +277,7 @@ $col-gutter: 1.4rem !default;
 //
 // Compatibility untested.
 //
-// Styleguide 1.3.9.
+// Styleguide 1.3.11.
 @mixin equal-width-columns($custom-col-gutter: $col-gutter) {
 	display: table;
 	table-layout: fixed;
@@ -253,7 +299,7 @@ $col-gutter: 1.4rem !default;
 //
 // Compatibility untested.
 //
-// Styleguide 1.3.10.
+// Styleguide 1.3.12.
 @mixin grid-overlay($custom-col-count: $col-count, $custom-col-gutter: $col-gutter-fluid, $overlay-color: rgba(#777, .1)) {
 	$column-width: get-column-width(1, $custom-col-count, $custom-col-gutter);
 	$gradient-string: $overlay-color 0, $overlay-color $column-width;
