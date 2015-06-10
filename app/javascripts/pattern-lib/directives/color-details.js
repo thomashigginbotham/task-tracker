@@ -25,7 +25,7 @@ define(['directives/module'], function(directives) {
 				cache: true
 			}).
 				success(function(data) {
-					var matches = data.match(/\$color[^:]+:\s*[^;]+/g);
+					var matches = data.match(/^\$color[^:]+:\s*[^;]+/gm);
 					var len = matches.length;
 					var n, match, sassVar;
 
