@@ -1,15 +1,22 @@
 /* jslint browser: true */
 
-/* ================================
-* Application Scripts
-* ================================ */
 require(['jquery'], function($) {
 	'use strict';
 
-	/* -- Initialize scripts -- */
+	/*
+	 * Initialization
+	 */
 	var init = function() {
+		runSamplePlugin();
+	};
+
+	/*
+	 * Add text to the footer using Sample Plugin.
+	 * This is just an example to demonstrate the usage of custom jQuery plugins
+	 * as a pattern for development.
+	 */
+	var runSamplePlugin = function() {
 		$(function() {
-			/* -- Sample jQuery Plugin -- */
 			require(['samplePlugin'], function() {
 				$('.site-footer p').first().samplePlugin({
 					color: '#777'
@@ -18,24 +25,24 @@ require(['jquery'], function($) {
 		});
 	};
 
-	/* -- Allow XPL to re-run scripts when components load -- */
+	/*
+	 * Main entry point
+	 */
 	(function() {
+		// Allow XPL to re-run start-up scripts when pattern library components
+		// have finished loading
 		window.addEventListener('xplComponentsLoaded', function() {
 			setTimeout(init, 0);
 		}, false);
-	})();
 
-	/* -- Add Selectivizr support for IE 6-8 <http://selectivizr.com/> -- */
-	(function() {
+		// Use Selectivizr for IE 8 and below
 		if ($('.lt-ie9').length > 0) {
-			var script = document.createElement('script');
+			var selectivizrPath = '/javascripts/vendor/selectivizr.js';
 
-			script.src = '/javascripts/vendor/selectivizr.js';
-
-			document.getElementsByTagName('head')[0].appendChild(script);
+			$.getScript(selectivizrPath);
 		}
-	})();
 
-	/* -- Let's go! -- */
-	setTimeout(init, 0);
+		// Let's go!
+		setTimeout(init, 0);
+	})();
 });
