@@ -5,7 +5,9 @@
 // No styleguide reference.
 
 .xpl-footer {
+	@include box-sizing(border-box);
 	padding: 1em 0;
+	height: 60px;
 	background: $ui-color-accent-light;
 
 	h1 {
@@ -15,6 +17,7 @@
 	}
 
 	p {
+		@include vertical-align();
 		margin: 0;
 		overflow: hidden;
 		text-overflow: ellipsis;

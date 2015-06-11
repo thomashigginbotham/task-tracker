@@ -17,7 +17,11 @@ define([
 		app.run(['$rootScope', function($rootScope) {
 			$rootScope.$on('$routeChangeSuccess', function() {
 				// Notify other scripts of route change
-				window.dispatchEvent(new CustomEvent('xplRouteChanged'));
+				try {
+					window.dispatchEvent(new CustomEvent('xplRouteChanged'));
+				} catch (ex) {
+
+				}
 			});
 		}]);
 

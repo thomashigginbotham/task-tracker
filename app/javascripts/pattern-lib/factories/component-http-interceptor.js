@@ -26,7 +26,11 @@ define(['factories/module'], function(factories) {
 					requestCount--;
 
 					if (requestCount === 0) {
-						window.dispatchEvent(new CustomEvent('xplComponentsLoaded'));
+						try {
+							window.dispatchEvent(new CustomEvent('xplComponentsLoaded'));
+						} catch (ex) {
+
+						}
 					}
 				}
 
@@ -37,7 +41,11 @@ define(['factories/module'], function(factories) {
 					requestCount--;
 
 					if (requestCount === 0) {
-						window.dispatchEvent(new CustomEvent('xplComponentsLoaded'));
+						try {
+							window.dispatchEvent(new CustomEvent('xplComponentsLoaded'));
+						} catch (ex) {
+
+						}
 					}
 				}
 

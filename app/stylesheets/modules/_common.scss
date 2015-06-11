@@ -1,0 +1,14 @@
+// Common Functions and Mixins
+//
+// No styleguide reference.
+
+// Vertically center content within its parent
+//
+// No styleguide reference.
+//
+// Compatible with Chrome, Firefox, Safari, IE 9+
+@mixin vertical-align {
+	@include translateY(-50%);
+	position: relative;
+	top: 50%;
+}
