@@ -36,9 +36,6 @@ define(['directives/module', 'jquery'], function(directives, $) {
 				submenu: [{
 					text: 'Home Page',
 					uri: '/pages/index'
-				}, {
-					text: 'Interior Page',
-					uri: '/pages/interior'
 				}]
 			}];
 
