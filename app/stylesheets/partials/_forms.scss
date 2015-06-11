@@ -2,6 +2,11 @@
 //
 // No styleguide reference.
 
+// Variables
+//
+// No styleguide reference.
+$form-field-height: 2.78em;
+
 // Global Styles
 //
 // Compatibility untested.
@@ -11,97 +16,142 @@ label {
 	cursor: pointer;
 }
 
-// Basic Layout
+// Text boxes.
 //
 // Compatibility untested.
 //
 // No styleguide reference.
-$basic-label-width: 12em;
-$basic-field-width: 20em;
+input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
+	@include box-sizing(border-box);
+	padding: 0 $form-field-height / 4;
+	height: $form-field-height;
+	border: 1px solid $color-primary;
 
-.basic-form {
-	.form-field {
-		@include row;
-		margin-bottom: $col-gutter / 2;
+	&:focus {
+		outline: 1px solid $color-primary;
 	}
+}
+
+textarea {
+	@include box-sizing(border-box);
+	padding: $form-field-height / 4;
+	border: 1px solid $color-primary;
+
+	&:focus {
+		outline: 1px solid $color-primary;
+	}
+}
+
+// Drop-downs.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+select {
+	@include box-sizing(border-box);
+	padding: 0 $form-field-height / 4;
+	height: $form-field-height;
+	border: 1px solid $color-primary;
+
+	&:focus {
+		outline: 1px solid $color-primary;
+	}
+}
+
+// Validations.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+.error-state {
+	color: $color-error;
+
+	input:not([type=radio]):not([type=checkbox]):not([type=submit]),
+	textarea,
+	select {
+		border-color: $color-error;
+		color: $color-text;
+
+		&:focus {
+			outline: 1px solid $color-error;
+		}
+	}
+}
+
+.error-msg {
+	display: block;
+	clear: left;
+	color: $color-error;
+
+	&:before {
+		content: '\f071';
+		margin-right: .25em;
+		font-family: 'FontAwesome';
+	}
+}
+
+// Field groupings.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+.form-field {
+	@include rem(margin-bottom, $col-gutter / 2);
 
 	label {
 		display: block;
-		font-weight: $bold;
+	}
+
+	textarea {
+		display: block;
+	}
+
+	.error-msg {
+		@include rem(margin-top, $col-gutter / 3);
+	}
+}
+
+.inline-field {
+	$label-width: 12em;
+	$field-width: 20em;
+
+	@include row();
+	@include rem(margin-bottom, $col-gutter / 2);
+
+	label {
+		display: block;
 
 		@media (min-width: $canvas-medium) {
 			float: left;
 			margin-right: 1em;
-			width: $basic-label-width;
+			width: $label-width;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			line-height: $form-field-height;
 		}
 	}
 
-	input:not([type=radio]):not([type=checkbox]),
-	textarea,
+	input,
 	select {
-		width: $basic-field-width;
-	}
-
-	input:not([type=radio]):not([type=checkbox]) {
-		border-width: 0 0 1px;
-		border-color: $color-text;
-		background-color: transparent;
-	}
-
-	input:not([type=radio]):not([type=checkbox]):focus {
-		border-color: $color-primary;
-		outline: none;
-	}
-
-	textarea,
-	select {
-		border-color: $color-text;
-	}
-
-	textarea:focus,
-	select:focus {
-		border-color: $color-primary;
-		outline: none;
-	}
-
-	.option-field {
-		label {
-			display: inline;
-			float: none;
-			margin: 0;
-			width: auto;
-		}
-	}
-
-	.error-state {
-		color: $color-error;
-
-		input:not([type=radio]):not([type=checkbox]),
-		textarea,
-		select {
-			border-color: $color-error;
-			color: $color-text;
-		}
-
-		.error-msg {
-			display: block;
-
-			@media (min-width: $canvas-medium) {
-				float: left;
-				width: $basic-label-width + $basic-field-width + 1em;
-				text-align: right;
-			}
-		}
+		width: $field-width;
 	}
 
 	.error-msg {
-		color: $color-error;
+		@include rem(margin-top, $col-gutter / 3);
 
-		&:before {
-			content: '\f071';
-			margin-right: .25em;
-			font-family: 'FontAwesome';
+		@media (min-width: $canvas-medium) {
+			margin-left: $label-width + 1em;
 		}
+	}
+}
+
+.option-field {
+	label {
+		display: inline;
+		float: none;
+		margin: 0;
+		width: auto;
 	}
 }
 
@@ -113,19 +163,58 @@ $basic-field-width: 20em;
 button,
 .button {
 	@include inline-block();
+	position: relative;
+	z-index: 1;
 	padding: .5em 1em;
-	border: 0;
+	border: 1px solid $color-primary;
 	text-decoration: none;
-	color: $color-bg;
-	background: $color-tertiary;
+	color: $color-primary;
+	background: none;
 
 	&.primary {
-		background: $color-primary;
+		padding: 1em;
 	}
 
 	&.disabled,
 	&[disabled] {
+		border-color: darken($color-bg, 20%);
 		cursor: not-allowed;
-		background: lighten(desaturate($color-tertiary, 50%), 10%);
+		color: darken($color-bg, 30%);
+		background: darken($color-bg, 5%);
+
+		&:hover {
+			color: darken($color-bg, 30%);
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+
+	&:hover {
+		color: $color-bg;
+	}
+
+	&:before {
+		@include scale3d(0, 1, 1);
+		@include opacity(0);
+		@include transition(transform .3s, opacity .3s);
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: darken($color-primary, 10%);
+	}
+
+	&:hover:before {
+		@include translate3d(0, 0, 0);
+		@include opacity(1);
+	}
+
+	&:focus {
+		outline: 1px solid $color-primary;
 	}
 }

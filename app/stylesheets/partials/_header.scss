@@ -10,7 +10,7 @@
 	text-align: center;
 	background-color: darken($color-bg, 5%);
 
-	:before {
+	.content-wrapper:before {
 		@include background(linear-gradient(to right, $color-primary 33.333%, $color-secondary 33.333%, $color-secondary 66.667%, $color-tertiary 66.667%));
 		content: '';
 		position: absolute;

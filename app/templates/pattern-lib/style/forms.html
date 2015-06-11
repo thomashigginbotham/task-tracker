@@ -10,26 +10,15 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
-	&lt;div class=&quot;form-field&quot;&gt;
-		&lt;label for=&quot;single-line-textbox&quot;&gt;Text box label&lt;/label&gt;
-		&lt;input type=&quot;text&quot; id=&quot;single-line-textbox&quot; placeholder=&quot;Placeholder text&quot; /&gt;
-	&lt;/div&gt;
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;inline-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;single-line-textbox&quot;&gt;Text box label&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;single-line-textbox&quot; placeholder=&quot;Placeholder text&quot; /&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;div class=&quot;inline-field error-state&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;single-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;text&quot; id=&quot;single-line-textbox-error&quot; placeholder=&quot;Placeholder text&quot; /&gt;&NewLine;&Tab;&Tab;&lt;span class=&quot;error-msg&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
 
-	&lt;div class=&quot;form-field error-state&quot;&gt;
-		&lt;label for=&quot;single-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;
-		&lt;input type=&quot;text&quot; id=&quot;single-line-textbox-error&quot; placeholder=&quot;Placeholder text&quot; /&gt;
-		&lt;span class=&quot;error-msg&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-
-		<form action="#" method="POST" class="basic-form">
-			<div class="form-field">
+		<form action="#" method="post">
+			<div class="inline-field">
 				<label for="single-line-textbox">Text box label</label>
 				<input type="text" id="single-line-textbox" placeholder="Placeholder text" />
 			</div>
 
-			<div class="form-field error-state">
+			<div class="inline-field error-state">
 				<label for="single-line-textbox-error">Text box in error state</label>
 				<input type="text" id="single-line-textbox-error" placeholder="Placeholder text" />
 				<span class="error-msg">Something’s not right</span>
@@ -43,20 +32,9 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
-	&lt;div class=&quot;form-field&quot;&gt;
-		&lt;label for=&quot;multi-line-textbox&quot;&gt;Text box label&lt;/label&gt;
-		&lt;textarea id=&quot;multi-line-textbox&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;
-	&lt;/div&gt;
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;multi-line-textbox&quot;&gt;Text box label&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;textarea id=&quot;multi-line-textbox&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;div class=&quot;form-field error-state&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;multi-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;textarea id=&quot;multi-line-textbox-error&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;&NewLine;&Tab;&Tab;&lt;span class=&quot;error-msg&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
 
-	&lt;div class=&quot;form-field error-state&quot;&gt;
-		&lt;label for=&quot;multi-line-textbox-error&quot;&gt;Text box in error state&lt;/label&gt;
-		&lt;textarea id=&quot;multi-line-textbox-error&quot; cols=&quot;50&quot; rows=&quot;5&quot; placeholder=&quot;Placeholder text&quot;&gt;&lt;/textarea&gt;
-		&lt;span class=&quot;error-msg&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-
-		<form action="#" method="POST" class="basic-form">
+		<form action="#" method="post">
 			<div class="form-field">
 				<label for="multi-line-textbox">Text box label</label>
 				<textarea id="multi-line-textbox" cols="50" rows="5" placeholder="Placeholder text"></textarea>
@@ -78,29 +56,10 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
-	&lt;div class=&quot;form-field&quot;&gt;
-		&lt;label for=&quot;dropdown&quot;&gt;Drop-down label&lt;/label&gt;
-		&lt;select id=&quot;dropdown&quot;&gt;
-			&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
-			&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
-			&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
-		&lt;/select&gt;
-	&lt;/div&gt;
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;inline-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;dropdown&quot;&gt;Drop-down label&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;select id=&quot;dropdown&quot;&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;&NewLine;&Tab;&Tab;&lt;/select&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;div class=&quot;inline-field error-state&quot;&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;dropdown-error&quot;&gt;Drop-down in error state&lt;/label&gt;&NewLine;&Tab;&Tab;&lt;select id=&quot;dropdown-error&quot;&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;&NewLine;&Tab;&Tab;&Tab;&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;&NewLine;&Tab;&Tab;&lt;/select&gt;&NewLine;&Tab;&Tab;&lt;span class=&quot;error-msg&quot;&gt;Something&CloseCurlyQuote;s not right&lt;/span&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
 
-	&lt;div class=&quot;form-field error-state&quot;&gt;
-		&lt;label for=&quot;dropdown-error&quot;&gt;Drop-down in error state&lt;/label&gt;
-		&lt;select id=&quot;dropdown-error&quot;&gt;
-			&lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
-			&lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
-			&lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
-		&lt;/select&gt;
-		&lt;span class=&quot;error-msg&quot;&gt;Something&rsquo;s not right&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-
-		<form action="#" method="POST" class="basic-form">
-			<div class="form-field">
+		<form action="#" method="post">
+			<div class="inline-field">
 				<label for="dropdown">Drop-down label</label>
 				<select id="dropdown">
 					<option value="">Option 1</option>
@@ -109,7 +68,7 @@
 				</select>
 			</div>
 
-			<div class="form-field error-state">
+			<div class="inline-field error-state">
 				<label for="dropdown-error">Drop-down in error state</label>
 				<select id="dropdown-error">
 					<option value="">Option 1</option>
@@ -128,24 +87,9 @@
 				<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 			</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
-	&lt;div class=&quot;form-field option-field&quot;&gt;
-		&lt;input type=&quot;checkbox&quot; id=&quot;check-1&quot; checked=&quot;checked&quot; /&gt;
-		&lt;label for=&quot;check-1&quot;&gt;Option 1&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;form-field option-field&quot;&gt;
-		&lt;input type=&quot;checkbox&quot; id=&quot;check-2&quot; /&gt;
-		&lt;label for=&quot;check-2&quot;&gt;Option 2&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;form-field option-field&quot;&gt;
-		&lt;input type=&quot;checkbox&quot; id=&quot;check-3&quot; /&gt;
-		&lt;label for=&quot;check-3&quot;&gt;Option 3&lt;/label&gt;
-	&lt;/div&gt;
+			<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;check-1&quot; checked=&quot;checked&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;check-1&quot;&gt;Option 1&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;check-2&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;check-2&quot;&gt;Option 2&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;checkbox&quot; id=&quot;check-3&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;check-3&quot;&gt;Option 3&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;&NewLine;&lt;/form&gt;</code></pre>
 
-	&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;
-&lt;/form&gt;</code></pre>
-
-			<form action="#" method="POST" class="basic-form">
+			<form action="#" method="post">
 				<div class="form-field option-field">
 					<input type="checkbox" id="check-1" checked="checked" />
 					<label for="check-1">Option 1</label>
@@ -169,24 +113,9 @@
 				<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 			</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
-	&lt;div class=&quot;form-field option-field&quot;&gt;
-		&lt;input type=&quot;radio&quot; id=&quot;radio-1&quot; name=&quot;radio&quot; checked=&quot;checked&quot; /&gt;
-		&lt;label for=&quot;radio-1&quot;&gt;Option 1&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;form-field option-field&quot;&gt;
-		&lt;input type=&quot;radio&quot; id=&quot;radio-2&quot; name=&quot;radio&quot; /&gt;
-		&lt;label for=&quot;radio-2&quot;&gt;Option 2&lt;/label&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;form-field option-field&quot;&gt;
-		&lt;input type=&quot;radio&quot; id=&quot;radio-3&quot; name=&quot;radio&quot; /&gt;
-		&lt;label for=&quot;radio-3&quot;&gt;Option 3&lt;/label&gt;
-	&lt;/div&gt;
+			<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;radio&quot; id=&quot;radio-1&quot; name=&quot;radio&quot; checked=&quot;checked&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;radio-1&quot;&gt;Option 1&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;radio&quot; id=&quot;radio-2&quot; name=&quot;radio&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;radio-2&quot;&gt;Option 2&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&Tab;&lt;div class=&quot;form-field option-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;input type=&quot;radio&quot; id=&quot;radio-3&quot; name=&quot;radio&quot; /&gt;&NewLine;&Tab;&Tab;&lt;label for=&quot;radio-3&quot;&gt;Option 3&lt;/label&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&NewLine;&Tab;&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;&NewLine;&lt;/form&gt;</code></pre>
 
-	&lt;p class=&quot;error-msg&quot;&gt;General error message.&lt;/p&gt;
-&lt;/form&gt;</code></pre>
-
-			<form action="#" method="POST" class="basic-form">
+			<form action="#" method="post">
 				<div class="form-field option-field">
 					<input type="radio" id="radio-1" name="radio" checked="checked" />
 					<label for="radio-1">Option 1</label>
@@ -213,15 +142,9 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;POST&quot; class=&quot;basic-form&quot;&gt;
-	&lt;div class=&quot;form-field&quot;&gt;
-		&lt;button class=&quot;primary&quot;&gt;Primary Button&lt;/button&gt;
-		&lt;button&gt;Default Button&lt;/button&gt;
-		&lt;button disabled=&quot;disabled&quot;&gt;Disabled Button&lt;/button&gt;
-	&lt;/div&gt;
-&lt;/form&gt;</code></pre>
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;&NewLine;&Tab;&lt;div class=&quot;form-field&quot;&gt;&NewLine;&Tab;&Tab;&lt;button class=&quot;primary&quot;&gt;Primary Button&lt;/button&gt;&NewLine;&Tab;&Tab;&lt;button&gt;Default Button&lt;/button&gt;&NewLine;&Tab;&Tab;&lt;button disabled=&quot;disabled&quot;&gt;Disabled Button&lt;/button&gt;&NewLine;&Tab;&lt;/div&gt;&NewLine;&lt;/form&gt;</code></pre>
 
-		<form action="#" method="POST" class="basic-form">
+		<form action="#" method="post">
 			<div class="form-field">
 				<button class="primary">Primary Button</button>
 				<button>Default Button</button>
@@ -236,9 +159,7 @@
 			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
 		</header>
 
-<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;a href=&quot;#&quot; class=&quot;button primary&quot;&gt;Primary Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;
-&lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Disabled Button&lt;/a&gt;</code></pre>
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;a href=&quot;#&quot; class=&quot;button primary&quot;&gt;Primary Button&lt;/a&gt;&NewLine;&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Default Button&lt;/a&gt;&NewLine;&lt;a href=&quot;#&quot; class=&quot;button disabled&quot;&gt;Disabled Button&lt;/a&gt;</code></pre>
 
 		<div>
 			<a href="#" class="button primary">Primary Button</a>
