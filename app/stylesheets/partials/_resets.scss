@@ -48,7 +48,8 @@ tt {
 	font-size: .9em;
 }
 
-// No borders on <img>
+// Image resets
 img {
+	max-width: 100%;
 	border-width: 0;
 }

@@ -26,18 +26,18 @@
 		border-bottom-width: 0;
 	}
 
-	.basic-form .form-field {
+	.form-field {
 		white-space: nowrap;
-	}
 
-	.basic-form .form-field label {
-		@include hide-text(right);
-		width: 0;
-		font-size: 0;
-	}
+		label {
+			@include hide-text(right);
+			width: 0;
+			font-size: 0;
+		}
 
-	.basic-form .form-field input[type=search] {
-		width: 150px;
+		input[type=search] {
+			width: 150px;
+		}
 	}
 
 	// Responsive updates
@@ -47,7 +47,7 @@
 		text-align: left;
 
 		h2 {
-			@include column(2);
+			@include column(4);
 			margin-bottom: 0;
 
 			img {
@@ -56,14 +56,14 @@
 		}
 
 		.basic-form {
-			@include column(10);
+			@include column(8);
 		}
 
 		// Search box
-		.basic-form .form-field {
+		.form-field {
 			text-align: right;
 
-			[type=search] {
+			input[type=search] {
 				width: 225px;
 			}
 		}
