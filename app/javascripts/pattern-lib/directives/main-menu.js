@@ -76,18 +76,27 @@ define(['directives/module', 'jquery'], function(directives, $) {
 		};
 
 		var link = function($scope, element) {
-			$scope.$on('$routeChangeSuccess', function() {
+			var updateActiveClass = function() {
 				// Add current menu item's class
 				var path = $location.path();
 				var curSection = path.match(/[a-z0-9-]+/);
 				var activeClassMatch = element[0].className.match(/[^\s]+\-active/);
 
+				// Remove existing [section]-active class
 				if (activeClassMatch !== null) {
 					element.removeClass(activeClassMatch[0]);
 				}
 
+				// Add the new [section]-active class
 				element.addClass(curSection + '-active');
-			});
+			};
+
+			// Update class on route changes
+			$scope.$on('$routeChangeSuccess', updateActiveClass);
+
+			// Update now too since $routeChangeSuccess sometimes skips on the
+			// initial run
+			updateActiveClass();
 		};
 
 		return {
