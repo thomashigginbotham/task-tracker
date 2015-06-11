@@ -36,10 +36,10 @@ $canvas-tiny: 480px;
 // $color-bg        - Hexadecimal value of the main background.
 //
 // Styleguide 3.3.
-$color-primary: #3f9eff;       // Dodger Blue
-$color-primary-dark: #0480ff;  // Azure Radiance
-$color-secondary: #ff2c1d;     // Red Orange
-$color-tertiary: #b8cc18;      // La Rioja
+$color-primary: #6390c7;
+$color-primary-dark: darken($color-primary, 15%);
+$color-secondary: #e87c24;
+$color-tertiary: #6f9183;
 
 $color-text: #222;
 $color-text-light: #777;
