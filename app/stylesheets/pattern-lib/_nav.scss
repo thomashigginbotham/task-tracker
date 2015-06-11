@@ -199,6 +199,10 @@
 	// Compatibility untested.
 	//
 	// No styleguide reference.
+	.xpl-tools-menu {
+		display: none;
+	}
+
 	@media (min-width: $ui-small-canvas) {
 		.xpl-content-wrapper {
 			@include row();
@@ -210,6 +214,7 @@
 
 		.xpl-tools-menu {
 			@include column(1, 4);
+			display: block;
 			text-align: right;
 
 			a {
