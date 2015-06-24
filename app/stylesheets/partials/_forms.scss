@@ -78,15 +78,39 @@ select {
 	}
 }
 
+.success-msg,
+.warning-msg,
 .error-msg {
 	display: block;
 	clear: left;
+
+	&:before {
+		margin-right: .25em;
+		font-family: 'FontAwesome';
+	}
+}
+
+.success-msg {
+	color: $color-success;
+
+	&:before {
+		content: '\f058';
+	}
+}
+
+.warning-msg {
+	color: $color-warning;
+
+	&:before {
+		content: '\f05a';
+	}
+}
+
+.error-msg {
 	color: $color-error;
 
 	&:before {
 		content: '\f071';
-		margin-right: .25em;
-		font-family: 'FontAwesome';
 	}
 }
 
@@ -216,5 +240,36 @@ button,
 
 	&:focus {
 		outline: 1px solid $color-primary;
+	}
+}
+
+// Messages
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+.msg-box {
+	&.success-msg,
+	&.warning-msg,
+	&.error-msg {
+		padding: .75em 1em;
+		border-width: 1px;
+		border-style: solid;
+		color: $color-text;
+	}
+
+	&.success-msg {
+		border-color: $color-success;
+		background-color: scale-lightness($color-success, 95%);
+	}
+
+	&.warning-msg {
+		border-color: $color-warning;
+		background-color: scale-lightness($color-warning, 95%);
+	}
+
+	&.error-msg {
+		border-color: $color-error;
+		background-color: scale-lightness($color-error, 95%);
 	}
 }

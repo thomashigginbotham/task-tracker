@@ -167,4 +167,39 @@
 			<a href="#" class="button disabled">Disabled Button</a>
 		</div>
 	</section>
+
+	<h2>Messages</h2>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Success Message</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;msg-box success-msg&quot;&gt;Things worked out as expected. Congratulations!&lt;/div&gt;</code></pre>
+
+		<div class="msg-box success-msg">Things worked out as expected. Congratulations!</div>
+	</section>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Warning Message</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;msg-box warning-msg&quot;&gt;Be on the look-out. I&amp;rsquo;m not sure if everything is all right.&lt;/div&gt;</code></pre>
+
+		<div class="msg-box warning-msg">Be on the look-out. I&rsquo;m not sure if everything is all right.</div>
+	</section>
+
+	<section class="xpl-content-group" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<header>
+			<h1>Error Message</h1>
+			<span class="xpl-subheading"><a href data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></span>
+		</header>
+
+		<pre data-prettyprint data-ng-show="codeIsVisible"><code>&lt;div class=&quot;msg-box error-msg&quot;&gt;Something went wrong. Maybe try it again?&lt;/div&gt;</code></pre>
+
+		<div class="msg-box error-msg">Something went wrong. Maybe try it again?</div>
+	</section>
 </div>
