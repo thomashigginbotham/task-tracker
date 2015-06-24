@@ -11,9 +11,9 @@ The Experis Pattern Library (XPL) is a living style guide and a component-driven
 * [Bower](http://bower.io/): Enter `npm install -g bower`.
 
 ## Quick Installation
-5. Open a command prompt and change to the directory containing this file.
-6. Run `npm install` to retrieve necessary development dependencies.
-7. Run `bower install` to retrieve project dependencies.
+1. Open a command prompt and change to the directory containing this file.
+2. Run `npm install` to retrieve necessary development dependencies.
+3. Run `bower install` to retrieve project dependencies.
 
 ## Getting Started
 
