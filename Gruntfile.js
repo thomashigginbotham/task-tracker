@@ -221,7 +221,16 @@ module.exports = function(grunt) {
 	});
 
 	// Tasks
+	// The "default" task will create optimized CSS and JS, along with HTML, ready
+	// for distribution in a "dist" folder.
 	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist']);
+
+	// The "serve" task will start a local web server, and open the pattern library
+	// in your default browser. You can make changes to your files and the browser
+	// will refresh showing the latest changes.
 	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'express:dev', 'watch']);
+
+	// The "dist-serve" task will start a local web server that uses the final,
+	// optimized files.
 	grunt.registerTask('dist-serve', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
 };
