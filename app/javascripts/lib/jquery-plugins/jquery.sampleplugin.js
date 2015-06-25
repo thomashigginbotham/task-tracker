@@ -1,18 +1,22 @@
-/// <summary>
-/// A sample jQuery plugin
-/// </summary>
+/**
+ * A sample jQuery plugin. It appends text to an element and provides an option
+ * for setting the font color.
+ */
 define(['jquery'], function ($) {
 	'use strict';
 
 	$.fn.samplePlugin = function (options) {
 		var settings = $.extend({
-			color: '#f00'
+			color: '#f00',
+			text: 'Hello!'
 		}, options);
 
 		if(this.find('.js-sample').length === 0) {
-			this.append($('<p class="js-sample" style="color:' + settings.color + '">This text was added by a sample jQuery plugin. Plugins are placed in the <strong>app/javascripts/lib/jquery-plugins</strong> folder and are called from <strong>app/javascripts/app.js</strong>.</p>'));
+			this.append($('<p class="js-sample" style="color:' + settings.color + '">' + settings.text + '</p>'));
 		}
 
 		return this;
 	};
+
+	return $.fn.samplePlugin;
 });

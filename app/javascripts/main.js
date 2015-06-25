@@ -8,13 +8,20 @@
 requirejs.config({
 	baseUrl: '/javascripts/',
 	paths: {
-		samplePlugin: 'lib/jquery-plugins/jquery.sampleplugin',
+		'sample-plugin': 'lib/jquery-plugins/jquery.sampleplugin',
+		'jquery-noconflict': 'lib/jquery-noconflict',
+		footer: 'lib/components/footer',
 		jquery: '../bower_components/jquery/dist/jquery',
 		almond: '../bower_components/almond/almond'
 	},
-	packages: [
-
-	]
+	map: {
+		'*': {
+			'jquery': 'jquery-noconflict'
+		},
+		'jquery-noconflict': {
+			'jquery': 'jquery'
+		}
+	}
 });
 
 /* -- Initialize App (app.js) -- */

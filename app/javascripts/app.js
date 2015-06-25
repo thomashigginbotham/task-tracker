@@ -6,21 +6,9 @@ define(['jquery'], function($) {
 	 * Initialization
 	 */
 	var init = function() {
-		runSamplePlugin();
-	};
-
-	/*
-	 * Add text to the footer using Sample Plugin.
-	 * This is just an example to demonstrate the usage of custom jQuery plugins
-	 * as a pattern for development.
-	 */
-	var runSamplePlugin = function() {
-		$(function() {
-			require(['samplePlugin'], function() {
-				$('.site-footer p').first().samplePlugin({
-					color: '#777'
-				});
-			});
+		// Site Footer scripts
+		require(['footer'], function(footer) {
+			footer.addText('This text was added with JavaScript. See <strong>/app/javascripts/apps.js</strong> to make changes.');
 		});
 	};
 
