@@ -101,7 +101,7 @@ module.exports = function(grunt) {
 			target: {
 				rjsConfig: 'app/javascripts/main.js',
 				options: {
-					exclude: ['html5shiv', 'selectivizr', 'requirejs']
+					exclude: ['html5shiv', 'selectivizr', 'requirejs', 'angular', 'angular-route', 'google-code-prettify']
 				}
 			}
 		},
@@ -115,6 +115,7 @@ module.exports = function(grunt) {
 					include: ['../bower_components/almond/almond.js'],
 					findNestedDependencies: true,
 					optimize: 'uglify2',
+					insertRequire: ['app'],
 					wrap: true,
 					generateSourceMaps: true,
 					preserveLicenseComments: false,

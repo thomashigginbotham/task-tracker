@@ -1,6 +1,6 @@
 /* jslint browser: true */
 
-require(['jquery'], function($) {
+define(['jquery'], function($) {
 	'use strict';
 
 	/*
