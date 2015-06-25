@@ -8,7 +8,7 @@ define(['jquery'], function($) {
 	var init = function() {
 		// Site Footer scripts
 		require(['footer'], function(footer) {
-			footer.addText('This text was added with JavaScript. See <strong>/app/javascripts/apps.js</strong> to make changes.');
+			footer.addText('This text was added with JavaScript. See <strong>/app/javascripts/app.js</strong> to make changes.');
 		});
 	};
 
