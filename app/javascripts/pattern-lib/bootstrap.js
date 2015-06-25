@@ -13,18 +13,6 @@ define([
 	'use strict';
 
 	$(function() {
-		// Initialize
-		app.run(['$rootScope', function($rootScope) {
-			$rootScope.$on('$routeChangeSuccess', function() {
-				// Notify other scripts of route change
-				try {
-					window.dispatchEvent(new CustomEvent('xplRouteChanged'));
-				} catch (ex) {
-
-				}
-			});
-		}]);
-
 		// Fire event notification when all $http requests are done
 		app.config(['$httpProvider', function($httpProvider) {
 			$httpProvider.interceptors.push('componentHttpInterceptor');

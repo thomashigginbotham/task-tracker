@@ -1,5 +1,4 @@
 /* jslint browser: true */
-
 define(['jquery'], function($) {
 	'use strict';
 
