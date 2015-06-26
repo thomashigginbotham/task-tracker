@@ -17,9 +17,148 @@
 
 			<main>
 				<article class="content-wrapper">
-					<h1>Page Heading</h1>
-					<p>This is a simple starter page. Edit this HTML markup in <strong>app/index.html</strong> to suit your needs.</p>
-					<p>Other page types can be added by duplicating this one. To add them to the navigation at the top of the pattern library, edit the file at <strong>javascripts/pattern-lib/directives/main-menu.js</strong>.</p>
+					<h1>A Starter Page to Get You Going</h1>
+					<p>Edit this HTML markup to suit your needs. You can create more pages by duplicating this one. Add them to the top of the pattern library menu by editing the file at <strong>javascripts/pattern-lib/directives/main-menu.js</strong>.</p>
+
+					<h2>Built for Responsive Design</h2>
+					<p>Unlike other popular frameworks, XPL was designed from the ground up with responsive design in mind. It wasn’t tacked on and it doesn’t require additional or alternate CSS to work.</p>
+
+					<h2>It’s Semantic</h2>
+					<p>No need to learn a lot of cryptic class names like <code>col-xs-7</code> or <code>medium-3 columns end</code>. Write your HTML with semantic class names, such as <code>site-header</code> or <code>sidebar</code>, and use our short list of Sass mixins to control the layout.</p>
+
+					<h2>Layout Examples</h2>
+
+					<p>To see the source code for these layout examples, look at <strong>app/index.html</strong> and <strong>app/stylesheets/partials/_demo.scss</strong>.</p>
+
+					<h3>The <code>row()</code> and <code>column()</code> Mixins</h3>
+
+					<div class="demo-row">
+						<div class="demo-column-small">3 of 12</div>
+						<div class="demo-column-large">9 of 12</div>
+					</div>
+
+					<div class="demo-row">
+						<div class="demo-column-medium">6 of 12</div>
+						<div class="demo-column-medium">6 of 12</div>
+					</div>
+
+					<div class="demo-row">
+						<div class="demo-column-breakout">2 of 10</div>
+						<div class="demo-column-breakout">2 of 10</div>
+						<div class="demo-column-breakout">2 of 10</div>
+						<div class="demo-column-breakout">2 of 10</div>
+						<div class="demo-column-breakout">2 of 10</div>
+					</div>
+
+					<div class="demo-row">
+						<div class="demo-column-medium">6 of 12</div>
+						<div class="demo-column-small">3 of 12</div>
+						<div class="demo-column-small">3 of 12</div>
+					</div>
+
+					<p>XPL has a 12-column grid, but you can change that to any other number by editing the <code>$col-count</code> variable in <strong>app/stylesheets/partials/_base.scss</strong>.</p>
+					<p>You can even change the grid size on the fly for specific sections of a page. Notice how the third row in the demo above has 5 equal-width boxes in the middle of a 12-column grid. Yep, break outside the grid any time you want.</p>
+
+					<h3>The <code>column-with-divider()</code> Mixin</h3>
+
+					<div class="demo-row demo-dividers">
+						<div class="demo-column-with-divider"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, natus.</p></div>
+						<div class="demo-column-with-divider"><p>Voluptatum culpa ut debitis minima dolorum harum alias id libero.</p></div>
+						<div class="demo-column-with-divider"><p>Praesentium in, provident quibusdam, corrupti enim eligendi quae natus officiis?</p></div>
+					</div>
+
+					<p>Need a simple border between your columns? No problem. You can even vertically center the column content with the <code>vertical-align()</code> mixin.</p>
+
+					<h3>The <code>center-column()</code>, <code>push()</code>, and <code>pull()</code> Mixins</h3>
+
+					<div class="demo-row">
+						<div class="demo-column-center">I am centered.</div>
+					</div>
+
+					<div class="demo-row">
+						<div class="demo-column-push">I was pushed right.</div>
+						<div class="demo-column-pull">I was pulled left.</div>
+					</div>
+
+					<p>Horizontally center a single column or offset multiple columns any way you like.</p>
+
+					<h3>The <code>grid()</code> Mixin</h3>
+
+					<ul class="demo-grid">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+						<li>Item 5</li>
+						<li>Item 6</li>
+						<li>Item 7</li>
+						<li>Item 8</li>
+					</ul>
+
+					<p>You can also create simple boxes that automatically wrap to the next row.</p>
+					<p>Call the <code>grid()</code> mixin with different media query values to change the number of columns to best fit the user’s viewport. The demo above uses 2 columns on small screens and 4 columns on larger screens.</p>
+
+					<h3>The <code>equal-width-columns()</code> Mixin</h3>
+
+					<ul class="demo-equal-width">
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+						<li>Item 4</li>
+					</ul>
+
+					<p>Have you ever had a row with an unknown number of columns? Use the <code>equal-width-columns()</code> mixin, and the number of columns becomes irrelevant. The column widths will adjust to fill the container.</p>
+					<p>Try it out by adding or removing items in the demo above.</p>
+
+					<h2>Fluid or Fixed-width Gutters</h2>
+
+					<div class="demo-row">
+						<div class="demo-fluid-gutter">
+							<p>The gutter between these two columns is fluid (10% of the total width). Resize your browser to see its width adjust relative to the browser.</p>
+						</div>
+
+						<div class="demo-fluid-gutter">
+							<p>The other demos on this page use fixed-width gutters (1.4 rem). They stay the same size regardless of the browser width.</p>
+						</div>
+					</div>
+
+					<p>Set your gutters to be a percentage or a fixed-width value and even add backgrounds to the columns. Try doing that in Bootstrap or Foundation without pulling your hair out.</p>
+
+					<h2>Test Your Grids with an Overlay</h2>
+
+					<div class="demo-overlay">
+						<div class="demo-row">
+							<div class="demo-column-small-overlay">3 of 12</div>
+							<div class="demo-column-medium-overlay">6 of 12</div>
+							<div class="demo-column-small-overlay">3 of 12</div>
+						</div>
+
+						<div class="demo-row">
+							<div class="demo-column-small-overlay">3 of 12</div>
+							<div class="demo-column-small-overlay">3 of 12</div>
+							<div class="demo-column-small-overlay">3 of 12</div>
+							<div class="demo-column-small-overlay">3 of 12</div>
+						</div>
+
+						<div class="demo-row">
+							<div class="demo-column-tiny-overlay">2 of 12</div>
+							<div class="demo-column-tiny-overlay">2 of 12</div>
+							<div class="demo-column-tiny-overlay">2 of 12</div>
+							<div class="demo-column-tiny-overlay">2 of 12</div>
+							<div class="demo-column-tiny-overlay">2 of 12</div>
+							<div class="demo-column-tiny-overlay">2 of 12</div>
+						</div>
+					</div>
+
+					<p>Not sure if things are lining up just right? Use the <code>grid-overlay()</code> mixin to check it out or to show off your awesome alignment skills.</p>
+
+					<h2>Sprites for High DPI (Retina) Screens</h2>
+
+					<p>XPL Has mixins for generating high DPI sprite images and CSS automatically. If you’re already familiar with using Compass for sprites, you’ll be right at home.</p>
+					<p>Take a look at <strong>app/stylesheets/modules/_sprites-2x.scss</strong> for the available functions and mixins.</p>
+
+					<h2>Now Start Building!</h2>
+					<p>Now that you see what’s available, go ahead and delete the <strong>_demo.scss</strong> partial and the reference to it in <strong>main.scss</strong>. Then replace this HTML with your own.</p>
 				</article>
 			</main>
 

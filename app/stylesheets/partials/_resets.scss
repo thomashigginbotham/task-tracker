@@ -48,6 +48,15 @@ tt {
 	font-size: .9em;
 }
 
+// Code formatting
+code {
+	background-color: darken($color-bg, 10%);
+}
+
+pre code {
+	background-color: transparent;
+}
+
 // Image resets
 img {
 	max-width: 100%;

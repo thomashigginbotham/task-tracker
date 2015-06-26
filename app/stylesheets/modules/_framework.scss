@@ -88,11 +88,9 @@ $col-gutter: 1.4rem !default;
 @mixin column-width($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
 	$base-width-percentage: $col-span / $custom-col-count * 100;
 
-	// Old browsers must use fluid gutters
-	width: $base-width-percentage - ($col-gutter-fluid * (1 - $base-width-percentage / 100)) - .001%;
-
-	// New browsers can use fluid or fixed gutters
-	@if unit($custom-col-gutter) != '%' {
+	@if unit($custom-col-gutter) == '%' {
+		width: $base-width-percentage - ($custom-col-gutter * (1 - $base-width-percentage / 100)) - .001%;
+	} @else {
 		width: calc(#{$base-width-percentage * 1%} - #{$custom-col-gutter * (1 - $base-width-percentage / 100)} - .1px);
 	}
 }
@@ -131,8 +129,7 @@ $col-gutter: 1.4rem !default;
 
 	box-sizing: border-box;
 	float: left;
-	margin-right: $col-gutter-fluid;
-	margin-right: calc(#{$custom-col-gutter});
+	margin-right: $custom-col-gutter;
 
 	&:last-child {
 		float: right;
