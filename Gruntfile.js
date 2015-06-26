@@ -217,6 +217,12 @@ module.exports = function(grunt) {
 					recursive: true
 				}
 			}
+		},
+		karma: {
+			unit: {
+				configFile: 'karma.conf.js',
+				background: true
+			}
 		}
 	});
 
@@ -230,7 +236,40 @@ module.exports = function(grunt) {
 	// will refresh showing the latest changes.
 	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'express:dev', 'watch']);
 
-	// The "dist-serve" task will start a local web server that uses the final,
+	// The "serve-dist" task will start a local web server that uses the final,
 	// optimized files.
-	grunt.registerTask('dist-serve', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
+	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
+
+	// The "serve-test" task functions identically to the "serve" task, except that
+	// it will also run Karma/Jasmine unit tests.
+	grunt.registerTask('serve-test', function() {
+		var watchConfig = {
+			html: {
+				files: ['app/**/*.html'],
+				tasks: ['processhtml:dev'],
+				options: {
+					livereload: true
+				}
+			},
+			css: {
+				files: ['app/stylesheets/**/*.scss'],
+				tasks: ['compass:dev', 'autoprefixer'],
+				options: {
+					livereload: true
+				}
+			},
+			karma: {
+				files: ['app/javascripts/**/*.js', 'test/**/*.js'],
+				tasks: ['karma:unit:run'],
+				options: {
+					atBegin: true,
+					livereload: true
+				}
+			}
+		};
+
+		grunt.config('watch', watchConfig);
+
+		grunt.task.run(['karma:unit:start', 'clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'express:dev', 'watch']);
+	});
 };

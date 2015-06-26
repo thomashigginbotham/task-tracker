@@ -15,7 +15,13 @@
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-express": "~1.2.0",
+    "grunt-karma": "^0.8.3",
     "grunt-processhtml": "~0.3.3",
-    "matchdep": "~0.1.2"
+    "karma": "^0.12.21",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "matchdep": "~0.1.2",
+    "requirejs": "^2.1.14"
   }
 }

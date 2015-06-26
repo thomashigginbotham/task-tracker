@@ -11,7 +11,7 @@ define(['jquery'], function ($) {
 			text: 'Hello!'
 		}, options);
 
-		if(this.find('.js-sample').length === 0) {
+		if (this.find('.js-sample').length === 0) {
 			this.append($('<p class="js-sample" style="color:' + settings.color + '">' + settings.text + '</p>'));
 		}
 
