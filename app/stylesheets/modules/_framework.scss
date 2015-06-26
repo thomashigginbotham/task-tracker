@@ -196,9 +196,9 @@ $col-gutter: 1.4rem !default;
 @mixin push($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
 	$push-ratio: $col-span / $custom-col-count;
 	margin-left: $push-ratio * 100% + ($push-ratio * $col-gutter-fluid);
-	margin-left: calc(#{$push-ratio * 100%} + ($push-ratio * #{$custom-col-gutter}));
+	margin-left: calc(#{$push-ratio * 100%} + #{$push-ratio * $custom-col-gutter});
 	margin-right: ($push-ratio * 100% + ($push-ratio * $col-gutter-fluid)) * -1 + $col-gutter-fluid;
-	margin-right: calc((#{$push-ratio * 100%} + ($push-ratio * #{$custom-col-gutter})) * -1 + #{$custom-col-gutter});
+	margin-right: calc((#{$push-ratio * 100%} + #{$push-ratio * $custom-col-gutter}) * -1 + #{$custom-col-gutter});
 
 	&:last-child {
 		float: left;
