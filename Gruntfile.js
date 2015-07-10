@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 				options: {
 					port: 9090,
 					hostname: '0.0.0.0',
-					bases: ['.tmp', 'app'],
+					bases: ['.tmp', '.tmp/html', 'app'],
 					open: 'http://localhost:9090/pattern-lib.html',
 					livereload: true
 				}
@@ -148,7 +148,7 @@ module.exports = function(grunt) {
 				options: {
 					port: 9091,
 					hostname: '0.0.0.0',
-					bases: ['dist'],
+					bases: ['dist', 'dist/html'],
 					open: 'http://localhost:9091/pattern-lib.html'
 				}
 			}
@@ -179,9 +179,9 @@ module.exports = function(grunt) {
 			dev: {
 				files: [{
 					expand: true,
-					cwd: 'app',
+					cwd: 'app/html',
 					src: ['*.html'],
-					dest: '.tmp',
+					dest: '.tmp/html',
 					ext: '.html'
 				}, {
 					expand: true,
@@ -197,9 +197,9 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: 'app',
+					cwd: 'app/html',
 					src: ['*.html'],
-					dest: 'dist',
+					dest: 'dist/html',
 					ext: '.html'
 				}, {
 					expand: true,
