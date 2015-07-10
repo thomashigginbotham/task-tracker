@@ -43,11 +43,6 @@ module.exports = function(grunt) {
 						dest: 'dist/stylesheets/partials'
 					}, {
 						expand: true,
-						cwd: 'app/images',
-						src: ['**'],
-						dest: 'dist/images'
-					}, {
-						expand: true,
 						cwd: 'app/fonts',
 						src: ['**'],
 						dest: 'dist/fonts'
@@ -218,6 +213,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		imagemin: {
+			dynamic: {
+				options: {
+					optimizationLevel: 3
+				},
+				files: [{
+					expand: true,
+					cwd: 'app/images',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'dist/images'
+				}]
+			}
+		},
 		karma: {
 			unit: {
 				configFile: 'karma.conf.js',
@@ -229,7 +237,7 @@ module.exports = function(grunt) {
 	// Tasks
 	// The "default" task will create optimized CSS and JS, along with HTML, ready
 	// for distribution in a "dist" folder.
-	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist']);
+	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin']);
 
 	// The "serve" task will start a local web server, and open the pattern library
 	// in your default browser. You can make changes to your files and the browser
@@ -238,7 +246,7 @@ module.exports = function(grunt) {
 
 	// The "serve-dist" task will start a local web server that uses the final,
 	// optimized files.
-	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'express:dist', 'express-keepalive']);
+	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin', 'express:dist', 'express-keepalive']);
 
 	// The "serve-test" task functions identically to the "serve" task, except that
 	// it will also run Karma/Jasmine unit tests.
