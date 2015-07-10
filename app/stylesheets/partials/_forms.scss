@@ -186,18 +186,17 @@ select {
 // No styleguide reference.
 button,
 .button {
-	@include inline-block();
+	display: inline-block;
+	vertical-align: top;
 	position: relative;
 	z-index: 1;
-	padding: .5em 1em;
+	padding: 0 1em;
+	height: 2.75em;
+	line-height: 2.75em;
 	border: 1px solid $color-primary;
 	text-decoration: none;
 	color: $color-primary;
 	background: none;
-
-	&.primary {
-		padding: 1em;
-	}
 
 	&.disabled,
 	&[disabled] {
@@ -220,7 +219,7 @@ button,
 	}
 
 	&:before {
-		@include scale3d(0, 1, 1);
+		@include scale3d(0, 1, 0);
 		@include opacity(0);
 		@include transition(transform .3s, opacity .3s);
 		content: '';
