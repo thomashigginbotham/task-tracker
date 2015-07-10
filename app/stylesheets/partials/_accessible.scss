@@ -1,0 +1,27 @@
+// Styles to assist with accessibility.
+//
+// No styleguide reference.
+
+// Skip links are hidden until focus is received.
+//
+// Compatible with Chrome, Firefox, IE 8+.
+//
+// No styleguide reference.
+.skip-to-content {
+	@include rem(top, $col-gutter * -2.5);
+	@include rem(padding, $col-gutter / 2 $col-gutter);
+	@include transition(top 1s ease-out, background-color .5s linear);
+	position: absolute;
+	z-index: 900;
+	left: 0;
+	width: auto;
+	height: auto;
+	color: $color-bg;
+	background-color: $color-primary;
+
+	&:focus {
+		@include transition(top .1s ease-in, background-color .5s linear);
+		top: 0;
+		outline: none;
+	}
+}

@@ -12,3 +12,17 @@
 	position: relative;
 	top: 50%;
 }
+
+// Hide content visually but not from screen readers
+//
+// No styleguide reference.
+//
+// Compatible with Chrome, Firefox, Safari, Opera, IE 7+
+@mixin accessible-hide {
+	position: absolute;
+	top: auto;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
