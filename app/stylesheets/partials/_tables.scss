@@ -21,12 +21,12 @@
 
 	th:first-child,
 	td:first-child {
-		@include rem(padding, #{$col-gutter / 4} #{$col-gutter / 2} #{$col-gutter / 4} 0);
+		@include rem(padding, $col-gutter / 4 $col-gutter / 2 $col-gutter / 4 0);
 	}
 
 	th:last-child,
 	td:last-child {
-		@include rem(padding, #{$col-gutter / 4} 0 #{$col-gutter / 4} #{$col-gutter / 2});
+		@include rem(padding, $col-gutter / 4 0 $col-gutter / 4 $col-gutter / 2);
 	}
 
 	td {
