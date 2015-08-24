@@ -10,7 +10,7 @@ define(['factories/module'], function(factories) {
 
 		var isCustomPartial = function(uri) {
 			// Partials in the templates/pattern-lib folder are not user components
-			return uri.match(/^templates\/pattern\-lib\//i) === null;
+			return uri.match(/^html\/templates\/pattern\-lib\//i) === null;
 		};
 
 		return {

@@ -140,8 +140,7 @@ module.exports = function(grunt) {
 					port: 9090,
 					hostname: '0.0.0.0',
 					bases: ['.tmp', '.tmp/html', 'app'],
-					open: 'http://localhost:9090/pattern-lib.html',
-					livereload: true
+					open: 'http://localhost:9090/pattern-lib.html'
 				}
 			},
 			dist: {
@@ -155,7 +154,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			html: {
-				files: ['app/**/*.html'],
+				files: ['app/html/**/*.html'],
 				tasks: ['processhtml:dev'],
 				options: {
 					livereload: true
@@ -180,14 +179,8 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'app/html',
-					src: ['*.html'],
+					src: ['**/*.html'],
 					dest: '.tmp/html',
-					ext: '.html'
-				}, {
-					expand: true,
-					cwd: 'app/templates',
-					src: ['*.html'],
-					dest: '.tmp/templates',
 					ext: '.html'
 				}],
 				options: {
@@ -198,14 +191,8 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: 'app/html',
-					src: ['*.html'],
-					dest: 'dist/html',
-					ext: '.html'
-				}, {
-					expand: true,
-					cwd: 'app/templates',
 					src: ['**/*.html'],
-					dest: 'dist/templates',
+					dest: 'dist/html',
 					ext: '.html'
 				}],
 				options: {
@@ -253,7 +240,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('serve-test', function() {
 		var watchConfig = {
 			html: {
-				files: ['app/**/*.html'],
+				files: ['app/html/**/*.html'],
 				tasks: ['processhtml:dev'],
 				options: {
 					livereload: true
