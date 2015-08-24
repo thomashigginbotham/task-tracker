@@ -140,7 +140,8 @@ module.exports = function(grunt) {
 					port: 9090,
 					hostname: '0.0.0.0',
 					bases: ['.tmp', '.tmp/html', 'app'],
-					open: 'http://localhost:9090/pattern-lib.html'
+					open: 'http://localhost:9090/pattern-lib.html',
+					livereload: true
 				}
 			},
 			dist: {
@@ -155,23 +156,14 @@ module.exports = function(grunt) {
 		watch: {
 			html: {
 				files: ['app/html/**/*.html'],
-				tasks: ['processhtml:dev'],
-				options: {
-					livereload: true
-				}
+				tasks: ['processhtml:dev']
 			},
 			css: {
 				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer'],
-				options: {
-					livereload: true
-				}
+				tasks: ['compass:dev', 'autoprefixer']
 			},
 			js: {
-				files: ['app/javascripts/**/*.js'],
-				options: {
-					livereload: true
-				}
+				files: ['app/javascripts/**/*.js']
 			}
 		},
 		processhtml: {
@@ -241,24 +233,17 @@ module.exports = function(grunt) {
 		var watchConfig = {
 			html: {
 				files: ['app/html/**/*.html'],
-				tasks: ['processhtml:dev'],
-				options: {
-					livereload: true
-				}
+				tasks: ['processhtml:dev']
 			},
 			css: {
 				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer'],
-				options: {
-					livereload: true
-				}
+				tasks: ['compass:dev', 'autoprefixer']
 			},
 			karma: {
 				files: ['app/javascripts/**/*.js', 'test/**/*.js'],
 				tasks: ['karma:unit:run'],
 				options: {
-					atBegin: true,
-					livereload: true
+					atBegin: true
 				}
 			}
 		};
