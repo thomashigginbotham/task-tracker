@@ -134,38 +134,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		express: {
-			dev: {
-				options: {
-					port: 9090,
-					hostname: '0.0.0.0',
-					bases: ['.tmp', '.tmp/html', 'app'],
-					open: 'http://localhost:9090/pattern-lib.html',
-					livereload: true
-				}
-			},
-			dist: {
-				options: {
-					port: 9091,
-					hostname: '0.0.0.0',
-					bases: ['dist', 'dist/html'],
-					open: 'http://localhost:9091/pattern-lib.html'
-				}
-			}
-		},
-		watch: {
-			html: {
-				files: ['app/html/**/*.html'],
-				tasks: ['processhtml:dev']
-			},
-			css: {
-				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer']
-			},
-			js: {
-				files: ['app/javascripts/**/*.js']
-			}
-		},
 		processhtml: {
 			dev: {
 				files: [{
@@ -210,6 +178,46 @@ module.exports = function(grunt) {
 				configFile: 'karma.conf.js',
 				background: true
 			}
+		},
+		connect: {
+			dev: {
+				options: {
+					port: 9090,
+					base: ['.tmp', '.tmp/html', 'app'],
+					open: 'http://localhost:9090/pattern-lib.html',
+					livereload: true
+				}
+			},
+			dist: {
+				options: {
+					port: 9091,
+					base: ['dist', 'dist/html'],
+					open: 'http://localhost:9091/pattern-lib.html',
+					keepalive: true
+				}
+			}
+		},
+		watch: {
+			html: {
+				files: ['app/html/**/*.html'],
+				tasks: ['processhtml:dev'],
+				options: {
+					livereload: true,
+				}
+			},
+			css: {
+				files: ['app/stylesheets/**/*.scss'],
+				tasks: ['compass:dev', 'autoprefixer'],
+				options: {
+					livereload: true,
+				}
+			},
+			js: {
+				files: ['app/javascripts/**/*.js'],
+				options: {
+					livereload: true,
+				}
+			}
 		}
 	});
 
@@ -221,11 +229,11 @@ module.exports = function(grunt) {
 	// The "serve" task will start a local web server, and open the pattern library
 	// in your default browser. You can make changes to your files and the browser
 	// will refresh showing the latest changes.
-	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'express:dev', 'watch']);
+	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'connect:dev', 'watch']);
 
 	// The "serve-dist" task will start a local web server that uses the final,
 	// optimized files.
-	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin', 'express:dist', 'express-keepalive']);
+	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin', 'connect:dist']);
 
 	// The "serve-test" task functions identically to the "serve" task, except that
 	// it will also run Karma/Jasmine unit tests.
@@ -233,23 +241,30 @@ module.exports = function(grunt) {
 		var watchConfig = {
 			html: {
 				files: ['app/html/**/*.html'],
-				tasks: ['processhtml:dev']
+				tasks: ['processhtml:dev'],
+				options: {
+					livereload: true,
+				}
 			},
 			css: {
 				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer']
+				tasks: ['compass:dev', 'autoprefixer'],
+				options: {
+					livereload: true,
+				}
 			},
 			karma: {
 				files: ['app/javascripts/**/*.js', 'test/**/*.js'],
 				tasks: ['karma:unit:run'],
 				options: {
-					atBegin: true
+					atBegin: true,
+					livereload: true
 				}
 			}
 		};
 
 		grunt.config('watch', watchConfig);
 
-		grunt.task.run(['karma:unit:start', 'clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'express:dev', 'watch']);
+		grunt.task.run(['karma:unit:start', 'clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'connect:dev', 'watch']);
 	});
 };
