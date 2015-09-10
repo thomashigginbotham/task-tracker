@@ -41,7 +41,7 @@ $col-gutter: 1.4rem !default;
 //
 // $which - Which floats to clear. Can be "before", "after", or "all".
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.1.
 @mixin clear-floats($before: true, $after: true) {
@@ -66,7 +66,7 @@ $col-gutter: 1.4rem !default;
 
 // Creates a full-width block that will act as a wrapper for a columns
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.2
 @mixin row() {
@@ -82,7 +82,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.3.
 @mixin column-width($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
@@ -102,7 +102,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.4.
 @mixin column-width-with-dividers($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
@@ -121,7 +121,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.5.
 @mixin column($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
@@ -148,7 +148,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.6.
 @mixin column-with-divider($border, $col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
@@ -173,7 +173,7 @@ $col-gutter: 1.4rem !default;
 // $col-span         - How many columns this cell will span across.
 // $custom-col-count - The total number of columns in the row.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.7.
 @mixin center-column($col-span, $custom-col-count: $col-count) {
@@ -190,7 +190,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.8.
 @mixin push($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
@@ -211,7 +211,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-count  - The total number of columns in the row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.9.
 @mixin pull($col-span, $custom-col-count: $col-count, $custom-col-gutter: $col-gutter) {
@@ -223,7 +223,7 @@ $col-gutter: 1.4rem !default;
 // $cols              - The number of cells per row.
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.10.
 @mixin grid($cols, $custom-col-gutter: $col-gutter) {
@@ -272,7 +272,7 @@ $col-gutter: 1.4rem !default;
 //
 // $custom-col-gutter - The width of the gutters.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 9+
 //
 // Styleguide 1.3.11.
 @mixin equal-width-columns($custom-col-gutter: $col-gutter) {
@@ -294,7 +294,7 @@ $col-gutter: 1.4rem !default;
 // $custom-col-gutter - The width of the gutters (only percentage widths).
 // $overlay-color     - The color of the columns.
 //
-// Compatibility untested.
+// Compatible with Chrome, Firefox, Safari, IE 10+
 //
 // Styleguide 1.3.12.
 @mixin grid-overlay($custom-col-count: $col-count, $custom-col-gutter: $col-gutter-fluid, $overlay-color: rgba(#777, .1)) {

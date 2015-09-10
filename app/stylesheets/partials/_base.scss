@@ -13,7 +13,7 @@
 $page-max-width: 960px;
 $page-margin: 20px;
 $col-count: 12;
-$col-gutter: 1.4rem;
+$col-gutter: 1.4rem; // Use a percentage value for IE 8 support
 
 // Responsive Break Points
 //

@@ -18,18 +18,25 @@ define(['jquery'], function($) {
 	(function() {
 		// Allow XPL to re-run start-up scripts when pattern library components
 		// have finished loading
-		window.addEventListener('xplComponentsLoaded', function() {
-			setTimeout(init, 0);
-		}, false);
-
-		// Use Selectivizr for IE 8 and below
-		if ($('.lt-ie9').length > 0) {
-			var selectivizrPath = '/javascripts/vendor/selectivizr.js';
-
-			$.getScript(selectivizrPath);
+		if (window.addEventListener) {
+			window.addEventListener('xplComponentsLoaded', function() {
+				setTimeout(init, 0);
+			}, false);
 		}
 
 		// Let's go!
-		setTimeout(init, 0);
+		setTimeout(function() {
+			init();
+
+			// Use Selectivizr and Respond.js for IE 8 and below
+			// IMPORTANT: Selectivizr requires a global jQuery object to work.
+			if ($('.lt-ie9').length > 0) {
+				var selectivizrPath = '/javascripts/vendor/selectivizr.js';
+
+				$.getScript(selectivizrPath, function() {
+					$.getScript('//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js');
+				});
+			}
+		}, 0);
 	})();
 });
