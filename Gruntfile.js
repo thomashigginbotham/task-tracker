@@ -75,15 +75,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		autoprefixer: {
-			options: {
-				browsers: ['last 2 versions', 'ie 8', 'ie 9', '> 5%'],
-				diff: true
-			},
-			main: {
-				src: '.tmp/stylesheets/*.css'
-			}
-		},
 		cssmin: {
 			dist: {
 				files: {
@@ -207,7 +198,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer'],
+				tasks: ['compass:dev'],
 				options: {
 					livereload: true,
 				}
@@ -224,16 +215,16 @@ module.exports = function(grunt) {
 	// Tasks
 	// The "default" task will create optimized CSS and JS, along with HTML, ready
 	// for distribution in a "dist" folder.
-	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin']);
+	grunt.registerTask('default', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin']);
 
 	// The "serve" task will start a local web server, and open the pattern library
 	// in your default browser. You can make changes to your files and the browser
 	// will refresh showing the latest changes.
-	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'connect:dev', 'watch']);
+	grunt.registerTask('serve', ['clean:dev', 'copy:dev', 'compass:dev', 'processhtml:dev', 'connect:dev', 'watch']);
 
 	// The "serve-dist" task will start a local web server that uses the final,
 	// optimized files.
-	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'autoprefixer', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin', 'connect:dist']);
+	grunt.registerTask('serve-dist', ['clean:dist', 'copy:dist', 'compass:dist', 'cssmin', 'requirejs', 'processhtml:dist', 'imagemin', 'connect:dist']);
 
 	// The "serve-test" task functions identically to the "serve" task, except that
 	// it will also run Karma/Jasmine unit tests.
@@ -248,7 +239,7 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['app/stylesheets/**/*.scss'],
-				tasks: ['compass:dev', 'autoprefixer'],
+				tasks: ['compass:dev'],
 				options: {
 					livereload: true,
 				}
@@ -265,6 +256,6 @@ module.exports = function(grunt) {
 
 		grunt.config('watch', watchConfig);
 
-		grunt.task.run(['karma:unit:start', 'clean:dev', 'copy:dev', 'compass:dev', 'autoprefixer', 'processhtml:dev', 'connect:dev', 'watch']);
+		grunt.task.run(['karma:unit:start', 'clean:dev', 'copy:dev', 'compass:dev', 'processhtml:dev', 'connect:dev', 'watch']);
 	});
 };
