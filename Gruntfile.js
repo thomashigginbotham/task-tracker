@@ -190,7 +190,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			html: {
-				files: ['app/html/**/*.html'],
+				files: ['app/**/*.html'],
 				tasks: ['processhtml:dev'],
 				options: {
 					livereload: true,

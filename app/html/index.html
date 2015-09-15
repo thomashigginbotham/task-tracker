@@ -4,172 +4,154 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <!--<![endif]-->
 	<head>
-		<title>Starter Page</title>
+		<title>Task Tracker 2.0</title>
 		<!-- build:include templates/head.html --><!-- /build -->
 
 		<link rel="stylesheet" href="/stylesheets/main.css"/>
 	</head>
 
 	<body>
-		<a class="skip-to-content" href="#main-content">Skip to main content</a>
+		<app-ui>
+			<group-pane heading="Task Tracker" class="menu-pane">
+				<menu-block heading="Menu">
+					<menu-item uri="/#/projects" icon="folder" active>Projects</menu-item>
+					<menu-item uri="/#/reports" icon="pie-chart">Reports</menu-item>
+					<menu-item uri="/#/settings" icon="sliders">Settings</menu-item>
+					<menu-item uri="/#/account/sign-out" icon="sign-out">Sign Out</menu-item>
+				</menu-block>
 
-		<div class="page-wrapper">
-			<!-- build:include templates/header.html --><!-- /build -->
-			<!-- build:include templates/nav.html --><!-- /build -->
+				<menu-block heading="Quick Links">
+					<menu-item uri="/#/projects/experis/experis-administration">Experis Administration</menu-item>
+					<menu-item uri="/#/reports/utilization">Utilization Report</menu-item>
+					<menu-item uri="/#/reports/peoplesoft">PeopleSoft Time Sheet</menu-item>
+				</menu-block>
 
-			<main id="main-content">
-				<article class="content-wrapper">
-					<h1>A Starter Page to Get You Going</h1>
-					<p>Edit this HTML markup to suit your needs. You can create more pages by duplicating this one. Add them to the top of the pattern library menu by editing the file at <strong>javascripts/pattern-lib/directives/main-menu.js</strong>.</p>
+				<group-block heading="Search">
+					<form action="#" method="get">
+						<input type="search" placeholder="Keywords&hellip;">
+						<button type="submit">Go</button>
+					</form>
+				</group-block>
 
-					<h2>Built for Responsive Design</h2>
-					<p>Unlike other popular frameworks, XPL was designed from the ground up with responsive design in mind. It wasn’t tacked on and it doesn’t require additional or alternate CSS to work.</p>
+				<menu-block heading="Information">
+					<menu-item uri="#daily-summary" icon="info-circle">Daily Summary</menu-item>
+					<menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</menu-item>
+				</menu-block>
+			</group-pane>
 
-					<h2>It’s Semantic</h2>
-					<p>No need to learn a lot of cryptic class names like <code>col-xs-7</code> or <code>medium-3 columns end</code>. Write your HTML with semantic class names, such as <code>site-header</code> or <code>sidebar</code>, and use our short list of Sass mixins to control the layout.</p>
+			<group-pane heading="Acme Website Redesign" icon="folder" class="detail-pane">
+				<group-pane-menu>
+					<menu-block layout="horizontal">
+						<menu-item
+							uri="/#/projects/acme/acme-website-redesign/edit"
+							icon="pencil">Edit Project</menu-item>
 
-					<h2>Layout Examples</h2>
+						<menu-item uri="#pin" icon="thumb-tack">Pin</menu-item>
+					</menu-block>
+				</group-pane-menu>
 
-					<p>To see the source code for these layout examples, look at <strong>app/index.html</strong> and <strong>app/stylesheets/partials/_demo.scss</strong>.</p>
+				<div class="detail-block">
+					<paper-block heading="Active Tasks (3)">
+						<table is="sortable-table" default-sort-col="3"
+							default-sort-order="asc"
+							columns='["Task", "Time Spent", "Due Date"]'
+							widths='["50%", "25%", "25%"]'>
+							<tr>
+								<td><a href="/#/task/acme-website-redesign/attend-weekly-client-meeting">Attend weekly client meeting</a></td>
+								<td><strong>5</strong> of <strong>30</strong> hours</td>
+								<td data-sort-value="20150923"><time datetime="9/23/2015">9/23/2015</time></td>
+							</tr>
 
-					<h3>The <code>row()</code> and <code>column()</code> Mixins</h3>
+							<tr>
+								<td><a href="/#/task/acme-website-redesign/create-photoshop-comps">Create Photoshop comps</a></td>
+								<td><strong>12.75</strong> of <strong>25</strong> hours</td>
+								<td data-sort-value="20150929"><time datetime="9/29/2015">9/29/2015</time></td>
+							</tr>
 
-					<div class="demo-row">
-						<div class="demo-column-small">3 of 12</div>
-						<div class="demo-column-large">9 of 12</div>
-					</div>
+							<tr>
+								<td><a href="/#/task/acme-website-redesign/create-html-build-outs">Create HTML build-outs</a></td>
+								<td><strong>3.5</strong> of <strong>8</strong> hours</td>
+								<td data-sort-value="20151012"><time datetime="10/12/2015">10/12/2015</time></td>
+							</tr>
+						</table>
+					</paper-block>
 
-					<div class="demo-row">
-						<div class="demo-column-medium">6 of 12</div>
-						<div class="demo-column-medium">6 of 12</div>
-					</div>
+					<button-row>
+						<p>Last updated by
+							<a href="/#/users/rebecca-chambers">Rebecca Chambers</a> at
+							<time datetime="2015-09-14T09:38-04:00">9:38 AM</time>
+						</p>
 
-					<div class="demo-row">
-						<div class="demo-column-breakout">2 of 10</div>
-						<div class="demo-column-breakout">2 of 10</div>
-						<div class="demo-column-breakout">2 of 10</div>
-						<div class="demo-column-breakout">2 of 10</div>
-						<div class="demo-column-breakout">2 of 10</div>
-					</div>
+						<icon-button uri="/#/tasks/add" icon="plus-circle">Add a Task</icon-button>
+					</button-row>
+				</div>
 
-					<div class="demo-row">
-						<div class="demo-column-medium">6 of 12</div>
-						<div class="demo-column-small">3 of 12</div>
-						<div class="demo-column-small">3 of 12</div>
-					</div>
+				<div class="detail-block">
+					<paper-block heading="Completed Tasks (6)">
+						<table is="sortable-table" default-sort-col="3"
+							default-sort-order="desc"
+							columns='["Task", "Time Spent", "Completed"]'
+							widths='["50%", "25%", "25%"]'>
+							<tr>
+								<td><a href="/#/task/acme-website-redesign/attend-kick-off-meeting">Attend kick-off meeting</a></td>
+								<td><strong>1</strong> of <strong>1</strong> hours</td>
+								<td data-sort-value="20150812"><time datetime="2015-08-12">8/12/2015</time></td>
+							</tr>
 
-					<p>XPL has a 12-column grid, but you can change that to any other number by editing the <code>$col-count</code> variable in <strong>app/stylesheets/partials/_base.scss</strong>.</p>
-					<p>You can even change the grid size on the fly for specific sections of a page. Notice how the third row in the demo above has 5 equal-width boxes in the middle of a 12-column grid. Yep, break outside the grid any time you want.</p>
+							<tr>
 
-					<h3>The <code>column-with-divider()</code> Mixin</h3>
+								<td><a href="/#/task/acme-website-redesign/conduct-stakeholder-interviews">Conduct stakeholder interviews</a></td>
+								<td class="warn"><strong>6.25</strong> of <strong>4</strong> hours</td>
+								<td data-sort-value="20150819"><time datetime="2015-08-19">8/19/2015</time></td>
+							</tr>
 
-					<div class="demo-row demo-dividers">
-						<div class="demo-column-with-divider"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, natus.</p></div>
-						<div class="demo-column-with-divider"><p>Voluptatum culpa ut debitis minima dolorum harum alias id libero.</p></div>
-						<div class="demo-column-with-divider"><p>Praesentium in, provident quibusdam, corrupti enim eligendi quae natus officiis?</p></div>
-					</div>
+							<tr>
+								<td><a href="/#/task/acme-website-redesign/create-personas-and-user-journey-documents">Create personas and user journey documents</a></td>
+								<td><strong>12.5</strong> of <strong>16</strong> hours</td>
+								<td data-sort-value="20150826"><time datetime="2015-08-26">8/26/2015</time></td>
+							</tr>
 
-					<p>Need a simple border between your columns? No problem. You can even vertically center the column content with the <code>vertical-align()</code> mixin.</p>
+							<tr>
+								<td><a href="/#/task/acme-website-redesign/create-html-wireframes">Create HTML wireframes</a></td>
+								<td><strong>13.75</strong> of <strong>16</strong> hours</td>
+								<td data-sort-value="20150917"><time datetime="2015-09-17">9/17/2015</time></td>
+							</tr>
+						</table>
+					</paper-block>
+				</div>
+			</group-pane>
 
-					<h3>The <code>center-column()</code>, <code>push()</code>, and <code>pull()</code> Mixins</h3>
+			<group-pane heading="Project Details" class="properties-pane">
+				<div class="property-block">
+					<h2>Acme Website Redesign</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</p>
+				</div>
 
-					<div class="demo-row">
-						<div class="demo-column-center">I am centered.</div>
-					</div>
+				<div class="property-block">
+					<menu-block heading="Client">
+						<menu-item uri="/#/clients/the-acme-company">The Acme Company</menu-item>
+					</menu-block>
 
-					<div class="demo-row">
-						<div class="demo-column-push">I was pushed right.</div>
-						<div class="demo-column-pull">I was pulled left.</div>
-					</div>
+					<group-block heading="Created">
+						<time datetime="2015-09-14">Sep. 14, 2015</time>
+					</group-block>
 
-					<p>Horizontally center a single column or offset multiple columns any way you like.</p>
+					<group-block heading="Time Spent">
+						<p>78.25 of 125 hours</p>
+					</group-block>
 
-					<h3>The <code>grid()</code> Mixin</h3>
+					<group-block heading="Task Status">
+						<p>6 of 9 tasks completed</p>
+					</group-block>
 
-					<ul class="demo-grid">
-						<li>Item 1</li>
-						<li>Item 2</li>
-						<li>Item 3</li>
-						<li>Item 4</li>
-						<li>Item 5</li>
-						<li>Item 6</li>
-						<li>Item 7</li>
-						<li>Item 8</li>
-					</ul>
-
-					<p>You can also create simple boxes that automatically wrap to the next row.</p>
-					<p>Call the <code>grid()</code> mixin with different media query values to change the number of columns to best fit the user’s viewport. The demo above uses 2 columns on small screens and 4 columns on larger screens.</p>
-
-					<h3>The <code>equal-width-columns()</code> Mixin</h3>
-
-					<ul class="demo-equal-width">
-						<li>Item 1</li>
-						<li>Item 2</li>
-						<li>Item 3</li>
-						<li>Item 4</li>
-					</ul>
-
-					<p>Have you ever had a row with an unknown number of columns? Use the <code>equal-width-columns()</code> mixin, and the number of columns becomes irrelevant. The column widths will adjust to fill the container.</p>
-					<p>Try it out by adding or removing items in the demo above.</p>
-
-					<h2>Fluid or Fixed-width Gutters</h2>
-
-					<div class="demo-row">
-						<div class="demo-fluid-gutter">
-							<p>The gutter between these two columns is fluid (10% of the total width). Resize your browser to see its width adjust relative to the browser.</p>
-						</div>
-
-						<div class="demo-fluid-gutter">
-							<p>The other demos on this page use fixed-width gutters (1.4 rem). They stay the same size regardless of the browser width.</p>
-						</div>
-					</div>
-
-					<p>Set your gutters to be a percentage or a fixed-width value and even add backgrounds to the columns. Try doing that in Bootstrap or Foundation without pulling your hair out.</p>
-
-					<h2>Test Your Grids with an Overlay</h2>
-
-					<div class="demo-overlay">
-						<div class="demo-row">
-							<div class="demo-column-small-overlay">3 of 12</div>
-							<div class="demo-column-medium-overlay">6 of 12</div>
-							<div class="demo-column-small-overlay">3 of 12</div>
-						</div>
-
-						<div class="demo-row">
-							<div class="demo-column-small-overlay">3 of 12</div>
-							<div class="demo-column-small-overlay">3 of 12</div>
-							<div class="demo-column-small-overlay">3 of 12</div>
-							<div class="demo-column-small-overlay">3 of 12</div>
-						</div>
-
-						<div class="demo-row">
-							<div class="demo-column-tiny-overlay">2 of 12</div>
-							<div class="demo-column-tiny-overlay">2 of 12</div>
-							<div class="demo-column-tiny-overlay">2 of 12</div>
-							<div class="demo-column-tiny-overlay">2 of 12</div>
-							<div class="demo-column-tiny-overlay">2 of 12</div>
-							<div class="demo-column-tiny-overlay">2 of 12</div>
-						</div>
-					</div>
-
-					<p>Not sure if things are lining up just right? Use the <code>grid-overlay()</code> mixin to check it out or to show off your awesome alignment skills.</p>
-
-					<h2>Sprites for High DPI (Retina) Screens</h2>
-
-					<p>XPL Has mixins for generating high DPI sprite images and CSS automatically. If you’re already familiar with using Compass for sprites, you’ll be right at home.</p>
-					<p>Take a look at <strong>app/stylesheets/modules/_sprites-2x.scss</strong> for the available functions and mixins.</p>
-
-					<h2>Support for Jasmine/Karma Unit Testing</h2>
-					<p>One of the benefits of building websites with a componentized approach is unit testing. XPL comes with a simple starter spec (<strong>test/sample-spec.js</strong>) that includes a single unit test for the included sample jQuery plugin (<strong>app/javascripts/lib/jquery-plugins/jquery.sampleplugin.js</strong>).</p>
-					<p>Use the <code>grunt serve-test</code> task to start up a server and run your unit tests as you make changes.</p>
-
-					<h2>Now Start Building!</h2>
-					<p>Now that you see what’s available, go ahead and delete the <strong>_demo.scss</strong> partial and the reference to it in <strong>main.scss</strong>. Then replace this HTML with your own.</p>
-				</article>
-			</main>
-
-			<!-- build:include templates/footer.html --><!-- /build -->
-		</div>
+					<menu-block heading="Team Members">
+						<menu-item uri="/#/users/rebecca-chambers">Rebecca Chambers</menu-item>
+						<menu-item uri="/#/users/john-shepard">John Shepard</menu-item>
+						<menu-item uri="/#/users/marcus-fenix">Marcus Fenix</menu-item>
+					</menu-block>
+				</div>
+			</group-pane>
+		</app-ui>
 
 		<!-- build:js:dist javascripts/built.js -->
 		<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>

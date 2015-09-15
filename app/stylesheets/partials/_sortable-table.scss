@@ -1,0 +1,32 @@
+// Sortable Table components.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+table[is='sortable-table'] {
+	width: 100%;
+
+	thead {
+		text-transform: uppercase;
+		background-color: $color-bg-dark;
+
+		.fa-sort {
+			color: darken($color-bg-dark, 10%);
+		}
+	}
+
+	th,
+	td {
+		padding: $text-height / 2 $text-height;
+		vertical-align: top;;
+		text-align: left;
+	}
+
+	tbody tr:not(:first-child) td {
+		padding-top: 0;
+	}
+
+	tbody tr:last-child td {
+		padding-bottom: 0;
+	}
+}

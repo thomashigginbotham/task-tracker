@@ -1,0 +1,62 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="menu-item">
+	<style>
+		:host {
+			position: relative;
+			display: inline-block;
+			white-space: nowrap;
+		}
+
+		:host:not([icon='']) {
+			padding-left: 1.25em;
+		}
+
+		:host[active] > a {
+			font-weight: bold;
+		}
+
+		:host > a::before {
+			position: absolute;
+			left: 0;
+			font-family: FontAwesome;
+		}
+	</style>
+
+	<template>
+		<a href="{{uri}}" class$="{{getIconClass(icon)}}"><content></content></a>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'menu-item',
+			hostAttributes: {
+				role: 'listitem'
+			},
+			properties: {
+				uri: {
+					type: String,
+					value: '#',
+					reflectToAttribute: true
+				},
+				active: {
+					type: Boolean,
+					value: false,
+					reflectToAttribute: true
+				},
+				icon: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				}
+			},
+			getIconClass: function(iconName) {
+				if (iconName === '') {
+					return '';
+				}
+
+				return 'fa-' + iconName;
+			}
+		});
+	</script>
+</dom-module>

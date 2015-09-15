@@ -23,6 +23,7 @@ $col-gutter: 1.4rem; // Use a percentage value for IE 8 support
 // $canvas-tiny   - The smallest break point.
 //
 // Styleguide 3.2.
+$canvas-x-large: 1600px;
 $canvas-large: 960px;
 $canvas-medium: 800px;
 $canvas-small: 640px;
@@ -37,17 +38,16 @@ $canvas-tiny: 480px;
 //
 // Styleguide 3.3.
 $color-primary: #6390c7;
-$color-primary-dark: #3b6aa3;
 $color-secondary: #e87c24;
 $color-tertiary: #6f9183;
 
-$color-text: #222;
-$color-text-light: #777;
-$color-bg-dark: #ccc;
+$color-text: #2e2e33;
+$color-text-light: #45454d;
 $color-bg: #fff;
+$color-bg-dark: #f5f5fc;
 
 $color-success: #9c0;
-$color-warning: #f93;
+$color-warning: #e87c24;
 $color-error: #f00;
 
 // Fonts
@@ -73,8 +73,11 @@ $base-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 $base-font-weight: $regular;
 $base-font-size: 14px;
 $base-line-height: 1.8;
-$header-font-family: "Century Gothic", sans-serif;
-$header-font-weight: $bold;
+$header-font-family: "Segoe UI Light", "DejaVu Sans Condensed", sans-serif;
+$header-font-weight: $regular;
+$header-alt-font-family: "Segoe UI", "DejaVu Sans", sans-serif;
+$header-alt-font-weight: $bold;
 $fixed-font-family: monospace;
 $fixed-font-size: 85%;
 $fixed-line-height: $base-line-height;
+$text-height: $base-font-size * $base-line-height / 2;

@@ -1,0 +1,28 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="group-block">
+	<style>
+		:host {
+			display: block;
+		}
+	</style>
+
+	<template>
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<content></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'group-block',
+			properties: {
+				heading: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				}
+			}
+		});
+	</script>
+</dom-module>

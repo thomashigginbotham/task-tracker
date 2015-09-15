@@ -21,24 +21,26 @@ label {
 // Compatibility untested.
 //
 // No styleguide reference.
-input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
+input[type=text],
+input[type=search] {
 	@include box-sizing(border-box);
 	padding: 0 $form-field-height / 4;
+	max-width: 100%;
 	height: $form-field-height;
-	border: 1px solid $color-primary;
+	border: 1px solid $color-text;
 
 	&:focus {
-		outline: 1px solid $color-primary;
+		outline: 1px solid $color-text;
 	}
 }
 
 textarea {
 	@include box-sizing(border-box);
 	padding: $form-field-height / 4;
-	border: 1px solid $color-primary;
+	border: 1px solid $color-text;
 
 	&:focus {
-		outline: 1px solid $color-primary;
+		outline: 1px solid $color-text;
 	}
 }
 
@@ -51,10 +53,10 @@ select {
 	@include box-sizing(border-box);
 	padding: 0 $form-field-height / 4;
 	height: $form-field-height;
-	border: 1px solid $color-primary;
+	border: 1px solid $color-text;
 
 	&:focus {
-		outline: 1px solid $color-primary;
+		outline: 1px solid $color-text;
 	}
 }
 
@@ -66,7 +68,8 @@ select {
 .error-state {
 	color: $color-error;
 
-	input:not([type=radio]):not([type=checkbox]):not([type=submit]),
+	input[type=text],
+	input[type=search],
 	textarea,
 	select {
 		border-color: $color-error;

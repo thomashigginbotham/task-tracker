@@ -1,0 +1,127 @@
+// Group Pane components.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+group-pane {
+	.group-pane-header,
+	.group-pane-content {
+		padding: $col-gutter;
+	}
+
+	&.menu-pane {
+		color: $color-bg;
+		background-color: $color-text-light;
+
+		a {
+			color: lighten($color-text-light, 40%);
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: $color-bg;
+			}
+		}
+
+		h1,
+		h2 {
+			color: $color-bg;
+		}
+
+		h1 {
+			padding-bottom: $col-gutter;
+			border-bottom: 1px solid lighten($color-text-light, 10%);
+		}
+
+		.group-pane-header {
+			padding-bottom: 0;
+		}
+
+		[type=search] {
+			border: 1px solid $color-bg;
+			color: $color-bg;
+			background-color: $color-text-light;
+
+			&:focus {
+				outline: 1px solid $color-bg;
+			}
+		}
+
+		[type=submit] {
+			display: none;
+		}
+	}
+
+	&.detail-pane {
+		header {
+			color: $color-bg;
+			background-color: $color-primary;
+
+			a {
+				color: $color-bg;
+			}
+		}
+
+		h1 {
+			color: $color-bg;
+		}
+
+		@media (min-width: $canvas-x-large) {
+			.group-pane-content {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.detail-block {
+				flex: 0 1 calc(50% - #{$col-gutter / 2});
+
+				&:nth-child(odd) {
+					margin-right: $col-gutter;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&.properties-pane {
+		background-color: $color-bg-dark;
+
+		header {
+			color: $color-bg;
+			background-color: darken($color-primary, 10%);
+		}
+
+		h1 {
+			color: $color-bg;
+		}
+
+		group-block,
+		menu-block {
+			margin-bottom: $col-gutter + ($base-line-height / 2);
+			padding-bottom: 0;
+			border-bottom-width: 0;
+		}
+
+		@media (min-width: 50rem) and (max-width: 67.999rem) {
+			.group-pane-content {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.property-block {
+				flex: 0 1 calc(50% - #{$col-gutter / 2});
+
+				&:nth-child(odd) {
+					margin-right: $col-gutter;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

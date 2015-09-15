@@ -16,12 +16,15 @@ requirejs.config({
 	},
 	map: {
 		'*': {
-			'jquery': 'jquery-noconflict'
+			jquery: 'jquery-noconflict'
 		},
 		'jquery-noconflict': {
-			'jquery': 'jquery'
+			jquery: 'jquery'
 		}
-	}
+	},
+	packages: [
+
+	]
 });
 
 /* -- Initialize App (app.js) -- */

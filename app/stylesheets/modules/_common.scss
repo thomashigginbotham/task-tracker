@@ -26,3 +26,16 @@
 	height: 1px;
 	overflow: hidden;
 }
+
+// Remove possible bottom margin from the last child and its descendents.
+//
+// No style guide reference.
+//
+// Compatibility untested.
+@mixin remove-last-child-margin {
+	> :last-child:after {
+		content: '';
+		display: block;
+		margin: -$col-gutter 0 $col-gutter;
+	}
+}

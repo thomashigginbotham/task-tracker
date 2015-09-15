@@ -1,0 +1,65 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="app-ui">
+	<style>
+		:host {
+			display: block;
+		}
+
+		::content group-pane {
+			box-sizing: border-box;
+		}
+
+		@media (min-width: 50rem) {
+			:host {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			::content .menu-pane {
+				flex: 1 1 25%;
+			}
+
+			::content .detail-pane {
+				flex: 1 1 75%;
+			}
+
+			::content .properties-pane {
+				flex: 1 1 100%;
+				order: 1;
+			}
+		}
+
+		@media (min-width: 68rem) {
+			:host {
+				flex-wrap: nowrap;
+				min-height: 100%;
+			}
+
+			::content .menu-pane,
+			::content .properties-pane {
+				flex-grow: 0;
+				flex-basis: 17em;
+			}
+
+			::content .detail-pane {
+				flex-basis: 34em;
+				order: 1;
+			}
+
+			::content .properties-pane {
+				order: 0;
+			}
+		}
+	</style>
+
+	<template>
+		<content select="group-pane"></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'app-ui'
+		});
+	</script>
+</dom-module>

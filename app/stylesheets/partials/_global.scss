@@ -16,3 +16,12 @@
 	@include rem(margin-left, $col-gutter);
 	float: right;
 }
+
+// Status
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+.warn {
+	color: $color-warning;
+}

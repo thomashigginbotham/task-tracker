@@ -1,0 +1,35 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="paper-block">
+	<style>
+		:host {
+			display: block;
+		}
+
+		:host .paper-block-content {
+			padding: 1rem;
+			box-shadow: 0 0 .75rem rgba(0, 0, 0, .25);
+		}
+	</style>
+
+	<template>
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<div class="paper-block-content">
+			<content></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'paper-block',
+			properties: {
+				heading: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				}
+			}
+		});
+	</script>
+</dom-module>

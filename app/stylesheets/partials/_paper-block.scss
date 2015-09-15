@@ -1,0 +1,14 @@
+// Paper Block components.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+paper-block {
+	@include remove-last-child-margin;
+	margin-bottom: $col-gutter;
+
+	.paper-block.paper-block-content {
+		@include remove-last-child-margin;
+		padding: $col-gutter;
+	}
+}

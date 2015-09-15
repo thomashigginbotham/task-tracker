@@ -16,32 +16,34 @@ h5,
 h6 {
 	font-family: $header-font-family;
 	font-weight: $header-font-weight;
-	line-height: $base-line-height * .75;
 }
 
 h1 {
-	text-transform: uppercase;
-	font-size: 2.6em;
+	font-size: 1.5rem;
+	line-height: $base-line-height *.75;
 	color: $color-primary;
 }
 
 h2 {
-	font-size: 1.7em;
-	color: $color-primary;
+	font-weight: $header-alt-font-weight;
+	font-size: 1rem;
+	font-family: $header-alt-font-family;
 }
 
 h3 {
-	font-size: 1.4em;
+	font-weight: $bold;
+	font-size: 1rem;
+	font-family: $header-alt-font-weight;
 }
 
 h4 {
-	font-size: 1.2em;
+	font-size: 1rem;
 }
 
 h5 {
-	font-size: 1em;
+	font-size: .9rem;
 }
 
 h6 {
-	font-size: .8em;
+	font-size: .8rem;
 }

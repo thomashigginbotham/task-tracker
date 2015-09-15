@@ -1,0 +1,9 @@
+// Menu Item components.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+menu-item[active] > a.menu-item {
+	font-weight: $regular;
+	color: $color-bg;
+}

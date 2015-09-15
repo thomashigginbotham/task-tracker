@@ -16,6 +16,12 @@
 @import 'partials/header';     // Global header styles
 @import 'partials/footer';     // Global footer styles
 
-// The following is for the demo starter page.
-// Be sure to remove it when you're done.
-@import 'partials/demo';
+// Components
+@import 'partials/group-pane';
+@import 'partials/group-block';
+@import 'partials/menu-block';
+@import 'partials/menu-item';
+@import 'partials/paper-block';
+@import 'partials/sortable-table';
+@import 'partials/button-row';
+@import 'partials/icon-button';

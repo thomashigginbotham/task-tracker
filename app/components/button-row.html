@@ -1,0 +1,23 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="button-row">
+	<style>
+		:host {
+			display: block;
+		}
+	</style>
+
+	<template>
+		<div class="button-row-message"><content select="p"></content></div>
+
+		<div class="button-row-buttons">
+			<content select="icon-button"></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'button-row'
+		});
+	</script>
+</dom-module>

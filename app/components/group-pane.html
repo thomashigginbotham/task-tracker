@@ -1,0 +1,87 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="group-pane">
+	<style>
+		:host {
+			display: block;
+		}
+
+		.group-pane-header h1 {
+			position: relative;
+			margin: 0;
+		}
+
+		:host:not([icon='']) .group-pane-header h1 {
+			padding-left: 1.25em;
+		}
+
+		.group-pane-header h1::before {
+			position: absolute;
+			left: 0;
+			font-family: FontAwesome;
+		}
+
+		::content group-block:not(:last-child),
+		::content menu-block:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+
+		::content .group-pane-header menu-block {
+			margin-bottom: 0;
+		}
+
+		@media (min-width: 50rem) {
+			.group-pane-header {
+				display: flex;
+			}
+
+			.group-pane-header h1 {
+				flex-grow: 1;
+				align-self: center;
+			}
+
+			::content group-pane-menu {
+				align-self: center;
+				white-space: nowrap;
+			}
+		}
+	</style>
+
+	<template>
+		<section>
+			<header class="group-pane-header">
+				<h1 class$="{{getIconClass(icon)}}">{{heading}}</h1>
+				<content select="group-pane-menu"></content>
+			</header>
+
+			<div class="group-pane-content">
+				<content></content>
+			</div>
+		</section>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'group-pane',
+			properties: {
+				heading: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				},
+				icon: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				}
+			},
+			getIconClass: function(iconName) {
+				if (iconName === '') {
+					return '';
+				}
+
+				return 'fa-' + iconName;
+			}
+		});
+	</script>
+</dom-module>

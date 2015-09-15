@@ -1,0 +1,50 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="menu-block">
+	<style>
+		:host {
+			display: block;
+		}
+
+		:host[layout=vertical] ::content menu-item {
+			display: block;
+		}
+
+		:host[layout=horizontal] ::content menu-item {
+			margin-right: .75em;
+		}
+
+		:host[layout=horizontal] ::content menu-item:last-child {
+			margin-right: 0;
+		}
+	</style>
+
+	<template>
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<span class="menu-block-items" role="list">
+			<content select="menu-item"></content>
+		</span>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'menu-block',
+			hostAttributes: {
+				role: 'menu'
+			},
+			properties: {
+				heading: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				},
+				layout: {
+					type: String,
+					value: 'vertical',
+					reflectToAttribute: true
+				}
+			}
+		});
+	</script>
+</dom-module>
