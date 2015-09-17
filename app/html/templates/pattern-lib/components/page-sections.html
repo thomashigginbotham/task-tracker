@@ -4,33 +4,36 @@
 	<p>To add components to this area, edit the files in the <strong>app/templates/pattern-lib/components</strong> directory.</p>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Site Header <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Application UI <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/header.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-app-ui.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/header.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-app-ui.html"></div>
 
-		<p>This is a sample description for a header. Modify it to match your actual header.</p>
-		<p>The header consists of a logo on the left and a search field on the right. The color theme is represented at the top using a thin band of color boxes. On smaller viewports, the search field will move below the logo.</p>
+		<p>The Application UI component acts as a master layout for the Task Tracker application.</p>
+		<p>The <code>&lt;app-ui&gt;</code> tag has no available attributes and
+			expects to have three <code>&lt;group-pane&gt;</code> elements as
+			direct descendents. The class names and order of these child
+			elements are important. Reference the HTML in the sample for more
+			detail.</p>
 	</div>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Site Footer <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Group Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/footer.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-group-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/footer.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-group-pane.html"></div>
 
-		<p>The footer appears at the bottom of every page. This one is fairly basic and stark.</p>
-	</div>
-
-	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Site Navigation <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
-
-		<pre data-load-html data-load-uri="templates/nav.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
-
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/nav.html"></div>
-
-		<p>The main navigation is a simple horizontal list.</p>
+		<p>Group Panes, created with the <code>&lt;group-pane&gt;</code> tag, are
+			expected as direct descendents of an <code>&lt;app-ui&gt;</code> tag.
+			There are three types of Group Panes: Menu, Detail, and Properties;
+			each determined by their respective class names: menu-pane,
+			detail-pane, and properties-pane, respectively.</p>
+		<p>Group Panes have two available attributes. The <code>heading</code>
+			attribute allows for the addition of a heading to the top of the
+			pane. The <code>icon</code> attribute can be set to an icon name
+			available in the Font Awesome font family, and will cause that icon
+			to appear to the left of the heading.</p>
 	</div>
 </div>
