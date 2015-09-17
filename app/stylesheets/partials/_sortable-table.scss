@@ -5,6 +5,7 @@
 // No styleguide reference.
 table[is='sortable-table'] {
 	width: 100%;
+	table-layout: fixed;
 
 	thead {
 		text-transform: uppercase;
@@ -33,5 +34,13 @@ table[is='sortable-table'] {
 	th:not(:last-child),
 	td:not(:last-child) {
 		border-right: 1px solid darken($color-bg-dark, 10%);
+	}
+
+	.numeric,
+	.datetime {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-align: right;
 	}
 }
