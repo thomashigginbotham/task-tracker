@@ -18,7 +18,6 @@ group-pane {
 
 			&:hover,
 			&:focus {
-				text-decoration: none;
 				color: $color-bg;
 			}
 		}
@@ -62,6 +61,10 @@ group-pane {
 			}
 		}
 
+		a:hover {
+			text-decoration: underline;
+		}
+
 		h1 {
 			color: $color-bg;
 		}
@@ -92,6 +95,10 @@ group-pane {
 		header {
 			color: $color-bg;
 			background-color: darken($color-primary, 10%);
+		}
+
+		a:hover {
+			text-decoration: underline;
 		}
 
 		h1 {

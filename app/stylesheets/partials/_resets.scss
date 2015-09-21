@@ -17,11 +17,13 @@ body {
 a {
 	text-decoration: none;
 	color: $color-primary;
+}
 
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
+hr {
+	@include rem(margin, $col-gutter * 2 0);
+	height: 1px;
+	border: 0;
+	background-color: $color-text;
 }
 
 // No top margins on most block elements makes for easier

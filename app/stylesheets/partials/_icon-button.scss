@@ -34,3 +34,7 @@ icon-button {
 		outline: 1px solid $color-primary;
 	}
 }
+
+[joined] > .button-row-buttons > icon-button:not(:last-child) a {
+	border-right-width: 0;
+}

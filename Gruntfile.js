@@ -39,6 +39,18 @@ module.exports = function(grunt) {
 					}, {
 						expand: true,
 						flatten: true,
+						src: ['app/bower_components/webcomponentsjs/webcomponents-lite.min.js'],
+						dest: 'dist/javascripts/vendor'
+					}, {
+						expand: true,
+						flatten: true,
+						src: ['app/bower_components/polymer/polymer.html',
+						      'app/bower_components/polymer/polymer-mini.html',
+						      'app/bower_components/polymer/polymer-micro.html'],
+						dest: 'dist/javascripts/vendor'
+					}, {
+						expand: true,
+						flatten: true,
 						src: ['app/stylesheets/partials/_base.scss'],
 						dest: 'dist/stylesheets/partials'
 					}, {
@@ -135,7 +147,10 @@ module.exports = function(grunt) {
 					ext: '.html'
 				}],
 				options: {
-					recursive: true
+					recursive: true,
+					data: {
+						polymerPath: '/bower_components/polymer/polymer.html'
+					}
 				}
 			},
 			dist: {
@@ -145,9 +160,18 @@ module.exports = function(grunt) {
 					src: ['**/*.html'],
 					dest: 'dist/html',
 					ext: '.html'
+				}, {
+					expand: true,
+					cwd: 'app/components',
+					src: ['**/*.html'],
+					dest: 'dist/components',
+					ext: '.html'
 				}],
 				options: {
-					recursive: true
+					recursive: true,
+					data: {
+						polymerPath: '/javascripts/vendor/polymer.html'
+					}
 				}
 			}
 		},

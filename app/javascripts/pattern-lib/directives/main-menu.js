@@ -25,11 +25,17 @@ define(['directives/module', 'jquery'], function(directives, $) {
 			}, {
 				text: 'Components',
 				submenu: [{
-					text: 'Page Sections',
-					uri: '/components/page-sections'
+					text: 'Layout',
+					uri: '/components/layout'
 				}, {
-					text: 'UI Elements',
-					uri: '/components/ui-elements'
+					text: 'Blocks',
+					uri: '/components/blocks'
+				}, {
+					text: 'Buttons',
+					uri: '/components/buttons'
+				}, {
+					text: 'Tables',
+					uri: '/components/tables'
 				}]
 			}, {
 				text: 'Pages',

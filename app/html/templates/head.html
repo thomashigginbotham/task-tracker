@@ -4,8 +4,15 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- Polymer Components -->
+<!-- build:js:dist javascripts/vendor/webcomponents-lite.min.js -->
 <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-<link rel="import" href="/components/app-ui.html">
+<!-- /build -->
+
+<!-- build:template
+<link rel="import" href="<%= polymerPath %>">
+/build -->
+
+<link rel="import" href="/components/task-tracker-app.html">
 <link rel="import" href="/components/group-pane.html">
 <link rel="import" href="/components/group-pane-menu.html">
 <link rel="import" href="/components/group-block.html">

@@ -189,6 +189,7 @@ select {
 // No styleguide reference.
 button,
 .button {
+	box-sizing: border-box;
 	display: inline-block;
 	vertical-align: top;
 	position: relative;

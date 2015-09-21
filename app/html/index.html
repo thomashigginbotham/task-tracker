@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<app-ui>
+		<task-tracker-app>
 			<group-pane heading="Task Tracker" class="menu-pane">
 				<menu-block heading="Menu">
 					<menu-item uri="/#/projects" icon="folder" active>Projects</menu-item>
@@ -55,7 +55,8 @@
 						<table is="sortable-table" default-sort-col="3"
 							default-sort-order="asc"
 							columns='["Task", "Time Spent", "Due Date"]'
-							widths='["50%", "25%", "25%"]'>
+							widths='["50%", "25%", "25%"]',
+							aligns='["left", "right", "right"]'>
 							<tr>
 								<td><a href="/#/task/acme-website-redesign/attend-weekly-client-meeting">Attend weekly client meeting</a></td>
 								<td class="numeric"><strong>5</strong> of <strong>30</strong> hours</td>
@@ -91,7 +92,8 @@
 						<table is="sortable-table" default-sort-col="3"
 							default-sort-order="desc"
 							columns='["Task", "Time Spent", "Completed"]'
-							widths='["50%", "25%", "25%"]'>
+							widths='["50%", "25%", "25%"]',
+							aligns='["left", "right", "right"]'>
 							<tr>
 								<td><a href="/#/task/acme-website-redesign/attend-kick-off-meeting">Attend kick-off meeting</a></td>
 								<td class="numeric"><strong>1</strong> of <strong>1</strong> hours</td>
@@ -151,7 +153,7 @@
 					</menu-block>
 				</div>
 			</group-pane>
-		</app-ui>
+		</task-tracker-app>
 
 		<!-- build:js:dist javascripts/built.js -->
 		<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>

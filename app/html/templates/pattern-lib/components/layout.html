@@ -1,0 +1,64 @@
+<div class="xpl-content-wrapper">
+	<h1>General Layout</h1>
+	<p>Important parts of common page layout are included here. These components are found in the <strong>app/templates</strong> directory.</p>
+	<p>To add components to this area, edit the files in the <strong>app/templates/pattern-lib/components</strong> directory.</p>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Task Tracker App <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-task-tracker-app.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-task-tracker-app.html"></div>
+
+		<p>The task tracker app component acts as a master layout for the application.</p>
+		<p>The <code>&lt;task-tracker-app&gt;</code> tag has no available attributes and
+			expects to have three <code>&lt;group-pane&gt;</code> elements as
+			direct descendents. The class names and order of these child
+			elements are important. Reference the HTML in the sample for more
+			detail.</p>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Group Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-group-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-group-pane.html"></div>
+
+		<p>Group panes, created with the <code>&lt;group-pane&gt;</code> tag, are
+			expected as direct descendents of an <code>&lt;task-tracker-app&gt;</code> tag.
+			There are three types of group panes: menu, detail, and properties;
+			each determined by their respective class names: menu-pane,
+			detail-pane, and properties-pane, respectively.</p>
+		<p>group panes have two available attributes. The <code>heading</code>
+			attribute allows for the addition of a heading to the top of the
+			pane. The <code>icon</code> attribute can be set to an icon name
+			available in the Font Awesome font family, and will cause that icon
+			to appear to the left of the heading.</p>
+		<p>A menu may be added to the pane’s header by placing a
+			<a href="#/components/blocks">menu block component</a> within
+			<code>group-pane-menu</code> tags.</p>
+
+		<table class="key-value">
+			<thead>
+				<tr>
+					<th>Attribute</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>heading</td>
+					<td>A heading to appear at the top of the pane.</td>
+				</tr>
+				<tr>
+					<td>icon</td>
+					<td>An icon name from the Font Awesome font.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

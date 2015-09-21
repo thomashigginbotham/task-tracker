@@ -29,6 +29,10 @@
 		@include rem(padding, $col-gutter / 4 0 $col-gutter / 4 $col-gutter / 2);
 	}
 
+	tbody tr:first-child td {
+		@include rem(padding-top, $col-gutter / 2);
+	}
+
 	td {
 		border-right: 1px solid lighten($color-text, 65%);
 
@@ -36,4 +40,8 @@
 			border-right-width: 0;
 		}
 	}
+}
+
+.key-value {
+	@extend .basic-table;
 }

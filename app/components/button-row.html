@@ -1,9 +1,11 @@
-<link rel="import" href="/bower_components/polymer/polymer.html">
-
 <dom-module id="button-row">
 	<style>
 		:host {
 			display: block;
+		}
+
+		:host:not([joined]) ::content icon-button:not(:last-child) {
+			margin-right: 1em;
 		}
 	</style>
 
@@ -17,7 +19,10 @@
 
 	<script>
 		Polymer({
-			is: 'button-row'
+			is: 'button-row',
+			properties: {
+				joined: Boolean
+			}
 		});
 	</script>
 </dom-module>

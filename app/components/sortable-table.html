@@ -1,14 +1,12 @@
-<link rel="import" href="/bower_components/polymer/polymer.html">
-
 <dom-module id="sortable-table">
 	<style>
-		::content thead th {
+		:host ::content thead th {
 			cursor: pointer;
 		}
 
-		::content thead .fa-sort,
-		::content thead .fa-sort-asc,
-		::content thead .fa-sort-desc {
+		:host ::content thead .fa-sort,
+		:host ::content thead .fa-sort-asc,
+		:host ::content thead .fa-sort-desc {
 			font-family: FontAwesome;
 		}
 	</style>
@@ -22,12 +20,9 @@
 			is: 'sortable-table',
 			extends: 'table',
 			properties: {
-				columns: {
-					type: Array
-				},
-				widths: {
-					type: Array
-				},
+				columns: Array,
+				widths: Array,
+				aligns: Array,
 				defaultSortCol: {
 					type: Number,
 					value: '',
@@ -46,6 +41,7 @@
 			appendHeaders: function() {
 				var columns = this.columns;
 				var widths = this.widths;
+				var aligns = this.aligns;
 
 				if (Array.isArray(columns)) {
 					// Create table headers
@@ -61,6 +57,10 @@
 
 						if (Array.isArray(widths)) {
 							th.style.width = widths[index];;
+						}
+
+						if (Array.isArray(aligns)) {
+							th.style.textAlign = aligns[index];
 						}
 
 						th.innerHTML = headerContent + ' <span class="fa-sort"></span>';
