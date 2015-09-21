@@ -17,8 +17,10 @@
 @import 'partials/footer';     // Global footer styles
 
 // Components
+@import 'partials/task-tracker-app';
 @import 'partials/group-pane';
 @import 'partials/group-block';
+@import 'partials/footer-pane';
 @import 'partials/menu-block';
 @import 'partials/menu-item';
 @import 'partials/paper-block';

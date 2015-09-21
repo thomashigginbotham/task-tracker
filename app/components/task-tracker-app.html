@@ -9,50 +9,56 @@
 		}
 
 		@media (min-width: 50rem) {
-			:host {
+			:host > div {
 				display: flex;
 				flex-wrap: wrap;
 			}
 
-			::content .menu-pane {
+			:host ::content .menu-pane {
 				flex: 1 1 25%;
 			}
 
-			::content .detail-pane {
+			:host ::content .detail-pane {
 				flex: 1 1 75%;
 			}
 
-			::content .properties-pane {
+			:host ::content .properties-pane {
 				flex: 1 1 100%;
 				order: 1;
 			}
 		}
 
 		@media (min-width: 68rem) {
-			:host {
+			:host > div {
 				flex-wrap: nowrap;
 				min-height: 100%;
 			}
 
-			::content .menu-pane,
-			::content .properties-pane {
+			:host ::content .menu-pane,
+			:host ::content .properties-pane {
 				flex-grow: 0;
 				flex-basis: 17em;
 			}
 
-			::content .detail-pane {
+			:host ::content .detail-pane {
 				flex-basis: 34em;
 				order: 1;
 			}
 
-			::content .properties-pane {
+			:host ::content .properties-pane {
 				order: 0;
 			}
 		}
 	</style>
 
 	<template>
-		<content select="group-pane"></content>
+		<div>
+			<content select="group-pane"></content>
+		</div>
+
+		<footer>
+			<content select="footer-pane"></content>
+		</footer>
 	</template>
 
 	<script>

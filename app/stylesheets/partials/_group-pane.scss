@@ -65,6 +65,10 @@ group-pane {
 			text-decoration: underline;
 		}
 
+		icon-button a:hover {
+			text-decoration: none;
+		}
+
 		h1 {
 			color: $color-bg;
 		}
@@ -99,6 +103,10 @@ group-pane {
 
 		a:hover {
 			text-decoration: underline;
+		}
+
+		icon-button a:hover {
+			text-decoration: none;
 		}
 
 		h1 {

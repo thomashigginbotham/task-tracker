@@ -1,0 +1,19 @@
+// Task Tracker App component.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+task-tracker-app {
+	$group-pane-max-height: calc(100vh - #{$col-gutter * 2} - #{$base-font-size * $base-line-height});
+
+	@media (min-width: 68rem) and (min-height: 40rem) {
+		& {
+			height: $group-pane-max-height;
+		}
+
+		group-pane {
+			max-height: $group-pane-max-height;
+			overflow: auto;
+		}
+	}
+}
