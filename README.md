@@ -1,6 +1,8 @@
-# Experis Pattern Library
+# Task Tracker
 
-![Screenshot of XPL](http://portfolio.thomashigginbotham.com/images/xpl/xpl-banner-large.png)
+Task Tracker is a web application that provides simple project management and time tracking. It is built with the Experis Pattern Library and Polymer.
+
+In the current phase, I am building out static pages using Polymer components. When complete, functionality will be added using AngularJS on the front end and ASP.NET MVC on the back end.
 
 The Experis Pattern Library (XPL) is a living style guide and a component-driven, front-end development resource. It strives to provide auto-generated documentation and reference as well as a development environment for creating highly organized and efficient websites.
 
