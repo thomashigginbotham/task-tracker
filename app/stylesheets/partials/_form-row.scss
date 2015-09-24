@@ -1,0 +1,12 @@
+// Form row components.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+form-row {
+	group-block:not(:last-child) {
+		margin-right: $col-gutter;
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+}

@@ -6,7 +6,19 @@
 group-pane {
 	.group-pane-header,
 	.group-pane-content {
+		box-sizing: border-box;
 		padding: $col-gutter;
+	}
+
+	.group-pane-content {
+		$heading-height: $col-gutter * 2 + 1.5rem * $base-line-height * .75;
+		$footer-pane-padding: $col-gutter * 2;
+		$footer-pane-height: $base-font-size * $base-line-height;
+
+		@media (min-width: 68rem) and (min-height: 40rem) {
+			height: calc(100vh - #{$heading-height} - (#{$footer-pane-padding} + #{$footer-pane-height}));
+			overflow: auto;
+		}
 	}
 
 	&.menu-pane {

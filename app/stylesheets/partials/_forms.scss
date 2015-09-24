@@ -5,7 +5,7 @@
 // Variables
 //
 // No styleguide reference.
-$form-field-height: 2.78em;
+$form-field-height: 2.4rem;
 
 // Global Styles
 //
@@ -22,25 +22,34 @@ label {
 //
 // No styleguide reference.
 input[type=text],
-input[type=search] {
+input[type=search],
+input[type=date],
+input[type=email],
+input[type=number] {
 	@include box-sizing(border-box);
 	padding: 0 $form-field-height / 4;
 	max-width: 100%;
 	height: $form-field-height;
-	border: 1px solid $color-text;
+	border: 1px solid lighten($color-text-light, 50%);
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
 
 	&:focus {
-		outline: 1px solid $color-text;
+		border: 1px solid $color-text-light;
+		outline: 1px solid $color-text-light;
 	}
 }
 
 textarea {
 	@include box-sizing(border-box);
 	padding: $form-field-height / 4;
-	border: 1px solid $color-text;
+	border: 1px solid lighten($color-text-light, 50%);
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
 
 	&:focus {
-		outline: 1px solid $color-text;
+		border: 1px solid $color-text-light;
+		outline: 1px solid $color-text-light;
 	}
 }
 
@@ -50,13 +59,14 @@ textarea {
 //
 // No styleguide reference.
 select {
-	@include box-sizing(border-box);
-	padding: 0 $form-field-height / 4;
 	height: $form-field-height;
-	border: 1px solid $color-text;
+	border: 1px solid lighten($color-text-light, 50%);
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
 
 	&:focus {
-		outline: 1px solid $color-text;
+		border: 1px solid $color-text-light;
+		outline: 1px solid $color-text-light;
 	}
 }
 
@@ -70,6 +80,9 @@ select {
 
 	input[type=text],
 	input[type=search],
+	input[type=date],
+	input[type=email],
+	input[type=number],
 	textarea,
 	select {
 		border-color: $color-error;

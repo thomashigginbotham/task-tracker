@@ -55,6 +55,10 @@
 					<td>A heading to appear at the top of the pane.</td>
 				</tr>
 				<tr>
+					<td>color</td>
+					<td>A CSS color value to use for the heading background.</td>
+				</tr>
+				<tr>
 					<td>icon</td>
 					<td>An icon name from the Font Awesome font.</td>
 				</tr>
@@ -90,6 +94,38 @@
 				<tr>
 					<td>version</td>
 					<td>The current version of Task Tracker.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Form Row <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-form-row.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-form-row.html"></div>
+
+		<p>A form row can display any number of group boxes in a horizontal layout. The form fields within the group boxes can be stretched to fill the full width by using the <code>stretch</code> attribute. The <code>flex</code> attribute is available for setting the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex shorthand values</a> for each group box.</p>
+
+		<table class="key-value">
+			<thead>
+				<tr>
+					<th>Attribute</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>stretch</td>
+					<td>A boolean attribute to stretch the form fields to fill the full row.</td>
+				</tr>
+				<tr>
+					<td>flex</td>
+					<td>An array of flex values for each group box in the row.</td>
 				</tr>
 			</tbody>
 		</table>

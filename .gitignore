@@ -7,9 +7,8 @@
 app/bower_components
 dist
 node_modules
-*.sublime-*
 *.css
-Sourcefiles
+graphic-comps
 
 #################
 ## Eclipse

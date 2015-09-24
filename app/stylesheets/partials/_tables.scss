@@ -4,7 +4,7 @@
 //
 // No styleguide reference.
 .basic-table {
-	border-collapse: collapse;
+	border-collapse: separate;
 
 	thead tr {
 		border-bottom: 1px solid lighten($color-text, 65%);

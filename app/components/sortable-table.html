@@ -1,9 +1,5 @@
 <dom-module id="sortable-table">
 	<style>
-		:host ::content thead th {
-			cursor: pointer;
-		}
-
 		:host ::content thead .fa-sort,
 		:host ::content thead .fa-sort-asc,
 		:host ::content thead .fa-sort-desc {
@@ -21,6 +17,7 @@
 			extends: 'table',
 			properties: {
 				columns: Array,
+				noSort: Array,
 				widths: Array,
 				aligns: Array,
 				defaultSortCol: {
@@ -40,6 +37,7 @@
 			},
 			appendHeaders: function() {
 				var columns = this.columns;
+				var noSort = this.noSort;
 				var widths = this.widths;
 				var aligns = this.aligns;
 
@@ -63,17 +61,22 @@
 							th.style.textAlign = aligns[index];
 						}
 
-						th.innerHTML = headerContent + ' <span class="fa-sort"></span>';
+						th.innerHTML = headerContent;
 
 						tr.appendChild(th);
 
-						// Add event listeners
-						th.addEventListener('click', function() {
-							var parentTable = this.parentNode.parentNode.parentNode;
-							var sortOrder = toggleSortOrderFunc(this);
+						if (!Array.isArray(noSort) || noSort.indexOf(index + 1) === -1) {
+							th.innerHTML += ' <span class="fa-sort"></span>';
+							th.style.cursor = 'pointer';
 
-							sortFunc(index, parentTable, sortOrder);
-						}, false);
+							// Add event listeners
+							th.addEventListener('click', function() {
+								var parentTable = this.parentNode.parentNode.parentNode;
+								var sortOrder = toggleSortOrderFunc(this);
+
+								sortFunc(index, parentTable, sortOrder);
+							}, false);
+						}
 					});
 
 					this.appendChild(thead);
@@ -120,7 +123,11 @@
 						sibling.dataset.sortOrder = '';
 
 						// Remove sorting class
-						sibling.querySelector('span').className = 'fa-sort';
+						var span = sibling.querySelector('span');
+
+						if (span !== null) {
+							span.className = 'fa-sort';
+						}
 					}
 				};
 

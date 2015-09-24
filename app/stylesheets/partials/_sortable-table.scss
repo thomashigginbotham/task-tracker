@@ -4,8 +4,9 @@
 //
 // No styleguide reference.
 table[is='sortable-table'] {
-	width: 100%;
 	table-layout: fixed;
+	width: 100%;
+	border-collapse: separate;
 
 	thead {
 		text-transform: uppercase;
@@ -19,7 +20,7 @@ table[is='sortable-table'] {
 	th,
 	td {
 		padding: $text-height / 2 $text-height;
-		vertical-align: top;;
+		vertical-align: top;
 		text-align: left;
 	}
 
@@ -31,9 +32,9 @@ table[is='sortable-table'] {
 		padding-bottom: 0;
 	}
 
-	th:not(:last-child),
-	td:not(:last-child) {
-		border-right: 1px solid darken($color-bg-dark, 10%);
+	th:not(:first-child),
+	td:not(:first-child) {
+		border-left: 1px solid darken($color-bg-dark, 10%);
 	}
 
 	.numeric,
@@ -42,5 +43,10 @@ table[is='sortable-table'] {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		text-align: right;
+	}
+
+	.edit,
+	.remove {
+		text-align: center;
 	}
 }

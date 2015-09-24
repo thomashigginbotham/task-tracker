@@ -36,12 +36,18 @@ define(['directives/module', 'jquery'], function(directives, $) {
 				}, {
 					text: 'Tables',
 					uri: '/components/tables'
+				}, {
+					text: 'Decoration',
+					uri: '/components/decoration'
 				}]
 			}, {
 				text: 'Pages',
 				submenu: [{
-					text: 'Home Page',
-					uri: '/pages/index'
+					text: 'Project',
+					uri: '/pages/project'
+				}, {
+					text: 'Time Records',
+					uri: '/pages/time-records'
 				}]
 			}];
 

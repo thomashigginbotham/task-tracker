@@ -47,7 +47,7 @@
 
 	<template>
 		<section>
-			<header class="group-pane-header">
+			<header class="group-pane-header" style$="{{getBackgroundColor(color)}}">
 				<h1 class$="{{getIconClass(icon)}}">{{heading}}</h1>
 				<content select="group-pane-menu"></content>
 			</header>
@@ -67,11 +67,23 @@
 					value: '',
 					reflectToAttribute: true
 				},
+				color: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				},
 				icon: {
 					type: String,
 					value: '',
 					reflectToAttribute: true
 				}
+			},
+			getBackgroundColor: function(color) {
+				if (color === '') {
+					return '';
+				}
+
+				return 'background-color: ' + color;
 			},
 			getIconClass: function(iconName) {
 				if (iconName === '') {

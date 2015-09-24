@@ -20,18 +20,18 @@
 					<menu-item uri="/#/account/sign-out" icon="sign-out">Sign Out</menu-item>
 				</menu-block>
 
-				<menu-block heading="Quick Links">
-					<menu-item uri="/#/projects/experis/experis-administration">Experis Administration</menu-item>
-					<menu-item uri="/#/reports/utilization">Utilization Report</menu-item>
-					<menu-item uri="/#/reports/peoplesoft">PeopleSoft Time Sheet</menu-item>
-				</menu-block>
-
 				<group-block heading="Search">
 					<form action="#" method="get">
 						<input type="search" placeholder="Keywords&hellip;">
 						<button type="submit">Go</button>
 					</form>
 				</group-block>
+
+				<menu-block heading="Quick Links">
+					<menu-item uri="/#/projects/experis/experis-administration">Experis Administration</menu-item>
+					<menu-item uri="/#/reports/utilization">Utilization Report</menu-item>
+					<menu-item uri="/#/reports/peoplesoft">PeopleSoft Time Sheet</menu-item>
+				</menu-block>
 
 				<menu-block heading="Information">
 					<menu-item uri="#daily-summary" icon="info-circle">Daily Summary</menu-item>
@@ -135,21 +135,23 @@
 					</menu-block>
 
 					<group-block heading="Created">
-						<time datetime="2015-09-14">Sep. 14, 2015</time>
+						<icon-item icon="calendar-plus-o">
+							<time datetime="2015-09-14">Sep. 14, 2015</time>
+						</icon-item>
 					</group-block>
 
 					<group-block heading="Time Spent">
-						<p>78.25 of 125 hours</p>
+						<icon-item icon="clock-o">78.25 of 125 hours</icon-item>
 					</group-block>
 
 					<group-block heading="Task Status">
-						<p>6 of 9 tasks completed</p>
+						<icon-item icon="check-square-o">6 of 9 tasks completed</icon-item>
 					</group-block>
 
 					<menu-block heading="Team Members">
-						<menu-item uri="/#/users/rebecca-chambers">Rebecca Chambers</menu-item>
 						<menu-item uri="/#/users/john-shepard">John Shepard</menu-item>
 						<menu-item uri="/#/users/marcus-fenix">Marcus Fenix</menu-item>
+						<menu-item uri="/#/users/rebecca-chambers">Rebecca Chambers</menu-item>
 					</menu-block>
 				</div>
 			</group-pane>

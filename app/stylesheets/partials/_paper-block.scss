@@ -8,7 +8,6 @@ paper-block {
 	margin-bottom: $col-gutter;
 
 	.paper-block.paper-block-content {
-		@include remove-last-child-margin;
 		padding: $col-gutter;
 	}
 }

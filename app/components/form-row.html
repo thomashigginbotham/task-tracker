@@ -1,0 +1,51 @@
+<dom-module id="form-row">
+	<style>
+		@media (min-width: 50rem) {
+			:host {
+				display: flex;
+			}
+
+			:host ::content group-block:not(:last-child) {
+				margin-right: 1rem;
+			}
+
+			:host[stretch] ::content input,
+			:host[stretch] ::content textarea,
+			:host[stretch] ::content select {
+				box-sizing: border-box;
+				width: 100%;
+			}
+		}
+	</style>
+
+	<template>
+		<content select="group-block"></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'form-row',
+			properties: {
+				stretch: Boolean,
+				flex: Array
+			},
+			attached: function() {
+				this.setFlexValues();
+			},
+			setFlexValues: function() {
+				var host = this;
+				var flex = this.flex;
+
+				if (Array.isArray(flex) && flex.length > 0) {
+					var groupBlocks = host.getElementsByTagName('group-block');
+
+					if (groupBlocks !== null) {
+						for (var i = 0; i < groupBlocks.length; i++) {
+							groupBlocks[i].style.flex = flex[i]
+						}
+					}
+				}
+			}
+		});
+	</script>
+</dom-module>
