@@ -34,7 +34,7 @@ table[is='sortable-table'] {
 
 	th:not(:first-child),
 	td:not(:first-child) {
-		border-left: 1px solid darken($color-bg-dark, 10%);
+		border-left: 1px solid $color-bg-dark;
 	}
 
 	.numeric,
