@@ -8,9 +8,8 @@ icon-button {
 		@include inline-block;
 		@include transition(background-color .25s ease-out);
 		padding: $col-gutter / 2 $col-gutter;
-		border: 1px solid $color-primary;
-		color: $color-primary;
-		background-color: $color-bg;
+		color: $color-bg;
+		background-color: $color-primary;
 	}
 
 	&:not([icon='']) {
@@ -26,12 +25,12 @@ icon-button {
 	a:hover {
 		text-decoration: none;
 		color: $color-bg;
-		background-color: $color-primary;
+		background-color: darken($color-primary, 10%);
 	}
 
 	a:focus {
 		text-decoration: none;
-		outline: 1px solid $color-primary;
+		outline: 1px solid darken($color-primary, 10%);
 	}
 }
 

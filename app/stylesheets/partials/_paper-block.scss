@@ -10,4 +10,13 @@ paper-block {
 	.paper-block.paper-block-content {
 		padding: $col-gutter;
 	}
+
+	&.status-good .paper-block-content {
+		background-color: $color-success;
+	}
+
+	button-row {
+		padding-top: $col-gutter;
+		border-top: 1px solid $color-text;
+	}
 }

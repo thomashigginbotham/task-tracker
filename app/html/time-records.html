@@ -49,6 +49,33 @@
 						<menu-item uri="#pin" icon="thumb-tack">Pin</menu-item>
 					</menu-block>
 				</group-pane-menu>
+				
+				<div class="detail-block">
+					<paper-block heading="New Time Record" class="status-good">
+						<form-row stretch flex='["1 1 25%", "1 1 25%", "2 1 50%"]'>
+							<group-block heading="Date">
+								<input type="date" value="2015-09-19">
+							</group-block>
+
+							<group-block heading="Time Spent (Hours)">
+								<input type="number" step="0.25" value="0.25">
+							</group-block>
+
+							<group-block heading="User">
+								<select name="user-new-time" id="user-new-time">
+									<option value="">John Shepard</option>
+									<option value="">Marcus Fenix</option>
+									<option value="" selected>Rebecca Chambers</option>
+								</select>
+							</group-block>
+						</form-row>
+
+						<button-row>
+							<p>24.75 hours remaining</p>
+							<icon-button uri="#" icon="plus-circle">Add Time</icon-button>
+						</button-row>
+					</paper-block>
+				</div>
 
 				<div class="detail-block">
 					<h2>
@@ -82,33 +109,6 @@
 						</table>
 
 						<p class="center-text"><strong>Total Time:</strong> 5 hours</p>
-					</paper-block>
-				</div>
-
-				<div class="detail-block">
-					<paper-block heading="New Time Record">
-						<form-row stretch flex='["1 1 25%", "1 1 25%", "2 1 50%"]'>
-							<group-block heading="Date">
-								<input type="date" value="2015-09-19">
-							</group-block>
-
-							<group-block heading="Time Spent (Hours)">
-								<input type="number" step="0.25" value="0.25">
-							</group-block>
-
-							<group-block heading="User">
-								<select name="user-new-time" id="user-new-time">
-									<option value="">John Shepard</option>
-									<option value="">Marcus Fenix</option>
-									<option value="" selected>Rebecca Chambers</option>
-								</select>
-							</group-block>
-						</form-row>
-
-						<button-row>
-							<p>24.75 hours remaining</p>
-							<icon-button uri="#" icon="plus-circle">Add Time</icon-button>
-						</button-row>
 					</paper-block>
 				</div>
 
