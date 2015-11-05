@@ -10,6 +10,10 @@
 			padding-left: 1.25em;
 		}
 
+		:host[caution] > a {
+			background-color: #c90;
+		}
+
 		:host > a::before {
 			position: absolute;
 			left: 0;
@@ -33,6 +37,9 @@
 				},
 				icon: {
 					type: 'String'
+				},
+				caution: {
+					type: 'Boolean'
 				}
 			},
 			getIconClass: function(iconName) {

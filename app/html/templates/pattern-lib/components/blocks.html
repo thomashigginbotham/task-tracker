@@ -91,6 +91,20 @@
 	<hr>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Notice Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-notice-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-notice-block.html"></div>
+
+		<p>A notice block can be added to the top of a group pane and is used for displaying notifications or for displaying a form to allow users to make changes pertaining to the group pane.</p>
+
+		<p>It may contain any HTML content.</p>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
 		<h2>Paper Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
 		<pre data-load-html data-load-uri="templates/sample-paper-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>

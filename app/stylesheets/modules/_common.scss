@@ -33,9 +33,14 @@
 //
 // Compatibility untested.
 @mixin remove-last-child-margin {
-	> :last-child:after {
-		content: '';
-		display: block;
-		margin: -$col-gutter 0 $col-gutter;
+	> :last-child {
+		margin-bottom: 0;
+
+		&::after {
+			content: '';
+			display: block;
+			margin: -$col-gutter 0 $col-gutter;
+
+		}
 	}
 }

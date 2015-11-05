@@ -21,6 +21,28 @@ group-pane {
 		}
 	}
 
+	.group-pane-header {
+		menu-item a {
+			display: inline-block;
+		}
+
+		menu-item:not([icon='']) a {
+			padding: .3em .5em;
+
+			&::before {
+				left: .5em;
+			}
+		}
+
+		[active] {
+			background-color: rgba($color-bg, .25);
+
+			a {
+				font-weight: $regular;
+			}
+		}
+	}
+
 	&.menu-pane {
 		color: $color-bg;
 		background-color: $color-text-light;

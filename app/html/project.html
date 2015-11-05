@@ -44,13 +44,44 @@
 					<menu-block layout="horizontal">
 						<menu-item
 							uri="/#/projects/acme/acme-website-redesign/edit"
-							icon="pencil">Edit Project</menu-item>
+							icon="pencil"
+							active>Edit Project</menu-item>
 
 						<menu-item uri="#pin" icon="thumb-tack">Pin</menu-item>
 					</menu-block>
 				</group-pane-menu>
 
 				<div class="detail-block">
+					<notice-block>
+						<form-row stretch flex='["2 1 50%", "1 1 25%", "1 1 25%"]'>
+							<group-block heading="Name">
+								<input type="text" name="project-name" value="Acme Website Redesign">
+							</group-block>
+
+							<group-block heading="Client">
+								<select name="project-client" id="project-client">
+									<option value="">The Acme Company</option>
+								</select>
+							</group-block>
+
+							<group-block heading="Creation Date">
+								<input type="date" name="project-create-date" value="2015-09-14">
+							</group-block>
+						</form-row>
+
+						<form-row stretch flex='["1 1 100%"]'>
+							<group-block heading="Description">
+								<textarea name="project-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
+							</group-block>
+						</form-row>
+
+						<button-row>
+							<icon-button uri="#" icon="check">Save Changes</icon-button>
+							<icon-button uri="#" icon="backward">Cancel</icon-button>
+							<icon-button uri="#" icon="remove" caution>Delete Project</icon-button>
+						</button-row>
+					</notice-block>
+
 					<paper-block heading="Active Tasks (3)">
 						<table is="sortable-table" default-sort-col="3"
 							default-sort-order="asc"

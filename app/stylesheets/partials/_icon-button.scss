@@ -32,6 +32,14 @@ icon-button {
 		text-decoration: none;
 		outline: 1px solid darken($color-primary, 10%);
 	}
+
+	&[caution] > a.icon-button {
+		background-color: $color-warning;
+
+		&:hover {
+			background-color: darken($color-warning, 10%);
+		}
+	}
 }
 
 [joined] > .button-row-buttons > icon-button:not(:last-child) a {

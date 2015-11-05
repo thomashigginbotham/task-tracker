@@ -1,0 +1,14 @@
+// Notice Block components.
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+notice-block {
+	@include remove-last-child-margin;
+	position: relative;
+	top: -$col-gutter;
+	left: -$col-gutter;
+	padding: $col-gutter;
+	width: 100%;
+	background-color: lighten($color-primary, 25%);
+}

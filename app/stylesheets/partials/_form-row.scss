@@ -4,9 +4,15 @@
 //
 // No styleguide reference.
 form-row {
+	margin-bottom: $col-gutter;
+
 	group-block:not(:last-child) {
 		margin-right: $col-gutter;
 		padding-bottom: 0;
 		border-bottom: 0;
+
+		@media (min-width: 50em) {
+			margin-bottom: 0;
+		}
 	}
 }
