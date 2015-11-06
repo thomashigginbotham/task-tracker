@@ -43,8 +43,11 @@ define(['directives/module', 'jquery'], function(directives, $) {
 			}, {
 				text: 'Pages',
 				submenu: [{
-					text: 'Project',
-					uri: '/pages/project'
+					text: 'Project List',
+					uri: '/pages/project-list'
+				}, {
+					text: 'Project Detail',
+					uri: '/pages/project-detail'
 				}, {
 					text: 'Time Records',
 					uri: '/pages/time-records'

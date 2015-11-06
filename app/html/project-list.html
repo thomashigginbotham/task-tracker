@@ -1,0 +1,149 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="lt-ie9"><![endif]-->
+<!--[if !(lt IE 9)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!--<![endif]-->
+	<head>
+		<title>Task Tracker 2.0</title>
+		<!-- build:include templates/head.html --><!-- /build -->
+
+		<link rel="stylesheet" href="/stylesheets/main.css"/>
+	</head>
+
+	<body>
+		<task-tracker-app>
+			<group-pane heading="Task Tracker" class="menu-pane">
+				<menu-block heading="Menu">
+					<menu-item uri="/#/projects" icon="folder" active>Projects</menu-item>
+					<menu-item uri="/#/reports" icon="pie-chart">Reports</menu-item>
+					<menu-item uri="/#/settings" icon="sliders">Settings</menu-item>
+					<menu-item uri="/#/account/sign-out" icon="sign-out">Sign Out</menu-item>
+				</menu-block>
+
+				<group-block heading="Search">
+					<form action="#" method="get">
+						<input type="search" placeholder="Keywords&hellip;">
+						<button type="submit">Go</button>
+					</form>
+				</group-block>
+
+				<menu-block heading="Quick Links">
+					<menu-item uri="/#/projects/experis/experis-administration">Experis Administration</menu-item>
+					<menu-item uri="/#/reports/utilization">Utilization Report</menu-item>
+					<menu-item uri="/#/reports/peoplesoft">PeopleSoft Time Sheet</menu-item>
+				</menu-block>
+
+				<menu-block heading="Information">
+					<menu-item uri="#daily-summary" icon="info-circle">Daily Summary</menu-item>
+					<menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</menu-item>
+				</menu-block>
+			</group-pane>
+
+			<group-pane heading="Projects" icon="folder" class="detail-pane" color="#356196">
+				<group-pane-menu>
+					<menu-block layout="horizontal">
+						<menu-item
+							uri="/#/projects/acme/acme-website-redesign/edit"
+							icon="plus">Add Project</menu-item>
+
+						<menu-item uri="#pin" icon="thumb-tack">Pin</menu-item>
+					</menu-block>
+				</group-pane-menu>
+
+				<div class="detail-block">
+					<paper-block heading="Active Projects">
+						<table is="sortable-table" default-sort-col="1"
+							default-sort-order="asc"
+							columns='["Name", "Client", "Time Spent", "Next Due Date"]'
+							widths='["35%", "25%", "20%", "20%"]',
+							aligns='["left", "left", "right", "right"]'>
+							<tr>
+								<td><a href="/#/projects/acme-website-redesign">Acme Website Redesign</a></td>
+								<td><a href="/#/clients/the-acme-company">Acme Company, The</a></td>
+								<td class="numeric"><strong>78.25</strong> of <strong>125</strong> hours</td>
+								<td class="datetime" data-sort-value="20150923"><time datetime="9/23/2015">9/23/2015</time></td>
+							</tr>
+							<tr>
+								<td><a href="/#/projects/acme-website-redesign">Office Administration</a></td>
+								<td><a href="/#/clients/the-acme-company">Acme Company, The</a></td>
+								<td class="numeric" data-sort-value="1298.75"><strong>1,298.75</strong> hours</td>
+								<td class="datetime" data-sort-value="20150926"><time datetime="9/26/2015">9/26/2015</time></td>
+							</tr>
+							<tr>
+								<td><a href="/#/projects/restaurant-maintenance-project">Restaurant Maintenance Project</a></td>
+								<td><a href="/#/clients/mom-pop-diner">Mom &amp; Pop Diner</a></td>
+								<td class="numeric"><strong>312.25</strong> hours</td>
+								<td class="datetime" data-sort-value="20150927"><time datetime="9/27/2015">9/27/2015</time></td>
+							</tr>
+							<tr>
+								<td><a href="/#/projects/acme-website-redesign">Hotel CMS Integration</a></td>
+								<td><a href="/#/clients/wands">Wands</a></td>
+								<td class="numeric"><strong>12.5</strong> of <strong>90</strong> hours</td>
+								<td class="datetime" data-sort-value="20150925"><time datetime="9/25/2015">9/25/2015</time></td>
+							</tr>
+							<tr>
+								<td><a href="/#/projects/us-government-photo-database">US Government Photo Database</a></td>
+								<td><a href="/#/clients/us-government">US Government</a></td>
+								<td class="numeric"><strong>41</strong> of <strong>150</strong> hours</td>
+								<td class="datetime" data-sort-value="20150924"><time datetime="9/24/2015">9/24/2015</time></td>
+							</tr>
+						</table>
+					</paper-block>
+				</div>
+
+				<div class="detail-block">
+					<paper-block heading="Completed Projects">
+						<table is="sortable-table" default-sort-col="1"
+							default-sort-order="asc"
+							columns='["Name", "Client", "Time Spent", "Completed On"]'
+							widths='["35%", "25%", "20%", "20%"]',
+							aligns='["left", "left", "right", "right"]'>
+							<tr>
+								<td><a href="/#/projects/humanitarian-organization-graphic-design">Humanitarian Organization Graphic Design</a></td>
+								<td><a href="/#/clients/red-plus">Red Plus</a></td>
+								<td class="numeric warn"><strong>25</strong> of <strong>20</strong> hours</td>
+								<td class="datetime" data-sort-value="20150802"><time datetime="8/02/2015">8/02/2015</time></td>
+							</tr>
+							<tr>
+								<td><a href="/#/projects/community-college-website">Community College Website</a></td>
+								<td><a href="/#/clients/uvr">UVR</a></td>
+								<td class="numeric"><strong>129.25</strong> of <strong>150</strong> hours</td>
+								<td class="datetime" data-sort-value="20150721"><time datetime="7/21/2015">7/21/2015</time></td>
+							</tr>
+						</table>
+					</paper-block>
+				</div>
+			</group-pane>
+
+			<group-pane heading="Quick Menu" class="properties-pane">
+				<div class="property-block">
+					<p>Are you looking for one of these projects?</p>
+				</div>
+
+				<div class="property-block">
+					<menu-block heading="Recent Projects">
+						<menu-item uri="/#/projects/acme-website-redesign">Acme Website Redesign</menu-item>
+						<menu-item uri="/#/projects/us-government-photo-database">US Government Photo Database</menu-item>
+						<menu-item uri="/#/projects/hotel-cms-integration">Hotel CMS Integration</menu-item>
+					</menu-block>
+
+					<menu-block heading="Active Projects">
+						<menu-item uri="/#/projects/office-administration">Office Administration</menu-item>
+						<menu-item uri="/#/projects/restaurant-maintenance-project">Restaurant Maintenance Project</menu-item>
+					</menu-block>
+
+					<menu-block heading="Recently Completed">
+						<menu-item uri="/#/projects/humanitarian-organization-graphic-design">Humanitarian Organization Graphic Design</menu-item>
+						<menu-item uri="/#/projects/community-college-website">Community College Website</menu-item>
+					</menu-block>
+				</div>
+			</group-pane>
+
+			<footer-pane status="online" version="0.0.1"></footer-pane>
+		</task-tracker-app>
+
+		<!-- build:js:dist javascripts/built.js -->
+		<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
+		<!-- /build -->
+	</body>
+</html>

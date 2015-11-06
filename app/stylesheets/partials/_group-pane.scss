@@ -22,6 +22,10 @@ group-pane {
 	}
 
 	.group-pane-header {
+		menu-item {
+			overflow: visible;
+		}
+
 		menu-item a {
 			display: inline-block;
 		}

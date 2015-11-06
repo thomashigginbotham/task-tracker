@@ -6,12 +6,23 @@
 	</style>
 
 	<template>
-		<content></content>
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<div class="notice-block-content">
+			<content></content>
+		</div>
 	</template>
 
 	<script>
 		Polymer({
-			is: 'notice-block'
+			is: 'notice-block',
+			properties: {
+				heading: {
+					type: String,
+					value: '',
+					reflectToAttribute: true
+				}
+			}
 		});
 	</script>
 </dom-module>
