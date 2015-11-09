@@ -13,7 +13,13 @@
 				margin-right: 1rem;
 			}
 
-			:host[stretch] ::content input,
+			:host[stretch] ::content input[type=text],
+			:host[stretch] ::content input[type=password],
+			:host[stretch] ::content input[type=number],
+			:host[stretch] ::content input[type=date],
+			:host[stretch] ::content input[type=search],
+			:host[stretch] ::content input[type=email],
+			:host[stretch] ::content input[type=tel],
 			:host[stretch] ::content textarea,
 			:host[stretch] ::content select {
 				box-sizing: border-box;

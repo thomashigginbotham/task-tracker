@@ -31,6 +31,9 @@ define(['directives/module', 'jquery'], function(directives, $) {
 					text: 'Blocks',
 					uri: '/components/blocks'
 				}, {
+					text: 'Forms',
+					uri: '/components/forms'
+				}, {
 					text: 'Buttons',
 					uri: '/components/buttons'
 				}, {

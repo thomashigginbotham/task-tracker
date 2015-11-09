@@ -50,6 +50,83 @@
 					</menu-block>
 				</group-pane-menu>
 
+				<notice-block heading="Change Task Details">
+					<form-row stretch flex='["2 1 50%", "1 1 25%", "1 1 25%"]'>
+						<group-block heading="Name">
+							<input type="text" name="task-name" value="Attend weekly client meeting">
+						</group-block>
+
+						<group-block heading="Project">
+							<select name="task-project" id="task-project">
+								<option value="">Acme Website Redesign</option>
+							</select>
+						</group-block>
+					</form-row>
+
+					<form-row stretch flex='["1 1 35%", "1 1 35%", "1 1 30%"]'>
+						<group-block heading="Creation Date">
+							<input type="date" name="task-due-date" value="2015-09-14">
+						</group-block>
+
+						<group-block heading="Due Date">
+							<input type="date" name="task-due-date" value="2015-09-23">
+						</group-block>
+
+						<group-block heading="Complete">
+							<ul is="toggle-fields">
+								<li>
+									<input type="checkbox" id="task-completed" name="task-completed"><label for="task-completed">Mark as complete?</label>
+								</li>
+							</ul>
+						</group-block>
+					</form-row>
+
+					<form-row stretch flex='["1 1 auto", "1 1 75%"]'>
+						<group-block heading="Recurrence">
+							<select name="task-recurrence">
+								<option value="">Once</option>
+								<option value="">Weekly</option>
+							</select>
+						</group-block>
+
+						<group-block heading="On Day(s)">
+							<ul is="toggle-fields">
+								<li><input type="checkbox" id="task-day-0" name="task-day-0"><label for="task-day-0">Sunday</label></li>
+
+								<li><input type="checkbox" id="task-day-1" name="task-day-1"><label for="task-day-1">Monday</label></li>
+
+								<li><input type="checkbox" id="task-day-2" name="task-day-2"><label for="task-day-2">Tuesday</label></li>
+
+								<li><input type="checkbox" id="task-day-3" name="task-day-3"><label for="task-day-3">Wenesday</label></li>
+
+								<li><input type="checkbox" id="task-day-4" name="task-day-4"><label for="task-day-4">Thursday</label></li>
+
+								<li><input type="checkbox" id="task-day-5" name="task-day-5"><label for="task-day-5">Friday</label></li>
+
+								<li><input type="checkbox" id="task-day-6" name="task-day-6"><label for="task-day-6">Saturday</label></li>
+							</ul>
+						</group-block>
+					</form-row>
+
+					<form-row stretch flex='["1 1 100%"]'>
+						<group-block heading="Description">
+							<textarea name="task-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
+						</group-block>
+					</form-row>
+
+					<form-row stretch flex='["1 1 100%"]'>
+						<group-block heading="Tags">
+							<input type="text" name="task-tags" value="Meeting, Billable">
+						</group-block>
+					</form-row>
+
+					<button-row>
+						<icon-button uri="#" icon="check">Save Changes</icon-button>
+						<icon-button uri="#" icon="backward">Cancel</icon-button>
+						<icon-button uri="#" icon="trash" caution>Delete Task</icon-button>
+					</button-row>
+				</notice-block>
+
 				<div class="detail-block">
 					<paper-block heading="New Time Record" class="status-important">
 						<form-row stretch flex='["1 1 25%", "1 1 25%", "2 1 50%"]'>

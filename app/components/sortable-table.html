@@ -1,5 +1,11 @@
 <dom-module id="sortable-table">
 	<style>
+		:host ::content th {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
 		:host ::content thead .fa-sort,
 		:host ::content thead .fa-sort-asc,
 		:host ::content thead .fa-sort-desc {
