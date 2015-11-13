@@ -6,6 +6,13 @@ define(['jquery'], function($) {
 	 * Initialization
 	 */
 	var init = function() {
+		// ES6
+		require(['system'], function(System) {
+			System.config({
+				defaultJSExensions: true
+			});
+		});
+
 		// Site Footer scripts
 		require(['footer'], function(footer) {
 			footer.addText('This text was added with JavaScript. See <strong>/app/javascripts/app.js</strong> to make changes.');

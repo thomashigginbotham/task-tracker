@@ -1,0 +1,31 @@
+<dom-module id="tracker-group-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			h2 {
+				margin-bottom: 0;
+				text-transform: uppercase;
+				font-size: .5rem;
+				font-family: var(--heading-font-family);
+			}
+		</style>
+
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+		<content></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-group-block',
+			properties: {
+				heading: {
+					type: String,
+					value: ''
+				}
+			}
+		});
+	</script>
+</dom-module>

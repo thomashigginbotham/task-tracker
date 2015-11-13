@@ -1,23 +1,48 @@
 <dom-module id="icon-button">
 	<style>
 		:host {
+			--icon-button-gutter: 1.4rem;
+			--icon-button-color-primary: #6390c7;
+			--icon-button-color-primary-dark: #4176b6;
+			--icon-button-color-caution: #c90;
+			--icon-button-color-caution-dark: #a27b04;
+			--icon-button-color-text: #fff;
+
 			position: relative;
 			display: inline-block;
 			white-space: nowrap;
 		}
 
-		:host:not([icon='']) {
-			padding-left: 1.25em;
+		a {
+			display: inline-block;
+			padding: calc(var(--icon-button-gutter) / 2) var(--icon-button-gutter);
+			color: var(--icon-button-color-text);
+			background-color: var(--icon-button-color-primary);
+			transition: background-color .25s ease-out;
 		}
 
-		:host[caution] > a {
-			background-color: #c90;
+		:host a:hover {
+			text-decoration: none;
+			background-color: var(--icon-button-color-primary-dark);
 		}
 
-		:host > a::before {
-			position: absolute;
-			left: 0;
+		:host a:focus {
+			text-decoration: none;
+			outline: 1px solid var(--icon-button-color-primary-dark);
+		}
+
+		:host a::before {
+			position: relative;
+			margin-right: .5em;
 			font-family: FontAwesome;
+		}
+
+		:host([caution]) a {
+			background-color: var(--icon-button-color-caution);
+		}
+
+		:host([caution]) a:hover {
+			background-color: var(--icon-button-color-caution-dark);
 		}
 	</style>
 

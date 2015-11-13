@@ -1,0 +1,96 @@
+<dom-module id="tracker-base-styles">
+	<template>
+		<style>
+			/* Variables */
+			:host {
+				--gutter: 1.4rem;
+
+				--heading-font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+				--font-size: 13px;
+				--pane-heading-font-size: 1.5rem;
+				--font-regular: 400;
+				--font-bold: 700;
+				--line-height: 1.6;
+
+				--color-primary: #6390c7;
+				--color-text: #111;
+				--color-light: #fff;
+				--color-dark: #000;
+				--color-ui-light: #eee;
+				--color-ui-dark: #333;
+			}
+
+			/*
+			 * No top margins on most block elements makes for easier
+			 * vertical alignment with other elements.
+			 */
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin: 0 0 calc(var(--gutter) / 2);
+			}
+
+			p,
+			ul,
+			ol,
+			dl,
+			table {
+				margin: 0 0 var(--gutter);
+			}
+
+			/* Hyperlinks */
+			a {
+				text-decoration: none;
+				color: var(--color-primary);
+			}
+
+			a:hover,
+			a:focus {
+				text-decoration: underline;
+			}
+
+			/* Image resets */
+			img {
+				max-width: 100%;
+				border-width: 0;
+			}
+
+			/* Decorative Elements */
+			hr {
+				margin: var(--gutter);
+				height: 1px;
+				border: 0;
+				background-color: var(color-text);
+			}
+
+
+			/* Monospace font reset */
+			pre,
+			code,
+			kbd,
+			samp,
+			tt {
+				font-family: monospace;
+				font-size: .9em;
+			}
+
+			/* Code formatting */
+			code {
+				background-color: var(--color-ui-light);
+			}
+
+			pre code {
+				background-color: transparent;
+			}
+
+			/* Dark theme */
+			:host-context(.dark-theme),
+			:host-context(.dark-theme) a {
+				color: var(--color-light);
+			}
+		</style>
+	</template>
+</dom-module>

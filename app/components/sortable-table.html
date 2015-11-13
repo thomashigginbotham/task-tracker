@@ -1,15 +1,75 @@
 <dom-module id="sortable-table">
 	<style>
-		:host ::content th {
+		:host {
+			--sortable-table-gutter: 1.4rem;
+			--sortable-table-font-size: 13px;
+			--sortable-table-color-text: #303033;
+			--sortable-table-color-accent: #f7f7f9;
+			--sortable-table-color-inactive: #c6c6cc;
+
+			table-layout: fixed;
+			width: 100%;
+			border-collapse: separate;
+		}
+
+		::content thead {
+			text-transform: uppercase;
+			background-color: var(--sortable-table-color-accent);
+		}
+
+		::content thead .fa-sort,
+		::content thead .fa-sort-asc,
+		::content thead .fa-sort-desc {
+			font-family: FontAwesome;
+		}
+
+		::content thead .fa-sort {
+			color: var(--sortable-table-color-inactive);
+		}
+
+		::content thead .fa-sort-asc,
+		::content thead .fa-sort-desc {
+			color: var(--sortable-table-color-text);
+		}
+
+		::content th,
+		::content td {
+			padding: 7px 13px;
+			padding: calc(var(--sortable-table-font-size) / 2) var(--sortable-table-font-size);
+			vertical-align: top;
+			text-align: left;
+		}
+
+		::content th {
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}
 
-		:host ::content thead .fa-sort,
-		:host ::content thead .fa-sort-asc,
-		:host ::content thead .fa-sort-desc {
-			font-family: FontAwesome;
+		::content tbody tr:not(:first-child) td {
+			padding-top: 0;
+		}
+
+		::content tbody tr:last-child td {
+			padding-bottom: 0;
+		}
+
+		::content th:not(:first-child),
+		::content td:not(:first-child) {
+			border-left: 1px solid var(--sortable-table-color-accent);
+		}
+
+		::content .numeric,
+		::content .datetime {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			text-align: right;
+		}
+
+		::content .edit,
+		::content .remove {
+			text-align: center;
 		}
 	</style>
 
@@ -29,12 +89,10 @@
 				defaultSortCol: {
 					type: Number,
 					value: '',
-					reflectToAttribute: true
 				},
 				defaultSortOrder: {
 					type: String,
 					value: 'asc',
-					reflectToAttribute: true
 				}
 			},
 			attached: function() {

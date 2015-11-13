@@ -4,15 +4,23 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- Polymer Components -->
-<!-- build:js:dist javascripts/vendor/webcomponents-lite.min.js -->
-<script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+<!-- build:js:dist javascripts/vendor/webcomponents.min.js -->
+<script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
 <!-- /build -->
+
+<script>
+	// Force Polymer to use Shadow DOM to avoid Angular conflicts
+	var Polymer = Polymer || {};
+	Polymer.dom = 'shadow';
+</script>
 
 <!-- build:template
 <link rel="import" href="<%= polymerPath %>">
 /build -->
 
-<link rel="import" href="/components/task-tracker-app.html">
+<link rel="import" href="/components/tracker-app.html">
+
+<!-- <link rel="import" href="/components/task-tracker-app.html">
 <link rel="import" href="/components/group-pane.html">
 <link rel="import" href="/components/group-pane-menu.html">
 <link rel="import" href="/components/footer-pane.html">
@@ -26,14 +34,8 @@
 <link rel="import" href="/components/icon-button.html">
 <link rel="import" href="/components/icon-item.html">
 <link rel="import" href="/components/form-row.html">
-<link rel="import" href="/components/toggle-fields.html">
+<link rel="import" href="/components/toggle-fields.html"> -->
 
 <!-- build:remove:dist -->
 <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css"/>
 <!-- /build -->
-
-<!--[if lt IE 9]>
-<script src="/javascripts/vendor/html5shiv.min.js"></script>
-<![endif]-->
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">

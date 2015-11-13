@@ -1,0 +1,33 @@
+<link rel="import" href="tracker-group-pane.html">
+
+<dom-module id="tracker-property-pane">
+	<template>
+		<style include="tracker-base-styles">
+
+		</style>
+
+		<tracker-group-pane heading="{{heading}}" color="{{color}}" icon="{{icon}}">
+			<content></content>
+		</tracker-group-pane>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-property-pane',
+			properties: {
+				heading: {
+					type: String,
+					value: ''
+				},
+				color: {
+					type: String,
+					value: ''
+				},
+				icon: {
+					type: String,
+					value: ''
+				}
+			}
+		});
+	</script>
+</dom-module>

@@ -198,7 +198,7 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					port: 9090,
-					base: ['.tmp', '.tmp/html', 'app'],
+					base: ['.tmp', '.tmp/html', 'node_modules', 'app'],
 					open: 'http://localhost:9090/pattern-lib.html',
 					livereload: true
 				}

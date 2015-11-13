@@ -4,8 +4,23 @@
 			display: block;
 		}
 
-		:host:not([joined]) ::content icon-button:not(:last-child) {
+		:host(:not([joined])) ::content icon-button:not(:last-child) {
 			margin-right: 1em;
+		}
+
+		@media (min-width: 50rem) {
+			:host {
+				display: flex;
+				align-items: center;
+			}
+
+			.button-row-message {
+				flex-grow: 2;
+			}
+
+			:host ::content p {
+				margin: 0;
+			}
 		}
 	</style>
 

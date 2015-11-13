@@ -1,7 +1,16 @@
 <dom-module id="notice-block">
 	<style>
 		:host {
+			--notice-block-gutter: 1.4rem;
+			--notice-block-color-bg: #d3e4f9;
+
 			display: block;
+			position: relative;
+			top: -var(--notice-block-gutter);
+			left: -var(--notice-block-gutter);
+			padding: var(--notice-block-gutter);
+			width: 100%;
+			background-color: var(--notice-block-color-bg);
 		}
 	</style>
 
@@ -20,7 +29,6 @@
 				heading: {
 					type: String,
 					value: '',
-					reflectToAttribute: true
 				}
 			}
 		});

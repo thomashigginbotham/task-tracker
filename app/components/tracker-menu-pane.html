@@ -1,0 +1,45 @@
+<link rel="import" href="tracker-group-pane.html">
+
+<dom-module id="tracker-menu-pane">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				color: var(--color-light);
+				background-color: var(--color-ui-dark);
+			}
+
+			::content .tracker-group-pane-content {
+				padding-top: 0;
+			}
+		</style>
+
+		<tracker-group-pane heading="{{heading}}" color="{{color}}" icon="{{icon}}" class="dark-theme">
+			<content></content>
+		</tracker-group-pane>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-menu-pane',
+			properties: {
+				heading: {
+					type: String,
+					value: ''
+				},
+				color: {
+					type: String,
+					value: ''
+				},
+				icon: {
+					type: String,
+					value: ''
+				}
+			},
+			attached: function() {
+				if (!this.color) {
+					this.color = '#222';
+				}
+			}
+		});
+	</script>
+</dom-module>

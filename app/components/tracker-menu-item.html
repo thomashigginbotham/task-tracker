@@ -1,0 +1,52 @@
+<dom-module id="tracker-menu-item">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				position: relative;
+				display: inline-block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			:host([icon]) {
+				padding-left: 1.25em;
+			}
+
+			:host([active]) a {
+				font-weight: bold;
+			}
+
+			a::before {
+				position: absolute;
+				left: 0;
+				font-family: FontAwesome;
+			}
+		</style>
+
+		<a href="{{uri}}" class$="{{icon}}"><content></content></a>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-menu-item',
+			hostAttributes: {
+				role: 'listitem'
+			},
+			properties: {
+				uri: {
+					type: String,
+					value: '#',
+				},
+				active: {
+					type: Boolean,
+					value: false,
+				},
+				icon: {
+					type: String,
+					value: '',
+				}
+			}
+		});
+	</script>
+</dom-module>

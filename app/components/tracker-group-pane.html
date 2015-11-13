@@ -1,0 +1,130 @@
+<link rel="import" href="tracker-group-pane-menu">
+
+<dom-module id="tracker-group-pane">
+	<template>
+		<style include="tracker-base-styles">
+			/* Layout */
+			:host {
+				--heading-height: var(--gutter) * 2 + var(--pane-heading-font-size) * var(--line-height);
+				--footer-pane-height: var(--gutter) * 2 + var(--font-size) * var(--line-height);
+
+				display: block;
+			}
+
+			.tracker-group-pane-header,
+			.tracker-group-pane-content {
+				box-sizing: border-box;
+				padding: var(--gutter);
+			}
+
+			@media (min-width: 50rem) {
+				.tracker-group-pane-header {
+					display: flex;
+				}
+
+				.tracker-group-pane-header h1 {
+					flex-grow: 1;
+					align-self: center;
+				}
+
+				::content tracker-group-pane-menu {
+					align-self: center;
+					white-space: nowrap;
+				}
+			}
+
+			@media (min-width: 68rem) and (min-height: 40rem) {
+				.tracker-group-pane-content {
+					height: calc(100vh - (var(--heading-height)) - (var(--footer-pane-height)));
+					overflow: auto;
+				}
+			}
+
+			/* Header */
+			.tracker-group-pane-header h1 {
+				position: relative;
+				margin: 0;
+				font-size: var(--pane-heading-font-size);
+				line-height: var(--line-height);
+			}
+
+			:host([icon]) .tracker-group-pane-header h1 {
+				padding-left: 1.25em;
+			}
+
+			.tracker-group-pane-header h1::before {
+				position: absolute;
+				left: 0;
+				font-family: FontAwesome;
+			}
+
+			.tracker-group-pane-header ::content tracker-menu-item {
+				overflow: visible;
+			}
+
+			.tracker-group-pane-header ::content tracker-menu-item a {
+				display: inline-block;
+			}
+
+			.tracker-group-pane-header ::content tracker-menu-item[icon] a {
+				padding: .3em .5em;
+			}
+
+			.tracker-group-pane-header ::content tracker-menu-item[icon] a::before {
+				left: .5em;
+			}
+
+			.tracker-group-pane-header ::content [active] {
+				background-color: rgba(255, 255, 255, .25);
+			}
+
+			.tracker-group-pane-header ::content [active] a {
+				font-weight: var(--font-regular);
+			}
+
+			/* Child Blocks */
+			::content tracker-group-block:not(:last-child),
+			::content tracker-menu-block:not(:last-child) {
+				margin-bottom: var(--gutter);
+			}
+		</style>
+
+		<section>
+			<header class="tracker-group-pane-header" style$="{{getBackgroundColor(color)}}">
+				<h1 class$="{{icon}}">{{heading}}</h1>
+				<content select="tracker-group-pane-menu"></content>
+			</header>
+
+			<div class="tracker-group-pane-content">
+				<content></content>
+			</div>
+		</section>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-group-pane',
+			properties: {
+				heading: {
+					type: String,
+					value: ''
+				},
+				color: {
+					type: String,
+					value: ''
+				},
+				icon: {
+					type: String,
+					value: ''
+				}
+			},
+			getBackgroundColor: function(color) {
+				if (color === '') {
+					return '';
+				}
+
+				return 'background-color: ' + color;
+			}
+		});
+	</script>
+</dom-module>

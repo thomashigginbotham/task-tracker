@@ -1,19 +1,30 @@
 <dom-module id="menu-block">
 	<style>
 		:host {
+			--menu-block-heading-font: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+			--menu-block-heading-color: #303033;
+
 			display: block;
 		}
 
-		:host[layout=vertical] ::content menu-item {
+		:host([layout=vertical]) ::content menu-item {
 			display: block;
 		}
 
-		:host[layout=horizontal] ::content menu-item {
+		:host([layout=horizontal]) ::content menu-item {
 			margin-right: .75em;
 		}
 
-		:host[layout=horizontal] ::content menu-item:last-child {
+		:host([layout=horizontal]) ::content menu-item:last-child {
 			margin-right: 0;
+		}
+
+		:host h2 {
+			margin-bottom: 0;
+			text-transform: uppercase;
+			font-size: .5rem;
+			font-family: var(--menu-block-heading-font);
+			color: var(--menu-block-heading-color);
 		}
 	</style>
 

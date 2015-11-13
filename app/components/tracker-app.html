@@ -1,0 +1,79 @@
+<link rel="import" href="tracker-base-styles.html">
+<link rel="import" href="tracker-menu-pane.html">
+<link rel="import" href="tracker-detail-pane.html">
+<link rel="import" href="tracker-property-pane.html">
+<link rel="import" href="tracker-footer-pane.html">
+<link rel="import" href="tracker-group-block.html">
+<link rel="import" href="tracker-menu-block.html">
+
+<dom-module id="tracker-app">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			::content group-pane {
+				box-sizing: border-box;
+			}
+
+			@media (min-width: 50rem) {
+				.tracker-app-main {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				::content [is=tracker-menu-pane] {
+					flex: 1 1 25%;
+				}
+
+				::content [is=tracker-detail-pane] {
+					flex: 1 1 75%;
+				}
+
+				::content [is=tracker-property-pane] {
+					flex: 1 1 100%;
+					order: 1;
+				}
+			}
+
+			@media (min-width: 68rem) {
+				.tracker-app-main {
+					flex-wrap: nowrap;
+					min-height: 100%;
+				}
+
+				::content [is=tracker-menu-pane],
+				::content [is=tracker-property-pane] {
+					flex-grow: 0;
+					flex-basis: 17em;
+				}
+
+				::content [is=tracker-detail-pane] {
+					flex-basis: 34em;
+					order: 1;
+				}
+
+				::content [is=tracker-property-pane] {
+					order: 0;
+				}
+			}
+		</style>
+
+		<div class="tracker-app-main">
+			<content select="tracker-menu-pane"></content>
+			<content select="tracker-detail-pane"></content>
+			<content select="tracker-property-pane"></content>
+		</div>
+
+		<footer class="tracker-app-footer">
+			<content select="tracker-footer-pane"></content>
+		</footer>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-app'
+		});
+	</script>
+</dom-module>

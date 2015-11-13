@@ -8,11 +8,11 @@
 			white-space: nowrap;
 		}
 
-		:host:not([icon='']) {
+		:host([icon]) {
 			padding-left: 1.25em;
 		}
 
-		:host[active] > a {
+		:host([active]) > a {
 			font-weight: bold;
 		}
 
@@ -37,17 +37,14 @@
 				uri: {
 					type: String,
 					value: '#',
-					reflectToAttribute: true
 				},
 				active: {
 					type: Boolean,
 					value: false,
-					reflectToAttribute: true
 				},
 				icon: {
 					type: String,
 					value: '',
-					reflectToAttribute: true
 				}
 			},
 			getIconClass: function(iconName) {

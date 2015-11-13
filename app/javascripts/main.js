@@ -12,7 +12,13 @@ requirejs.config({
 		'jquery-noconflict': 'lib/jquery-noconflict',
 		footer: 'lib/components/footer',
 		jquery: '../bower_components/jquery/dist/jquery',
-		almond: '../bower_components/almond/almond'
+		almond: '../bower_components/almond/almond',
+		system: '/systemjs/dist/system'
+	},
+	shim: {
+		system: {
+			exports: 'System'
+		}
 	},
 	map: {
 		'*': {

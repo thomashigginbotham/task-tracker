@@ -1,0 +1,45 @@
+<link rel="import" href="tracker-menu-item.html">
+
+<dom-module id="tracker-menu-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			:host([layout=vertical]) ::content tracker-menu-item {
+				display: block;
+			}
+
+			:host([layout=horizontal]) ::content tracker-menu-item:not(:last-child) {
+				margin-right: .75em;
+			}
+		</style>
+
+		<tracker-group-block heading="{{heading}}">
+			<span class="menu-block-items" role="list">
+				<content><content>
+			</span>
+		</tracker-group-block>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-menu-block',
+			hostAttributes: {
+				role: 'menu'
+			},
+			properties: {
+				heading: {
+					type: String,
+					value: '',
+				},
+				layout: {
+					type: String,
+					value: 'vertical',
+					reflectToAttribute: true
+				}
+			}
+		});
+	</script>
+</dom-module>

@@ -1,0 +1,73 @@
+<dom-module id="tracker-footer-pane">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+				box-sizing: border-box;
+				padding: var(--gutter, 1.4rem);
+				width: 100%;
+				color: var(--color-light, #fff);
+				background-color: var(--color-dark, #333);
+			}
+
+			.tracker-footer-pane-detail a {
+				text-decoration: underline;
+				color: var(--color-light, #fff);
+			}
+
+			@media (min-width: 50rem) {
+				:host(:after) {
+					content: '';
+					display: table;
+					clear: both;
+				}
+
+				.tracker-footer-pane-status {
+					float: left;
+					margin-right: 1em;
+				}
+
+				.tracker-footer-pane-detail {
+					float: right;
+				}
+
+				.tracker-footer-pane-status p,
+				.tracker-footer-pane-detail p {
+					margin: 0;
+				}
+			}
+		</style>
+
+		<section>
+			<div class="tracker-footer-pane-status"></div>
+
+			<div class="tracker-footer-pane-detail">
+				<a class="tracker-footer-pane-version" href="https://github.com/thomashigginbotham/task-tracker">Task Tracker <span>[[version]]</span></a>.
+				<a class="tracker-footer-pane-license" href="https://opensource.org/licenses/MIT">MIT License</a>.
+			</div>
+		</section>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-footer-pane',
+			properties: {
+				status: {
+					type: String,
+					value: 'offline'
+				},
+				version: String
+			},
+			attached: function() {
+				this.setStatus(this.status.toLowerCase());
+			},
+			setStatus: function(status) {
+				var statusDiv = this.shadowRoot.querySelector('.tracker-footer-pane-status');
+				var offlineMessage = '<p><span class="icon-warning"></span> Offline. Server unavailable.</p>';
+				var onlineMessage = '<p><span class="icon-check-circle"></span> Online. Connected to server.</p>'
+
+				statusDiv.innerHTML = (status === 'online') ? onlineMessage : offlineMessage;
+			}
+		});
+	</script>
+</dom-module>

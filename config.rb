@@ -4,6 +4,7 @@ sass_dir = "app/stylesheets"
 images_dir = "app/images"
 generated_images_dir = "app/images/sprites"
 javascripts_dir = "app/javascripts"
+fonts_dir = "app/fonts"
 
 # Production Paths
 http_path = "/"
@@ -11,6 +12,7 @@ http_images_path = "/images";
 http_generated_images_path = "/images/sprites";
 http_stylesheets_path = "/stylesheets";
 http_javascripts_path = "/javascripts";
+http_fonts_path = "/fonts";
 
 # CSS Output Style (:expanded, :nested, :compact, or :compressed)
 output_style = :expanded
