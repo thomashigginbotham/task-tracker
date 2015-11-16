@@ -1,0 +1,37 @@
+<dom-module id="tracker-paper-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			.tracker-paper-block-content {
+				padding: var(--gutter);
+				border: 1px solid var(--color-ui);
+				box-shadow: 0 0 .5rem rgba(0, 0, 0, .15), 0 .5em 1em rgba(0, 0, 0, .2);
+			}
+
+			.tracker-paper-block-content ::content > :last-child {
+				margin-bottom: 0;
+			}
+		</style>
+
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<div class="tracker-paper-block-content">
+			<content></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-paper-block',
+			properties: {
+				heading: {
+					type: String,
+					value: ''
+				}
+			}
+		});
+	</script>
+</dom-module>

@@ -3,10 +3,13 @@
 <dom-module id="tracker-property-pane">
 	<template>
 		<style include="tracker-base-styles">
-
+			:host {
+				display: block;
+				background-color: var(--color-ui-light);
+			}
 		</style>
 
-		<tracker-group-pane heading="{{heading}}" color="{{color}}" icon="{{icon}}">
+		<tracker-group-pane heading$="{{heading}}" font-color$="{{fontColor}}" bg-color$="{{bgColor}}" icon$="{{icon}}">
 			<content></content>
 		</tracker-group-pane>
 	</template>
@@ -19,7 +22,11 @@
 					type: String,
 					value: ''
 				},
-				color: {
+				fontColor: {
+					type: String,
+					value: ''
+				},
+				bgColor: {
 					type: String,
 					value: ''
 				},

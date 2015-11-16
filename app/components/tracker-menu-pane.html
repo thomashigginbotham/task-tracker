@@ -4,6 +4,7 @@
 	<template>
 		<style include="tracker-base-styles">
 			:host {
+				display: block;
 				color: var(--color-light);
 				background-color: var(--color-ui-dark);
 			}
@@ -13,7 +14,7 @@
 			}
 		</style>
 
-		<tracker-group-pane heading="{{heading}}" color="{{color}}" icon="{{icon}}" class="dark-theme">
+		<tracker-group-pane heading$="{{heading}}" font-color$="{{fontColor}}" bg-color$="{{bgColor}}" icon$="{{icon}}" class="dark-theme">
 			<content></content>
 		</tracker-group-pane>
 	</template>
@@ -26,18 +27,17 @@
 					type: String,
 					value: ''
 				},
-				color: {
+				fontColor: {
+					type: String,
+					value: ''
+				},
+				bgColor: {
 					type: String,
 					value: ''
 				},
 				icon: {
 					type: String,
 					value: ''
-				}
-			},
-			attached: function() {
-				if (!this.color) {
-					this.color = '#222';
 				}
 			}
 		});

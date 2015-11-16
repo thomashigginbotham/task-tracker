@@ -16,7 +16,9 @@
 				--color-text: #111;
 				--color-light: #fff;
 				--color-dark: #000;
+				--color-ui: #ccc;
 				--color-ui-light: #eee;
+				--color-ui-light-shade: rgba(255, 255, 255, .6);
 				--color-ui-dark: #333;
 			}
 
@@ -33,6 +35,15 @@
 				margin: 0 0 calc(var(--gutter) / 2);
 			}
 
+			::content h1,
+			::content h2,
+			::content h3,
+			::content h4,
+			::content h5,
+			::content h6 {
+				margin: 0 0 calc(var(--gutter) / 2);
+			}
+
 			p,
 			ul,
 			ol,
@@ -41,25 +52,38 @@
 				margin: 0 0 var(--gutter);
 			}
 
+			::content p,
+			::content ul,
+			::content ol,
+			::content dl,
+			::content table {
+				margin: 0 0 var(--gutter);
+			}
+
 			/* Hyperlinks */
-			a {
+			a,
+			::content a {
 				text-decoration: none;
 				color: var(--color-primary);
 			}
 
 			a:hover,
-			a:focus {
+			a:focus,
+			::content a:hover,
+			::content a:focus {
 				text-decoration: underline;
 			}
 
 			/* Image resets */
-			img {
+			img,
+			::content img {
 				max-width: 100%;
 				border-width: 0;
 			}
 
 			/* Decorative Elements */
-			hr {
+			hr,
+			::content hr {
 				margin: var(--gutter);
 				height: 1px;
 				border: 0;
@@ -77,18 +101,30 @@
 				font-size: .9em;
 			}
 
+			::content pre,
+			::content code,
+			::content kbd,
+			::content samp,
+			::content tt {
+				font-family: monospace;
+				font-size: .9em;
+			}
+
 			/* Code formatting */
-			code {
+			code,
+			::content code {
 				background-color: var(--color-ui-light);
 			}
 
-			pre code {
+			pre code,
+			::content pre code {
 				background-color: transparent;
 			}
 
 			/* Dark theme */
 			:host-context(.dark-theme),
-			:host-context(.dark-theme) a {
+			:host-context(.dark-theme) a,
+			:host-context(.dark-theme) ::content a {
 				color: var(--color-light);
 			}
 		</style>

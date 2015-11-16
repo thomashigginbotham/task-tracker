@@ -1,18 +1,22 @@
+<link rel="import" href="tracker-font-icon-styles.html">
+
 <dom-module id="tracker-footer-pane">
 	<template>
+		<style include="tracker-font-icon-styles"></style>
+
 		<style include="tracker-base-styles">
 			:host {
 				display: block;
 				box-sizing: border-box;
-				padding: var(--gutter, 1.4rem);
+				padding: var(--gutter);
 				width: 100%;
-				color: var(--color-light, #fff);
-				background-color: var(--color-dark, #333);
+				color: var(--color-text);
+				background-color: var(--color-ui);
 			}
 
 			.tracker-footer-pane-detail a {
 				text-decoration: underline;
-				color: var(--color-light, #fff);
+				color: var(--color-text);
 			}
 
 			@media (min-width: 50rem) {

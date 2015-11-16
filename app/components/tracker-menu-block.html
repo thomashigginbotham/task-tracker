@@ -17,8 +17,8 @@
 		</style>
 
 		<tracker-group-block heading="{{heading}}">
-			<span class="menu-block-items" role="list">
-				<content><content>
+			<span class="tracker-menu-block-items" role="list">
+				<content id="content"><content>
 			</span>
 		</tracker-group-block>
 	</template>
@@ -30,14 +30,30 @@
 				role: 'menu'
 			},
 			properties: {
-				heading: {
+				heading: String,
+				fontColor: {
 					type: String,
-					value: '',
+					notify: true,
+					observer: '_fontColorChanged'
 				},
 				layout: {
 					type: String,
 					value: 'vertical',
 					reflectToAttribute: true
+				}
+			},
+			_fontColorChanged: function() {
+				this._setMenuItemColor();
+			},
+			_setMenuItemColor: function() {
+				var children = this.$.content.getDistributedNodes();
+
+				for (var i = 0, len = children.length; i < len; i++) {
+					var child = children[i];
+
+					if (child.nodeName === 'TRACKER-MENU-ITEM') {
+						child.setAttribute('font-color', this.fontColor);
+					}
 				}
 			}
 		});

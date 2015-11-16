@@ -6,9 +6,10 @@
 			}
 
 			h2 {
-				margin-bottom: 0;
+				/* Temporary fix for https://github.com/Polymer/polymer/pull/2642 */
+				margin-bottom: var(--polymer-specificity-hack, .5em);
 				text-transform: uppercase;
-				font-size: .5rem;
+				font-size: .6rem;
 				font-family: var(--heading-font-family);
 			}
 		</style>

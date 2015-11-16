@@ -5,12 +5,16 @@
 <link rel="import" href="tracker-footer-pane.html">
 <link rel="import" href="tracker-group-block.html">
 <link rel="import" href="tracker-menu-block.html">
+<link rel="import" href="tracker-paper-block.html">
+<link rel="import" href="tracker-sortable-table.html">
 
 <dom-module id="tracker-app">
 	<template>
 		<style include="tracker-base-styles">
 			:host {
 				display: block;
+				min-height: 100vh;
+				background-color: var(--color-dark);
 			}
 
 			::content group-pane {
@@ -23,39 +27,32 @@
 					flex-wrap: wrap;
 				}
 
-				::content [is=tracker-menu-pane] {
-					flex: 1 1 25%;
+				::content tracker-menu-pane {
+					flex: 0 1 15rem;
 				}
 
-				::content [is=tracker-detail-pane] {
-					flex: 1 1 75%;
+				::content tracker-detail-pane {
+					flex: 1 1 auto;
 				}
 
-				::content [is=tracker-property-pane] {
+				::content tracker-property-pane {
 					flex: 1 1 100%;
-					order: 1;
 				}
 			}
 
-			@media (min-width: 68rem) {
+			@media (min-width: 70rem) {
 				.tracker-app-main {
 					flex-wrap: nowrap;
 					min-height: 100%;
 				}
 
-				::content [is=tracker-menu-pane],
-				::content [is=tracker-property-pane] {
-					flex-grow: 0;
-					flex-basis: 17em;
+				::content tracker-detail-pane {
+					order: 2;
 				}
 
-				::content [is=tracker-detail-pane] {
-					flex-basis: 34em;
+				::content tracker-property-pane {
+					flex: 0 0 15rem;
 					order: 1;
-				}
-
-				::content [is=tracker-property-pane] {
-					order: 0;
 				}
 			}
 		</style>

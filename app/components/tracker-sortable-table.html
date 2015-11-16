@@ -1,0 +1,247 @@
+<dom-module id="tracker-sortable-table">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				table-layout: fixed;
+				width: 100%;
+				border-collapse: separate !important;
+			}
+
+			::content thead {
+				text-transform: uppercase;
+				background-color: var(--color-ui-light);
+			}
+
+			::content .icon-sort,
+			::content .icon-sort-asc,
+			::content .icon-sort-desc {
+				display: inline-block;
+				font: normal normal normal 14px/1 FontAwesome;
+				font-size: inherit;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			::content .icon-sort:before {
+				content: '\f0dc';
+			}
+
+			::content .icon-sort-desc:before {
+				content: '\f0dd';
+			}
+
+			::content .icon-sort-asc:before {
+				content: '\f0de';
+			}
+
+			::content th,
+			::content td {
+				padding: 7px 13px;
+				padding: calc(var(--font-size) / 2) var(--font-size);
+				vertical-align: top;
+				text-align: left;
+			}
+
+			::content th {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			::content tbody tr:not(:first-child) td {
+				padding-top: 0;
+			}
+
+			::content tbody tr:last-child td {
+				padding-bottom: 0;
+			}
+
+			::content th:not(:first-child),
+			::content td:not(:first-child) {
+				border-left: 1px solid var(--color-ui-light);
+			}
+
+			::content .numeric,
+			::content .datetime {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: right;
+			}
+
+			::content .edit,
+			::content .remove {
+				text-align: center;
+			}
+		</style>
+
+		<content></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-sortable-table',
+			extends: 'table',
+			properties: {
+				columns: Array,
+				noSort: Array,
+				widths: Array,
+				aligns: Array,
+				defaultSortCol: {
+					type: Number,
+					value: '',
+				},
+				defaultSortOrder: {
+					type: String,
+					value: 'asc',
+				}
+			},
+			attached: function() {
+				this.appendHeaders();
+				this.setupDefaultSort();
+			},
+			appendHeaders: function() {
+				var columns = this.columns;
+				var noSort = this.noSort;
+				var widths = this.widths;
+				var aligns = this.aligns;
+
+				if (Array.isArray(columns)) {
+					// Create table headers
+					var thead = document.createElement('thead');
+					var tr = document.createElement('tr');
+					var sortFunc = this.sortColumn;
+					var toggleSortOrderFunc = this.toggleSortOrder;
+
+					thead.appendChild(tr);
+
+					columns.forEach(function(headerContent, index) {
+						var th = document.createElement('th');
+
+						if (Array.isArray(widths)) {
+							th.style.width = widths[index];;
+						}
+
+						if (Array.isArray(aligns)) {
+							th.style.textAlign = aligns[index];
+						}
+
+						th.innerHTML = headerContent;
+
+						tr.appendChild(th);
+
+						if (!Array.isArray(noSort) || noSort.indexOf(index + 1) === -1) {
+							th.innerHTML += ' <span class="icon-sort"></span>';
+							th.style.cursor = 'pointer';
+
+							// Add event listeners
+							th.addEventListener('click', function() {
+								var parentTable = this.parentNode.parentNode.parentNode;
+								var sortOrder = toggleSortOrderFunc(this);
+
+								sortFunc(index, parentTable, sortOrder);
+							}, false);
+						}
+					});
+
+					this.appendChild(thead);
+				}
+			},
+			setupDefaultSort: function() {
+				if (typeof this.defaultSortCol === 'undefined' || this.defaultSortCol === '') {
+					return;
+				}
+
+				var sortHeader = this.querySelector('thead th:nth-child(' + this.defaultSortCol + ')');
+				var sortDirection = (typeof this.defaultSortOrder === 'undefined'
+					|| this.defaultSortOrder === '') ? 'asc' : this.defaultSortOrder;
+				var sortOrder =  (sortDirection === 'asc' ) ? '-1' : '1';
+
+				this.toggleSortOrder(sortHeader, sortOrder);
+				this.sortColumn(this.defaultSortCol - 1, this, sortOrder);
+			},
+			toggleSortOrder: function(th, sortOrder) {
+				var siblings = th.parentNode.childNodes;
+
+				if (typeof sortOrder === 'undefined') {
+					// Get sort order from data attribute
+					sortOrder = th.dataset.sortOrder;
+
+					// Set to the opposite order
+					if (typeof sortOrder === 'undefined' || sortOrder === '') {
+						sortOrder = '-1';
+					} else {
+						sortOrder = (sortOrder === '1') ? '-1' : '1';
+					}
+				}
+
+				th.dataset.sortOrder = sortOrder;
+
+				// Add sorting class
+				th.querySelector('span').className = (sortOrder === '-1') ? 'icon-sort-asc' : 'icon-sort-desc';
+
+				// Remove sort order from other headings
+				for (var i = 0; i < siblings.length; i++) {
+					var sibling = siblings[i];
+
+					if (sibling !== th) {
+						sibling.dataset.sortOrder = '';
+
+						// Remove sorting class
+						var span = sibling.querySelector('span');
+
+						if (span !== null) {
+							span.className = 'icon-sort';
+						}
+					}
+				};
+
+				return sortOrder;
+			},
+			sortColumn: function(index, tableElement, sortOrder) {
+				var tbody = tableElement.querySelector('tbody');
+				var rows = tbody.querySelectorAll('tr');
+				var rowArray = Array.prototype.slice.call(rows);
+				var sortedRows = rowArray.sort(function(a, b) {
+					var colCellA = a.querySelector('td:nth-child(' + (index + 1) + ')');
+					var colCellB = b.querySelector('td:nth-child(' + (index + 1) + ')');
+					var textA = (typeof colCellA.dataset.sortValue !== 'undefined') ? colCellA.dataset.sortValue : colCellA.innerText.toLowerCase();
+					var textB = (typeof colCellB.dataset.sortValue !== 'undefined') ? colCellB.dataset.sortValue : colCellB.innerText.toLowerCase();
+					var floatA = parseFloat(textA);
+					var floatB = parseFloat(textB);
+
+					// Try comparing as float
+					if (!isNaN(floatA) && !isNaN(floatB)) {
+						if (floatA < floatB) {
+							return sortOrder;
+						} else if (floatA > floatB) {
+							return -sortOrder;
+						} else {
+							return 0;
+						}
+					}
+
+					// Compare as string
+					if (textA < textB) {
+						return sortOrder;
+					} else if (textA > textB) {
+						return -sortOrder;
+					} else {
+						return 0;
+					}
+				});
+
+				// Remove existing rows
+				while (tbody.firstChild) {
+					tbody.removeChild(tbody.firstChild);
+				}
+
+				// Add sorted rows
+				sortedRows.forEach(function(element) {
+					tbody.appendChild(element);
+				});
+			}
+		});
+	</script>
+</dom-module>

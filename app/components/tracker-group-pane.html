@@ -1,11 +1,14 @@
-<link rel="import" href="tracker-group-pane-menu">
+<link rel="import" href="tracker-group-pane-menu.html">
+<link rel="import" href="tracker-font-icon-styles.html">
 
 <dom-module id="tracker-group-pane">
 	<template>
+		<style include="tracker-font-icon-styles"></style>
+
 		<style include="tracker-base-styles">
 			/* Layout */
 			:host {
-				--heading-height: var(--gutter) * 2 + var(--pane-heading-font-size) * var(--line-height);
+				--heading-height: var(--gutter) * 2 + var(--pane-heading-font-size);
 				--footer-pane-height: var(--gutter) * 2 + var(--font-size) * var(--line-height);
 
 				display: block;
@@ -33,7 +36,7 @@
 				}
 			}
 
-			@media (min-width: 68rem) and (min-height: 40rem) {
+			@media (min-width: 70rem) and (min-height: 40rem) {
 				.tracker-group-pane-content {
 					height: calc(100vh - (var(--heading-height)) - (var(--footer-pane-height)));
 					overflow: auto;
@@ -45,10 +48,10 @@
 				position: relative;
 				margin: 0;
 				font-size: var(--pane-heading-font-size);
-				line-height: var(--line-height);
+				line-height: 1;
 			}
 
-			:host([icon]) .tracker-group-pane-header h1 {
+			:host(:not([icon=''])) .tracker-group-pane-header h1 {
 				padding-left: 1.25em;
 			}
 
@@ -84,14 +87,15 @@
 
 			/* Child Blocks */
 			::content tracker-group-block:not(:last-child),
-			::content tracker-menu-block:not(:last-child) {
+			::content tracker-menu-block:not(:last-child),
+			::content .block:not(:last-child) {
 				margin-bottom: var(--gutter);
 			}
 		</style>
 
 		<section>
-			<header class="tracker-group-pane-header" style$="{{getBackgroundColor(color)}}">
-				<h1 class$="{{icon}}">{{heading}}</h1>
+			<header class="tracker-group-pane-header" style$="{{getColorStyles(fontColor, bgColor)}}">
+				<h1 class$="{{getIconClassName(icon)}}">{{heading}}</h1>
 				<content select="tracker-group-pane-menu"></content>
 			</header>
 
@@ -109,7 +113,11 @@
 					type: String,
 					value: ''
 				},
-				color: {
+				fontColor: {
+					type: String,
+					value: ''
+				},
+				bgColor: {
 					type: String,
 					value: ''
 				},
@@ -118,12 +126,25 @@
 					value: ''
 				}
 			},
-			getBackgroundColor: function(color) {
-				if (color === '') {
-					return '';
+			getColorStyles: function(fontColor, bgColor) {
+				var styleString = '';
+
+				if (fontColor) {
+					styleString += 'color:' + fontColor + ';';
 				}
 
-				return 'background-color: ' + color;
+				if (bgColor) {
+					styleString += 'background-color:' + bgColor + ';';
+				}
+
+				return styleString;
+			},
+			getIconClassName: function(iconName) {
+				if (iconName !== '') {
+					return 'icon-' + iconName;
+				}
+
+				return '';
 			}
 		});
 	</script>

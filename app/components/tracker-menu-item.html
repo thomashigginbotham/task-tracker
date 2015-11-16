@@ -1,5 +1,9 @@
+<link rel="import" href="tracker-font-icon-styles.html">
+
 <dom-module id="tracker-menu-item">
 	<template>
+		<style include="tracker-font-icon-styles"></style>
+
 		<style include="tracker-base-styles">
 			:host {
 				position: relative;
@@ -22,9 +26,20 @@
 				left: 0;
 				font-family: FontAwesome;
 			}
+
+			:host-context(.dark-theme) a {
+				color: var(--color-ui-light-shade);
+			}
+
+			:host-context(.dark-theme) a:hover {
+				text-decoration: none;
+				color: var(--color-light);
+			}
 		</style>
 
-		<a href="{{uri}}" class$="{{icon}}"><content></content></a>
+		<a href="{{uri}}" class$="{{iconClass}}" style$="{{styleString}}">
+			<content></content>
+		</a>
 	</template>
 
 	<script>
@@ -42,9 +57,27 @@
 					type: Boolean,
 					value: false,
 				},
-				icon: {
+				fontColor: String,
+				icon: String,
+				iconClass: {
 					type: String,
-					value: '',
+					computed: 'computeIconClass(icon)'
+				},
+				styleString: {
+					type: String,
+					computed: 'computeInlineStyle(fontColor)'
+				}
+			},
+			computeIconClass: function(iconName) {
+				if (iconName !== '') {
+					return 'icon-' + iconName;
+				}
+
+				return '';
+			},
+			computeInlineStyle: function(fontColor) {
+				if (fontColor) {
+					return 'color: ' + fontColor + ';';
 				}
 			}
 		});
