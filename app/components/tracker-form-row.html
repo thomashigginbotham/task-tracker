@@ -1,0 +1,48 @@
+<dom-module id="tracker-form-row">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			::content tracker-group-block:not(:last-child) {
+				margin-right: var(--gutter);
+			}
+
+			@media (min-width: 50rem) {
+				:host {
+					display: flex;
+				}
+			}
+		</style>
+
+		<content select="tracker-group-block"></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-form-row',
+			properties: {
+				stretch: Boolean,
+				flex: Array
+			},
+			attached: function() {
+				this._setFlexValues();
+			},
+			_setFlexValues: function() {
+				var host = this;
+				var flex = this.flex;
+
+				if (Array.isArray(flex) && flex.length > 0) {
+					var groupBlocks = host.getElementsByTagName('tracker-group-block');
+
+					if (groupBlocks !== null) {
+						for (var i = 0, len = groupBlocks.length; i < len; i++) {
+							groupBlocks[i].style.flex = flex[i]
+						}
+					}
+				}
+			}
+		});
+	</script>
+</dom-module>

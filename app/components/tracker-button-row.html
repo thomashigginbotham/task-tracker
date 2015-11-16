@@ -1,0 +1,43 @@
+<dom-module id="tracker-button-row">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			:host(:not([joined])) ::content tracker-icon-button:not(:last-child) {
+				margin-right: 1em;
+			}
+
+			@media (min-width: 50rem) {
+				:host {
+					display: flex;
+					align-items: center;
+				}
+
+				.tracker-button-row-message {
+					flex-grow: 2;
+				}
+
+				:host ::content p {
+					margin: 0;
+				}
+			}
+		</style>
+
+		<div class="tracker-button-row-message"><content select="p"></content></div>
+
+		<div class="tracker-button-row-buttons">
+			<content select="tracker-icon-button"></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-button-row',
+			properties: {
+				joined: Boolean
+			}
+		});
+	</script>
+</dom-module>

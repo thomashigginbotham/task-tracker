@@ -1,0 +1,74 @@
+<link rel="import" href="tracker-font-icon-styles.html">
+
+<dom-module id="tracker-icon-button">
+	<template>
+		<style include="tracker-font-icon-styles"></style>
+
+		<style include="tracker-base-styles">
+			:host {
+				position: relative;
+				display: inline-block;
+				white-space: nowrap;
+			}
+
+			a {
+				display: inline-block;
+				padding: 1em;
+				color: var(--color-light);
+				background-color: var(--color-primary);
+				transition: background-color .25s ease-out;
+			}
+
+			a:hover {
+				text-decoration: none;
+				background-color: var(--color-primary-dark);
+			}
+
+			a:focus {
+				text-decoration: none;
+				outline: 1px solid var(--color-primary-dark);
+			}
+
+			a::before {
+				position: relative;
+				margin-right: .5em;
+				font-family: FontAwesome;
+			}
+
+			:host([caution]) a {
+				background-color: var(--color-caution);
+			}
+
+			:host([caution]) a:hover {
+				background-color: var(--color-caution-dark);
+			}
+		</style>
+
+		<a href="{{uri}}" class$="{{iconClass}}"><content></content></a>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-icon-button',
+			hostAttributes: {
+				role: 'button'
+			},
+			properties: {
+				uri: 'String',
+				icon: 'String',
+				caution: 'Boolean',
+				iconClass: {
+					type: 'String',
+					computed: 'computedIconClass(icon)'
+				}
+			},
+			computedIconClass: function(iconName) {
+				if (iconName === '') {
+					return '';
+				}
+
+				return 'icon-' + iconName;
+			}
+		});
+	</script>
+</dom-module>

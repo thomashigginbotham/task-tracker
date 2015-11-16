@@ -9,7 +9,7 @@
 			/* Layout */
 			:host {
 				--heading-height: var(--gutter) * 2 + var(--pane-heading-font-size);
-				--footer-pane-height: var(--gutter) * 2 + var(--font-size) * var(--line-height);
+				--footer-pane-height: var(--gutter) + var(--font-size) * var(--line-height);
 
 				display: block;
 			}
@@ -48,6 +48,7 @@
 				position: relative;
 				margin: 0;
 				font-size: var(--pane-heading-font-size);
+				font-weight: var(--font-regular);
 				line-height: 1;
 			}
 
@@ -61,7 +62,12 @@
 				font-family: FontAwesome;
 			}
 
+			.tracker-group-pane-header ::content tracker-menu-block {
+				margin-bottom: 0;
+			}
+
 			.tracker-group-pane-header ::content tracker-menu-item {
+				padding: .15em 1em;
 				overflow: visible;
 			}
 
@@ -78,18 +84,27 @@
 			}
 
 			.tracker-group-pane-header ::content [active] {
-				background-color: rgba(255, 255, 255, .25);
-			}
-
-			.tracker-group-pane-header ::content [active] a {
 				font-weight: var(--font-regular);
+				background-color: var(--color-ui-light-shade);
 			}
 
 			/* Child Blocks */
-			::content tracker-group-block:not(:last-child),
-			::content tracker-menu-block:not(:last-child),
-			::content .block:not(:last-child) {
+			::content tracker-group-block,
+			::content tracker-menu-block,
+			::content tracker-paper-block,
+			::content tracker-button-row,
+			::content .block {
 				margin-bottom: var(--gutter);
+			}
+
+			::content > :last-child {
+				margin-bottom: 0;
+			}
+
+			::content > :last-child::after {
+				content: '';
+				display: block;
+				margin: -var(--gutter) 0 var(--gutter);
 			}
 		</style>
 

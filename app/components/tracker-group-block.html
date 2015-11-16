@@ -12,6 +12,22 @@
 				font-size: .6rem;
 				font-family: var(--heading-font-family);
 			}
+
+			@media (min-width: 50rem) {
+				:host-context([stretch]) ::content input[type=text],
+				:host-context([stretch]) ::content input[type=password],
+				:host-context([stretch]) ::content input[type=number],
+				:host-context([stretch]) ::content input[type=date],
+				:host-context([stretch]) ::content input[type=search],
+				:host-context([stretch]) ::content input[type=email],
+				:host-context([stretch]) ::content input[type=tel],
+				:host-context([stretch]) ::content textarea,
+				:host-context([stretch]) ::content select {
+					box-sizing: border-box;
+					display: block;
+					width: 100%;
+				}
+			}
 		</style>
 
 		<h2 hidden$="{{!heading}}">{{heading}}</h2>

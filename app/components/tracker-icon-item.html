@@ -1,0 +1,51 @@
+<link rel="import" href="tracker-font-icon-styles.html">
+
+<dom-module id="tracker-icon-item">
+	<template>
+		<style include="tracker-font-icon-styles"></style>
+
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+				position: relative;
+			}
+
+			:host > div {
+				position: relative;
+				left: 1.25em;
+			}
+
+			[class^='icon'] {
+				position: absolute;
+				top: 0;
+				left: -1.25em;
+				line-height: 1.5;
+			}
+		</style>
+
+		<div>
+			<span class$="{{iconClass}}"></span>
+			<content></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-icon-item',
+			properties: {
+				icon: String,
+				iconClass: {
+					type: String,
+					computed: 'computeIconClass(icon)'
+				},
+			},
+			computeIconClass: function(iconName) {
+				if (iconName !== '') {
+					return 'icon-' + iconName;
+				}
+
+				return '';
+			}
+		});
+	</script>
+</dom-module>

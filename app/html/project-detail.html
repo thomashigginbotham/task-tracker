@@ -1,197 +1,192 @@
 <!doctype html>
-<!--[if lt IE 9]><html class="lt-ie9"><![endif]-->
-<!--[if !(lt IE 9)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<!--<![endif]-->
-	<head>
-		<title>Task Tracker 2.0</title>
-		<!-- build:include templates/head.html --><!-- /build -->
+<html lang="en">
 
-		<link rel="stylesheet" href="/stylesheets/main.css"/>
-	</head>
+<head>
+	<title>Task Tracker 2.0</title>
+	<!-- build:include templates/head.html -->
+	<!-- /build -->
+	<link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
 
-	<body>
-		<task-tracker-app>
-			<group-pane heading="Task Tracker" class="menu-pane">
-				<menu-block heading="Menu">
-					<menu-item uri="/#/projects" icon="folder" active>Projects</menu-item>
-					<menu-item uri="/#/reports" icon="pie-chart">Reports</menu-item>
-					<menu-item uri="/#/settings" icon="sliders">Settings</menu-item>
-					<menu-item uri="/#/account/sign-out" icon="sign-out">Sign Out</menu-item>
-				</menu-block>
+<body>
+	<tracker-app>
+		<tracker-menu-pane heading="Task Tracker" font-color="#fff" bg-color="#000">
+			<tracker-menu-block heading="Menu">
+				<tracker-menu-item uri="projects.html" icon="folder" active>Projects</tracker-menu-item>
+				<tracker-menu-item uri="reports.html" icon="pie-chart">Reports</tracker-menu-item>
+				<tracker-menu-item uri="settings.html" icon="sliders">Settings</tracker-menu-item>
+				<tracker-menu-item uri="signin.html" icon="sign-out">Sign Out</tracker-menu-item>
+			</tracker-menu-block>
 
-				<group-block heading="Search">
-					<form action="#" method="get">
-						<input type="search" placeholder="Keywords&hellip;">
-						<button type="submit">Go</button>
-					</form>
-				</group-block>
+			<tracker-group-block heading="Search">
+				<form action="#" method="get">
+					<input type="search" placeholder="Keywords&hellip;">
+					<button type="submit">Go</button>
+				</form>
+			</tracker-group-block>
 
-				<menu-block heading="Quick Links">
-					<menu-item uri="/#/projects/experis/experis-administration">Experis Administration</menu-item>
-					<menu-item uri="/#/reports/utilization">Utilization Report</menu-item>
-					<menu-item uri="/#/reports/peoplesoft">PeopleSoft Time Sheet</menu-item>
-				</menu-block>
+			<tracker-menu-block heading="Quick Links">
+				<tracker-menu-item uri="project-detail.html">Experis Administration</tracker-menu-item>
+				<tracker-menu-item uri="utilization-report.html">Utilization Report</tracker-menu-item>
+				<tracker-menu-item uri="timesheet-report.html">PeopleSoft Time Sheet</tracker-menu-item>
+			</tracker-menu-block>
 
-				<menu-block heading="Information">
-					<menu-item uri="#daily-summary" icon="info-circle">Daily Summary</menu-item>
-					<menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</menu-item>
-				</menu-block>
-			</group-pane>
+			<tracker-menu-block heading="Information">
+				<tracker-menu-item uri="#daily-summary" icon="info-circle">Daily Summary</tracker-menu-item>
+				<tracker-menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</tracker-menu-item>
+			</tracker-menu-block>
+		</tracker-menu-pane>
 
-			<group-pane heading="Acme Website Redesign" icon="folder" class="detail-pane">
-				<group-pane-menu>
-					<menu-block layout="horizontal">
-						<menu-item
-							uri="/#/projects/acme/acme-website-redesign/edit"
-							icon="pencil"
-							active>Edit Project</menu-item>
+		<tracker-detail-pane heading="Acme Website Redesign" icon="folder" font-color="#fff" bg-color="#5c2">
+			<tracker-group-pane-menu>
+				<tracker-menu-block layout="horizontal" font-color="#fff">
+					<tracker-menu-item uri="#edit" icon="pencil" active>Edit Project</tracker-menu-item>
+					<tracker-menu-item uri="#pin" icon="thumb-tack">Pin</tracker-menu-item>
+				</tracker-menu-block>
+			</tracker-group-pane-menu>
 
-						<menu-item uri="#pin" icon="thumb-tack">Pin</menu-item>
-					</menu-block>
-				</group-pane-menu>
+			<tracker-notice-block heading="Change Project Details">
+				<tracker-form-row stretch flex='["2 1 50%", "1 1 25%", "1 1 25%"]'>
+					<tracker-group-block heading="Name">
+						<input type="text" name="project-name" value="Acme Website Redesign">
+					</tracker-group-block>
 
-				<notice-block heading="Change Project Details">
-					<form-row stretch flex='["2 1 50%", "1 1 25%", "1 1 25%"]'>
-						<group-block heading="Name">
-							<input type="text" name="project-name" value="Acme Website Redesign">
-						</group-block>
+					<tracker-group-block heading="Client">
+						<select name="project-client" id="project-client">
+							<option value="">The Acme Company</option>
+						</select>
+					</tracker-group-block>
 
-						<group-block heading="Client">
-							<select name="project-client" id="project-client">
-								<option value="">The Acme Company</option>
-							</select>
-						</group-block>
+					<tracker-group-block heading="Creation Date">
+						<input type="date" name="project-create-date" value="2015-09-14">
+					</tracker-group-block>
+				</tracker-form-row>
 
-						<group-block heading="Creation Date">
-							<input type="date" name="project-create-date" value="2015-09-14">
-						</group-block>
-					</form-row>
+				<tracker-form-row stretch flex='["1 1 100%"]'>
+					<tracker-group-block heading="Description">
+						<textarea name="project-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
+					</tracker-group-block>
+				</tracker-form-row>
 
-					<form-row stretch flex='["1 1 100%"]'>
-						<group-block heading="Description">
-							<textarea name="project-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
-						</group-block>
-					</form-row>
+				<tracker-button-row>
+					<tracker-icon-button uri="#" icon="check">Save Changes</tracker-icon-button>
+					<tracker-icon-button uri="#" icon="backward">Cancel</tracker-icon-button>
+					<tracker-icon-button uri="#" icon="trash" caution>Delete Project</tracker-icon-button>
+				</tracker-button-row>
+			</tracker-notice-block>
 
-					<button-row>
-						<icon-button uri="#" icon="check">Save Changes</icon-button>
-						<icon-button uri="#" icon="backward">Cancel</icon-button>
-						<icon-button uri="#" icon="trash" caution>Delete Project</icon-button>
-					</button-row>
-				</notice-block>
+			<div class="block">
+				<tracker-paper-block heading="Active Tasks (3)">
+					<table is="tracker-sortable-table" default-sort-col="3"
+						default-sort-order="asc"
+						columns='["Task", "Time Spent", "Due Date"]'
+						widths='["50%", "25%", "25%"]',
+						aligns='["left", "right", "right"]'>
+						<tr>
+							<td><a href="time-records.html">Attend weekly client meeting</a></td>
+							<td class="numeric"><strong>5</strong> of <strong>30</strong> hours</td>
+							<td class="datetime" data-sort-value="20150923"><time datetime="9/23/2015">9/23/2015</time></td>
+						</tr>
 
-				<div class="detail-block">
-					<paper-block heading="Active Tasks (3)">
-						<table is="sortable-table" default-sort-col="3"
-							default-sort-order="asc"
-							columns='["Task", "Time Spent", "Due Date"]'
-							widths='["50%", "25%", "25%"]',
-							aligns='["left", "right", "right"]'>
-							<tr>
-								<td><a href="/#/task/acme-website-redesign/attend-weekly-client-meeting">Attend weekly client meeting</a></td>
-								<td class="numeric"><strong>5</strong> of <strong>30</strong> hours</td>
-								<td class="datetime" data-sort-value="20150923"><time datetime="9/23/2015">9/23/2015</time></td>
-							</tr>
+						<tr>
+							<td><a href="time-records.html">Create Photoshop comps</a></td>
+							<td class="numeric"><strong>12.75</strong> of <strong>25</strong> hours</td>
+							<td class="datetime" data-sort-value="20150929"><time datetime="9/29/2015">9/29/2015</time></td>
+						</tr>
 
-							<tr>
-								<td><a href="/#/task/acme-website-redesign/create-photoshop-comps">Create Photoshop comps</a></td>
-								<td class="numeric"><strong>12.75</strong> of <strong>25</strong> hours</td>
-								<td class="datetime" data-sort-value="20150929"><time datetime="9/29/2015">9/29/2015</time></td>
-							</tr>
+						<tr>
+							<td><a href="time-records.html">Create HTML build-outs</a></td>
+							<td class="numeric"><strong>3.5</strong> of <strong>8</strong> hours</td>
+							<td class="datetime" data-sort-value="20151012"><time datetime="10/12/2015">10/12/2015</time></td>
+						</tr>
+					</table>
+				</tracker-paper-block>
 
-							<tr>
-								<td><a href="/#/task/acme-website-redesign/create-html-build-outs">Create HTML build-outs</a></td>
-								<td class="numeric"><strong>3.5</strong> of <strong>8</strong> hours</td>
-								<td class="datetime" data-sort-value="20151012"><time datetime="10/12/2015">10/12/2015</time></td>
-							</tr>
-						</table>
-					</paper-block>
+				<tracker-button-row>
+					<p>Last updated by
+						<a href="user-detail.html">Rebecca Chambers</a> at
+						<time datetime="2015-09-14T09:38-04:00">9:38 AM</time>
+					</p>
 
-					<button-row>
-						<p>Last updated by
-							<a href="/#/users/rebecca-chambers">Rebecca Chambers</a> at
-							<time datetime="2015-09-14T09:38-04:00">9:38 AM</time>
-						</p>
+					<tracker-icon-button uri="#add" icon="plus-circle">Add a Task</tracker-icon-button>
+				</tracker-button-row>
+			</div>
 
-						<icon-button uri="/#/tasks/add" icon="plus-circle">Add a Task</icon-button>
-					</button-row>
-				</div>
+			<div class="block">
+				<tracker-paper-block heading="Completed Tasks (6)">
+					<table is="tracker-sortable-table" default-sort-col="3"
+						default-sort-order="desc"
+						columns='["Task", "Time Spent", "Completed"]'
+						widths='["50%", "25%", "25%"]',
+						aligns='["left", "right", "right"]'>
+						<tr>
+							<td><a href="time-records.html">Attend kick-off meeting</a></td>
+							<td class="numeric"><strong>1</strong> of <strong>1</strong> hours</td>
+							<td class="datetime" data-sort-value="20150812"><time datetime="2015-08-12">8/12/2015</time></td>
+						</tr>
 
-				<div class="detail-block">
-					<paper-block heading="Completed Tasks (6)">
-						<table is="sortable-table" default-sort-col="3"
-							default-sort-order="desc"
-							columns='["Task", "Time Spent", "Completed"]'
-							widths='["50%", "25%", "25%"]',
-							aligns='["left", "right", "right"]'>
-							<tr>
-								<td><a href="/#/task/acme-website-redesign/attend-kick-off-meeting">Attend kick-off meeting</a></td>
-								<td class="numeric"><strong>1</strong> of <strong>1</strong> hours</td>
-								<td class="datetime" data-sort-value="20150812"><time datetime="2015-08-12">8/12/2015</time></td>
-							</tr>
+						<tr>
 
-							<tr>
+							<td><a href="time-records.html">Conduct stakeholder interviews</a></td>
+							<td class="numeric warn"><strong>6.25</strong> of <strong>4</strong> hours</td>
+							<td class="datetime" data-sort-value="20150819"><time datetime="2015-08-19">8/19/2015</time></td>
+						</tr>
 
-								<td><a href="/#/task/acme-website-redesign/conduct-stakeholder-interviews">Conduct stakeholder interviews</a></td>
-								<td class="numeric warn"><strong>6.25</strong> of <strong>4</strong> hours</td>
-								<td class="datetime" data-sort-value="20150819"><time datetime="2015-08-19">8/19/2015</time></td>
-							</tr>
+						<tr>
+							<td><a href="time-records.html">Create personas and user journey documents</a></td>
+							<td class="numeric"><strong>12.5</strong> of <strong>16</strong> hours</td>
+							<td class="datetime" data-sort-value="20150826"><time datetime="2015-08-26">8/26/2015</time></td>
+						</tr>
 
-							<tr>
-								<td><a href="/#/task/acme-website-redesign/create-personas-and-user-journey-documents">Create personas and user journey documents</a></td>
-								<td class="numeric"><strong>12.5</strong> of <strong>16</strong> hours</td>
-								<td class="datetime" data-sort-value="20150826"><time datetime="2015-08-26">8/26/2015</time></td>
-							</tr>
+						<tr>
+							<td><a href="time-records.html">Create HTML wireframes</a></td>
+							<td class="numeric"><strong>13.75</strong> of <strong>16</strong> hours</td>
+							<td class="datetime" data-sort-value="20150917"><time datetime="2015-09-17">9/17/2015</time></td>
+						</tr>
+					</table>
+				</tracker-paper-block>
+			</div>
+		</tracker-detail-pane>
 
-							<tr>
-								<td><a href="/#/task/acme-website-redesign/create-html-wireframes">Create HTML wireframes</a></td>
-								<td class="numeric"><strong>13.75</strong> of <strong>16</strong> hours</td>
-								<td class="datetime" data-sort-value="20150917"><time datetime="2015-09-17">9/17/2015</time></td>
-							</tr>
-						</table>
-					</paper-block>
-				</div>
-			</group-pane>
+		<tracker-property-pane heading="Quick Menu" font-color="#fff" bg-color="#555">
+			<div class="block">
+				<h2>Acme Website Redesign</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</p>
+			</div>
 
-			<group-pane heading="Project Details" class="properties-pane">
-				<div class="property-block">
-					<h2>Acme Website Redesign</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</p>
-				</div>
+			<div class="block">
+				<tracker-menu-block heading="Client">
+					<tracker-menu-item uri="clients.html">The Acme Company</tracker-menu-item>
+				</tracker-menu-block>
 
-				<div class="property-block">
-					<menu-block heading="Client">
-						<menu-item uri="/#/clients/the-acme-company">The Acme Company</menu-item>
-					</menu-block>
+				<tracker-group-block heading="Created">
+					<tracker-icon-item icon="calendar-plus-o">
+						<time datetime="2015-09-14">Sep. 14, 2015</time>
+					</tracker-icon-item>
+				</tracker-group-block>
 
-					<group-block heading="Created">
-						<icon-item icon="calendar-plus-o">
-							<time datetime="2015-09-14">Sep. 14, 2015</time>
-						</icon-item>
-					</group-block>
+				<tracker-group-block heading="Time Spent">
+					<tracker-icon-item icon="clock-o">78.25 of 125 hours</tracker-icon-item>
+				</tracker-group-block>
 
-					<group-block heading="Time Spent">
-						<icon-item icon="clock-o">78.25 of 125 hours</icon-item>
-					</group-block>
+				<tracker-group-block heading="Task Status">
+					<tracker-icon-item icon="check-square-o">6 of 9 tasks completed</tracker-icon-item>
+				</tracker-group-block>
 
-					<group-block heading="Task Status">
-						<icon-item icon="check-square-o">6 of 9 tasks completed</icon-item>
-					</group-block>
+				<tracker-menu-block heading="Team Members">
+					<tracker-menu-item uri="user-detail.html">John Shepard</tracker-menu-item>
+					<tracker-menu-item uri="user-detail.html">Marcus Fenix</tracker-menu-item>
+					<tracker-menu-item uri="user-detail.html">Rebecca Chambers</tracker-menu-item>
+				</tracker-menu-block>
+			</div>
+		</tracker-property-pane>
 
-					<menu-block heading="Team Members">
-						<menu-item uri="/#/users/john-shepard">John Shepard</menu-item>
-						<menu-item uri="/#/users/marcus-fenix">Marcus Fenix</menu-item>
-						<menu-item uri="/#/users/rebecca-chambers">Rebecca Chambers</menu-item>
-					</menu-block>
-				</div>
-			</group-pane>
+		<tracker-footer-pane status="online" version="0.0.1"></tracker-footer-pane>
+	</tracker-app>
 
-			<footer-pane status="online" version="0.0.1"></footer-pane>
-		</task-tracker-app>
+	<!-- build:js:dist javascripts/built.js -->
+	<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
+	<!-- /build -->
+</body>
 
-		<!-- build:js:dist javascripts/built.js -->
-		<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
-		<!-- /build -->
-	</body>
 </html>

@@ -1,0 +1,40 @@
+<dom-module id="tracker-notice-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+				position: relative;
+				top: -var(--gutter);
+				left: -var(--gutter);
+				padding: var(--gutter);
+				width: 100%;
+				background-color: var(--color-ui);
+			}
+
+			::content > :last-child {
+				margin-bottom: 0;
+			}
+
+			::content > :last-child::after {
+				content: '';
+				display: block;
+				margin: -var(--gutter) 0 var(--gutter);
+			}
+		</style>
+
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<div class="tracker-notice-block-content">
+			<content></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-notice-block',
+			properties: {
+				heading: String
+			}
+		});
+	</script>
+</dom-module>

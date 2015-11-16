@@ -6,29 +6,17 @@
 
 		<style include="tracker-base-styles">
 			:host {
-				position: relative;
-				display: inline-block;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
-			}
-
-			:host([icon]) {
-				padding-left: 1.25em;
 			}
 
 			:host([active]) a {
 				font-weight: bold;
 			}
 
-			a::before {
-				position: absolute;
-				left: 0;
-				font-family: FontAwesome;
-			}
-
 			:host-context(.dark-theme) a {
-				color: var(--color-ui-light-shade);
+				color: var(--color-ui);
 			}
 
 			:host-context(.dark-theme) a:hover {
