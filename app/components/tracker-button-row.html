@@ -19,8 +19,9 @@
 					flex-grow: 2;
 				}
 
-				:host ::content p {
-					margin: 0;
+				::content p {
+					/* Temporary fix for https://github.com/Polymer/polymer/pull/2642 */
+					margin-bottom: var(--polymer-specificity-hack, 0);
 				}
 			}
 		</style>

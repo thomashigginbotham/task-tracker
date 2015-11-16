@@ -21,8 +21,8 @@
 				--color-ui-light: #eee;
 				--color-ui-light-shade: rgba(255, 255, 255, .25);
 				--color-ui-dark: #333;
-				--color-caution: #c90;
-				--color-caution-dark: #a27b04;
+				--color-caution: #ecb100;
+				--color-caution-dark: #c90;
 			}
 
 			/*
@@ -122,6 +122,56 @@
 			pre code,
 			::content pre code {
 				background-color: transparent;
+			}
+
+			/* Forms */
+			::content label {
+				vertical-align: middle;
+				cursor: pointer;
+			}
+
+			::content [type=text],
+			::content [type=password],
+			::content [type=search],
+			::content [type=email],
+			::content [type=tel],
+			::content [type=number],
+			::content [type=date],
+			::content select,
+			::content textarea {
+				font-family: inherit;
+				font-size: inherit;
+			}
+
+			::content [type=text],
+			::content [type=password],
+			::content [type=search],
+			::content [type=email],
+			::content [type=tel],
+			::content [type=number],
+			::content [type=date],
+			::content select {
+				padding: 0 .5em;
+				height: 2.6em;
+				border: 1px solid var(--color-ui);
+				line-height: 2.6em;
+			}
+
+			::content textarea {
+				padding: .5em;
+				border: 1px solid var(--color-ui);
+			}
+
+			::content [type=text]:focus,
+			::content [type=password]:focus,
+			::content [type=search]:focus,
+			::content [type=email]:focus,
+			::content [type=tel]:focus,
+			::content [type=number]:focus,
+			::content [type=date]:focus,
+			::content textarea:focus,
+			::content select:focus {
+				outline: 2px solid var(--color-ui-dark);
 			}
 
 			/* Dark theme */

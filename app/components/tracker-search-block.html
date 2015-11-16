@@ -1,0 +1,36 @@
+<dom-module id="tracker-search-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			[type=search] {
+				width: 100%;
+			}
+
+			[type=submit] {
+				display: none;
+			}
+		</style>
+
+		<tracker-group-block heading="Search">
+			<form action="#" method="get">
+				<input type="search" placeholder="Keywords&hellip;">
+				<button type="submit">Go</button>
+			</form>
+		</tracker-group-block>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-search-block',
+			properties: {
+				uri: {
+					type: String,
+					value: '#',
+				}
+			}
+		});
+	</script>
+</dom-module>

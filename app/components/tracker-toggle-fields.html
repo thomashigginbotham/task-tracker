@@ -1,0 +1,36 @@
+<dom-module id="tracker-toggle-fields">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			::content li {
+				display: inline-block;
+				margin-right: 1em;
+				white-space: nowrap;
+			}
+
+			::content li:last-child {
+				margin-right: 0;
+			}
+
+			::content [type=checkbox],
+			::content [type=radio] {
+				margin-right: .25em;
+				vertical-align: middle;
+			}
+		</style>
+
+		<content></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-toggle-fields',
+			extends: 'ul'
+		});
+	</script>
+</dom-module>

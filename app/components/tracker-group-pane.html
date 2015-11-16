@@ -47,6 +47,9 @@
 			.tracker-group-pane-header h1 {
 				position: relative;
 				margin: 0;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 				font-size: var(--pane-heading-font-size);
 				font-weight: var(--font-regular);
 				line-height: 1;
@@ -91,6 +94,7 @@
 			/* Child Blocks */
 			::content tracker-group-block,
 			::content tracker-menu-block,
+			::content tracker-search-block,
 			::content tracker-paper-block,
 			::content tracker-button-row,
 			::content .block {
