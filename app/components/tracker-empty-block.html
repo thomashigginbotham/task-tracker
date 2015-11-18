@@ -1,0 +1,39 @@
+<dom-module id="tracker-empty-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+				padding: var(--gutter);
+				text-align: center;
+				color: var(--color-ui);
+			}
+
+			h2 {
+				font-size: 2rem;
+				color: var(--color-ui);
+			}
+
+			.tracker-paper-block-content ::content > :last-child {
+				margin-bottom: 0;
+			}
+		</style>
+
+		<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+		<div class="tracker-empty-block-content">
+			<content></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-empty-block',
+			properties: {
+				heading: {
+					type: String,
+					value: ''
+				}
+			}
+		});
+	</script>
+</dom-module>

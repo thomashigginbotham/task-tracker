@@ -51,6 +51,15 @@ define(['directives/module', 'jquery'], function(directives, $) {
 				}, {
 					text: 'Time Records',
 					uri: '/pages/time-records'
+				}, {
+					text: 'People',
+					uri: '/pages/people'
+				}, {
+					text: 'Reports',
+					uri: '/pages/reports'
+				}, {
+					text: 'Settings',
+					uri: '/pages/settings'
 				}]
 			}];
 
