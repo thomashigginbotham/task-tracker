@@ -3,16 +3,14 @@
 	<p>Data represented in rows and columns should make use of table components.</p>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Sorted Table <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Sortable Table <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-sorted-table.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-sortable-table.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-sorted-table.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-sortable-table.html"></div>
 
-		<p>A sorted table extends the HTML table element and provides headings that may be used to sort their respective columns.</p>
-		<p>Columns are sorted based on the contents of each cell by default. To create custom sort values, add a
-			<code>data-sort-value</code> to the
-			<code>&lt;td&gt;</code> tag.</p>
+		<p>A Sortable Table extends the HTML <code>&lt;table&gt;</code> element and provides headings that may be used to sort their respective columns.</p>
+		<p>Columns are sorted based on the contents of each cell by default. To create custom sort values, add a <strong>data-sort-value</strong> to the<code>&lt;td&gt;</code> tag.</p>
 
 		<table class="key-value">
 			<thead>

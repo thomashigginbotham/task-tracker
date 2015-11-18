@@ -34,7 +34,10 @@
 		Polymer({
 			is: 'tracker-drawer',
 			properties: {
-				heading: String,
+				heading: {
+					type: String,
+					value: ''
+				},
 				visible: {
 					type: Boolean,
 					value: false,

@@ -16,9 +16,6 @@ define(['directives/module', 'jquery'], function(directives, $) {
 					text: 'Color',
 					uri: '/style/color'
 				}, {
-					text: 'Forms',
-					uri: '/style/forms'
-				}, {
 					text: 'Tables',
 					uri: '/style/tables'
 				}]
@@ -46,8 +43,8 @@ define(['directives/module', 'jquery'], function(directives, $) {
 			}, {
 				text: 'Pages',
 				submenu: [{
-					text: 'Project List',
-					uri: '/pages/project-list'
+					text: 'Projects',
+					uri: '/pages/projects'
 				}, {
 					text: 'Project Detail',
 					uri: '/pages/project-detail'

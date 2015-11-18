@@ -6,11 +6,8 @@
 .basic-table {
 	border-collapse: separate;
 
-	thead tr {
-		border-bottom: 1px solid lighten($color-text, 65%);
-	}
-
 	thead th {
+		border-bottom: 1px solid lighten($color-text, 65%);
 		text-align: left;
 	}
 

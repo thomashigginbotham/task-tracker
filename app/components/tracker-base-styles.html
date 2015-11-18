@@ -5,7 +5,8 @@
 			:host {
 				--gutter: 1.4rem;
 
-				--heading-font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+				--base-font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+				--heading-font-family: "Segoe UI Light", "Avenir", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 				--font-size: 13px;
 				--pane-heading-font-size: 1.5rem;
 				--font-regular: 400;
@@ -36,6 +37,7 @@
 			h5,
 			h6 {
 				margin: 0 0 calc(var(--gutter) / 2);
+				font-family: var(--heading-font-family);
 			}
 
 			::content h1,

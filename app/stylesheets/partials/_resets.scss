@@ -10,6 +10,11 @@ body {
 
 body {
 	margin: 0;
+	font-family: $base-font-family;
 	color: $color-text;
 	background-color: $color-bg;
+}
+
+a {
+	color: $color-primary;
 }

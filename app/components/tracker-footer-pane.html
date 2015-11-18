@@ -58,12 +58,19 @@
 			properties: {
 				status: {
 					type: String,
-					value: 'offline'
+					value: 'offline',
+					notify: true,
+					observer: 'statusChanged',
+					reflectToAttribute: true
 				},
 				version: String
 			},
 			attached: function() {
 				this.setStatus(this.status.toLowerCase());
+			},
+			statusChanged: function() {
+				console.log('here');
+				this.setStatus();
 			},
 			setStatus: function(status) {
 				var statusDiv = this.shadowRoot.querySelector('.tracker-footer-pane-status');

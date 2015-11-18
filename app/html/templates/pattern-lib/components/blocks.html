@@ -3,11 +3,11 @@
 	<p>Block components help with grouping related content together.</p>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Group Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Group Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-group-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-group-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-group-block.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-group-block.html"></div>
 
 		<p>A group block is a very basic block that allows for a heading to be placed above the grouped content.</p>
 
@@ -31,13 +31,13 @@
 	<hr>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Menu Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Menu Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-menu-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-menu-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-menu-block.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-menu-block.html"></div>
 
-		<p>Similar to group blocks, menu blocks act as a wrapper for content and provide a heading above. However, a menu block is intended as a form of navigation and may only contain <code>menu-item</code> children.</p>
+		<p>Similar to Group Blocks, Menu Blocks act as a wrapper for content and provide a heading above. However, a Menu Block is intended as a form of navigation and may only contain <code>tracker-menu-item</code> children.</p>
 
 		<table class="key-value">
 			<thead>
@@ -53,15 +53,23 @@
 					<td>A heading to appear above the menu.</td>
 				</tr>
 				<tr>
+					<td>font-color</td>
+					<td>A CSS color value to use for the heading forecolor.</td>
+				</tr>
+				<tr>
 					<td>layout</td>
-					<td>A value of <code>vertical</code> (default) will create a vertical menu. A value of <code>horizontal</code> will create a horizontal menu.</td>
+					<td>A value of <strong>vertical</strong> (default) will create a vertical menu. A value of <strong>horizontal</strong> will create a horizontal menu.</td>
 				</tr>
 			</tbody>
 		</table>
+	</div>
 
-		<h3>Menu Item</h3>
+	<hr>
 
-		<p>A menu item is an individual hyperlink within a menu block. Menu items expose three attributes:</p>
+	<div class="xpl-component-wrapper">
+		<h2>Tracker Menu Item</h2>
+
+		<p>A Menu Item is an individual hyperlink within a Menu Block (see Tracker Menu Block above for an example). Menu Items expose the following attributes:</p>
 
 		<table class="key-value">
 			<thead>
@@ -77,6 +85,10 @@
 					<td>The URI for the hyperlink.</td>
 				</tr>
 				<tr>
+					<td>font-color</td>
+					<td>A CSS color value to use for the heading forecolor.</td>
+				</tr>
+				<tr>
 					<td>icon</td>
 					<td>An icon name from the Font Awesome font.</td>
 				</tr>
@@ -84,35 +96,9 @@
 					<td>active</td>
 					<td>A boolean attribute to indicate a currently active menu item</td>
 				</tr>
-			</tbody>
-		</table>
-	</div>
-
-	<hr>
-
-	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Notice Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
-
-		<pre data-load-html data-load-uri="templates/sample-notice-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
-
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-notice-block.html"></div>
-
-		<p>A notice block can be added to the top of a group pane and is used for displaying notifications or for displaying a form to allow users to make changes pertaining to the group pane.</p>
-
-		<p>It may contain any HTML content.</p>
-
-		<table class="key-value">
-			<thead>
 				<tr>
-					<th>Attribute</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>heading</td>
-					<td>A heading to appear above the content.</td>
+					<td>is-drawer-toggle</td>
+					<td>A boolean attribute that, when present, causes the Menu Item to act as a toggle for opening and closing the <a href="#/components/layout">Drawer</a> component.</td>
 				</tr>
 			</tbody>
 		</table>
@@ -121,15 +107,15 @@
 	<hr>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Paper Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Paper Block <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-paper-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-paper-block.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-paper-block.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-paper-block.html"></div>
 
-		<p>A paper block is similar to a group block in that it has a heading
+		<p>A Paper Block is similar to a Group Block in that it has a heading
 			and allows any type of content. The content itself, however, is
-			displayed within a box with a shadow, creating a three-dimensional
+			displayed within a box with a drop shadow, creating a three-dimensional
 			effect.</p>
 
 		<table class="key-value">
@@ -144,6 +130,10 @@
 				<tr>
 					<td>heading</td>
 					<td>A heading to appear above the content.</td>
+				</tr>
+				<tr>
+					<td>important</td>
+					<td>A boolean attribute to indicate that the block should be prominently featured.</td>
 				</tr>
 			</tbody>
 		</table>

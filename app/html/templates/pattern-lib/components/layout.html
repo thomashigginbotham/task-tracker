@@ -1,45 +1,29 @@
 <div class="xpl-content-wrapper">
 	<h1>General Layout</h1>
-	<p>Important parts of common page layout are included here. These components are found in the <strong>app/templates</strong> directory.</p>
-	<p>To add components to this area, edit the files in the <strong>app/templates/pattern-lib/components</strong> directory.</p>
+	<p>Important parts of common page layout are included here. To add components to this area, edit the files in the <strong>app/templates/pattern-lib/components</strong> directory.</p>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Task Tracker App <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker App <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-task-tracker-app.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-app.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-task-tracker-app.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-app.html"></div>
 
-		<p>The task tracker app component acts as a master layout for the application.</p>
-		<p>The <code>&lt;task-tracker-app&gt;</code> tag has no available attributes and
-			expects to have three <code>&lt;group-pane&gt;</code> elements and a
-			<code>&lt;footer-panel&gt;</code> element as descendents. The class
-			names and order of these child elements are important. Reference the
-			HTML in the sample above for more detail.</p>
+		<p>The Tracker App component acts as a master layout for the application.</p>
+		<p>The <code>&lt;task-tracker-app&gt;</code> tag has no available attributes and expects to have four child elements: <code>tracker-menu-pane</code>, <code>tracker-detail-pane</code>, <code>tracker-property-pane</code>, and <code>tracker-footer-pane</code>, in that order.</p>
+		<p>All Polymer components used within the app are imported from the tracker-app definition file.</p>
 	</div>
 
 	<hr>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Group Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Group Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-group-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-group-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-group-pane.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-group-pane.html"></div>
 
-		<p>Group panes, created with the <code>&lt;group-pane&gt;</code> tag, are
-			expected as direct descendents of an <code>&lt;task-tracker-app&gt;</code> tag.
-			There are three types of group panes: menu, detail, and properties;
-			each determined by their respective class names: menu-pane,
-			detail-pane, and properties-pane, respectively.</p>
-		<p>group panes have two available attributes. The <code>heading</code>
-			attribute allows for the addition of a heading to the top of the
-			pane. The <code>icon</code> attribute can be set to an icon name
-			available in the Font Awesome font family, and will cause that icon
-			to appear to the left of the heading.</p>
-		<p>A menu may be added to the pane’s header by placing a
-			<a href="#/components/blocks">menu block component</a> within
-			<code>group-pane-menu</code> tags.</p>
+		<p>Group Panes are intended only for use by Menu Panes, Detail Panes, and Property Panes. These three panes have many similarities, so they are basically wrappers for Group Panes.</p>
 
 		<table class="key-value">
 			<thead>
@@ -55,7 +39,11 @@
 					<td>A heading to appear at the top of the pane.</td>
 				</tr>
 				<tr>
-					<td>color</td>
+					<td>font-color</td>
+					<td>A CSS color value to use for the heading forecolor.</td>
+				</tr>
+				<tr>
+					<td>bg-color</td>
 					<td>A CSS color value to use for the heading background.</td>
 				</tr>
 				<tr>
@@ -69,13 +57,145 @@
 	<hr>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Footer Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Group Pane Menu <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-footer-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-group-pane-menu.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-footer-pane.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-group-pane-menu.html"></div>
 
-		<p>The footer pane is added to the bottom of the task tracker app. It is
+		<p>A menu can be inserted into the header of a Group Pane by adding a Group Pane Menu component. The Group Pane Menu expects a single Menu Block component as a child.</p>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Tracker Menu Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-tracker-menu-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-menu-pane.html"></div>
+
+		<p>The Menu Pane is a wrapper around a Group Pane, so it provides the same features and attributes with different styling. It is intended to provide navigation for the application.</p>
+
+		<table class="key-value">
+			<thead>
+				<tr>
+					<th>Attribute</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>heading</td>
+					<td>A heading to appear at the top of the pane.</td>
+				</tr>
+				<tr>
+					<td>font-color</td>
+					<td>A CSS color value to use for the heading forecolor.</td>
+				</tr>
+				<tr>
+					<td>bg-color</td>
+					<td>A CSS color value to use for the heading background.</td>
+				</tr>
+				<tr>
+					<td>icon</td>
+					<td>An icon name from the Font Awesome font.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Tracker Detail Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-tracker-detail-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-detail-pane.html"></div>
+
+		<p>The Detail Pane is a wrapper around a Group Pane, so it provides the same features and attributes with different styling. This pane should contain the primary content for the application.</p>
+
+		<table class="key-value">
+			<thead>
+				<tr>
+					<th>Attribute</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>heading</td>
+					<td>A heading to appear at the top of the pane.</td>
+				</tr>
+				<tr>
+					<td>font-color</td>
+					<td>A CSS color value to use for the heading forecolor.</td>
+				</tr>
+				<tr>
+					<td>bg-color</td>
+					<td>A CSS color value to use for the heading background.</td>
+				</tr>
+				<tr>
+					<td>icon</td>
+					<td>An icon name from the Font Awesome font.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Tracker Property Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-tracker-property-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-property-pane.html"></div>
+
+		<p>The Property Pane is a wrapper around a Group Pane, so it provides the same features and attributes with different styling. Property Panes should contain ancillary content for the Detail Pane.</p>
+
+		<table class="key-value">
+			<thead>
+				<tr>
+					<th>Attribute</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>heading</td>
+					<td>A heading to appear at the top of the pane.</td>
+				</tr>
+				<tr>
+					<td>font-color</td>
+					<td>A CSS color value to use for the heading forecolor.</td>
+				</tr>
+				<tr>
+					<td>bg-color</td>
+					<td>A CSS color value to use for the heading background.</td>
+				</tr>
+				<tr>
+					<td>icon</td>
+					<td>An icon name from the Font Awesome font.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<hr>
+
+	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
+		<h2>Tracker Footer Pane <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+
+		<pre data-load-html data-load-uri="templates/sample-tracker-footer-pane.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-footer-pane.html"></div>
+
+		<p>The Footer Pane is added to the bottom of the Tracker App. It is
 			used to display a status message and version/license information.</p>
 
 		<table class="key-value">
@@ -89,7 +209,7 @@
 			<tbody>
 				<tr>
 					<td>status</td>
-					<td>Possible values are <code>online</code> and <code>offline</code>.</td>
+					<td>Possible values are <strong>online</strong> and <strong>offline</strong>.</td>
 				</tr>
 				<tr>
 					<td>version</td>
@@ -102,13 +222,15 @@
 	<hr>
 
 	<div class="xpl-component-wrapper" data-view-code data-show-text="View HTML" data-hide-text="Hide HTML">
-		<h2>Form Row <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
+		<h2>Tracker Drawer <a href class="xpl-subheader" data-ng-class="{'xpl-show-code': !codeIsVisible, 'xpl-hide-code': codeIsVisible}" data-ng-click="toggleCodeVisibility()">{{instructionText}}</a></h2>
 
-		<pre data-load-html data-load-uri="templates/sample-form-row.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
+		<pre data-load-html data-load-uri="templates/sample-tracker-drawer.html" data-html-encode="true" data-prettyprint data-ng-show="codeIsVisible"></pre>
 
-		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-form-row.html"></div>
+		<div class="xpl-component-demo" data-load-html data-load-uri="templates/sample-tracker-drawer.html"></div>
 
-		<p>A form row can display any number of group boxes in a horizontal layout. The form fields within the group boxes can be stretched to fill the full width by using the <code>stretch</code> attribute. The <code>flex</code> attribute is available for setting the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex shorthand values</a> for each group box.</p>
+		<p>The Drawer can be added to the top of a Detail Pane and is used for displaying information or forms pertaining to the pane. It is hidden by default, but can be shown by changing its <strong>visible</strong> attribute or by setting the <strong>is-drawer-toggle</strong> attribute of a <a href="#/components/blocks">Menu Item</a>.</p>
+
+		<p>It may contain any HTML content.</p>
 
 		<table class="key-value">
 			<thead>
@@ -120,12 +242,12 @@
 
 			<tbody>
 				<tr>
-					<td>stretch</td>
-					<td>A boolean attribute to stretch the form fields to fill the full row.</td>
+					<td>heading</td>
+					<td>A heading to appear above the content.</td>
 				</tr>
 				<tr>
-					<td>flex</td>
-					<td>An array of flex values for each group box in the row.</td>
+					<td>visible</td>
+					<td>A boolean attribute to indicate if the drawer is visible.</td>
 				</tr>
 			</tbody>
 		</table>
