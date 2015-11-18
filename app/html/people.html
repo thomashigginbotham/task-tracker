@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Task Tracker 2.0</title>
+	<!-- build:include templates/head.html -->
+	<!-- /build -->
+	<link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+
+<body>
+	<tracker-app>
+		<tracker-menu-pane heading="Task Tracker" font-color="#fff" bg-color="#000">
+			<tracker-menu-block heading="Menu">
+				<tracker-menu-item uri="projects.html" icon="folder">Projects</tracker-menu-item>
+				<tracker-menu-item uri="people.html" icon="users" active>People</tracker-menu-item>
+				<tracker-menu-item uri="reports.html" icon="pie-chart">Reports</tracker-menu-item>
+				<tracker-menu-item uri="settings.html" icon="sliders">Settings</tracker-menu-item>
+				<tracker-menu-item uri="signin.html" icon="sign-out">Sign Out</tracker-menu-item>
+			</tracker-menu-block>
+
+			<tracker-search-block></tracker-search-block>
+
+			<tracker-menu-block heading="Quick Links">
+				<tracker-menu-item uri="project-detail.html">Experis Administration</tracker-menu-item>
+				<tracker-menu-item uri="utilization-report.html">Utilization Report</tracker-menu-item>
+				<tracker-menu-item uri="timesheet-report.html">PeopleSoft Time Sheet</tracker-menu-item>
+			</tracker-menu-block>
+
+			<tracker-menu-block heading="Information">
+				<tracker-menu-item uri="#daily-summary" icon="info-circle">Daily Summary</tracker-menu-item>
+				<tracker-menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</tracker-menu-item>
+			</tracker-menu-block>
+		</tracker-menu-pane>
+
+		<tracker-detail-pane heading="People" icon="users" font-color="#fff" bg-color="#e87c24">
+			<tracker-group-pane-menu>
+				<tracker-menu-block layout="horizontal" font-color="#fff">
+					<tracker-menu-item uri="project-detail.html" icon="plus">Add Client</tracker-menu-item>
+					<tracker-menu-item uri="project-detail.html" icon="plus">Add User</tracker-menu-item>
+				</tracker-menu-block>
+			</tracker-group-pane-menu>
+
+			<div class="block">
+				<tracker-paper-block heading="Clients">
+					<table is="tracker-sortable-table" default-sort-col="1"
+						default-sort-order="asc"
+						columns='["Name", "Primary Contact", "Created"]'
+						widths='["30%", "55%", "15%"]',
+						aligns='["left", "left", "right"]'>
+						<tr>
+							<td><a href="client-detail.html">Acme Company, The</a></td>
+							<td><a href="mailto:wiley@acme.com">William Coy</a></td>
+							<td class="datetime" data-sort-value="20150721"><time datetime="7/21/2015">7/21/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="client-detail.html">Mom &amp; Pop Diner</a></td>
+							<td><a href="mailto:cosmo@mompopdiner.com">Cosmo Kramer</a></td>
+							<td class="datetime" data-sort-value="20150702"><time datetime="7/02/2015">7/02/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="client-detail.html">Wands</a></td>
+							<td><a href="mailto:howard@wands.com">Howie Hughley</a></td>
+							<td class="datetime" data-sort-value="20150812"><time datetime="8/12/2015">8/12/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="client-detail.html">US Government</a></td>
+							<td>Agent Smith</td>
+							<td class="datetime" data-sort-value="20150817"><time datetime="8/17/2015">8/17/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="clients-detail.html">Red Plus</a></td>
+							<td><a href="mailto:benevolentwizard@redplus.org">Mahatma Gandalf</a></td>
+							<td class="datetime" data-sort-value="20150821"><time datetime="8/21/2015">8/21/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="clients-detail.html">UVR</a></td>
+							<td><a href="mailto:carlton.banks@uvr.org">Carlton Banks</a></td>
+							<td class="datetime" data-sort-value="20150830"><time datetime="8/30/2015">8/30/2015</time></td>
+						</tr>
+					</table>
+				</tracker-paper-block>
+			</div>
+
+			<div class="block">
+				<tracker-paper-block heading="Users">
+					<table is="tracker-sortable-table" default-sort-col="1"
+						default-sort-order="asc"
+						columns='["Name", "E-mail", "Created"]'
+						widths='["30%", "55%", "15%"]',
+						aligns='["left", "left", "right"]'>
+						<tr>
+							<td><a href="user-detail.html">Chambers, Rebecca</a></td>
+							<td><a href="mailto:rebecca.chambers@tasktracker.com">rebecca.chambers@tasktracker.com</a></td>
+							<td class="datetime" data-sort-value="20150515"><time datetime="5/15/2015">5/15/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="user-detail.html">Fenix, Marcus</a></td>
+							<td><a href="mailto:marcus.fenix@tasktracker.com">marcus.fenix@tasktracker.com</a></td>
+							<td class="datetime" data-sort-value="20150525"><time datetime="5/25/2015">5/25/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="user-detail.html">Shepard, John</a></td>
+							<td><a href="mailto:john.shepard@tasktracker.com">john.shepard@tasktracker.com</a></td>
+							<td class="datetime" data-sort-value="20150617"><time datetime="6/17/2015">6/17/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="user-detail.html">Johnson, Avery</a></td>
+							<td><a href="mailto:avery.johnson@tasktracker.com">avery.johnson@tasktracker.com</a></td>
+							<td class="datetime" data-sort-value="20150617"><time datetime="6/17/2015">6/17/2015</time></td>
+						</tr>
+						<tr>
+							<td><a href="user-detail.html">Jacqueline, Natla</a></td>
+							<td><a href="mailto:natla.jacqueline@tasktracker.com">natla.jacqueline@tasktracker.com</a></td>
+							<td class="datetime" data-sort-value="20150714"><time datetime="7/14/2015">7/14/2015</time></td>
+						</tr>
+					</table>
+				</tracker-paper-block>
+			</div>
+		</tracker-detail-pane>
+
+		<tracker-property-pane heading="Quick Menu" font-color="#fff" bg-color="#555">
+			<div class="block">
+				<tracker-menu-block heading="Recent Clients">
+					<tracker-menu-item uri="client-detail.html">Acme Company, The</tracker-menu-item>
+					<tracker-menu-item uri="client-detail.html">Mom &amp; Pop Diner</tracker-menu-item>
+					<tracker-menu-item uri="client-detail.html">Red Plus</tracker-menu-item>
+				</tracker-menu-block>
+
+				<tracker-menu-block heading="Active Users">
+					<tracker-menu-item uri="user-detail.html">Rebecca Chambers</tracker-menu-item>
+					<tracker-menu-item uri="user-detail.html">Marcus Fenix</tracker-menu-item>
+					<tracker-menu-item uri="user-detail.html">John Shepard</tracker-menu-item>
+				</tracker-menu-block>
+
+				<tracker-group-block heading="Client Stats">
+					<tracker-icon-item icon="user">6 Total Clients</tracker-icon-item>
+					<tracker-icon-item icon="folder">5 with Active Projects</tracker-icon-item>
+				</tracker-group-block>
+
+				<tracker-group-block heading="User Stats">
+					<tracker-icon-item icon="user">5 Total Users</tracker-icon-item>
+					<tracker-icon-item icon="folder">3 on Active Projects</tracker-icon-item>
+				</tracker-group-block>
+			</div>
+		</tracker-property-pane>
+
+		<tracker-footer-pane status="online" version="0.0.1"></tracker-footer-pane>
+	</tracker-app>
+
+	<!-- build:js:dist javascripts/built.js -->
+	<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
+	<!-- /build -->
+</body>
+
+</html>
