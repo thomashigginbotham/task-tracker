@@ -62,7 +62,7 @@
 				},
 				fontColor: String,
 				icon: String,
-				isNoticeToggle: Boolean,
+				isDrawerToggle: Boolean,
 				iconClass: {
 					type: String,
 					computed: 'computeIconClass(icon)'
@@ -88,17 +88,17 @@
 				}
 			},
 			handleClick: function(e) {
-				if (this.isNoticeToggle) {
-					this.active = this.toggleNoticeBlock();
+				if (this.isDrawerToggle) {
+					this.active = this.toggleDrawer();
 					e.preventDefault();
 				}
 			},
-			toggleNoticeBlock: function() {
-				var noticeBlock = document.querySelector('tracker-notice-block');
+			toggleDrawer: function() {
+				var drawer = document.querySelector('tracker-drawer');
 
-				noticeBlock.visible = !noticeBlock.visible;
+				drawer.visible = !drawer.visible;
 
-				return noticeBlock.visible;
+				return drawer.visible;
 			}
 		});
 	</script>

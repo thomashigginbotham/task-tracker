@@ -1,4 +1,4 @@
-<dom-module id="tracker-notice-block">
+<dom-module id="tracker-drawer">
 	<template>
 		<style include="tracker-base-styles">
 			:host {
@@ -25,14 +25,14 @@
 
 		<h2 hidden$="{{!heading}}">{{heading}}</h2>
 
-		<div class="tracker-notice-block-content">
+		<div class="tracker-drawer-content">
 			<content></content>
 		</div>
 	</template>
 
 	<script>
 		Polymer({
-			is: 'tracker-notice-block',
+			is: 'tracker-drawer',
 			properties: {
 				heading: String,
 				visible: {

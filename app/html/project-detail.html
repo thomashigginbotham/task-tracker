@@ -35,12 +35,12 @@
 		<tracker-detail-pane heading="Acme Website Redesign" icon="folder" font-color="#fff" bg-color="#5c2">
 			<tracker-group-pane-menu>
 				<tracker-menu-block layout="horizontal" font-color="#fff">
-					<tracker-menu-item uri="#edit" icon="pencil" is-notice-toggle>Edit Project</tracker-menu-item>
+					<tracker-menu-item uri="#edit" icon="pencil" is-drawer-toggle>Edit Project</tracker-menu-item>
 					<tracker-menu-item uri="#pin" icon="thumb-tack">Pin</tracker-menu-item>
 				</tracker-menu-block>
 			</tracker-group-pane-menu>
 
-			<tracker-notice-block heading="Change Project Details">
+			<tracker-drawer heading="Change Project Details">
 				<tracker-form-row stretch flex='["2 1 50%", "1 1 25%", "1 1 25%"]'>
 					<tracker-group-block heading="Name">
 						<input type="text" name="project-name" value="Acme Website Redesign">
@@ -68,7 +68,7 @@
 					<tracker-icon-button uri="#" icon="backward">Cancel</tracker-icon-button>
 					<tracker-icon-button uri="#" icon="trash" caution>Delete Project</tracker-icon-button>
 				</tracker-button-row>
-			</tracker-notice-block>
+			</tracker-drawer>
 
 			<div class="block">
 				<tracker-paper-block heading="Active Tasks (3)">
