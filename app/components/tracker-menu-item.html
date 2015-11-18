@@ -11,17 +11,31 @@
 				white-space: nowrap;
 			}
 
-			:host([active]) a {
-				font-weight: bold;
-			}
-
 			:host-context(.dark-theme) a {
 				color: var(--color-ui);
+			}
+
+			:host([active]):host-context(.dark-theme) a {
+				color: var(--color-light);
 			}
 
 			:host-context(.dark-theme) a:hover {
 				text-decoration: none;
 				color: var(--color-light);
+			}
+
+			:host-context(tracker-group-pane-menu) a {
+				padding: .15em .5em;
+			}
+
+			:host([active]):host-context(tracker-group-pane-menu) a,
+			:host-context(tracker-group-pane-menu) a:hover {
+				background-color: var(--color-ui-light-shade);
+			}
+
+			:host-context(tracker-group-pane-menu) a:hover,
+			:host-context(tracker-group-pane-menu) a:focus {
+				text-decoration: none;
 			}
 		</style>
 
@@ -44,9 +58,11 @@
 				active: {
 					type: Boolean,
 					value: false,
+					reflectToAttribute: true
 				},
 				fontColor: String,
 				icon: String,
+				isNoticeToggle: Boolean,
 				iconClass: {
 					type: String,
 					computed: 'computeIconClass(icon)'
@@ -55,6 +71,9 @@
 					type: String,
 					computed: 'computeInlineStyle(fontColor)'
 				}
+			},
+			listeners: {
+				'click': 'handleClick'
 			},
 			computeIconClass: function(iconName) {
 				if (iconName !== '') {
@@ -67,6 +86,19 @@
 				if (fontColor) {
 					return 'color: ' + fontColor + ';';
 				}
+			},
+			handleClick: function(e) {
+				if (this.isNoticeToggle) {
+					this.active = this.toggleNoticeBlock();
+					e.preventDefault();
+				}
+			},
+			toggleNoticeBlock: function() {
+				var noticeBlock = document.querySelector('tracker-notice-block');
+
+				noticeBlock.visible = !noticeBlock.visible;
+
+				return noticeBlock.visible;
 			}
 		});
 	</script>

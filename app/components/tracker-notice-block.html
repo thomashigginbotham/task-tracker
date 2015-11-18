@@ -2,13 +2,14 @@
 	<template>
 		<style include="tracker-base-styles">
 			:host {
-				display: block;
+				display: none;
 				position: relative;
 				top: -var(--gutter);
 				left: -var(--gutter);
 				padding: var(--gutter);
 				width: 100%;
 				background-color: var(--color-ui);
+				transition: top .35s ease-in-out, margin .35s ease-in-out;
 			}
 
 			::content > :last-child {
@@ -33,7 +34,45 @@
 		Polymer({
 			is: 'tracker-notice-block',
 			properties: {
-				heading: String
+				heading: String,
+				visible: {
+					type: Boolean,
+					value: false,
+					observer: 'visibleChanged'
+				},
+				topOffset: Number
+			},
+			attached: function() {
+				var that = this;
+
+				this.style.transition = 'none';
+				this.style.display = 'block';
+				this.topOffset = getComputedStyle(this).top;
+
+				if (!this.visible) {
+					this.hideBlock();
+				}
+
+				setTimeout(function() {
+					that.style.transition = '';
+				}, 0);
+			},
+			showBlock: function() {
+				this.style.marginBottom = 0;
+				this.style.top = this.topOffset;
+			},
+			hideBlock: function() {
+				var blockHeight = this.offsetHeight;
+
+				this.style.marginBottom = -blockHeight + 'px';
+				this.style.top = 'calc(' + -blockHeight + 'px + ' + this.topOffset + ')';
+			},
+			visibleChanged: function() {
+				if (this.visible) {
+					this.showBlock();
+				} else {
+					this.hideBlock();
+				}
 			}
 		});
 	</script>
