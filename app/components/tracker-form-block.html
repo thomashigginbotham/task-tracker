@@ -1,0 +1,37 @@
+<dom-module id="tracker-form-block">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+			}
+
+			.tracker-form-block-buttons {
+				position: relative;
+				box-sizing: border-box;
+				bottom: -var(--gutter);
+				left: -var(--gutter);
+				padding: var(--gutter) var(--gutter) 1px;
+				width: calc(100% + var(--gutter) * 2);
+				background-color: var(--color-ui-lightest);
+			}
+
+			:host-context(tracker-drawer) .tracker-form-block-buttons {
+				background-color: var(--color-ui-dark-shade);
+			}
+		</style>
+
+		<div class="tracker-form-block-fields">
+			<content select="tracker-form-row"></content>
+		</div>
+
+		<div class="tracker-form-block-buttons">
+			<content select="tracker-button-row"></content>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-form-block'
+		});
+	</script>
+</dom-module>

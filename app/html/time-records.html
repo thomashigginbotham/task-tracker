@@ -42,104 +42,108 @@
 			</tracker-group-pane-menu>
 
 			<tracker-drawer heading="Change Task Details">
-				<tracker-form-row stretch flex='["2 1 calc(70% + 1.4rem)", "1 1 30%"]'>
-					<tracker-group-block heading="Name">
-						<input type="text" name="task-name" value="Attend weekly client meeting">
-					</tracker-group-block>
-
-					<tracker-group-block heading="Project">
-						<select name="task-project" id="task-project">
-							<option value="">Acme Website Redesign</option>
-						</select>
-					</tracker-group-block>
-				</tracker-form-row>
-
-				<tracker-form-row stretch flex='["1 1 35%", "1 1 35%", "1 1 30%"]'>
-					<tracker-group-block heading="Creation Date">
-						<input type="date" name="task-due-date" value="2015-09-14">
-					</tracker-group-block>
-
-					<tracker-group-block heading="Due Date">
-						<input type="date" name="task-due-date" value="2015-09-23">
-					</tracker-group-block>
-
-					<tracker-group-block heading="Estimate (Hours)">
-						<input type="number" step="0.25" value="1" min="0.25">
-					</tracker-group-block>
-					</tracker-group-block>
-				</tracker-form-row>
-
-				<tracker-form-row stretch flex='["1 1 auto", "1 1 75%"]'>
-					<tracker-group-block heading="Recurrence">
-						<select name="task-recurrence">
-							<option value="">Once</option>
-							<option value="" selected>Weekly</option>
-						</select>
-					</tracker-group-block>
-
-					<tracker-group-block heading="On Day(s)">
-						<ul is="tracker-toggle-fields">
-							<li><input type="checkbox" id="task-day-0" name="task-day-0"><label for="task-day-0">Sunday</label></li>
-							<li><input type="checkbox" id="task-day-1" name="task-day-1" checked><label for="task-day-1">Monday</label></li>
-							<li><input type="checkbox" id="task-day-2" name="task-day-2"><label for="task-day-2">Tuesday</label></li>
-							<li><input type="checkbox" id="task-day-3" name="task-day-3"><label for="task-day-3">Wednesday</label></li>
-							<li><input type="checkbox" id="task-day-4" name="task-day-4"><label for="task-day-4">Thursday</label></li>
-							<li><input type="checkbox" id="task-day-5" name="task-day-5"><label for="task-day-5">Friday</label></li>
-							<li><input type="checkbox" id="task-day-6" name="task-day-6"><label for="task-day-6">Saturday</label></li>
-						</ul>
-					</tracker-group-block>
-				</tracker-form-row>
-
-				<tracker-form-row stretch flex='["1 1 100%"]'>
-					<tracker-group-block heading="Description">
-						<textarea name="task-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
-					</tracker-group-block>
-				</tracker-form-row>
-
-				<tracker-form-row stretch flex='["1 1 calc(70% + 1.4rem)", "1 1 30%"]'>
-					<tracker-group-block heading="Tags">
-						<input type="text" name="task-tags" value="Meeting, Billable">
-					</tracker-group-block>
-
-					<tracker-group-block heading="Complete">
-						<ul is="tracker-toggle-fields">
-							<li>
-								<input type="checkbox" id="task-completed" name="task-completed"><label for="task-completed">Mark as complete?</label>
-							</li>
-						</ul>
-				</tracker-form-row>
-
-				<tracker-button-row>
-					<tracker-icon-button uri="#" icon="check">Save Changes</tracker-icon-button>
-					<tracker-icon-button uri="#" icon="backward">Cancel</tracker-icon-button>
-					<tracker-icon-button uri="#" icon="trash" caution>Delete Task</tracker-icon-button>
-				</tracker-button-row>
-			</tracker-drawer>
-
-			<div class="block">
-				<tracker-paper-block heading="New Time Record" important>
-					<tracker-form-row stretch flex='["1 1 25%", "1 1 25%", "2 1 50%"]'>
-						<tracker-group-block heading="Date">
-							<input type="date" value="2015-09-19">
+				<tracker-form-block>
+					<tracker-form-row stretch flex='["2 1 calc(70% + 1.4rem)", "1 1 30%"]'>
+						<tracker-group-block heading="Name">
+							<input type="text" name="task-name" value="Attend weekly client meeting">
 						</tracker-group-block>
 
-						<tracker-group-block heading="Time Spent (Hours)">
-							<input type="number" step="0.25" value="0.25" min="0.25">
-						</tracker-group-block>
-
-						<tracker-group-block heading="User">
-							<select name="user-new-time" id="user-new-time">
-								<option value="">John Shepard</option>
-								<option value="">Marcus Fenix</option>
-								<option value="" selected>Rebecca Chambers</option>
+						<tracker-group-block heading="Project">
+							<select name="task-project" id="task-project">
+								<option value="">Acme Website Redesign</option>
 							</select>
 						</tracker-group-block>
 					</tracker-form-row>
 
+					<tracker-form-row stretch flex='["1 1 35%", "1 1 35%", "1 1 30%"]'>
+						<tracker-group-block heading="Creation Date">
+							<input type="date" name="task-due-date" value="2015-09-14">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Due Date">
+							<input type="date" name="task-due-date" value="2015-09-23">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Estimate (Hours)">
+							<input type="number" step="0.25" value="1" min="0.25">
+						</tracker-group-block>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 auto", "1 1 75%"]'>
+						<tracker-group-block heading="Recurrence">
+							<select name="task-recurrence">
+								<option value="">Once</option>
+								<option value="" selected>Weekly</option>
+							</select>
+						</tracker-group-block>
+
+						<tracker-group-block heading="On Day(s)">
+							<ul is="tracker-toggle-fields">
+								<li><input type="checkbox" id="task-day-0" name="task-day-0"><label for="task-day-0">Sunday</label></li>
+								<li><input type="checkbox" id="task-day-1" name="task-day-1" checked><label for="task-day-1">Monday</label></li>
+								<li><input type="checkbox" id="task-day-2" name="task-day-2"><label for="task-day-2">Tuesday</label></li>
+								<li><input type="checkbox" id="task-day-3" name="task-day-3"><label for="task-day-3">Wednesday</label></li>
+								<li><input type="checkbox" id="task-day-4" name="task-day-4"><label for="task-day-4">Thursday</label></li>
+								<li><input type="checkbox" id="task-day-5" name="task-day-5"><label for="task-day-5">Friday</label></li>
+								<li><input type="checkbox" id="task-day-6" name="task-day-6"><label for="task-day-6">Saturday</label></li>
+							</ul>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 100%"]'>
+						<tracker-group-block heading="Description">
+							<textarea name="task-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 calc(70% + 1.4rem)", "1 1 30%"]'>
+						<tracker-group-block heading="Tags">
+							<input type="text" name="task-tags" value="Meeting, Billable">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Complete">
+							<ul is="tracker-toggle-fields">
+								<li>
+									<input type="checkbox" id="task-completed" name="task-completed"><label for="task-completed">Mark as complete?</label>
+								</li>
+							</ul>
+					</tracker-form-row>
+
 					<tracker-button-row>
-						<p>24.75 hours remaining</p>
-						<tracker-icon-button uri="#" icon="check">Save Record</tracker-icon-button>
+						<tracker-icon-button uri="#" icon="check">Save Changes</tracker-icon-button>
+						<tracker-icon-button uri="#" icon="backward">Cancel</tracker-icon-button>
+						<tracker-icon-button uri="#" icon="trash" caution>Delete Task</tracker-icon-button>
 					</tracker-button-row>
+				</tracker-form-block>
+			</tracker-drawer>
+
+			<div class="block">
+				<tracker-paper-block heading="New Time Record" important>
+					<tracker-form-block>
+						<tracker-form-row stretch flex='["1 1 25%", "1 1 25%", "2 1 50%"]'>
+							<tracker-group-block heading="Date">
+								<input type="date" value="2015-09-19">
+							</tracker-group-block>
+
+							<tracker-group-block heading="Time Spent (Hours)">
+								<input type="number" step="0.25" value="0.25" min="0.25">
+							</tracker-group-block>
+
+							<tracker-group-block heading="User">
+								<select name="user-new-time" id="user-new-time">
+									<option value="">John Shepard</option>
+									<option value="">Marcus Fenix</option>
+									<option value="" selected>Rebecca Chambers</option>
+								</select>
+							</tracker-group-block>
+						</tracker-form-row>
+
+						<tracker-button-row>
+							<p>24.75 hours remaining</p>
+							<tracker-icon-button uri="#" icon="check">Save Record</tracker-icon-button>
+						</tracker-button-row>
+					</tracker-form-block>
 				</tracker-paper-block>
 			</div>
 

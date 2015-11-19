@@ -9,6 +9,10 @@
 				margin-right: var(--gutter);
 			}
 
+			:host-context(tracker-form-block):host(:last-of-type) ::content tracker-group-block {
+				margin-bottom: 0;
+			}
+
 			@media (min-width: 50rem) {
 				:host {
 					display: flex;
