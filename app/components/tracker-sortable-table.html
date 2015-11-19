@@ -12,6 +12,12 @@
 				background-color: var(--color-ui-light);
 			}
 
+			::content tbody::before {
+				content: '';
+				display: block;
+				height: calc(var(--font-size) / 2);
+			}
+
 			::content .icon-sort,
 			::content .icon-sort-asc,
 			::content .icon-sort-desc {
