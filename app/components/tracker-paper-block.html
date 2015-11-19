@@ -11,6 +11,13 @@
 				box-shadow: 0 0 .5rem rgba(0, 0, 0, .15), 0 .5em 1em rgba(0, 0, 0, .2);
 			}
 
+			.tracker-paper-block-content::after {
+				content: '';
+				display: table;
+				line-height: 0;
+				clear: both;
+			}
+
 			.tracker-paper-block-content ::content > :last-child {
 				margin-bottom: 0;
 			}

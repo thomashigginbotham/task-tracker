@@ -1,272 +1,51 @@
 // Form Styles
 //
 // No styleguide reference.
-
-// Variables
-//
-// No styleguide reference.
-$form-field-height: 2rem;
-
-// Global Styles
-//
-// Compatibility untested.
-//
-// No styleguide reference.
 label {
+	vertical-align: middle;
 	cursor: pointer;
 }
 
-// Text boxes.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-input[type=text],
-input[type=search],
-input[type=date],
-input[type=email],
-input[type=number] {
-	@include box-sizing(border-box);
-	padding: 0 $form-field-height / 4;
-	max-width: 100%;
-	height: $form-field-height;
-	border: 1px solid lighten($color-text-light, 50%);
-	font-size: $base-font-size;
-	font-weight: $base-font-weight;
+[type=text],
+[type=password],
+[type=search],
+[type=email],
+[type=tel],
+[type=number],
+[type=date],
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
 
-	&:focus {
-		border: 1px solid $color-text-light;
-		outline: 1px solid $color-text-light;
-	}
+[type=text],
+[type=password],
+[type=search],
+[type=email],
+[type=tel],
+[type=number],
+[type=date],
+select {
+	padding: 0 .5em;
+	height: 2.6em;
+	border: 1px solid $color-ui;
+	line-height: 2.6em;
 }
 
 textarea {
-	@include box-sizing(border-box);
-	padding: $form-field-height / 4;
-	max-width: 100%;
-	border: 1px solid lighten($color-text-light, 50%);
-	font-size: $base-font-size;
-	font-weight: $base-font-weight;
-
-	&:focus {
-		border: 1px solid $color-text-light;
-		outline: 1px solid $color-text-light;
-	}
+	padding: .5em;
+	border: 1px solid $color-ui;
 }
 
-// Drop-downs.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-select {
-	height: $form-field-height;
-	border: 1px solid lighten($color-text-light, 50%);
-	font-size: $base-font-size;
-	font-weight: $base-font-weight;
-
-	&:focus {
-		border: 1px solid $color-text-light;
-		outline: 1px solid $color-text-light;
-	}
-}
-
-// Validations.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-.error-state {
-	color: $color-error;
-
-	input[type=text],
-	input[type=search],
-	input[type=date],
-	input[type=email],
-	input[type=number],
-	textarea,
-	select {
-		border-color: $color-error;
-		color: $color-text;
-
-		&:focus {
-			outline: 1px solid $color-error;
-		}
-	}
-}
-
-.success-msg,
-.warning-msg,
-.error-msg {
-	display: block;
-	clear: left;
-
-	&:before {
-		margin-right: .25em;
-		font-family: 'FontAwesome';
-	}
-}
-
-.success-msg {
-	color: $color-success;
-
-	&:before {
-		content: '\f058';
-	}
-}
-
-.warning-msg {
-	color: $color-warning;
-
-	&:before {
-		content: '\f05a';
-	}
-}
-
-.error-msg {
-	color: $color-error;
-
-	&:before {
-		content: '\f071';
-	}
-}
-
-// Field groupings.
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-.form-field {
-	@include rem(margin-bottom, $col-gutter / 2);
-
-	label {
-		display: block;
-	}
-
-	textarea {
-		display: block;
-	}
-
-	.error-msg {
-		@include rem(margin-top, $col-gutter / 3);
-	}
-}
-
-.inline-field {
-	$label-width: 12em;
-	$field-width: 20em;
-
-	@include row();
-	@include rem(margin-bottom, $col-gutter / 2);
-
-	label {
-		display: block;
-
-		@media (min-width: $canvas-medium) {
-			float: left;
-			margin-right: 1em;
-			width: $label-width;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			line-height: $form-field-height;
-		}
-	}
-
-	input,
-	select {
-		width: $field-width;
-	}
-
-	.error-msg {
-		@include rem(margin-top, $col-gutter / 3);
-
-		@media (min-width: $canvas-medium) {
-			margin-left: $label-width + 1em;
-		}
-	}
-}
-
-.option-field {
-	label {
-		display: inline;
-		float: none;
-		margin: 0;
-		width: auto;
-	}
-}
-
-// Buttons
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-button,
-.button {
-	@include transition(background-color .25s ease-out);
-	box-sizing: border-box;
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	z-index: 1;
-	padding: 0 1em;
-	height: 2.75em;
-	line-height: 2.75em;
-	text-decoration: none;
-	color: $color-bg;
-	background: $color-primary;
-
-	&.disabled,
-	&[disabled] {
-		cursor: not-allowed;
-		color: darken($color-bg, 30%);
-		background: darken($color-bg, 5%);
-
-		&:hover {
-			color: darken($color-bg, 30%);
-		}
-
-		&:before {
-			display: none;
-		}
-	}
-
-	&:hover {
-		color: darken($color-primary, 30%);
-	}
-
-	&:focus {
-		outline: 1px solid darken($color-primary, 30%);
-	}
-}
-
-// Messages
-//
-// Compatibility untested.
-//
-// No styleguide reference.
-.msg-box {
-	&.success-msg,
-	&.warning-msg,
-	&.error-msg {
-		padding: .75em 1em;
-		border-width: 1px;
-		border-style: solid;
-		color: $color-text;
-	}
-
-	&.success-msg {
-		border-color: $color-success;
-		background-color: scale-lightness($color-success, 95%);
-	}
-
-	&.warning-msg {
-		border-color: $color-warning;
-		background-color: scale-lightness($color-warning, 95%);
-	}
-
-	&.error-msg {
-		border-color: $color-error;
-		background-color: scale-lightness($color-error, 95%);
-	}
+[type=text]:focus,
+[type=password]:focus,
+[type=search]:focus,
+[type=email]:focus,
+[type=tel]:focus,
+[type=number]:focus,
+[type=date]:focus,
+textarea:focus,
+select:focus {
+	outline: 2px solid $color-ui-dark;
 }

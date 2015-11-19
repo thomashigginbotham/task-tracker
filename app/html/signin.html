@@ -23,9 +23,35 @@
 
 		<tracker-detail-pane heading="Sign In" icon="sign-in" font-color="#fff" bg-color="#95434f">
 			<div class="block">
-				<tracker-empty-block heading="Coming Soon">
-					<p>Looks like we need a way to sign in and out. We’re on top of it.</p>
-				</tracker-empty-block>
+				<div class="center-column-6">
+					<tracker-paper-block>
+						<h2>Welcome</h2>
+						<p>Please enter your username and password to sign in.</p>
+
+						<tracker-form-block>
+							<tracker-form-row stretch flex='["1 1 50%", "1 1 50%"]'>
+								<tracker-group-block heading="Username">
+									<input type="text" id="username">
+								</tracker-group-block>
+
+								<tracker-group-block heading="Password">
+									<input type="password" id="pass">
+								</tracker-group-block>
+							</tracker-form-row>
+
+							<tracker-form-row>
+								<tracker-group-block>
+									<input type="checkbox" id="remember-me">
+									<label for="remember-me">Keep me signed in</label>
+								</tracker-group-block>
+							</tracker-form-row>
+
+							<tracker-button-row>
+								<tracker-icon-button uri="projects.html" icon="sign-in">Sign In</tracker-icon-button>
+							</tracker-button-row>
+						</tracker-form-block>
+					</tracker-paper-block>
+				</div>
 			</div>
 		</tracker-detail-pane>
 		<tracker-footer-pane status="online" version="0.0.1"></tracker-footer-pane>

@@ -21,6 +21,21 @@
 	text-align: center;
 }
 
+// Columns
+//
+// Compatibility untested.
+//
+// No styleguide reference.
+@for $i from 1 through 12 {
+	.column-#{$i} {
+		@include column($i);
+	}
+
+	.center-column-#{$i} {
+		@include center-column($i);
+	}
+}
+
 // Status
 //
 // Compatibility untested.
