@@ -42,9 +42,17 @@
 			:host([caution]) a:hover {
 				background-color: var(--color-caution-dark);
 			}
+
+			:host([disabled]) a {
+				background-color: var(--color-ui);
+			}
+
+			:host([disabled]) a:hover {
+				cursor: not-allowed;
+			}
 		</style>
 
-		<a href="{{uri}}" class$="{{iconClass}}"><content></content></a>
+		<a href="{{getUri(uri, disabled)}}" class$="{{iconClass}}"><content></content></a>
 	</template>
 
 	<script>
@@ -54,9 +62,13 @@
 				role: 'button'
 			},
 			properties: {
-				uri: 'String',
-				icon: 'String',
-				caution: 'Boolean',
+				uri: String,
+				icon: String,
+				disabled: {
+					type: Boolean,
+					value: false
+				},
+				caution: Boolean,
 				iconClass: {
 					type: 'String',
 					computed: 'computedIconClass(icon)'
@@ -68,6 +80,13 @@
 				}
 
 				return 'icon-' + iconName;
+			},
+			getUri: function(uri, disabled) {
+				if (disabled) {
+					return 'javascript:';
+				}
+
+				return uri;
 			}
 		});
 	</script>

@@ -59,9 +59,13 @@
 						</tracker-group-block>
 					</tracker-form-row>
 
-					<tracker-form-row stretch flex='["1 1 100%"]'>
+					<tracker-form-row stretch flex='["1 1 calc(75% + 1.4rem)", "1 1 25%"]'>
 						<tracker-group-block heading="Description">
 							<textarea name="project-description" cols="50" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi illum iusto, dolor sit, ad labore!</textarea>
+						</tracker-group-block>
+
+						<tracker-group-block heading="Project Color">
+							<input type="color" value="#55cc22">
 						</tracker-group-block>
 					</tracker-form-row>
 
@@ -154,7 +158,7 @@
 
 			<div class="block">
 				<tracker-menu-block heading="Client">
-					<tracker-menu-item uri="clients.html">The Acme Company</tracker-menu-item>
+					<tracker-menu-item uri="client-detail.html">The Acme Company</tracker-menu-item>
 				</tracker-menu-block>
 
 				<tracker-group-block heading="Created">

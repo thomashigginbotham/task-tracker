@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Task Tracker 2.0</title>
+	<!-- build:include templates/head.html -->
+	<!-- /build -->
+	<link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+
+<body>
+	<tracker-app>
+		<tracker-menu-pane heading="Task Tracker" font-color="#fff" bg-color="#000">
+			<tracker-menu-block heading="Menu">
+				<tracker-menu-item uri="projects.html" icon="folder" active>Projects</tracker-menu-item>
+				<tracker-menu-item uri="people.html" icon="users">People</tracker-menu-item>
+				<tracker-menu-item uri="reports.html" icon="pie-chart">Reports</tracker-menu-item>
+				<tracker-menu-item uri="settings.html" icon="sliders">Settings</tracker-menu-item>
+				<tracker-menu-item uri="signin.html" icon="sign-out">Sign Out</tracker-menu-item>
+			</tracker-menu-block>
+
+			<tracker-search-block></tracker-search-block>
+
+			<tracker-menu-block heading="Quick Links">
+				<tracker-menu-item uri="project-detail.html">Experis Administration</tracker-menu-item>
+				<tracker-menu-item uri="utilization-report.html">Utilization Report</tracker-menu-item>
+				<tracker-menu-item uri="timesheet-report.html">Time Sheet Report</tracker-menu-item>
+			</tracker-menu-block>
+
+			<tracker-menu-block heading="Information">
+				<tracker-menu-item uri="#daily-summary" icon="info-circle">Daily Summary</tracker-menu-item>
+				<tracker-menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</tracker-menu-item>
+			</tracker-menu-block>
+		</tracker-menu-pane>
+
+		<tracker-detail-pane heading="New Project" icon="folder" font-color="#fff" bg-color="#c39">
+			<tracker-drawer heading="Add Project Details" visible="true">
+				<tracker-form-block>
+					<tracker-form-row stretch flex='["2 1 50%", "1 1 25%", "1 1 25%"]'>
+						<tracker-group-block heading="Name">
+							<input type="text" name="project-name" autofocus>
+						</tracker-group-block>
+
+						<tracker-group-block heading="Client">
+							<select name="project-client" id="project-client">
+								<option value="">Select a client</option>
+								<option value="">The Acme Company</option>
+							</select>
+						</tracker-group-block>
+
+						<tracker-group-block heading="Creation Date">
+							<input type="date" name="project-create-date" value="2015-09-14">
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 calc(75% + 1.4rem)", "1 1 25%"]'>
+						<tracker-group-block heading="Description">
+							<textarea name="project-description" cols="50" rows="5" placeholder="Have anything extra to say about this project? Add it here."></textarea>
+						</tracker-group-block>
+
+						<tracker-group-block heading="Project Color">
+							<input type="color" value="#cc3399">
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-button-row>
+						<tracker-icon-button uri="#" icon="check">Save Changes</tracker-icon-button>
+						<tracker-icon-button uri="#" icon="backward">Cancel</tracker-icon-button>
+					</tracker-button-row>
+				</tracker-form-block>
+			</tracker-drawer>
+
+			<div class="block">
+				<tracker-paper-block heading="Active Tasks (0)">
+					<tracker-empty-block heading="No Active Tasks">
+						<p>Save Changes to your project above, then use the <strong>Add Task</strong> button to add a new task to this project.</p>
+					</tracker-empty-block>
+				</tracker-paper-block>
+
+				<tracker-button-row>
+					<tracker-icon-button uri="#add" icon="plus-circle" disabled>Add a Task</tracker-icon-button>
+				</tracker-button-row>
+			</div>
+		</tracker-detail-pane>
+
+		<tracker-footer-pane status="online" version="0.0.1"></tracker-footer-pane>
+	</tracker-app>
+
+	<!-- build:js:dist javascripts/built.js -->
+	<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
+	<!-- /build -->
+</body>
+
+</html>
