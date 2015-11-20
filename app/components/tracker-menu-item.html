@@ -11,6 +11,16 @@
 				white-space: nowrap;
 			}
 
+			a:hover,
+			a:focus {
+				text-decoration: none;
+			}
+
+			span:hover,
+			span:focus {
+				text-decoration: underline;
+			}
+
 			:host-context(.dark-theme) a {
 				color: var(--color-ui);
 			}
@@ -20,8 +30,12 @@
 			}
 
 			:host-context(.dark-theme) a:hover {
-				text-decoration: none;
 				color: var(--color-light);
+			}
+
+			:host-context(.dark-theme) span:hover,
+			:host-context(.dark-theme) span:focus {
+				text-decoration: none;
 			}
 
 			:host-context(tracker-group-pane-menu) a {
@@ -33,14 +47,14 @@
 				background-color: var(--color-ui-light-shade);
 			}
 
-			:host-context(tracker-group-pane-menu) a:hover,
-			:host-context(tracker-group-pane-menu) a:focus {
+			:host-context(tracker-group-pane-menu) span:hover,
+			:host-context(tracker-group-pane-menu) span:focus {
 				text-decoration: none;
 			}
 		</style>
 
 		<a href="{{uri}}" class$="{{iconClass}}" style$="{{styleString}}">
-			<content></content>
+			<span><content></content></span>
 		</a>
 	</template>
 
