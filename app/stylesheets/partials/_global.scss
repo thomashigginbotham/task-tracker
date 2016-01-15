@@ -26,6 +26,14 @@
 // Compatibility untested.
 //
 // No styleguide reference.
+.row::before,
+.row::after {
+	content: '';
+	display: table;
+	line-height: 0;
+	clear: both;
+}
+
 @for $i from 1 through 12 {
 	.column-#{$i} {
 		@include column($i);

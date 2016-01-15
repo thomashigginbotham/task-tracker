@@ -218,6 +218,7 @@ module.exports = function(grunt) {
 				tasks: ['processhtml:dev'],
 				options: {
 					livereload: true,
+					spawn: false
 				}
 			},
 			css: {
@@ -225,12 +226,14 @@ module.exports = function(grunt) {
 				tasks: ['compass:dev'],
 				options: {
 					livereload: true,
+					spawn: false
 				}
 			},
 			js: {
 				files: ['app/javascripts/**/*.js'],
 				options: {
 					livereload: true,
+					spawn: false
 				}
 			}
 		}

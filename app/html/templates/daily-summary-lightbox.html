@@ -1,0 +1,31 @@
+<tracker-lightbox id="daily-summary" heading="Daily Summary">
+	<div class="row block">
+		<div class="column-4"><tracker-menu-item uri="#" icon="angle-left">Yesterday (Tue)</tracker-menu-item></div>
+		<div class="column-4 center-text"><strong>Today</strong></div>
+		<div class="column-4"></div>
+	</div>
+
+	<table is="tracker-sortable-table" columns='["Task", "Hours"]'
+		widths='["85%", "15%"]',
+		aligns='["left", "right"]'>
+		<tr>
+			<td><a href="time-records.html">Daily Scrum meeting</a></td>
+			<td class="numeric">0.25</td>
+		</tr>
+		<tr>
+			<td><a href="time-records.html">E-mail management</a></td>
+			<td class="numeric">0.50</td>
+		</tr>
+		<tr>
+			<td><a href="time-records.html">Create HTML build-outs</a></td>
+			<td class="numeric">2.75</td>
+		</tr>
+	</table>
+
+	<tracker-button-row>
+		<p><strong>Total Hours: 5.25</strong></p>
+
+		<tracker-icon-button uri="utilization-report.html" icon="pie-chart">View Report</tracker-icon-button>
+		<tracker-icon-button uri="#" icon="close">Close</tracker-icon-button>
+	</tracker-button-row>
+</tracker-lightbox>

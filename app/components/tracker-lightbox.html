@@ -1,0 +1,136 @@
+<dom-module id="tracker-lightbox">
+	<template>
+		<style include="tracker-base-styles">
+			:host {
+				display: block;
+				z-index: -1;
+			}
+
+			:host(.tracker-lightbox-visible) {
+				display: block;
+				z-index: 10;
+			}
+
+			.tracker-lightbox-shade {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 0;
+				opacity: 0;
+				background: var(--color-ui-light-heavy-shade);
+				transition: opacity .25s ease-out;
+			}
+
+			:host(.tracker-lightbox-visible) .tracker-lightbox-shade {
+				height: 100vh;
+				opacity: 1;
+			}
+
+			.tracker-lightbox-wrapper {
+				display: block;
+				position: absolute;
+				z-index: -1;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				padding: var(--gutter);
+				min-width: var(--canvas-small);
+				border: 1px solid var(--color-ui);
+				background-color: var(--color-light);
+				opacity: 0;
+				box-shadow: 0 0 2rem rgba(0, 0, 0, .3), 0 1.5rem 4rem rgba(0, 0, 0, .25);
+				transition: opacity .25s ease-in;
+			}
+
+			:host(.tracker-lightbox-visible) .tracker-lightbox-wrapper {
+				z-index: 10;
+				opacity: 1;
+			}
+
+			.tracker-lightbox-wrapper > h2 {
+				margin-bottom: var(--gutter);
+				padding: .5rem var(--gutter);
+				text-align: center;
+				color: var(--color-light);
+				background-color: var(--color-primary);
+			}
+
+			::content .block {
+				margin-bottom: var(--gutter);
+			}
+
+			.tracker-lightbox-wrapper ::content > :last-child {
+				margin-bottom: 0;
+			}
+		</style>
+
+		<div class="tracker-lightbox-shade"></div>
+
+		<div class="tracker-lightbox-wrapper">
+			<h2 hidden$="{{!heading}}">{{heading}}</h2>
+
+			<div class="tracker-lightbox-content">
+				<content></content>
+			</div>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tracker-lightbox',
+			properties: {
+				heading: String,
+				visible: {
+					type: Boolean,
+					value: false,
+					observer: 'visibleChanged'
+				}
+			},
+			attached: function() {
+				this.addListeners();
+				this.checkVisibilityByHash();
+			},
+			visibleChanged: function(value) {
+				var visibleClass = ' tracker-lightbox-visible';
+				var hasVisibleClass = this.className.indexOf(visibleClass) > -1;
+
+				if (value === false && hasVisibleClass) {
+					var hash = window.location.hash.substring(1);
+
+					this.className = this.className.replace(visibleClass, '');
+
+					// Remove hash from URL
+					if (this.id.toLowerCase() === hash.toLowerCase()) {
+						window.location.hash = '';
+					}
+				} else if (value === true && !hasVisibleClass) {
+					this.className += visibleClass;
+				}
+			},
+			addListeners: function() {
+				var that = this;
+				var shade = this.shadowRoot.querySelector('.tracker-lightbox-shade');
+
+				// Watch for click on shade, then close lightbox
+				shade.addEventListener('click', function() {
+					that.visible = false;
+				}, false);
+
+				// Watch for hash updates and change visibility
+				window.addEventListener('hashchange', function() {
+					that.checkVisibilityByHash();
+				}, false);
+			},
+			checkVisibilityByHash: function() {
+				var hash = window.location.hash.substring(1);
+
+				if (this.id.toLowerCase() === hash.toLowerCase()) {
+					this.visible = true;
+				} else {
+					this.visible = false;
+				}
+			}
+		});
+	</script>
+</dom-module>

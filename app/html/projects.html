@@ -29,7 +29,7 @@
 
 			<tracker-menu-block heading="Information">
 				<tracker-menu-item uri="#daily-summary" icon="info-circle">Daily Summary</tracker-menu-item>
-				<tracker-menu-item uri="#recent tasks" icon="info-circle">Recent Tasks</tracker-menu-item>
+				<tracker-menu-item uri="#recent-tasks" icon="info-circle">Recent Tasks</tracker-menu-item>
 			</tracker-menu-block>
 		</tracker-menu-pane>
 
@@ -131,6 +131,9 @@
 
 		<tracker-footer-pane status="online" version="0.0.1"></tracker-footer-pane>
 	</tracker-app>
+
+	<!-- build:include templates/daily-summary-lightbox.html --><!-- /build -->
+	<!-- build:include templates/recent-tasks-lightbox.html --><!-- /build -->
 
 	<!-- build:js:dist javascripts/built.js -->
 	<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
