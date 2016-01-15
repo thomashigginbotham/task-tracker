@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Task Tracker 2.0</title>
+	<!-- build:include templates/head.html -->
+	<!-- /build -->
+	<link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+
+<body>
+	<tracker-app>
+		<tracker-menu-pane heading="Task Tracker" font-color="#fff" bg-color="#000">
+			<tracker-menu-block heading="Menu">
+				<tracker-menu-item uri="projects.html" icon="folder" active>Projects</tracker-menu-item>
+				<tracker-menu-item uri="people.html" icon="users">People</tracker-menu-item>
+				<tracker-menu-item uri="reports.html" icon="pie-chart">Reports</tracker-menu-item>
+				<tracker-menu-item uri="settings.html" icon="sliders">Settings</tracker-menu-item>
+				<tracker-menu-item uri="signin.html" icon="sign-out">Sign Out</tracker-menu-item>
+			</tracker-menu-block>
+
+			<tracker-search-block></tracker-search-block>
+
+			<tracker-menu-block heading="Quick Links">
+				<tracker-menu-item uri="project-detail.html">Experis Administration</tracker-menu-item>
+				<tracker-menu-item uri="utilization-report.html">Utilization Report</tracker-menu-item>
+				<tracker-menu-item uri="timesheet-report.html">Time Sheet Report</tracker-menu-item>
+			</tracker-menu-block>
+
+			<tracker-menu-block heading="Information">
+				<tracker-menu-item uri="#daily-summary" icon="info-circle">Daily Summary</tracker-menu-item>
+				<tracker-menu-item uri="#recent-tasks" icon="info-circle">Recent Tasks</tracker-menu-item>
+			</tracker-menu-block>
+		</tracker-menu-pane>
+
+		<tracker-detail-pane heading="New Task" icon="edit" font-color="#fff" bg-color="#6390c7">
+			<tracker-drawer heading="Add Task Details" visible="true">
+				<tracker-form-block>
+					<tracker-form-row stretch flex='["2 1 calc(70% + 1.4rem)", "1 1 30%"]'>
+						<tracker-group-block heading="Name">
+							<input type="text" name="task-name" value="">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Project">
+							<select name="task-project" id="task-project">
+								<option value="">Select a project</option>
+								<option value="">Acme Website Redesign</option>
+							</select>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 35%", "1 1 35%", "1 1 30%"]'>
+						<tracker-group-block heading="Creation Date">
+							<input type="date" name="task-due-date" value="2015-09-16">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Due Date">
+							<input type="date" name="task-due-date" value="2015-09-16">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Estimate (Hours)">
+							<input type="number" step="0.25" value=".25" min="0.25">
+						</tracker-group-block>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 auto", "1 1 75%"]'>
+						<tracker-group-block heading="Recurrence">
+							<select name="task-recurrence">
+								<option value="">Once</option>
+								<option value="">Weekly</option>
+							</select>
+						</tracker-group-block>
+
+						<tracker-group-block heading="On Day(s)">
+							<ul is="tracker-toggle-fields">
+								<li><input type="checkbox" id="task-day-0" name="task-day-0"><label for="task-day-0">Sunday</label></li>
+								<li><input type="checkbox" id="task-day-1" name="task-day-1" checked><label for="task-day-1">Monday</label></li>
+								<li><input type="checkbox" id="task-day-2" name="task-day-2"><label for="task-day-2">Tuesday</label></li>
+								<li><input type="checkbox" id="task-day-3" name="task-day-3"><label for="task-day-3">Wednesday</label></li>
+								<li><input type="checkbox" id="task-day-4" name="task-day-4"><label for="task-day-4">Thursday</label></li>
+								<li><input type="checkbox" id="task-day-5" name="task-day-5"><label for="task-day-5">Friday</label></li>
+								<li><input type="checkbox" id="task-day-6" name="task-day-6"><label for="task-day-6">Saturday</label></li>
+							</ul>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 100%"]'>
+						<tracker-group-block heading="Description">
+							<textarea name="task-description" cols="50" rows="5"></textarea>
+						</tracker-group-block>
+					</tracker-form-row>
+
+					<tracker-form-row stretch flex='["1 1 calc(70% + 1.4rem)", "1 1 30%"]'>
+						<tracker-group-block heading="Tags">
+							<input type="text" name="task-tags" value="">
+						</tracker-group-block>
+
+						<tracker-group-block heading="Complete">
+							<ul is="tracker-toggle-fields">
+								<li>
+									<input type="checkbox" id="task-completed" name="task-completed"><label for="task-completed">Mark as complete?</label>
+								</li>
+							</ul>
+					</tracker-form-row>
+
+					<tracker-button-row>
+						<tracker-icon-button uri="#" icon="check">Create Task</tracker-icon-button>
+					</tracker-button-row>
+				</tracker-form-block>
+			</tracker-drawer>
+
+			<div class="block">
+				<tracker-paper-block heading="Time Records">
+					<tracker-empty-block heading="No Records Available">
+						<p>Save changes to your task above, then enter your time records.</p>
+					</tracker-empty-block>
+				</tracker-paper-block>
+			</div>
+		</tracker-detail-pane>
+
+		<tracker-footer-pane status="online" version="0.0.1"></tracker-footer-pane>
+	</tracker-app>
+
+	<!-- build:include templates/daily-summary-lightbox.html --><!-- /build -->
+	<!-- build:include templates/recent-tasks-lightbox.html --><!-- /build -->
+
+	<!-- build:js:dist javascripts/built.js -->
+	<script data-main="/javascripts/main" src="/bower_components/requirejs/require.js"></script>
+	<!-- /build -->
+</body>
+
+</html>
